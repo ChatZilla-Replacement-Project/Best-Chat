@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="BncEditorDlg.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="BncListEditor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="NetworkEditorDlg.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="NetworkListDlg.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PortEditorDlg.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PredefinedNetworkViewerDlg.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ServerDomainEditorDlg.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="BncEditorDlg.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="BncListEditor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NetworkEditorDlg.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NetworkListDlg.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PortEditorDlg.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PredefinedNetworkViewerDlg.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ServerDomainEditorDlg.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

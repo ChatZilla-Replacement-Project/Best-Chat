@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Q082RL4DSEq1q+VhDAJbgusFNw9/FWYp+VOQvhSZkdduwALhnYgw7NiTuxKuEGJreLPsSoWl7wkx3Urr1po8yw==",
+  "success": true,
+  "projectFilePath": "B:\\Contents\\Best Chat\\Code\\Ctrls\\BestChat.GUI.Ctrls.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\willp\\.nuget\\packages\\calcbinding\\2.5.2\\calcbinding.2.5.2.nupkg.sha512",
+    "C:\\Users\\willp\\.nuget\\packages\\dynamicexpresso.core\\2.3.1\\dynamicexpresso.core.2.3.1.nupkg.sha512",
+    "C:\\Users\\willp\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.29\\microsoft.windows.sdk.net.ref.10.0.22621.29.nupkg.sha512"
+  ],
+  "logs": []
+}

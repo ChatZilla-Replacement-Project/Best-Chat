@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="strChanServOptAtTheme" xml:space="preserve">
+    <value>AtTheme</value>
+  </data>
+  <data name="strChanServOptAtThemeToolTip" xml:space="preserve">
+    <value>ChanServ is implemented by AtTheme.  Only select this if you're sure that's what they use.</value>
+  </data>
+  <data name="strChanServOptNull" xml:space="preserve">
+    <value>None available</value>
+  </data>
+  <data name="strChanServOptNullToolTip" xml:space="preserve">
+    <value>Select this if the network doesn't have ChanServ</value>
+  </data>
+  <data name="strChanServOptUnknown" xml:space="preserve">
+    <value>Available, but type unknown</value>
+  </data>
+  <data name="strChanServOptUnknownToolTip" xml:space="preserve">
+    <value>Select this if the network has a ChanServ, but you don't know much about it</value>
+  </data>
+  <data name="strHasAlisFalse" xml:space="preserve">
+    <value>False / Not Available</value>
+  </data>
+  <data name="strHasAlisFalseToolTip" xml:space="preserve">
+    <value>No ALIS is present on this network</value>
+  </data>
+  <data name="strHasAlisTrue" xml:space="preserve">
+    <value>True / Available</value>
+  </data>
+  <data name="strHasAlisTrueToolTip" xml:space="preserve">
+    <value>ALIS is available and ready to use.</value>
+  </data>
+  <data name="strHasAlisUnknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="strHasAlisUnknownToolTip" xml:space="preserve">
+    <value>ALIS may or may not be present</value>
+  </data>
+  <data name="strHasQFalse" xml:space="preserve">
+    <value>False / Not Available</value>
+  </data>
+  <data name="strHasQFalseToolTip" xml:space="preserve">
+    <value>No Q present on this network.  Q is really only QuakeNet.</value>
+  </data>
+  <data name="strHasQTrue" xml:space="preserve">
+    <value>True / Available</value>
+  </data>
+  <data name="strHasQTrueToolTip" xml:space="preserve">
+    <value>Q is present</value>
+  </data>
+  <data name="strHasQUnknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="strHasQUnknownToolTip" xml:space="preserve">
+    <value>Q might or might not be present on this network</value>
+  </data>
+  <data name="strManual" xml:space="preserve">
+    <value>Log in manually</value>
+  </data>
+  <data name="strNetworkInfoTypeCustom" xml:space="preserve">
+    <value>Custom/User defined</value>
+    <comment>A network created by the user and not based on another network.</comment>
+  </data>
+  <data name="strNetworkInfoTypeCustomToolTipText" xml:space="preserve">
+    <value>A network created by the user and not based on another network.</value>
+  </data>
+  <data name="strNetworkInfoTypeHidden" xml:space="preserve">
+    <value>Hidden</value>
+    <comment>A network provided by Best Chat, but the user has chosen to hide the network from views</comment>
+  </data>
+  <data name="strNetworkInfoTypeHiddenToolTipText" xml:space="preserve">
+    <value>A network provided by Best Chat, but the user has chosen to hide the network from views</value>
+  </data>
+  <data name="strNetworkInfoTypeModified" xml:space="preserve">
+    <value>Modified</value>
+    <comment>A network whose information was originally provided by Best Chat, but the user has made changes.</comment>
+  </data>
+  <data name="strNetworkInfoTypeModifiedToolTipText" xml:space="preserve">
+    <value>A network whose information was originally provided by Best Chat, but the user has made changes.</value>
+  </data>
+  <data name="strNetworkInfoTypePredefined" xml:space="preserve">
+    <value>Predefined</value>
+    <comment>A network whose information is provided by Best Chat and hasn't been changed.</comment>
+  </data>
+  <data name="strNetworkInfoTypePredefinedToolTipText" xml:space="preserve">
+    <value>A network whose information is provided by Best Chat and hasn't been changed.</value>
+  </data>
+  <data name="strNickServ" xml:space="preserve">
+    <value>Attempt to use NickServ (Requires a network that provides NickServ)</value>
+  </data>
+  <data name="strNickServOptAtTheme" xml:space="preserve">
+    <value>AtTheme</value>
+  </data>
+  <data name="strNickServOptAtThemeToolTip" xml:space="preserve">
+    <value>NickServ is implemented by AtTheme.  Only select this if you're sure that's what they use.</value>
+  </data>
+  <data name="strNickServOptNull" xml:space="preserve">
+    <value>None available</value>
+  </data>
+  <data name="strNickServOptNullToolTip" xml:space="preserve">
+    <value>Select this if the network doesn't have NickServ</value>
+  </data>
+  <data name="strNickServOptUnknown" xml:space="preserve">
+    <value>Available, but type unknown</value>
+  </data>
+  <data name="strNickServOptUnknownToolTip" xml:space="preserve">
+    <value>Select this if the network has a NickServ, but you don't know much about it</value>
+  </data>
+  <data name="strSASL" xml:space="preserve">
+    <value>Use SASL</value>
+  </data>
+</root>

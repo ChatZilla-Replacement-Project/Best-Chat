@@ -1,0 +1,695 @@
+﻿<Window
+	x:Class="BestChat.IRC.Global.View.NetworkEditorDlg"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:BestChat.IRC.Global.View"
+	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
+	xmlns:defs="clr-namespace:BestChat.IRC.Data.Defs;assembly=BestChat.IRC.Data"
+	xmlns:IrcCtrls="clr-namespace:BestChat.IRC.Global.View.Ctrls;assembly=BestChat.IRC.Global.View.Ctrls"
+	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
+	mc:Ignorable="d"
+	FontFamily="Times New Roman"
+	WindowStartupLocation="CenterOwner"
+	ShowInTaskbar="False"
+	ResizeMode="NoResize"
+	SizeToContent="WidthAndHeight"
+	MinWidth="400"
+	ToolTipService.HasDropShadow="True"
+	ToolTipService.Placement="Right"
+	d:DesignWidth="511.647">
+	<DockPanel
+		Margin="4">
+		<Grid
+			DockPanel.Dock="Bottom">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition
+					Width="4" />
+				<ColumnDefinition
+					Width="Auto" />
+				<ColumnDefinition
+					Width="4" />
+				<ColumnDefinition
+					Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="Auto" />
+			</Grid.RowDefinitions>
+			<Label
+				Style="{DynamicResource ValidationErrorMsg}" />
+			<Button
+				x:Name="btnOK"
+				Content="OK"
+				Grid.Column="2"
+				ToolTip="Saves your changes"
+				Click="OnOK" />
+			<Button
+				x:Name="btnCancel"
+				Content="Cancel"
+				Grid.Column="4"
+				ToolTip="Discards your changes if you've made any.  If you have made changes, you'll be asked if you're sure."
+				Click="OnCancel" />
+		</Grid>
+		<Separator
+			DockPanel.Dock="Bottom"
+			Height="8" />
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="Auto"
+					SharedSizeGroup="Label" />
+				<ColumnDefinition
+					Width="4"
+					SharedSizeGroup="Divider1" />
+				<ColumnDefinition
+					SharedSizeGroup="Fields" />
+				<ColumnDefinition
+					Width="4"
+					SharedSizeGroup="Divider2" />
+				<ColumnDefinition
+					Width="Auto"
+					SharedSizeGroup="ServerDomainBtns" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+			</Grid.RowDefinitions>
+			<Label
+				Content="Name: "
+				HorizontalContentAlignment="Right" />
+			<Label
+				Content="{Binding Name}"
+				ToolTip="This field is readonly because this network is predefined.  You can always create a new network instead."
+				Grid.Column="2"
+				Visibility="{CalcBinding:Binding !IsCustom}"
+				Grid.ColumnSpan="3" />
+			<TextBox
+				x:Name="editName"
+				Grid.Column="2"
+				Text="{Binding Name}"
+				Visibility="{CalcBinding:Binding IsCustom}"
+				Grid.ColumnSpan="3"
+				TextChanged="OnNameChanged"
+				ToolTip="This can be anything, but it must be not empty and unique."/>
+			<Label
+				Content="Homepage: "
+				HorizontalContentAlignment="Right"
+				Grid.Row="2" />
+			<Button
+				x:Name="btnHomePageLink"
+				Background="Transparent"
+				BorderThickness="0"
+				Click="OnHomePageLinkClicked"
+				Grid.Column="2"
+				Grid.Row="2"
+				Visibility="{CalcBinding:Binding !IsCustom}"
+				Grid.ColumnSpan="3">
+				<TextBlock
+					Foreground="Blue"
+					FontWeight="Bold"
+					ToolTip="Will open the page in the link in your browser as specified in Best Chat"
+					Cursor="Hand"
+					TextDecorations="Underline"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center"
+					Text="{Binding Homepage}" />
+			</Button>
+			<TextBox
+				x:Name="editHomepage"
+				Grid.Column="2"
+				Text="{Binding Homepage}"
+				Visibility="{CalcBinding:Binding IsCustom}"
+				Grid.Row="2"
+				Grid.ColumnSpan="3"
+				ToolTip="Omit if you don't have one, but if you specify this, it must be a valid URI."
+				TextChanged="OnHomepageChanged" />
+			<CheckBox
+				x:Name="chkAutoConnect"
+				Grid.Row="4"
+				Grid.ColumnSpan="5"
+				Content="Connect automatically to this network"
+				ToolTip="Check if you want Best Chat to open this network automatically when it starts up.  If you enable a bouncer for this network, that'll cause Best Chat to reopen any channels open in the bouncer." />
+			<CheckBox
+				x:Name="chkHideNetwork"
+				Grid.Row="6"
+				Grid.ColumnSpan="5"
+				Content="Hide this network when searching for channels"
+				ToolTip="Hide this network from the Join dialog.  This option exists mainly as predefined networks can't be deleted.  So you hide them instead." />
+			<CheckBox
+				x:Name="chkUseSSL"
+				Content="Use SSL?"
+				Grid.Row="8"
+				Grid.ColumnSpan="5"
+				ToolTip="Do you want to use SLL?  That will affect the list of ports available.  Don't select a SSL port if you're not using SSL.  Furthermore, don't select a non-SSL port if you are using SSL.  If you're using a bouncer, the port selection comes from the bouncer, not the network server." />
+			<Label
+				Content="NickServ availability and type: "
+				Grid.Row="8"
+				HorizontalContentAlignment="Right"
+				ToolTip="{Binding ToolTip, ElementName=comboNickServ}" />
+			<Label
+				Content="{Binding NickServAsText}"
+				Grid.Column="2"
+				Grid.Row="8"
+				Grid.ColumnSpan="3"
+				Visibility="{CalcBinding:Binding HasPredefintion}"
+				ToolTip="This is a list of known and unknown NickServ options.  “Unknown”, that just means the the network has a NickServ, but it's unknown what implementation the network uses.  “None available” means the network doesn't provide a NickServ." />
+			<IrcCtrls:NickServOptComboBox
+				x:Name="comboNickServ"
+				Grid.Column="2"
+				Grid.ColumnSpan="3"
+				Grid.Row="8"
+				Visibility="{CalcBinding:Binding !HasPredefinition}"
+				SelVal="{Binding NickServ}"
+				ToolTip="This is a list of known and unknown NickServ options.  “Unknown”, that just means the the network has a NickServ, but it's unknown what implementation the network uses.  “None available” means the network doesn't provide a NickServ.  This field isn't editable because the network is predefined.  We know the correct value and have provided it for you." />
+			<Label
+				Content="ChanServ availability and type: "
+				Grid.Row="10"
+				HorizontalContentAlignment="Right"
+				ToolTip="{Binding ToolTip, ElementName=comboChanServ}" />
+			<Label
+				Content="{Binding ChanServAsText}"
+				Grid.Column="2"
+				Grid.Row="10"
+				Grid.ColumnSpan="3"
+				Visibility="{CalcBinding:Binding HasPredefinition}"
+				ToolTip="This is a list of known and unknown ChanServ options.  “Unknown”, that just means the the network has a ChanServ, but it's unknown what implementation the network uses.  “None available” means the network doesn't provide a ChanServ.  This field isn't editable because the network is predefined.  We know the correct value and have provided it for you." />
+			<IrcCtrls:ChanServOptComboBox
+				x:Name="comboChanServ"
+				Grid.Column="2"
+				Grid.ColumnSpan="3"
+				Grid.Row="10"
+				SelVal="{Binding ChanServ}"
+				Visibility="{CalcBinding:Binding !HasPredefinition}"
+				ToolTip="This is a list of known and unknown ChanServ options.  “Unknown”, that just means the the network has a ChanServ, but it's unknown what implementation the network uses.  “None available” means the network doesn't provide a ChanServ." />
+			<Label
+				Content="Has ALIS: "
+				Grid.Row="12"
+				HorizontalContentAlignment="Right"
+				ToolTip="{Binding ToolTip, ElementName=comboHasAlis}" />
+			<Label
+				Content="{Binding HasAlisAsText}"
+				Grid.Row="12"
+				Grid.Column="2"
+				Grid.ColumnSpan="3"
+				Visibility="{CalcBinding:Binding HasPredefinition}"
+				ToolTip="Some networks require /list to be used in order to search for channels.  That works fine when you use the Join a Channel dialog.  In there, we just download a list of all channels and let you filter that list there.  However, if you don't want to use it and don't like relying on /list, some networks have a more advanced option called ALIS.  When available, the list is filtered by the network's server and presented to you.  If this value is “True / Available”, some options in the Join a Channel will let you tell Best Chat to use ALIS rather than /list to complete the search.  This will result in a faster search as we don't need to download as much, but you'll have fewer search options.  However, you can't change this value as this network is predefined." />
+			<IrcCtrls:HasAlisComboBox
+				x:Name="comboHasAlis"
+				SelVal="{Binding HasAlis}"
+				Grid.Column="2"
+				Grid.ColumnSpan="3"
+				Grid.Row="12"
+				Visibility="{CalcBinding:Binding !HasPredefinition}"
+				ToolTip="Some networks require /list to be used in order to search for channels.  That works fine when you use the Join a Channel dialog.  In there, we just download a list of all channels and let you filter that list there.  However, if you don't want to use it and don't like relying on /list, some networks have a more advanced option called ALIS.  When available, the list is filtered by the network's server and presented to you.  If this value is “True / Available”, some options in the Join a Channel will let you tell Best Chat to use ALIS rather than /list to complete the search.  This will result in a faster search as we don't need to download as much, but you'll have fewer search options." />
+			<Label
+				Content="Has Q: "
+				Grid.Row="14"
+				HorizontalContentAlignment="Right"
+				ToolTip="{Binding ToolTip, ElementName=comboHasQ}" />
+			<Label
+				Content="{Binding HasQAsText}"
+				Grid.Row="14"
+				Grid.Column="2"
+				Grid.ColumnSpan="3"
+				ToolTip="Some networks have a bot called “Q” that provides services similar to ChanServ and NickServ on other networks.  This is mainly QuakeNet.  Because we know of this network and if it has Q or not, you can't change this field." />
+			<IrcCtrls:HasQComboBox
+				x:Name="comboHasQ"
+				SelVal="{Binding HasQ}"
+				Grid.Column="2"
+				Grid.ColumnSpan="3"
+				Grid.Row="14"
+				Visibility="{CalcBinding:Binding !HasPredefinition}"
+				ToolTip="Some networks have a bot called “Q” that provides services similar to ChanServ and NickServ on other networks.  This is mainly QuakeNet.  Don't enable this unless you know what you're doing." />
+			<GroupBox
+				Grid.Row="16"
+				Grid.ColumnSpan="5"
+				Margin="0,0,0,4">
+				<GroupBox.Header>
+					<CheckBox
+						x:Name="chkUseBouncer"
+						Content="Use a bouncer?" />
+				</GroupBox.Header>
+				<Grid
+					Grid.IsSharedSizeScope="True"
+					Grid.Row="16"
+					Grid.ColumnSpan="5"
+					Margin="0,0,0,4">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition
+							Width="Auto"
+							SharedSizeGroup="Label" />
+						<ColumnDefinition
+							Width="4"
+							SharedSizeGroup="Divider1" />
+						<ColumnDefinition
+							SharedSizeGroup="Fields" />
+						<ColumnDefinition
+							Width="4"
+							SharedSizeGroup="Divider2" />
+						<ColumnDefinition
+							Width="Auto"
+							SharedSizeGroup="ServerDomainBtns" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="4" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="4" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="4" />
+						<RowDefinition
+							Height="Auto" />
+					</Grid.RowDefinitions>
+					<Label
+						Content="Bouncer to use: "
+						HorizontalContentAlignment="Right"
+						ToolTip="{Binding ToolTip, ElementName=labelBncSelection}"
+						IsEnabled="{Binding IsChecked, ElementName=chkUseBouncer, NotifyOnSourceUpdated=True}"  />
+					<Label
+						x:Name="labelBncSelection"
+						Content="Not yet ready as there's no backend for this"
+						Grid.Column="2"
+						ToolTip="This is the bouncer you've selected.  In order to change this, use the button to the right."
+						IsEnabled="{Binding IsChecked, ElementName=chkUseBouncer, NotifyOnSourceUpdated=True}" />
+					<Button
+						x:Name="btnBncChooseFromKnown"
+						Content="Browse Available…"
+						Grid.Column="4"
+						ToolTip="Click here to change which bouncer you want to use.  If you know of one that's not in the list shown there, you'll be able to add it."
+						IsEnabled="{Binding IsChecked, ElementName=chkUseBouncer, NotifyOnSourceUpdated=True}"  />
+					<Label
+						Content="Which server: "
+						HorizontalContentAlignment="Right"
+						Grid.Row="2"
+						ToolTip="{Binding ToolTip, ElementName=comboWhichServer}"
+						IsEnabled="{Binding IsChecked, ElementName=chkUseBouncer, NotifyOnSourceUpdated=True}" />
+					<ComboBox
+						x:Name="comboWhichServer"
+						Grid.Column="2"
+						Grid.ColumnSpan="3"
+						Grid.Row="2"
+						ToolTip="Your bouncer may have multiple servers for you to connect to.  Which one were you told to use?  You won't be able to connect to the wrong server." />
+					<Label
+						Content="Bouncer Name: "
+						Grid.Row="4"
+						HorizontalContentAlignment="Right"
+						ToolTip="{Binding ToolTip, ElementName=comboBncName}"
+						IsEnabled="{Binding IsChecked, ElementName=chkUseBouncer, NotifyOnSourceUpdated=True}"  />
+					<ComboBox
+						x:Name="comboBncName"
+						Grid.Row="4"
+						Grid.Column="2"
+						Grid.ColumnSpan="3"
+						ToolTip="What's the name of the bouncer you created?  It must be exactly the same, including the case."
+						IsReadOnly="True"
+						IsEditable="True"
+						IsEnabled="{Binding IsChecked, ElementName=chkUseBouncer, NotifyOnSourceUpdated=True}"  />
+					<GroupBox
+						Grid.Row="6"
+						Grid.ColumnSpan="5"
+						IsEnabled="{Binding IsChecked, ElementName=chkUseBouncer, NotifyOnSourceUpdated=True}">
+						<GroupBox.Header>
+							<CheckBox
+								x:Name="chkBestChatShouldLogInUser"
+								Content="Would you like Best Chat to log you in" />
+						</GroupBox.Header>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="Auto"
+									SharedSizeGroup="Label" />
+								<ColumnDefinition
+									Width="4"
+									SharedSizeGroup="Divider1" />
+								<ColumnDefinition
+									SharedSizeGroup="Fields" />
+								<ColumnDefinition
+									Width="4"
+									SharedSizeGroup="Divider2" />
+								<ColumnDefinition
+									Width="Auto"
+									SharedSizeGroup="ServerDomainBtns" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition
+									Height="Auto" />
+								<RowDefinition
+									Height="4" />
+								<RowDefinition
+									Height="Auto" />
+							</Grid.RowDefinitions>
+							<Label
+								Content="Account name: "
+								HorizontalContentAlignment="Right"
+								ToolTip="{Binding ToolTip, ElementName=editBncAcctName}"
+								IsEnabled="{Binding IsChecked, ElementName=chkBestChatShouldLogInUser, NotifyOnSourceUpdated=True}" />
+							<TextBox
+								x:Name="editBncAcctName"
+								Grid.Column="2"
+								Grid.ColumnSpan="3"
+								ToolTip="What was the account name you used when you created your bouncer?  Enter that here.  Be sure the case matches what you used."
+								IsEnabled="{Binding IsChecked, ElementName=chkBestChatShouldLogInUser, NotifyOnSourceUpdated=True}" />
+							<Label
+								Content="Password: "
+								HorizontalContentAlignment="Right"
+								ToolTip="{Binding ToolTip, ElementName=editPwd}"
+								Grid.Row="2"
+								IsEnabled="{Binding IsChecked, ElementName=chkBestChatShouldLogInUser, NotifyOnSourceUpdated=True}" />
+							<PasswordBox
+								x:Name="editBncPwd"
+								Grid.Column="2"
+								Grid.ColumnSpan="3"
+								ToolTip="Enter the password for you bouncer.  Don't use your NickServ or Q password here.  The may not work."
+								IsEnabled="{Binding IsChecked, ElementName=chkBestChatShouldLogInUser, NotifyOnSourceUpdated=True}" />
+						</Grid>
+					</GroupBox>
+				</Grid>
+			</GroupBox>
+			<IrcCtrls:NetworkLogInModesComboBox
+				x:Name="comboNetworkLogInMode"
+				Grid.Row="20"
+				Grid.ColumnSpan="5" />
+			<Grid
+				Grid.IsSharedSizeScope="True"
+				Grid.Row="20"
+				Grid.ColumnSpan="5"
+				Margin="0,0,0,4">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition
+						Width="Auto"
+						SharedSizeGroup="Label" />
+					<ColumnDefinition
+						Width="4"
+						SharedSizeGroup="Divider1" />
+					<ColumnDefinition
+						SharedSizeGroup="Fields" />
+					<ColumnDefinition
+						Width="4"
+						SharedSizeGroup="Divider2" />
+					<ColumnDefinition
+						Width="Auto"
+						SharedSizeGroup="ServerDomainBtns" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition
+						Height="Auto" />
+				</Grid.RowDefinitions>
+				<Label
+					Content="Network Account: "
+					HorizontalContentAlignment="Right"
+					ToolTip="{Binding ToolTip, ElementName=editAcct}" />
+				<TextBox
+					x:Name="editNetworkAcct"
+					Grid.Column="2"
+					Grid.ColumnSpan="3"
+					ToolTip="What's the account name you created with your network?  If you're using NickServ or SASL, that's the nick you create the account with.  Some NickServ implementations allow you to specify a different nick than what you're using now.  However, the success of that will depend on the type of NickServ as show below under “NickServ availability and type”." />
+			</Grid>
+			<Grid
+				Grid.IsSharedSizeScope="True"
+				Grid.Row="22"
+				Grid.ColumnSpan="5"
+				Margin="0,0,0,4">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition
+						Width="Auto"
+						SharedSizeGroup="Label" />
+					<ColumnDefinition
+						Width="4"
+						SharedSizeGroup="Divider1" />
+					<ColumnDefinition
+						SharedSizeGroup="Fields" />
+					<ColumnDefinition
+						Width="4"
+						SharedSizeGroup="Divider2" />
+					<ColumnDefinition
+						Width="Auto"
+						SharedSizeGroup="ServerDomainBtns" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition
+						Height="Auto" />
+				</Grid.RowDefinitions>
+				<Label
+					Content="Password: "
+					HorizontalContentAlignment="Right"
+					ToolTip="{Binding ToolTip, ElementName=editPwd}" />
+				<PasswordBox
+					x:Name="editPwd"
+					Grid.Column="2"
+					Grid.ColumnSpan="3"
+					ToolTip="Enter your password.  If you're using an bouncer, this is your bouncer password.  If you're using NickServ or SASL, this is your password for your NickServ account.  If you're using Q, this is the password to be sent to Q.  If your server requires a password, enter that here." />
+			</Grid>
+			<Grid
+				Grid.IsSharedSizeScope="True"
+				Grid.Row="24"
+				Grid.ColumnSpan="5"
+				Margin="0,0,0,4">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition
+						Width="Auto"
+						SharedSizeGroup="Label" />
+					<ColumnDefinition
+						Width="4"
+						SharedSizeGroup="Divider1" />
+					<ColumnDefinition
+						SharedSizeGroup="Fields" />
+					<ColumnDefinition
+						Width="4"
+						SharedSizeGroup="Divider2" />
+					<ColumnDefinition
+						Width="Auto"
+						SharedSizeGroup="ServerDomainBtns" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition
+						Height="Auto" />
+				</Grid.RowDefinitions>
+				<Label
+					Content="SSL Certificate File: "
+					HorizontalAlignment="Right"
+					ToolTip="{Binding ToolTip, ElementName=fileeditCert}" />
+				<Ctrls:FileBrowserCtrl
+					x:Name="fileeditCert"
+					Grid.Column="2"
+					Grid.ColumnSpan="3"
+					ToolTip="This is the file you want to use as your SSL certificate.  If you don't have one yet, Putty can make one for you, but you'll need to download it and run it seperately.  Best Chat doesn't include Putty." />
+			</Grid>
+			<GroupBox
+				Header="Which Port are you to use?"
+				Grid.Row="26"
+				Grid.ColumnSpan="5">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="4" />
+						<RowDefinition
+							Height="Auto" />
+					</Grid.RowDefinitions>
+					<TextBox
+						BorderThickness="0"
+						Text="If you see the required port in the list below, selected it there.  Otherwise, select “Not listed” (the first entry) in the list and use the text box to select the desired port."
+						Grid.ColumnSpan="7"
+						TextWrapping="Wrap"
+						Focusable="False" />
+					<Label
+						Content="Ports known to be available for this network: "
+						Grid.Row="2"
+						ToolTip="{Binding ToolTip, ElementName=comboPortToUse}" />
+					<ComboBox
+						x:Name="comboPortToUse"
+						Grid.Row="2"
+						MinWidth="50"
+						Grid.Column="2"
+						ToolTip="Do you want to use?  If you're using a bouncer, be sure to use the port they specified rather than just any port.  Don't use a SSL port if you aren't using SSL.  Furthermore, don't use a non-SSL port if you are using SSL.  If you know you need a port not in the list, select “Not listed” instead.  That will enable the “All Ports” option below." />
+					<Label
+						Content="All Ports"
+						Grid.Column="4"
+						Grid.Row="2"
+						IsEnabled="{Binding IsEnabled, ElementName=iudPort, NotifyOnSourceUpdated=True}" />
+					<Ctrls:IntegerUpDown
+						x:Name="iudPort"
+						Grid.Column="6"
+						Grid.Row="2"
+						Maximum="65535"
+						IsEnabled="{CalcBinding:Binding 'SelectedItem == null', ElementName=comboPortToUse, NotifyOnSourceUpdated=True}"
+						ToolTip="This lets you manually specify a port.  Use this if you know a port is an option that isn't in our list.  Be careful to not to use an SSL port if you aren't using SSL.  Furthermore, if you are using SSL, don't specify a non-SSL port." />
+				</Grid>
+			</GroupBox>
+			<CheckBox
+				x:Name="chkUseServersFromPredefinedNetwork"
+				Content="Use the predefined server list"
+				Grid.Row="28"
+				Grid.ColumnSpan="5"
+				Margin="0,0,0,4"
+				IsChecked="{Binding IsServerListDefaulted, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+				Visibility="{CalcBinding:Binding HasPredefinition}"
+				ToolTip="If checked, Best Chat will rely on the list of servers that we know of.  Typically, we've checked their website and gotten the list there.  Uncheck this to make modifications.  You might do that if our list is out of date." />
+			<DataGrid
+				x:Name="dgServerDomains"
+				Grid.Row="30"
+				Grid.ColumnSpan="3"
+				CanUserAddRows="False"
+				CanUserDeleteRows="False"
+				CanUserResizeRows="False"
+				MaxHeight="120">
+				<DataGrid.Columns>
+					<DataGridTextColumn
+						Header="Domain Name"
+						Binding="{Binding Domain}"
+						IsReadOnly="True" />
+					<DataGridCheckBoxColumn
+						Header="Is Enabled?"
+						Binding="{Binding IsEnabled}"
+						IsReadOnly="True" />
+					<DataGridTextColumn
+						Header="Ports"
+						Binding="{Binding AllPorts}"
+						IsReadOnly="True" />
+					<DataGridTextColumn
+						Header="SSL Ports"
+						Binding="{Binding AllSslPorts}"
+						IsReadOnly="True" />
+				</DataGrid.Columns>
+			</DataGrid>
+			<Grid
+				Grid.Row="30"
+				Grid.Column="4"
+				VerticalAlignment="Center"
+				IsEnabled="{CalcBinding:Binding !IsChecked, ElementName=chkUseServersFromPredefinedNetwork, NotifyOnSourceUpdated=True}">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition
+						Height="Auto" />
+					<RowDefinition
+						Height="4" />
+					<RowDefinition
+						Height="Auto" />
+					<RowDefinition
+						Height="20" />
+					<RowDefinition
+						Height="Auto" />
+					<RowDefinition
+						Height="4" />
+					<RowDefinition
+						Height="Auto" />
+					<RowDefinition
+						Height="4" />
+					<RowDefinition
+						Height="Auto" />
+				</Grid.RowDefinitions>
+				<Button
+					x:Name="btnMoveUp"
+					Content="Move this domain up ⇑"
+					IsEnabled="{CalcBinding:Binding 'SelectedIndex > 0 and Items.Count > 0', ElementName=dgServerDomains}"
+					ToolTip="Move the selected domain up one level in the search order.  The domain immediately above this entry will be moved down one spot.  Essentially, the two entries will trade places."
+					Click="OnMoveDomainUp" />
+				<Button
+					x:Name="btnMoveDown"
+					Content="Move this domain down ⇓"
+					Grid.Row="2"
+					IsEnabled="{CalcBinding:Binding 'SelectedIndex &lt; Items.Count', ElementName=dgServerDomains}"
+					ToolTip="Move the selected domain down one level in the search order.  The domain immediately below this entry will be moved up one spot.  Essentially, the two entries will trade places."
+					Click="OnMoveDomainDown" />
+				<Button
+					x:Name="btnAdd"
+					Grid.Row="4"
+					Content="Add new domain…"
+					ToolTip="Add a new domain name to the search order.  The new entry will be added to the bottom of the list and will be the last checked unless you use the buttons above to move the new entry up."
+					Click="OnAddDomain" />
+				<Button
+					x:Name="btnEdit"
+					Content="Edit this domain…"
+					Grid.Row="6"
+					IsEnabled="{CalcBinding:Binding 'Items.Count > 0', ElementName=dgServerDomains}"
+					ToolTip="Edit the selected domain so you can make changes.  Note: The name of domains can't be changed.  If you want to do that, delete the existing domain and recreate it with the new name."
+					Click="OnEditDomain" />
+				<Button
+					x:Name="btnDel"
+					Content="Delete the current domain"
+					Grid.Row="8"
+					IsEnabled="{CalcBinding:Binding 'Items.Count > 0', ElementName=dgServerDomains}"
+					ToolTip="Deletes the selected domain.  You'll be asked if you're sure."
+					Click="OnDelDomain" />
+			</Grid>
+		</Grid>
+	</DockPanel>
+</Window>

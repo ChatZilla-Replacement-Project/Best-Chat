@@ -1,0 +1,15 @@
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\bin\Debug\net7.0-windows\Util.Ext.deps.json
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\bin\Debug\net7.0-windows\Util.Ext.dll
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\bin\Debug\net7.0-windows\Util.Ext.pdb
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\bin\Debug\net7.0-windows\Util.Collections.dll
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\bin\Debug\net7.0-windows\Util.Collections.pdb
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\obj\Debug\net7.0-windows\Util.Ext.csproj.AssemblyReference.cache
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\obj\Debug\net7.0-windows\Util.Ext.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\obj\Debug\net7.0-windows\Util.Ext.AssemblyInfoInputs.cache
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\obj\Debug\net7.0-windows\Util.Ext.AssemblyInfo.cs
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\obj\Debug\net7.0-windows\Util.Ext.csproj.CoreCompileInputs.cache
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\obj\Debug\net7.0-windows\Util.Ext.csproj.CopyComplete
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\obj\Debug\net7.0-windows\Util.Ext.dll
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\obj\Debug\net7.0-windows\refint\Util.Ext.dll
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\obj\Debug\net7.0-windows\Util.Ext.pdb
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\obj\Debug\net7.0-windows\ref\Util.Ext.dll

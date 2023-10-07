@@ -1,0 +1,11 @@
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Collections\bin\Debug\net7.0-windows\Util.Collections.deps.json
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Collections\bin\Debug\net7.0-windows\Util.Collections.dll
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Collections\bin\Debug\net7.0-windows\Util.Collections.pdb
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Collections\obj\Debug\net7.0-windows\Util.Collections.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Collections\obj\Debug\net7.0-windows\Util.Collections.AssemblyInfoInputs.cache
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Collections\obj\Debug\net7.0-windows\Util.Collections.AssemblyInfo.cs
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Collections\obj\Debug\net7.0-windows\Util.Collections.csproj.CoreCompileInputs.cache
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Collections\obj\Debug\net7.0-windows\Util.Collections.dll
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Collections\obj\Debug\net7.0-windows\refint\Util.Collections.dll
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Collections\obj\Debug\net7.0-windows\Util.Collections.pdb
+C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Collections\obj\Debug\net7.0-windows\ref\Util.Collections.dll

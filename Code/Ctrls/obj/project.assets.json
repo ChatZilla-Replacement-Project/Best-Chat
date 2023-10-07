@@ -1,0 +1,227 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0-windows10.0.22621": {
+      "CalcBinding/2.5.2": {
+        "type": "package",
+        "dependencies": {
+          "DynamicExpresso.Core": "2.3.1"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/CalcBinding.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/CalcBinding.dll": {}
+        }
+      },
+      "DynamicExpresso.Core/2.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/DynamicExpresso.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DynamicExpresso.Core.dll": {}
+        }
+      },
+      "BestChat.Util.Ext.WPF/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BestChat.Util.Ext.WPF.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.Util.Ext.WPF.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
+      "Util/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Util.Ext": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Util.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Util.Collections/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Util.Collections.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.Collections.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Util.Ext/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Util.Collections": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Util.Ext.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.Ext.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "CalcBinding/2.5.2": {
+      "sha512": "hbMnS12GUmWTFVROhKJMAQNv5Cqx+AjVGOGGjUOidEaRQ5oGr87PCZih5kfEA/8qlRMzpBsMPQ0fiOahPWwmXQ==",
+      "type": "package",
+      "path": "calcbinding/2.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "calcbinding.2.5.2.nupkg.sha512",
+        "calcbinding.nuspec",
+        "lib/net40/CalcBinding.dll",
+        "lib/net45/CalcBinding.dll",
+        "lib/netcoreapp3.0/CalcBinding.dll"
+      ]
+    },
+    "DynamicExpresso.Core/2.3.1": {
+      "sha512": "gAoOdAA7KypwC2aEWbm72ZcNj9ERn0GBrFyFrLm9tRZGd+z1rgnKlh+BtWJi9X32ldzOwItY/Ty5ao6CqbG5ig==",
+      "type": "package",
+      "path": "dynamicexpresso.core/2.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dynamicexpresso.core.2.3.1.nupkg.sha512",
+        "dynamicexpresso.core.nuspec",
+        "lib/net45/DynamicExpresso.Core.dll",
+        "lib/net461/DynamicExpresso.Core.dll",
+        "lib/netstandard2.0/DynamicExpresso.Core.dll"
+      ]
+    },
+    "BestChat.Util.Ext.WPF/1.0.0": {
+      "type": "project",
+      "path": "../Platform/Util.Ext.WPF/Util.Ext.WPF.csproj",
+      "msbuildProject": "../Platform/Util.Ext.WPF/Util.Ext.WPF.csproj"
+    },
+    "Util/1.0.0": {
+      "type": "project",
+      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj",
+      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj"
+    },
+    "Util.Collections/1.0.0": {
+      "type": "project",
+      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj",
+      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj"
+    },
+    "Util.Ext/1.0.0": {
+      "type": "project",
+      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj",
+      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0-windows10.0.22621": [
+      "BestChat.Util.Ext.WPF >= 1.0.0",
+      "CalcBinding >= 2.5.2",
+      "Util >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\willp\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "B:\\Contents\\Best Chat\\Code\\Ctrls\\BestChat.GUI.Ctrls.csproj",
+      "projectName": "BestChat.GUI.Ctrls",
+      "projectPath": "B:\\Contents\\Best Chat\\Code\\Ctrls\\BestChat.GUI.Ctrls.csproj",
+      "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
+      "outputPath": "B:\\Contents\\Best Chat\\Code\\Ctrls\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0-windows10.0.22621.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0-windows10.0.22621": {
+          "targetAlias": "net7.0-windows10.0.22621.0",
+          "projectReferences": {
+            "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext.WPF\\Util.Ext.WPF.csproj": {
+              "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext.WPF\\Util.Ext.WPF.csproj"
+            },
+            "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj": {
+              "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0-windows10.0.22621": {
+        "targetAlias": "net7.0-windows10.0.22621.0",
+        "dependencies": {
+          "CalcBinding": {
+            "target": "Package",
+            "version": "[2.5.2, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.Windows.SDK.NET.Ref",
+            "version": "[10.0.22621.29, 10.0.22621.29]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.Windows.SDK.NET.Ref": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

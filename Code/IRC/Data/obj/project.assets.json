@@ -1,0 +1,299 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0-windows10.0.22621": {
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "BestChat.Platform.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BestChat.Platform.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.Platform.Common.dll": {}
+        }
+      },
+      "BestChat.Platform.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BestChat.Platform.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.Platform.Data.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "BestChat.Platform.DataLoc/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BestChat.Platform.DataLoc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.Platform.DataLoc.dll": {}
+        }
+      },
+      "BestChat.Platform.HttpClientOwner/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BestChat.Platform.HttpClientOwner.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.Platform.HttpClientOwner.dll": {}
+        }
+      },
+      "IRC.ModuleInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/IRC.ModuleInterfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IRC.ModuleInterfaces.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Util/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Util.Ext": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Util.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Util.Collections/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Util.Collections.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.Collections.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Util.Ext/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Util.Collections": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Util.Ext.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.Ext.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "BestChat.Platform.Common/1.0.0": {
+      "type": "project",
+      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj",
+      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj"
+    },
+    "BestChat.Platform.Data/1.0.0": {
+      "type": "project",
+      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj",
+      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj"
+    },
+    "BestChat.Platform.DataLoc/1.0.0": {
+      "type": "project",
+      "path": "../../Platform/Platform.DataLoc/Platform.DataLoc.csproj",
+      "msbuildProject": "../../Platform/Platform.DataLoc/Platform.DataLoc.csproj"
+    },
+    "BestChat.Platform.HttpClientOwner/1.0.0": {
+      "type": "project",
+      "path": "../../Platform/Platform.HttpClientOwner/Platform.HttpClientOwner.csproj",
+      "msbuildProject": "../../Platform/Platform.HttpClientOwner/Platform.HttpClientOwner.csproj"
+    },
+    "IRC.ModuleInterfaces/1.0.0": {
+      "type": "project",
+      "path": "../ModuleInterfaces/IRC.ModuleInterfaces.csproj",
+      "msbuildProject": "../ModuleInterfaces/IRC.ModuleInterfaces.csproj"
+    },
+    "Util/1.0.0": {
+      "type": "project",
+      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj",
+      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj"
+    },
+    "Util.Collections/1.0.0": {
+      "type": "project",
+      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj",
+      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj"
+    },
+    "Util.Ext/1.0.0": {
+      "type": "project",
+      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj",
+      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0-windows10.0.22621": [
+      "BestChat.Platform.Common >= 1.0.0",
+      "BestChat.Platform.Data >= 1.0.0",
+      "BestChat.Platform.DataLoc >= 1.0.0",
+      "BestChat.Platform.HttpClientOwner >= 1.0.0",
+      "IRC.ModuleInterfaces >= 1.0.0",
+      "Newtonsoft.Json >= 13.0.3",
+      "Util >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\willp\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "B:\\Contents\\Best Chat\\Code\\IRC\\Data\\IRC.Data.csproj",
+      "projectName": "BestChat.IRC.Data",
+      "projectPath": "B:\\Contents\\Best Chat\\Code\\IRC\\Data\\IRC.Data.csproj",
+      "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
+      "outputPath": "B:\\Contents\\Best Chat\\Code\\IRC\\Data\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0-windows10.0.22621.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0-windows10.0.22621": {
+          "targetAlias": "net7.0-windows10.0.22621.0",
+          "projectReferences": {
+            "B:\\Contents\\Best Chat\\Code\\IRC\\ModuleInterfaces\\IRC.ModuleInterfaces.csproj": {
+              "projectPath": "B:\\Contents\\Best Chat\\Code\\IRC\\ModuleInterfaces\\IRC.ModuleInterfaces.csproj"
+            },
+            "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.DataLoc\\Platform.DataLoc.csproj": {
+              "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.DataLoc\\Platform.DataLoc.csproj"
+            },
+            "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.HttpClientOwner\\Platform.HttpClientOwner.csproj": {
+              "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.HttpClientOwner\\Platform.HttpClientOwner.csproj"
+            },
+            "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj": {
+              "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj"
+            },
+            "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj": {
+              "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj"
+            },
+            "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj": {
+              "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0-windows10.0.22621": {
+        "targetAlias": "net7.0-windows10.0.22621.0",
+        "dependencies": {
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.Windows.SDK.NET.Ref",
+            "version": "[10.0.22621.29, 10.0.22621.29]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.Windows.SDK.NET.Ref": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

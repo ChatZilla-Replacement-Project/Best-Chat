@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>\bin</DocumentationFile>
+    <Copyright>2023</Copyright>
+    <NeutralLanguage>en</NeutralLanguage>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <RootNamespace>BestChat.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <AssemblyName>BestChat.$(MSBuildProjectName)</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Platform\Platform.DataLoc\Platform.DataLoc.csproj" />
+    <ProjectReference Include="..\..\Platform\Platform.HttpClientOwner\Platform.HttpClientOwner.csproj" />
+    <ProjectReference Include="..\ModuleInterfaces\IRC.ModuleInterfaces.csproj" />
+    <ProjectReference Include="C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Common\Platform.Common.csproj" />
+    <ProjectReference Include="C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\File\Platform.Data.csproj" />
+    <ProjectReference Include="C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util\Util.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Defs\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Defs\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

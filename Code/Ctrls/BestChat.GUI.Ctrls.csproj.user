@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="DropMenuBtn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="FileBrowserCtrl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="FolderBrowserCtrl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="FontSelectionComboBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="FontWeightComboBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="IntegerUpDown.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ResetPrefBtn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ShowHelpBtn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="DropMenuBtn.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FileBrowserCtrl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FolderBrowserCtrl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FontSelectionComboBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FontWeightComboBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="IntegerUpDown.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResetPrefBtn.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ShowHelpBtn.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

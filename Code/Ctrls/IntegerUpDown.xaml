@@ -1,0 +1,70 @@
+﻿<UserControl
+	x:Class="BestChat.GUI.Ctrls.IntegerUpDown"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:BestChat.GUI.Ctrls"
+	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
+	mc:Ignorable="d"
+	d:DesignHeight="24"
+	d:DesignWidth="800"
+	FontFamily="Times New Roman">
+	<Grid
+		Margin="1">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="*" />
+			<ColumnDefinition
+				Width="20" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<TextBox
+			Name="editCnts"
+			TextAlignment="Right"
+			Grid.Column="0"
+			TextChanged="OnCtntsTextChanged"
+			PreviewKeyDown="OnCtntsPreviewKeyDown"
+			Grid.RowSpan="2" />
+		<Button
+			x:Name="btnUp"
+			Click="OnUpClicked"
+            Grid.Column="1">
+			<Polygon
+				Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}">
+				<Polygon.Points>
+					<Point
+						X="0"
+						Y="6" />
+					<Point
+						X="5"
+						Y="0" />
+					<Point
+						X="10"
+						Y="6" />
+				</Polygon.Points>
+			</Polygon>
+		</Button>
+		<Button
+			x:Name="btnDown"
+			Click="OnDownClicked"
+			Grid.Column="1"
+            Grid.Row="1">
+			<Polygon
+				Fill="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}">
+				<Polygon.Points>
+					<Point />
+					<Point
+						X="5"
+						Y="6" />
+					<Point
+						X="10"
+						Y="0" />
+				</Polygon.Points>
+			</Polygon>
+		</Button>
+	</Grid>
+</UserControl>

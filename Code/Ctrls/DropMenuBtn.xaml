@@ -1,0 +1,26 @@
+﻿<UserControl
+	x:Class="BestChat.GUI.Ctrls.DropMenuBtn"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:BestChat.GUI.Ctrls"
+	mc:Ignorable="d">
+	<StackPanel
+		Orientation="Horizontal">
+		<Button
+			x:Name="btnLeft"
+			MouseEnter="OnLeftBtnMouseEnterInternal"
+			Click="OnLeftBtnClickedInternal"
+			MouseLeave="OnLeftBtnMouseLeaveInternal" />
+		<CheckBox
+			x:Name="chkDrop"
+			Content="▼"
+			MouseEnter="OnDropBtnMouseEnterInternal"
+			MouseLeave="OnDropBtnMouseLeaveInternal"
+			Style="{StaticResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}"
+			Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"
+			BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"
+			Checked="OnRightCheckedChanged" />
+	</StackPanel>
+</UserControl>

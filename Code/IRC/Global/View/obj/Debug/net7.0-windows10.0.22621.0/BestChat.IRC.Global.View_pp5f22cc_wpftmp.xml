@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BestChat.IRC.Global.View_pp5f22cc_wpftmp</name>
+    </assembly>
+    <members>
+        <member name="T:BestChat.IRC.Global.View.NetworkListDlg">
+            <summary>
+            Interaction logic for NetworkList.xaml
+            </summary>
+            <summary>
+            NetworkListDlg
+            </summary>
+        </member>
+        <member name="M:BestChat.IRC.Global.View.NetworkListDlg.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

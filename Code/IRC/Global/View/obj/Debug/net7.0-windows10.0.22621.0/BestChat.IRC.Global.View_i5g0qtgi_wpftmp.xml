@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BestChat.IRC.Global.View_i5g0qtgi_wpftmp</name>
+    </assembly>
+    <members>
+        <member name="T:BestChat.IRC.Global.View.NetworkEditorDlg">
+            <summary>
+            Interaction logic for NetworkEditorDlg.xaml
+            </summary>
+            <summary>
+            NetworkEditorDlg
+            </summary>
+        </member>
+        <member name="M:BestChat.IRC.Global.View.NetworkEditorDlg.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:BestChat.IRC.Global.View.NetworkListDlg">
+            <summary>
+            Interaction logic for NetworkList.xaml
+            </summary>
+            <summary>
+            NetworkListDlg
+            </summary>
+        </member>
+        <member name="M:BestChat.IRC.Global.View.NetworkListDlg.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:BestChat.IRC.Global.View.ServerDomainEditorDlg">
+            <summary>
+            Interaction logic for ServerDomainEditorDlg.xaml
+            </summary>
+            <summary>
+            ServerDomainEditorDlg
+            </summary>
+        </member>
+        <member name="M:BestChat.IRC.Global.View.ServerDomainEditorDlg.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

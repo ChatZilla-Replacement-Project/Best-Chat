@@ -1,0 +1,2717 @@
+﻿<Window
+	x:Class="BestChat.GUI.PrefsWnd"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
+	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
+	xmlns:local="clr-namespace:BestChat.GUI"
+	mc:Ignorable="d"
+	Title="Best Chat (GUI Mode) Preferences"
+	Height="450"
+	Width="800"
+	FontFamily="Times New Roman"
+	WindowStyle="ThreeDBorderWindow"
+	ResizeMode="CanResizeWithGrip"
+	WindowStartupLocation="CenterOwner"
+	ToolTipService.HasDropShadow="True"
+	ToolTipService.Placement="Right"
+	BorderThickness="1"
+	ShowInTaskbar="False">
+	<DockPanel>
+		<Grid
+			x:Name="panelBtnBar"
+			DockPanel.Dock="Bottom"
+			Margin="4,0,4,4">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition
+					Width="4" />
+				<ColumnDefinition
+					Width="Auto" />
+				<ColumnDefinition
+					Width="4" />
+				<ColumnDefinition
+					Width="Auto" />
+				<ColumnDefinition
+					Width="4" />
+				<ColumnDefinition
+					Width="Auto" />
+				<ColumnDefinition
+					Width="10" />
+			</Grid.ColumnDefinitions>
+			<Button
+				Background="Transparent"
+				BorderThickness="0"
+				Click="OnHomePageLinkClicked"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center">
+				<TextBlock
+					Foreground="Blue"
+					FontWeight="Bold"
+					ToolTip="Will open https://github.com/ChatZilla-Replacement-Project in your browser as specified in Best Chat"
+					Cursor="Hand"
+					TextDecorations="Underline"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center">Open the Best Chat homepage</TextBlock>
+			</Button>
+			<Button
+				Content="OK"
+				Grid.Column="2"
+				IsDefault="True" />
+			<Button
+				Content="_Apply"
+				Grid.Column="4" />
+			<Button
+				Content="Cancel"
+				Grid.Column="6"
+				IsCancel="True" />
+		</Grid>
+		<Grid
+			Margin="4">
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="Auto" />
+				<ColumnDefinition
+					Width="4" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition />
+					<RowDefinition
+						Height="4" />
+					<RowDefinition
+						Height="Auto" />
+				</Grid.RowDefinitions>
+				<TreeView
+					x:Name="treeMain"
+					ToolTip="Use this to select a view whose properties will be shown to the right.  &quot;Global&quot; properties aren't really for a view, but rather for the entire app.  You can remove all non-global properties from the list using the &quot;Remove&quot; button below.  That will reset all those controls to their default.">Global</TreeView>
+				<Button
+					x:Name="btnRemoveItemFromPrefs"
+					Grid.Row="2"
+					Content="Remove Item…" />
+			</Grid>
+			<GridSplitter
+				x:Name="splitterMain"
+				ResizeDirection="Columns"
+				Grid.Column="1" />
+			<TabControl
+				Grid.Column="2">
+				<TabItem
+					x:Name="_GlobalIRC">
+					<TabControl
+						x:Name="sheetGlobal">
+						<TabItem
+							Header="_General"
+							IsTabStop="False"
+							ToolTip="Contains various settings that don't belong elsewhere">
+							<ScrollViewer>
+								<Grid>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition />
+									</Grid.ColumnDefinitions>
+									<Grid.RowDefinitions>
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+									</Grid.RowDefinitions>
+									<GroupBox
+										Header="_Connection">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition
+													Width="Auto"
+													MinWidth="100" />
+												<ColumnDefinition
+													Width="*" />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<Ctrls:ResetPrefBtn
+												x:Name="btnGeneralConnectionEnableIdentServerReset" />
+											<Ctrls:ShowHelpBtn
+												x:Name="chkGeneralConnectionEnableIdentServerHelp"
+												Grid.Column="2" />
+											<CheckBox
+												x:Name="chkGeneralConnectionEnableIdentServer"
+												Content="Enable _Identification Server during connection process"
+												Grid.ColumnSpan="6"
+												ToolTip="Allows Best Chat to connect to servers that require an ident response"
+												Grid.Column="4" />
+											<RichTextBox
+												Grid.ColumnSpan="10"
+												Grid.Row="1"
+												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionEnableIdentServerHelp, NotifyOnSourceUpdated=True}"
+												Style="{DynamicResource HelpText}">
+												<FlowDocument>
+													<Paragraph>Allows Best Chat to connect to servers that require an ident response</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<Ctrls:ResetPrefBtn
+												x:Name="btnGeneralConnectionReconnect"
+												Grid.Row="3" />
+											<Ctrls:ShowHelpBtn
+												x:Name="chkGeneralConnectionReconnectHelp"
+												Grid.Column="2"
+												Grid.Row="3" />
+											<CheckBox
+												x:Name="chkGeneralConnectionReconnect"
+												Content="Reconnect when disconnected unexpectedly"
+												Grid.Row="3"
+												Grid.ColumnSpan="6"
+												Grid.Column="4" />
+											<RichTextBox
+												Grid.ColumnSpan="10"
+												Grid.Row="4"
+												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionReconnectHelp, NotifyOnSourceUpdated=True}"
+												Style="{DynamicResource HelpText}">
+												<FlowDocument>
+													<Paragraph>When your connection is lost unexpectedly, Best Chat can automatically reconnect to the server for you.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<Ctrls:ResetPrefBtn
+												x:Name="btnGeneralConnectionAutoRejoinReset"
+												Grid.Row="6" />
+											<Ctrls:ShowHelpBtn
+												x:Name="chkGeneralConnectionAutoRejoinHelp"
+												Grid.Column="2"
+												Grid.Row="6" />
+											<CheckBox
+												x:Name="chkGeneralConnectionAutoRejoin"
+												Content="R_ejoin when kicked"
+												Grid.Row="6"
+												Grid.ColumnSpan="6"
+												Grid.Column="4" />
+											<RichTextBox
+												Grid.ColumnSpan="10"
+												Grid.Row="7"
+												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionAutoRejoinHelp, NotifyOnSourceUpdated=True}"
+												Style="{DynamicResource HelpText}">
+												<FlowDocument>
+													<Paragraph>If this is turned on, Best Chat will try (only once) to rejoin a channel you got kicked from.  Note: Some channels dislike auto-rejoin and will ban you.  So be careful.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<Ctrls:ResetPrefBtn
+												x:Name="btnGeneralConnectionCharEncodingReset"
+												Grid.Row="9" />
+											<Ctrls:ShowHelpBtn
+												x:Name="chkGeneralConnectionCharEncodingHelp"
+												Grid.Column="2"
+												Grid.Row="9" />
+											<Label
+												Content="C_haracter Encoding:"
+												Grid.Row="9"
+												HorizontalContentAlignment="Right"
+												VerticalContentAlignment="Center"
+												Grid.Column="4" />
+											<TextBox
+												x:Name="editGeneralConnectionCharEncoding"
+												Grid.Row="9"
+												Grid.Column="6"
+												Grid.ColumnSpan="4" />
+											<RichTextBox
+												Grid.ColumnSpan="10"
+												Grid.Row="10"
+												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionCharEncodingHelp, NotifyOnSourceUpdated=True}"
+												Style="{DynamicResource HelpText}">
+												<FlowDocument>
+													<Paragraph>For multiple clients to correctly read messages with non-ASCII characters on IRC, they need to use the same character encoding.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<Ctrls:ResetPrefBtn
+												x:Name="btnGeneralConnectionAttemptLimitReset"
+												Grid.Row="12" />
+											<Ctrls:ShowHelpBtn
+												x:Name="chkGeneralConnectionAttemptLimitHelp"
+												Grid.Column="2"
+												Grid.Row="12" />
+											<Label
+												Content="Maximum Connection _Attempts:"
+												Grid.Row="12"
+												HorizontalContentAlignment="Right"
+												ToolTip="{Binding ToolTip, ElementName=iudMaxConnectionAttempts}"
+												VerticalContentAlignment="Center"
+												Grid.Column="4" />
+											<CheckBox
+												x:Name="chkGeneralConnectUnlimited"
+												Content="Unlimited Attempts?"
+												Grid.Row="12"
+												Grid.Column="6"
+												VerticalContentAlignment="Center"
+												ToolTip="If checked, Best Chat will attempt to reconnect to any server forever.  If unchecked, the limit will be to the right." />
+											<Ctrls:IntegerUpDown
+												x:Name="iudMaxConnectionAttempts"
+												Grid.Row="12"
+												Grid.Column="8"
+												Minimum="1"
+												Value="1" />
+											<RichTextBox
+												Grid.ColumnSpan="10"
+												Grid.Row="13"
+												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionAttemptLimitHelp, NotifyOnSourceUpdated=True}"
+												Style="{DynamicResource HelpText}">
+												<FlowDocument>
+													<Paragraph>This is number of times Best Chat attempts to connect to a server or network.  A value of 1 means Best Chat will never attempt to reconnect to the server.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<Ctrls:ResetPrefBtn
+												x:Name="btnGeneralConnectionDefQuitMsgReset"
+												Grid.Row="15" />
+											<Ctrls:ShowHelpBtn
+												x:Name="chkGeneralConnectionDefQuitMsgHelp"
+												Grid.Column="2"
+												Grid.Row="15" />
+											<Label
+												Content="Default Quit _Message: "
+												Grid.Row="15"
+												HorizontalContentAlignment="Right"
+												VerticalContentAlignment="Center"
+												ToolTip="{Binding ToolTip, ElementName=editDefQuitMessage}"
+												Grid.Column="4" />
+											<TextBox
+												x:Name="editDefQuitMessage"
+												Grid.Column="6"
+												Grid.Row="15"
+												Grid.ColumnSpan="4" />
+											<RichTextBox
+												Grid.ColumnSpan="10"
+												Grid.Row="16"
+												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionDefQuitMsgHelp, NotifyOnSourceUpdated=True}"
+												Style="{DynamicResource HelpText}">
+												<FlowDocument>
+													<Paragraph>Specifies a default quit message to use when on is not explicitly specified for a network or via the
+														<Span
+															FontFamily="Courier New">/quit</Span> command.
+													</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<Ctrls:ResetPrefBtn
+												x:Name="btnGeneralConnectionProxyTypeReset"
+												Grid.Row="18" />
+											<Ctrls:ShowHelpBtn
+												x:Name="chkGeneralConnectionProxyTypeHelp"
+												Grid.Column="2"
+												Grid.Row="18" />
+											<Label
+												Content="_Proxy Type: "
+												Grid.Row="18"
+												HorizontalContentAlignment="Right"
+												VerticalContentAlignment="Center"
+												ToolTip="{Binding ToolTip, ElementName=editProxyType}"
+												Grid.Column="4" />
+											<TextBox
+												x:Name="editProxyType"
+												Grid.Row="18"
+												Grid.Column="6"
+												Grid.ColumnSpan="4" />
+											<RichTextBox
+												Grid.ColumnSpan="10"
+												Grid.Row="19"
+												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionProxyTypeHelp, NotifyOnSourceUpdated=True}"
+												Style="{DynamicResource HelpText}">
+												<FlowDocument>
+													<Paragraph>Override the normal proxy choice by specifying “HTTP” to use your browser's HTTP proxy or “none” to force no proxy to be used (not even the SOCKS proxy).  Note that this usually works only when the browser is set to use a manual proxy configuration.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+										</Grid>
+									</GroupBox>
+									<GroupBox
+										Header="Identification"
+										Grid.Row="2">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition
+													Width="Auto"
+													MinWidth="100" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<Label
+												Content="Auto-away _Message: "
+												HorizontalContentAlignment="Right"
+												ToolTip="{Binding ToolTip, ElementName=editAutoAwayMsg}" />
+											<TextBox
+												x:Name="editAutoAwayMsg"
+												Grid.Column="2"
+												Grid.ColumnSpan="5"
+												ToolTip="The away message ChatZilla will use when you go away" />
+											<Label
+												Content="Auto-away _Timeout: "
+												Grid.Row="2"
+												HorizontalContentAlignment="Right"
+												ToolTip="{Binding ToolTip, ElementName=iudAutoAwayTimeout}" />
+											<CheckBox
+												x:Name="chkAutoAwayEnabled"
+												Content="Enabled?"
+												Grid.Row="2"
+												Grid.Column="2" />
+											<Ctrls:IntegerUpDown
+												x:Name="iudAutoAwayTimeout"
+												Grid.Row="2"
+												Grid.Column="4"
+												ToolTip="After how many minutes of inactivity Best Chat will set your status to &quot;away&quot;."
+												Value="10"
+												Minimum="10"
+												IsEnabled="{Binding IsChecked, ElementName=chkAutoAwayEnabled}" />
+											<Label
+												Content="seconds"
+												Grid.Row="2"
+												Grid.Column="5" />
+											<Label
+												Content="_Real Name: "
+												Grid.Row="4"
+												HorizontalContentAlignment="Right"
+												ToolTip="{Binding ToolTip, ElementName=editRealName}" />
+											<TextBox
+												x:Name="editRealName"
+												Grid.Row="4"
+												Grid.Column="2"
+												Grid.ColumnSpan="5"
+												ToolTip="This is your real name that others who do a /whois or /whowas on you will see.  It's commonly used to include one's real name, but you aren't required to enter anything."></TextBox>
+											<Label
+												Content="Default _Nick: "
+												Grid.Row="6"
+												HorizontalContentAlignment="Right"
+												ToolTip="{Binding ToolTip, ElementName=editDefNick}" />
+											<TextBox
+												x:Name="editDefNick"
+												Grid.Row="6"
+												Grid.Column="2"
+												Grid.ColumnSpan="5"
+												ToolTip="This is the name seen by everyone else on IRC.  You can use anything you like, but it can't contain particularly &quot;weird&quot; characters so keep it to alpha-numeric characters, dashes, underscores, and pipes." />
+											<Label
+												Content="Default Nick (_Away): "
+												Grid.Row="8"
+												HorizontalContentAlignment="Right"
+												ToolTip="{Binding ToolTip, ElementName=editDefNickAway}" />
+											<TextBox
+												x:Name="editDefNickAway"
+												Grid.Row="8"
+												Grid.Column="2"
+												Grid.ColumnSpan="5"
+												ToolTip="This nickname will automatically be used when you mark yourself away if different from your normal nickname.  You may leave this blank to not change nicknames when you're away." />
+											<Label
+												Content="_User Modes to Request"
+												Grid.Row="10"
+												ToolTip="{Binding ToolTip, ElementName=editRequestedUserModes}" />
+											<TextBox
+												x:Name="editRequestedUserModes"
+												HorizontalContentAlignment="Stretch"
+												VerticalContentAlignment="Stretch"
+												Grid.Row="10"
+												Grid.Column="2"
+												Grid.ColumnSpan="5"
+												ToolTip="Your usermode is an option string that's sent to the IRC network.  It's composed of a plus sign (&quot;+&quot;) followed by one or more letters, each of which represents an option.  The letter &quot;i&quot; represents &quot;invisible mode&quot;.  When you're invisible, your nickname won't appear in channel user lists for people who aren't in the channel with you.  The letter &quot;s&quot; allows you to see server messages like nickname collisions.  For a more complete list of available options, look up &quot;usermode&quot; on www.irc.help.org or contact your network's staff." />
+											<Label
+												Content="User _Name"
+												Grid.Row="12"
+												ToolTip="{Binding ToolTip, ElementName=editUserName}" />
+											<TextBox
+												x:Name="editUserName"
+												Grid.Row="12"
+												Grid.Column="2"
+												Grid.ColumnSpan="5"
+												ToolTip="Your user name is used to construct your &quot;host mask&quot; which is a string representing you.  It includes your connection's host name and this user name.  It's sometimes used for setting auto-op, bans, and other things specific to one person." />
+										</Grid>
+									</GroupBox>
+									<GroupBox
+										Header="_Logging"
+										Grid.Row="4">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<CheckBox
+												x:Name="checkBox"
+												Content="Log Views by Default"
+												ToolTip="Makes log views by default.  The log file is usually stored in your profile.  However, the location can be overridden with the box below." />
+											<Label
+												Content="Root folder for logs:"
+												Grid.Row="2"
+												IsEnabled="{Binding IsEnabled, ElementName=folderBrowserCtrl, NotifyOnSourceUpdated=True}"
+												ToolTip="{Binding ToolTip, ElementName=folderBrowserCtrl}" />
+											<Ctrls:FolderBrowserCtrl
+												x:Name="folderBrowserCtrl"
+												Grid.Row="2"
+												Grid.Column="2"
+												IsEnabled="{Binding IsChecked, ElementName=checkBox, NotifyOnSourceUpdated=True}"
+												ToolTip="Specifies the base location for all logs.  The various &quot;Log file for&quot; preferences specify exact names for the different types of log file." />
+										</Grid>
+									</GroupBox>
+									<GroupBox
+										Header="Message _Notifications"
+										Grid.Row="6">
+										<Grid>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<CheckBox
+												x:Name="chkGeneralAlertChanChat"
+												Content="Alert for Channel Chat"
+												ToolTip="Show message notifications for normal chat messages.  It may be annoying for high traffic channels.  Suggested for moderators or low traffic channels." />
+											<CheckBox
+												x:Name="chkGeneralAlertChanEvt"
+												Content="Alert for Channel Event"
+												Grid.Row="2"
+												ToolTip="Shows message notifications for joins, parts, kicks, user mode changes, and any other system messages.  It may be annoying for high traffic channels.  Suggested for moderators or low traffic channels." />
+											<CheckBox
+												x:Name="chkGeneralAlertChanStalk"
+												Content="Alert for Channel Stalk"
+												Grid.Row="4"
+												ToolTip="Shows message notifications for messages containing stalk words including your nickname." />
+											<CheckBox
+												x:Name="chkGeneralAlertUserChat"
+												Content="Alert for User Chat"
+												Grid.Row="6"
+												ToolTip="Shows message notifications for private messages." />
+											<CheckBox
+												x:Name="chkGeneralAlertShowPopups"
+												Content="Show Popups"
+												Grid.Row="8"
+												ToolTip="When enabled, popups are shown for views." />
+										</Grid>
+									</GroupBox>
+									<GroupBox
+										Header="_Sound Events"
+										Grid.Row="8">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition
+													Width="Auto" />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<TextBlock
+												Text="Sounds are for certain client events.  You can either have the computer beep one or more times or play a file from your computer."
+												TextWrapping="WrapWithOverflow"
+												Grid.ColumnSpan="3" />
+											<!--TODO: Add the controls to choose a sound to play-->
+											<Label
+												Content="Channel Chat: "
+												Grid.Row="2" />
+											<Label
+												Content="Channel Event: "
+												Grid.Row="4" />
+											<Label
+												Content="Channel Stalk: "
+												Grid.Row="6" />
+											<Label
+												Content="Channel Start: "
+												Grid.Row="8" />
+											<Label
+												Content="User Chat: "
+												Grid.Row="10" />
+											<Label
+												Content="User Start: "
+												Grid.Row="12" />
+										</Grid>
+									</GroupBox>
+								</Grid>
+							</ScrollViewer>
+						</TabItem>
+						<TabItem
+							Header="_Appearance"
+							Margin="0,0,0,0"
+							IsTabStop="False">
+							<ScrollViewer>
+								<StackPanel
+									Orientation="Vertical">
+									<GroupBox
+										Header="_Conference Mode">
+										<Grid
+											Margin="4,0,4,0">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition
+													Width="Auto"
+													MinWidth="100" />
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<Label
+												Content="Limit: "
+												HorizontalContentAlignment="Right" />
+											<Ctrls:IntegerUpDown
+												Grid.Column="2" />
+											<CheckBox
+												Content="Collapse Actions When Collapsing Messages"
+												Grid.Row="2"
+												Grid.ColumnSpan="4" />
+											<CheckBox
+												Content="Collapse Messages"
+												Grid.Row="4"
+												Grid.ColumnSpan="4" />
+										</Grid>
+									</GroupBox>
+									<GroupBox
+										Header="Font">
+										<Grid
+											Margin="4,0,4,0">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition
+													Width="150" />
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<Label
+												Content="Normal Family: "
+												HorizontalContentAlignment="Right" />
+											<CheckBox
+												Content="Override theme"
+												x:Name="chkFontNormalFamily"
+												Grid.Column="2" />
+											<Ctrls:FontSelectionComboBox
+												x:Name="fscbFontNormalFamily"
+												Grid.Column="4"
+												IsEnabled="{Binding IsChecked, ElementName=chkFontNormalFamily, NotifyOnSourceUpdated=True}"
+												Grid.ColumnSpan="2" />
+											<Label
+												Content="Fixed Width Family: "
+												HorizontalContentAlignment="Right"
+												Grid.Row="2" />
+											<CheckBox
+												Content="Override theme"
+												x:Name="chkFontFixedWidthFamily"
+												Grid.Column="2"
+												Grid.Row="2" />
+											<Ctrls:FontSelectionComboBox
+												x:Name="cbFontFixedWidthFamily"
+												ListOnlyFixedWidthFonts="True"
+												Grid.Column="4"
+												IsEnabled="{Binding IsChecked, ElementName=chkFontFixedWidthFamily, NotifyOnSourceUpdated=True}"
+												Grid.Row="2"
+												Grid.ColumnSpan="2" />
+											<Label
+												Content="Size: "
+												Grid.Row="4"
+												HorizontalContentAlignment="Right" />
+											<CheckBox
+												x:Name="chkFontSize"
+												Content="Override Theme"
+												Grid.Row="4"
+												Grid.Column="2" />
+											<Ctrls:IntegerUpDown
+												Grid.Row="4"
+												Grid.Column="4"
+												IsEnabled="{Binding IsChecked, ElementName=chkFontSize, NotifyOnSourceUpdated=True}" />
+											<Label
+												Content="Weight: "
+												Grid.Row="6"
+												HorizontalContentAlignment="Right" />
+											<CheckBox
+												x:Name="chkFontWeight"
+												Content="Override Theme"
+												Grid.Row="6"
+												Grid.Column="2" />
+											<Ctrls:FontWeightComboBox
+												Name="fcbFontWeight"
+												Grid.Row="6"
+												Grid.Column="4"
+												IsEnabled="{Binding IsChecked, ElementName=chkFontWeight, NotifyOnSourceUpdated=True}" />
+										</Grid>
+									</GroupBox>
+									<GroupBox
+										Header="_Time Stamps"
+										Margin="4,0,4,0">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="40" />
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<RichTextBox
+												MinWidth="10"
+												IsUndoEnabled="False"
+												AllowDrop="False"
+												IsHitTestVisible="False"
+												Focusable="False"
+												IsTabStop="False"
+												BorderThickness="0"
+												Grid.ColumnSpan="4">
+												<FlowDocument>
+													<Paragraph
+														TextIndent="10">The Format preference uses .NET replacements.  See
+														<Hyperlink
+															Foreground="Blue"
+															FontWeight="Bold"
+															NavigateUri="https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings">Standard TimeSpan format strings</Hyperlink> and
+														<Hyperlink
+															NavigateUri="https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-timespan-format-strings"
+															Foreground="Blue"
+															FontWeight="Bold">Custom TimeSpan format strings</Hyperlink> for how to format the value and some sample format strings.
+													</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<CheckBox
+												x:Name="cbShowTimeStamps"
+												Content="_Show the time stamp"
+												Grid.Row="2"
+												Grid.ColumnSpan="3"
+												Grid.Column="1" />
+											<Label
+												Content="Format: "
+												Grid.Row="4"
+												Grid.Column="1"
+												HorizontalContentAlignment="Right"
+												IsEnabled="{Binding IsEnabled, ElementName=editTimeStampFmt, NotifyOnSourceUpdated=True}" />
+											<TextBox
+												x:Name="editTimeStampFmt"
+												Grid.Row="4"
+												Grid.Column="5"
+												IsEnabled="{Binding IsChecked, ElementName=cbShowTimeStamps, NotifyOnSourceUpdated=True}" />
+										</Grid>
+									</GroupBox>
+									<GroupBox
+										Header="User _List">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<CheckBox
+												x:Name="chkUserListLeft"
+												Content="_Put the user list on the left" />
+											<CheckBox
+												x:Name="chkUserListShowModeSymbols"
+												Content="Show _mode symbols"
+												Grid.Row="2" />
+											<CheckBox
+												x:Name="chkUserListSortByMode"
+												Content="Sort by Mode"
+												Grid.Row="4" />
+										</Grid>
+									</GroupBox>
+								</StackPanel>
+							</ScrollViewer>
+						</TabItem>
+						<TabItem
+							Header="_Aliases"
+							IsTabStop="False">
+							<DockPanel>
+								<Grid
+									DockPanel.Dock="Right">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition
+											Width="Auto" />
+									</Grid.ColumnDefinitions>
+									<Grid.RowDefinitions>
+										<RowDefinition />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition />
+									</Grid.RowDefinitions>
+									<Button
+										x:Name="btnAddAlias"
+										Content="Add…"
+										Grid.Row="1" />
+									<Button
+										x:Name="btnEditAlias"
+										Content="Edit…"
+										Grid.Row="3" />
+									<Button
+										x:Name="btnDelAlias"
+										Content="Delete"
+										Grid.Row="5" />
+								</Grid>
+								<Separator
+									Width="4"
+									DockPanel.Dock="Right" />
+								<DockPanel>
+									<RichTextBox
+										IsUndoEnabled="False"
+										AllowDrop="False"
+										IsHitTestVisible="False"
+										Focusable="False"
+										IsTabStop="False"
+										BorderThickness="0"
+										Grid.ColumnSpan="4"
+										DockPanel.Dock="Top">
+										<FlowDocument>
+											<Paragraph
+												TextIndent="20">Allows you to make shortcuts to various commands or sequences of commands.  Each item has a name and a command list.  Best Chat will turn the alias into a command when it starts.  Don't include the leading “/” in the string.  If you enter $(x) where x is a number, it will put the xth parameter to your alias in that spot.  Use $(x+) to include all parameters after the xth parameter.</Paragraph>
+										</FlowDocument>
+									</RichTextBox>
+									<Separator
+										DockPanel.Dock="Top"
+										Height="4" />
+									<DataGrid
+										AutoGenerateColumns="False">
+										<DataGrid.Columns>
+											<DataGridTextColumn
+												Header="Alias"
+												IsReadOnly="True" />
+											<DataGridTextColumn
+												Header="What it does"
+												IsReadOnly="True" />
+											<DataGridTextColumn
+												Header="Description"
+												IsReadOnly="True" />
+										</DataGrid.Columns>
+									</DataGrid>
+								</DockPanel>
+							</DockPanel>
+						</TabItem>
+						<TabItem
+							Header="Auto _Perform"
+							IsTabStop="False">
+							<TabControl
+								Focusable="False">
+								<TabItem
+									Header="When Starting Best Chat"
+									IsTabStop="False">
+									<DockPanel>
+										<Grid
+											DockPanel.Dock="Right">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition />
+											</Grid.RowDefinitions>
+											<Button
+												x:Name="btnAddAutoPerformOnStartUp"
+												Content="Add…"
+												Grid.Row="1" />
+											<Button
+												x:Name="btnEditAutoPerformOnStartUp"
+												Content="Edit…"
+												Grid.Row="3" />
+											<Button
+												x:Name="btnDelAutoPerformOnStartUp"
+												Content="Delete"
+												Grid.Row="5" />
+										</Grid>
+										<Separator
+											Width="4"
+											DockPanel.Dock="Right" />
+										<DockPanel>
+											<RichTextBox
+												IsUndoEnabled="False"
+												AllowDrop="False"
+												IsHitTestVisible="False"
+												Focusable="False"
+												IsTabStop="False"
+												BorderThickness="0"
+												Grid.ColumnSpan="4"
+												DockPanel.Dock="Top">
+												<FlowDocument>
+													<Paragraph
+														TextIndent="20">Enter any commands to run when joining any channel.  This can include aliases.  Don't put a “/” on the start of the string.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<Separator
+												DockPanel.Dock="Top"
+												Height="4" />
+											<ListBox
+												x:Name="listAutoPerformOnStartUp"></ListBox>
+										</DockPanel>
+									</DockPanel>
+								</TabItem>
+								<TabItem
+									Header="When Joining a Network"
+									IsTabStop="False">
+									<DockPanel>
+										<Grid
+											DockPanel.Dock="Right">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition />
+											</Grid.RowDefinitions>
+											<Button
+												x:Name="btnAddAutoPerformOnJoinNet"
+												Content="Add…"
+												Grid.Row="1" />
+											<Button
+												x:Name="btnEditAutoPerformOnJoinNet"
+												Content="Edit…"
+												Grid.Row="3" />
+											<Button
+												x:Name="btnDelAutoPerformOnJoinNet"
+												Content="Delete"
+												Grid.Row="5" />
+										</Grid>
+										<Separator
+											Width="4"
+											DockPanel.Dock="Right" />
+										<DockPanel>
+											<RichTextBox
+												IsUndoEnabled="False"
+												AllowDrop="False"
+												IsHitTestVisible="False"
+												Focusable="False"
+												IsTabStop="False"
+												BorderThickness="0"
+												Grid.ColumnSpan="4"
+												DockPanel.Dock="Top">
+												<FlowDocument>
+													<Paragraph
+														TextIndent="20">Enter any commands to run when joining any network.  This can include aliases.  Don't put a “/” on the start of the string.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<Separator
+												DockPanel.Dock="Top"
+												Height="4" />
+											<ListBox
+												x:Name="listAutoPerformOnJoinNet"></ListBox>
+										</DockPanel>
+									</DockPanel>
+								</TabItem>
+								<TabItem
+									Header="When _Joining a Channel"
+									IsTabStop="False">
+									<DockPanel>
+										<Grid
+											DockPanel.Dock="Right">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition />
+											</Grid.RowDefinitions>
+											<Button
+												x:Name="btnAddAutoPerformOnChanJoin"
+												Content="Add…"
+												Grid.Row="1" />
+											<Button
+												x:Name="btnEditAutoPerformOnChanJoin"
+												Content="Edit…"
+												Grid.Row="3" />
+											<Button
+												x:Name="btnDelAutoPerformOnChanJoin"
+												Content="Delete"
+												Grid.Row="5" />
+										</Grid>
+										<Separator
+											Width="4"
+											DockPanel.Dock="Right" />
+										<DockPanel>
+											<RichTextBox
+												IsUndoEnabled="False"
+												AllowDrop="False"
+												IsHitTestVisible="False"
+												Focusable="False"
+												IsTabStop="False"
+												BorderThickness="0"
+												Grid.ColumnSpan="4"
+												DockPanel.Dock="Top">
+												<FlowDocument>
+													<Paragraph
+														TextIndent="20">Enter any commands to run when joining any channel.  This can include aliases.  Don't put a “/” on the start of the string.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<Separator
+												DockPanel.Dock="Top"
+												Height="4" />
+											<ListBox
+												x:Name="listAutoPerformOnChanJoin"></ListBox>
+										</DockPanel>
+									</DockPanel>
+								</TabItem>
+								<TabItem
+									Header="When Opening a User's Chat"
+									IsTabStop="False">
+									<DockPanel>
+										<Grid
+											DockPanel.Dock="Right">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition />
+											</Grid.RowDefinitions>
+											<Button
+												x:Name="btnAddAutoPerformOnUserChat"
+												Content="Add…"
+												Grid.Row="1" />
+											<Button
+												x:Name="btnEditAutoPerformOnUserChat"
+												Content="Edit…"
+												Grid.Row="3" />
+											<Button
+												x:Name="btnDelAutoPerformOnUserChat"
+												Content="Delete"
+												Grid.Row="5" />
+										</Grid>
+										<Separator
+											Width="4"
+											DockPanel.Dock="Right" />
+										<DockPanel>
+											<RichTextBox
+												IsUndoEnabled="False"
+												AllowDrop="False"
+												IsHitTestVisible="False"
+												Focusable="False"
+												IsTabStop="False"
+												BorderThickness="0"
+												Grid.ColumnSpan="4"
+												DockPanel.Dock="Top">
+												<FlowDocument>
+													<Paragraph
+														TextIndent="20">Enter any commands to run when opening the tab for a user's chat.  This can include aliases.  Don't put a “/” on the start of the string.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<Separator
+												DockPanel.Dock="Top"
+												Height="4" />
+											<ListBox
+												x:Name="listAutoPerformOnUserChat"></ListBox>
+										</DockPanel>
+									</DockPanel>
+								</TabItem>
+							</TabControl>
+						</TabItem>
+						<TabItem
+							Header="Alternate Nicks"
+							IsTabStop="False">
+							<DockPanel>
+								<Grid
+									DockPanel.Dock="Right">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition
+											Width="Auto" />
+									</Grid.ColumnDefinitions>
+									<Grid.RowDefinitions>
+										<RowDefinition />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="20" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition />
+									</Grid.RowDefinitions>
+									<Button
+										x:Name="btnMoveUpAltNick"
+										Content="Move Up ▲"
+										Grid.Row="1" />
+									<Button
+										x:Name="btnMoveDownAltNick"
+										Content="▼ Move Down"
+										Grid.Row="3" />
+									<Button
+										x:Name="btnAddAltNick"
+										Content="Add…"
+										Grid.Row="5" />
+									<Button
+										x:Name="btnEditAltNick"
+										Content="Edit…"
+										Grid.Row="7" />
+									<Button
+										x:Name="btnDelAltNick"
+										Content="Delete"
+										Grid.Row="9" />
+								</Grid>
+								<Separator
+									Width="4"
+									DockPanel.Dock="Right" />
+								<DockPanel>
+									<RichTextBox
+										IsUndoEnabled="False"
+										AllowDrop="False"
+										IsHitTestVisible="False"
+										Focusable="False"
+										IsTabStop="False"
+										BorderThickness="0"
+										Grid.ColumnSpan="4"
+										DockPanel.Dock="Top">
+										<FlowDocument>
+											<Paragraph
+												TextIndent="20">This is a list of nicknames you want Best Chat to try if the default is in use.  Your normal nick doesn't need to be included.  The order is important.</Paragraph>
+										</FlowDocument>
+									</RichTextBox>
+									<Separator
+										DockPanel.Dock="Top"
+										Height="4" />
+									<ListBox
+										x:Name="listAltNickList"></ListBox>
+								</DockPanel>
+							</DockPanel>
+						</TabItem>
+						<TabItem
+							Header="Stalk Words"
+							IsTabStop="False">
+							<DockPanel>
+								<Grid
+									DockPanel.Dock="Right">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition
+											Width="Auto" />
+									</Grid.ColumnDefinitions>
+									<Grid.RowDefinitions>
+										<RowDefinition />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition />
+									</Grid.RowDefinitions>
+									<Button
+										x:Name="btnAddStalkWord"
+										Content="Add…"
+										Grid.Row="1" />
+									<Button
+										x:Name="btnEditStalkWord"
+										Content="Edit…"
+										Grid.Row="3" />
+									<Button
+										x:Name="btnDelStalkWord"
+										Content="Delete"
+										Grid.Row="5" />
+								</Grid>
+								<Separator
+									Width="4"
+									DockPanel.Dock="Right" />
+								<DockPanel>
+									<RichTextBox
+										IsUndoEnabled="False"
+										AllowDrop="False"
+										IsHitTestVisible="False"
+										Focusable="False"
+										IsTabStop="False"
+										BorderThickness="0"
+										Grid.ColumnSpan="4"
+										DockPanel.Dock="Top">
+										<FlowDocument>
+											<Paragraph
+												TextIndent="20">A list of words that will cause a line to be highlighted.  If you also turn on Aggressive Notify, Best Chat will try to get your attention.</Paragraph>
+										</FlowDocument>
+									</RichTextBox>
+									<Separator
+										DockPanel.Dock="Top"
+										Height="4" />
+									<ListBox
+										x:Name="listStalkWords"></ListBox>
+								</DockPanel>
+							</DockPanel>
+						</TabItem>
+						<TabItem
+							Header="DCC"
+							IsTabStop="False">
+							<StackPanel
+								Orientation="Vertical">
+								<Grid
+									Height="367">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition
+											Width="Auto" />
+										<ColumnDefinition
+											Width="4" />
+										<ColumnDefinition />
+									</Grid.ColumnDefinitions>
+									<Grid.RowDefinitions>
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition />
+									</Grid.RowDefinitions>
+									<CheckBox
+										x:Name="chkDccEnabled"
+										Grid.ColumnSpan="3"
+										Content="Enabled" />
+									<CheckBox
+										x:Name="chkDccGetLocalIpFromServer"
+										Content="Get Local IP From Server"
+										Grid.Row="2"
+										Grid.ColumnSpan="3"
+										IsEnabled="{Binding IsChecked, ElementName=chkDccEnabled}" />
+									<Label
+										Content="Downloads Folder: "
+										Grid.Row="4"
+										HorizontalContentAlignment="Right" />
+									<Ctrls:FolderBrowserCtrl
+										Grid.Row="4"
+										Grid.Column="2"
+										IsEnabled="{Binding IsChecked, ElementName=chkDccEnabled}" />
+									<GroupBox
+										Header="Ports"
+										Grid.Row="6"
+										Grid.ColumnSpan="6">
+										<DockPanel>
+											<Grid
+												DockPanel.Dock="Right">
+												<Grid.ColumnDefinitions>
+													<ColumnDefinition
+														Width="Auto" />
+												</Grid.ColumnDefinitions>
+												<Grid.RowDefinitions>
+													<RowDefinition />
+													<RowDefinition
+														Height="Auto" />
+													<RowDefinition
+														Height="4" />
+													<RowDefinition
+														Height="Auto" />
+													<RowDefinition
+														Height="20" />
+													<RowDefinition
+														Height="Auto" />
+													<RowDefinition
+														Height="4" />
+													<RowDefinition
+														Height="Auto" />
+													<RowDefinition
+														Height="4" />
+													<RowDefinition
+														Height="Auto" />
+													<RowDefinition />
+												</Grid.RowDefinitions>
+												<Button
+													x:Name="btnMoveUpDccPortList"
+													Content="Move Up ▲"
+													Grid.Row="1" />
+												<Button
+													x:Name="btnMoveDownDccPortList"
+													Content="▼ Move Down"
+													Grid.Row="3" />
+												<Button
+													x:Name="btnAddDccPortList"
+													Content="Add…"
+													Grid.Row="5" />
+												<Button
+													x:Name="btnEditDccPortList"
+													Content="Edit…"
+													Grid.Row="7" />
+												<Button
+													x:Name="btnDelDccPortList"
+													Content="Delete"
+													Grid.Row="9" />
+											</Grid>
+											<Separator
+												Width="4"
+												DockPanel.Dock="Right" />
+											<DockPanel>
+												<RichTextBox
+													IsUndoEnabled="False"
+													AllowDrop="False"
+													IsHitTestVisible="False"
+													Focusable="False"
+													IsTabStop="False"
+													BorderThickness="0"
+													Grid.ColumnSpan="4"
+													DockPanel.Dock="Top">
+													<FlowDocument>
+														<Paragraph
+															TextIndent="20">List of ports that other users can connect to remotely.  Each item may be a single port or a range of ports.  Leave empty to use a random OS-picked port.  Each time you offer a DCC connection to someone, the next port listed is picked.</Paragraph>
+													</FlowDocument>
+												</RichTextBox>
+												<Separator
+													DockPanel.Dock="Top"
+													Height="4" />
+												<ListBox
+													x:Name="listDccPorts"></ListBox>
+											</DockPanel>
+										</DockPanel>
+									</GroupBox>
+								</Grid>
+							</StackPanel>
+						</TabItem>
+						<TabItem
+							Header="Plugins"
+							IsTabStop="False">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition />
+								</Grid.RowDefinitions>
+								<RichTextBox
+									IsReadOnly="True"
+									BorderThickness="0">
+									<FlowDocument>
+										<Paragraph>Best Chat supports two forms of plug-ins: External and Internal.  External plug-ins re those that it needs an external program or the OS to run.  Internal ones are those that it runs itself.</Paragraph>
+									</FlowDocument>
+								</RichTextBox>
+								<TabControl
+									Grid.Row="2">
+									<TabItem
+										Header="External"
+										IsTabStop="False">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition />
+											</Grid.RowDefinitions>
+											<RichTextBox
+												IsReadOnly="True"
+												BorderThickness="0">
+												<FlowDocument>
+													<Paragraph>It's a security risk as you might run who knows what, but Best Chat does support external plug-ins.  As noted, these might be binaries your OS knows how to run or scripts.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<CheckBox
+												x:Name="chkPlugInsAllowExternal"
+												Content="Allow External Plug-ins to be Run"
+												Grid.Row="2" />
+											<TabControl
+												Grid.Row="4"
+												IsEnabled="{Binding IsChecked, ElementName=chkPlugInsAllowExternal}">
+												<TabItem
+													Header="Where to Look"
+													IsTabStop="False">
+													<Grid>
+														<Grid.ColumnDefinitions>
+															<ColumnDefinition />
+															<ColumnDefinition
+																Width="4" />
+															<ColumnDefinition
+																Width="Auto" />
+														</Grid.ColumnDefinitions>
+														<Grid.RowDefinitions>
+															<RowDefinition
+																Height="Auto" />
+															<RowDefinition
+																Height="4" />
+															<RowDefinition />
+														</Grid.RowDefinitions>
+														<RichTextBox
+															IsReadOnly="True"
+															BorderThickness="0"
+															Grid.ColumnSpan="3">
+															<FlowDocument>
+																<Paragraph>Below are a series of paths you want Best Chat to consider as containing external plug-ins.  Chat will look in each location during start and create commands for all executables in those locations.  On Windows, anything with the extensions CMD or EXE will be treated as "scripts".  On MacOS, Linux, Unix, and other similar operating systems, that will be anything with the mode +x on files in those paths.  For all operating systems, Best Chat will add anything whose extension is listed to the in the bottom of this box.  If you aren't running Windows, but want to include EXEs, add Wine.  Also, non-Windows users that want to use PowerShell scripts may need to install PS.</Paragraph>
+															</FlowDocument>
+														</RichTextBox>
+														<ListBox
+															Grid.Row="2" />
+														<Grid
+															Grid.Column="2"
+															Grid.Row="2"
+															VerticalAlignment="Center">
+															<Grid.ColumnDefinitions>
+																<ColumnDefinition />
+															</Grid.ColumnDefinitions>
+															<Grid.RowDefinitions>
+																<RowDefinition
+																	Height="Auto" />
+																<RowDefinition
+																	Height="4" />
+																<RowDefinition
+																	Height="Auto" />
+																<RowDefinition
+																	Height="4" />
+																<RowDefinition
+																	Height="Auto" />
+															</Grid.RowDefinitions>
+															<Button
+																x:Name="btnAddExternalPlugInPath"
+																Content="Add…" />
+															<Button
+																x:Name="btnEditExternalPlugInPath"
+																Content="Edit…"
+																Grid.Row="2" />
+															<Button
+																x:Name="btnDelExternalPlugInPath"
+																Content="Delete"
+																Grid.Row="4" />
+														</Grid>
+													</Grid>
+												</TabItem>
+												<TabItem
+													Header="How to run them"
+													IsTabStop="False">
+													<Grid>
+														<Grid.ColumnDefinitions>
+															<ColumnDefinition />
+															<ColumnDefinition
+																Width="4" />
+															<ColumnDefinition
+																Width="Auto" />
+														</Grid.ColumnDefinitions>
+														<Grid.RowDefinitions>
+															<RowDefinition
+																Height="Auto" />
+															<RowDefinition
+																Height="4" />
+															<RowDefinition />
+														</Grid.RowDefinitions>
+														<RichTextBox
+															IsReadOnly="True"
+															BorderThickness="0">
+															<FlowDocument>
+																<Paragraph>Below are programs that Best Chat will attempt to use to run an external plug-in.  If you don't want any files of a certain type to be run by Best Chat, remove it from the list.  The two tabs below show the same data.  One just groups the data so that all types supported by a program are shown together if both file types use the same parameters to the executing program.  The other lets you quickly find a specific type.  Under Linux, anything marked with the +x file mode is treated as a binary executable if there is no file type listed below for that file or the file lacks a file extension.  In the parameter list, any %s will be replaced with the full path to the script.  In here, you don't specify the path as that comes from a search along your computer's PATH environment variable.  If that path changes, the actual program might change.  In that case, Best Chat will detect the change and ask you to approve the change or disable the program and file type it runs.</Paragraph>
+															</FlowDocument>
+														</RichTextBox>
+														<TabControl
+															Grid.Row="2">
+															<TabItem
+																Header="Grouped by what runs them"
+																IsTabStop="False">
+																<Grid>
+																	<Grid.ColumnDefinitions>
+																		<ColumnDefinition />
+																		<ColumnDefinition
+																			Width="4" />
+																		<ColumnDefinition
+																			Width="Auto" />
+																	</Grid.ColumnDefinitions>
+																	<Grid.RowDefinitions>
+																		<RowDefinition />
+																	</Grid.RowDefinitions>
+																	<DataGrid>
+																		<DataGrid.Columns>
+																			<DataGridTextColumn
+																				Header="File Name of Program"
+																				IsReadOnly="True" />
+																			<DataGridTextColumn
+																				Header="Where the Program was Found"
+																				IsReadOnly="True" />
+																			<DataGridTextColumn
+																				Header="Parameters to pass"
+																				IsReadOnly="True" />
+																			<DataGridTextColumn
+																				Header="Runs these file types"
+																				IsReadOnly="True" />
+																		</DataGrid.Columns>
+																	</DataGrid>
+																	<Grid
+																		Grid.Column="2"
+																		Grid.Row="2"
+																		VerticalAlignment="Center">
+																		<Grid.ColumnDefinitions>
+																			<ColumnDefinition />
+																		</Grid.ColumnDefinitions>
+																		<Grid.RowDefinitions>
+																			<RowDefinition
+																				Height="Auto" />
+																			<RowDefinition
+																				Height="4" />
+																			<RowDefinition
+																				Height="Auto" />
+																			<RowDefinition
+																				Height="4" />
+																			<RowDefinition
+																				Height="Auto" />
+																		</Grid.RowDefinitions>
+																		<Button
+																			x:Name="btnAddProgramToRunExternalPlugIn"
+																			Content="Add…" />
+																		<Button
+																			x:Name="btnEditProgramToRunExternalPlugIn"
+																			Content="Edit…"
+																			Grid.Row="2" />
+																		<Button
+																			x:Name="btnDelProgramToRunExternalPlugIn"
+																			Content="Delete"
+																			Grid.Row="4" />
+																	</Grid>
+																</Grid>
+															</TabItem>
+															<TabItem
+																Header="Ungrouped"
+																IsTabStop="False">
+																<Grid>
+																	<Grid.ColumnDefinitions>
+																		<ColumnDefinition />
+																		<ColumnDefinition
+																			Width="4" />
+																		<ColumnDefinition
+																			Width="Auto" />
+																	</Grid.ColumnDefinitions>
+																	<Grid.RowDefinitions>
+																		<RowDefinition />
+																	</Grid.RowDefinitions>
+																	<DataGrid>
+																		<DataGrid.Columns>
+																			<DataGridTextColumn
+																				Header="File Name Extension or Mask"
+																				IsReadOnly="True" />
+																			<DataGridTextColumn
+																				Header="File Name of the Program Needed"
+																				IsReadOnly="True" />
+																			<DataGridTextColumn
+																				Header="Path to That Program"
+																				IsReadOnly="True" />
+																			<DataGridTextColumn
+																				Header="Parameters to Pass"
+																				IsReadOnly="True" />
+																		</DataGrid.Columns>
+																	</DataGrid>
+																	<Grid
+																		Grid.Column="2"
+																		Grid.Row="2"
+																		VerticalAlignment="Center">
+																		<Grid.ColumnDefinitions>
+																			<ColumnDefinition />
+																		</Grid.ColumnDefinitions>
+																		<Grid.RowDefinitions>
+																			<RowDefinition
+																				Height="Auto" />
+																			<RowDefinition
+																				Height="4" />
+																			<RowDefinition
+																				Height="Auto" />
+																			<RowDefinition
+																				Height="4" />
+																			<RowDefinition
+																				Height="Auto" />
+																		</Grid.RowDefinitions>
+																		<Button
+																			x:Name="btnAddExternalPlugInFileType"
+																			Content="Add…" />
+																		<Button
+																			x:Name="btnEditExternalPlugInFileType"
+																			Content="Edit…"
+																			Grid.Row="2" />
+																		<Button
+																			x:Name="btnDelExternalPlugInFileType"
+																			Content="Delete"
+																			Grid.Row="4" />
+																	</Grid>
+																</Grid>
+															</TabItem>
+														</TabControl>
+													</Grid>
+												</TabItem>
+											</TabControl>
+										</Grid>
+									</TabItem>
+									<TabItem
+										Header="Internal"
+										IsTabStop="False">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<RichTextBox
+												IsReadOnly="True"
+												BorderThickness="0">
+												<FlowDocument>
+													<Paragraph>The following is a list of installed internal plug-ins.  From here, you can disable, uninstall, or install new internal plug-ins.  These won't work as intended, if at all, if not installed from here.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<DataGrid
+												x:Name="dgPluginsExtensions"
+												Grid.Row="2">
+												<DataGrid.Columns>
+													<DataGridTextColumn
+														Header="Name"
+														IsReadOnly="True" />
+													<DataGridTextColumn
+														Header="Type"
+														IsReadOnly="True" />
+													<DataGridTextColumn
+														Header="Description"
+														IsReadOnly="True"
+														MinWidth="500" />
+													<DataGridCheckBoxColumn
+														CanUserSort="False"
+														Header="Enabled" />
+													<DataGridHyperlinkColumn
+														CanUserSort="False"
+														Header="Uninstall?" />
+												</DataGrid.Columns>
+											</DataGrid>
+											<StackPanel
+												Grid.Row="4"
+												HorizontalAlignment="Center">
+												<Button
+													x:Name="btnInstallNewInternalPlugIn"
+													Content="Install New…" />
+											</StackPanel>
+										</Grid>
+									</TabItem>
+								</TabControl>
+							</Grid>
+						</TabItem>
+						<TabItem
+							Header="Reopen on Startup"
+							IsTabStop="False">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition />
+									<ColumnDefinition
+										Width="4" />
+									<ColumnDefinition
+										Width="Auto" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition />
+								</Grid.RowDefinitions>
+								<RichTextBox
+									IsReadOnly="True"
+									BorderThickness="0"
+									Grid.ColumnSpan="3">
+									<FlowDocument>
+										<Paragraph>On Start Up, Best Chat will attempt to connect to each of the locations listed below.</Paragraph>
+									</FlowDocument>
+								</RichTextBox>
+								<DataGrid
+									Grid.Row="2">
+									<DataGrid.Columns>
+										<DataGridTextColumn
+											Header="Network"
+											IsReadOnly="True" />
+										<DataGridTextColumn
+											Header="Channel or Nick"
+											IsReadOnly="True" />
+										<DataGridTextColumn
+											Header="Destination Type"
+											IsReadOnly="True" />
+									</DataGrid.Columns>
+								</DataGrid>
+								<Grid
+									Grid.Column="2"
+									Grid.Row="2"
+									VerticalAlignment="Center">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition />
+									</Grid.ColumnDefinitions>
+									<Grid.RowDefinitions>
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+									</Grid.RowDefinitions>
+									<Button
+										x:Name="btnAddIrcStartUpLoc"
+										Content="Add…" />
+									<Button
+										x:Name="btnEditIrcStartUpLoc"
+										Content="Edit…"
+										Grid.Row="2" />
+									<Button
+										x:Name="btnDelIrcStartUpLoc"
+										Content="Delete"
+										Grid.Row="4" />
+								</Grid>
+							</Grid>
+						</TabItem>
+						<TabItem
+							Header="G_lobal"
+							IsTabStop="False">
+							<ScrollViewer>
+								<Grid>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition
+											Width="10" />
+										<ColumnDefinition />
+										<ColumnDefinition
+											Width="4" />
+										<ColumnDefinition
+											Width="Auto" />
+										<ColumnDefinition
+											Width="4" />
+										<ColumnDefinition />
+									</Grid.ColumnDefinitions>
+									<Grid.RowDefinitions>
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+										<RowDefinition
+											Height="4" />
+										<RowDefinition
+											Height="Auto" />
+									</Grid.RowDefinitions>
+									<CheckBox
+										x:Name="chkGlobalAgressiveNotify"
+										Content="Agressive Notify"
+										Grid.ColumnSpan="2" />
+									<CheckBox
+										x:Name="chkGlobalSendNotificationsToOS"
+										Content="Send Notifications to the OS"
+										Grid.Column="1"
+										Grid.Row="2"
+										IsEnabled="{Binding IsChecked, ElementName=chkGlobalAgressiveNotify, NotifyOnSourceUpdated=True}" />
+									<CheckBox
+										x:Name="chkGlobalCopyImportant"
+										Content="Copy Important Messages to the Network Tab"
+										Grid.ColumnSpan="2"
+										Grid.Row="4" />
+									<CheckBox
+										x:Name="chkGlobalDelChanTabsOnPart"
+										Content="Delete Channel Tabs on Parts"
+										Grid.ColumnSpan="2"
+										Grid.Row="6" />
+									<CheckBox
+										x:Name="chkGlobalEnableSendingColorCodes"
+										Content="Enable Sending Color Codes"
+										Grid.ColumnSpan="2"
+										Grid.Row="8" />
+									<CheckBox
+										x:Name="chkGlobalSpellCheckInput"
+										Content="Enable the Spell Checker for Input"
+										Grid.ColumnSpan="2"
+										Grid.Row="10" />
+									<Label
+										Content="Auto Away-Check User Limit: "
+										HorizontalContentAlignment="Right"
+										Grid.Column="3" />
+									<Ctrls:IntegerUpDown
+										x:Name="iudGlobalAutoAwayLimit"
+										Minimum="0"
+										Grid.Column="5" />
+									<Label
+										Content="Max Auto-Created Views: "
+										HorizontalContentAlignment="Right"
+										Grid.Column="3"
+										Grid.Row="2" />
+									<Ctrls:IntegerUpDown
+										x:Name="iudGlobalMaxAutoCreateViews"
+										Minimum="1"
+										Grid.Column="5"
+										Grid.Row="2" />
+									<Label
+										Content="Max Stored URLs: "
+										HorizontalContentAlignment="Right"
+										Grid.Column="3"
+										Grid.Row="4" />
+									<Ctrls:IntegerUpDown
+										x:Name="iudGlobalMaxStoredURL"
+										Minimum="0"
+										Grid.Column="5"
+										Grid.Row="4" />
+									<Label
+										Content="Nick Completion String: "
+										HorizontalContentAlignment="Right"
+										Grid.Column="3"
+										Grid.Row="6" />
+									<TextBox
+										x:Name="editGlobalNickCompleteText"
+										Grid.Column="5"
+										Grid.Row="6" />
+									<GroupBox
+										Header="Headers"
+										Grid.Row="12"
+										Grid.ColumnSpan="6">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<RichTextBox
+												BorderThickness="0">
+												<FlowDocument>
+													<Paragraph>Sets the default visibility for headers of views.  You can override this if needed for each view.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<CheckBox
+												x:Name="chkGlobalHdrChan"
+												Content="Channels"
+												Grid.Row="2" />
+											<CheckBox
+												x:Name="chkGlobalHdrDCC"
+												Content="DCC"
+												Grid.Row="4" />
+											<CheckBox
+												x:Name="chkGlobalHdrNet"
+												Content="Networks"
+												Grid.Row="6" />
+											<CheckBox
+												x:Name="chkGlobalHdrUsers"
+												Content="Users"
+												Grid.Row="8" />
+										</Grid>
+									</GroupBox>
+									<GroupBox
+										Header="Links"
+										Grid.Row="14"
+										Grid.ColumnSpan="6">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="10" />
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<RichTextBox
+												Grid.ColumnSpan="4"
+												BorderThickness="0">
+												<FlowDocument>
+													<Paragraph>The link preferences define how Best Chat reacts to different kinds of clicks on links.  You can change these to suit your preferences.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<CheckBox
+												x:Name="chkGlobalLinkFocusBrowser"
+												Content="Focus browser when opening links"
+												Grid.Row="2"
+												Grid.ColumnSpan="4" />
+											<CheckBox
+												x:Name="chkGlobalLinkDefBrowser"
+												Content="Use the Default Browser as Registered in Your OS"
+												Grid.Row="4"
+												Grid.ColumnSpan="4" />
+											<Label
+												Content="Browser to Use: "
+												Grid.Row="6"
+												Grid.Column="1"
+												IsEnabled="{Binding IsEnabled, ElementName=fbGlobalLinkDefBrowser, NotifyOnSourceUpdated=True}"
+												VerticalAlignment="Center" />
+											<Ctrls:FileBrowserCtrl
+												x:Name="fbGlobalLinkDefBrowser"
+												Grid.Row="6"
+												Grid.Column="3"
+												IsEnabled="{CalcBinding:Binding !IsChecked, ElementName=chkGlobalLinkDefBrowser, NotifyOnSourceUpdated=True}" />
+											<!--TODO: Implement a means of specifying how the matched click is handled.  The means used by ChatZilla isn't documented or understood. -->
+											<Grid
+												Grid.Row="8"
+												Grid.ColumnSpan="4">
+												<Grid.ColumnDefinitions>
+													<ColumnDefinition />
+													<ColumnDefinition
+														Width="4" />
+													<ColumnDefinition
+														Width="Auto" />
+												</Grid.ColumnDefinitions>
+												<Grid.RowDefinitions>
+													<RowDefinition />
+												</Grid.RowDefinitions>
+												<DataGrid
+													x:Name="dgGlobalLinkSpecificClicks"
+													MinHeight="60">
+													<DataGrid.Columns>
+														<DataGridTextColumn
+															Header="Action"
+															IsReadOnly="True" />
+														<DataGridTextColumn
+															Header="Modifier Keys"
+															IsReadOnly="True" />
+													</DataGrid.Columns>
+												</DataGrid>
+												<Grid
+													Grid.Column="3"
+													VerticalAlignment="Center">
+													<Grid.ColumnDefinitions>
+														<ColumnDefinition />
+													</Grid.ColumnDefinitions>
+													<Grid.RowDefinitions>
+														<RowDefinition
+															Height="Auto" />
+														<RowDefinition
+															Height="4" />
+														<RowDefinition
+															Height="Auto" />
+														<RowDefinition
+															Height="4" />
+														<RowDefinition
+															Height="Auto" />
+													</Grid.RowDefinitions>
+													<Button
+														x:Name="btnAddGlobalLinkAction"
+														Content="Add…" />
+													<Button
+														x:Name="btnEditGlobalLinkAction"
+														Content="Edit…"
+														Grid.Row="2" />
+													<Button
+														x:Name="btnDelGlobalLinkAction"
+														Content="Delete"
+														Grid.Row="4" />
+												</Grid>
+											</Grid>
+											<Label
+												Content="All Other Clicks: "
+												Grid.Row="10"
+												Grid.ColumnSpan="2" />
+											<TextBlock
+												x:Name="editGlobalLinkOther"
+												Grid.Row="10"
+												Grid.Column="4" />
+										</Grid>
+									</GroupBox>
+									<GroupBox
+										Header="Log These View Types"
+										Grid.Row="16"
+										Grid.ColumnSpan="6">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition />
+												<ColumnDefinition
+													Width="Auto" />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="10" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<RichTextBox
+												BorderThickness="0"
+												Grid.ColumnSpan="4">
+												<FlowDocument>
+													<Paragraph>Sets the default logging state for views.  You can override this for each view as needed.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<CheckBox
+												x:Name="chkGlobalLogChan"
+												Content="Channels"
+												Grid.Row="2"
+												Grid.ColumnSpan="4" />
+											<CheckBox
+												x:Name="chkGlobalLogDCC"
+												Content="DCC"
+												Grid.Row="4"
+												Grid.ColumnSpan="4" />
+											<CheckBox
+												x:Name="chkGlobalLogNet"
+												Content="Networks"
+												Grid.Row="6"
+												Grid.ColumnSpan="4" />
+											<CheckBox
+												x:Name="chkGlobalLogUsers"
+												Content="Users"
+												Grid.Row="8"
+												Grid.ColumnSpan="4" />
+											<Separator
+												Grid.Row="9"
+												VerticalContentAlignment="Center"
+												Grid.ColumnSpan="4" />
+											<RichTextBox
+												BorderThickness="0"
+												Grid.Row="10"
+												Grid.ColumnSpan="4">
+												<FlowDocument>
+													<Paragraph>You can override how file names are formatted using the field below.
+														<Span
+															FontFamily="Courier New"
+															Background="LightGray">{ViewName}</Span> will be replaced with the name of the view.
+														<Span
+															FontFamily="Courier New"
+															Background="LightGray">{Date}</Span> will be replaced with the current date in YYYY-MM-DD format so it be sorted and won't cause problems with the file system.  If you omit the
+														<Span
+															FontFamily="Courier New"
+															Background="LightGray">{Date}</Span> , it will be placed at the end of the file name, but before the extension.  If you don't specify an extension,
+														<Span
+															FontFamily="Courier New"
+															Background="LightGray">.log</Span> will be added unless you end the format with a
+														<Span
+															FontFamily="Courier New"
+															Background="LightGray">.</Span> .
+													</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<Label
+												Content="Format to Use: "
+												HorizontalContentAlignment="Right"
+												Grid.Row="12" />
+											<TextBox
+												x:Name="editGlobalLogFileNameFmt"
+												Grid.Row="12"
+												Grid.Column="2" />
+											<Ctrls:DropMenuBtn
+												Ctnts="Insert"
+												Grid.Row="12"
+												Grid.Column="3">
+												<Ctrls:DropMenuBtn.Menu>
+													<ContextMenu>
+														<MenuItem
+															Header="View Name" />
+														<MenuItem
+															Header="Date" />
+													</ContextMenu>
+												</Ctrls:DropMenuBtn.Menu>
+											</Ctrls:DropMenuBtn>
+										</Grid>
+									</GroupBox>
+									<GroupBox
+										Header="Scrollback Size"
+										Grid.Row="18"
+										Grid.ColumnSpan="6">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition
+													Width="Auto"
+													MinWidth="100" />
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<RichTextBox
+												BorderThickness="0"
+												Grid.ColumnSpan="4">
+												<FlowDocument>
+													<Paragraph>Specifies the number of lines to keep for each view type.  Once the limit is reached, the oldest lines are moved as new lines are added.</Paragraph>
+												</FlowDocument>
+											</RichTextBox>
+											<Label
+												Content="Channels: "
+												HorizontalContentAlignment="Right"
+												Grid.Row="2" />
+											<Ctrls:IntegerUpDown
+												Minimum="50"
+												Grid.Row="2"
+												Grid.Column="2" />
+											<Label
+												Content="Client: "
+												HorizontalContentAlignment="Right"
+												Grid.Row="4" />
+											<Ctrls:IntegerUpDown
+												Minimum="50"
+												Grid.Row="4"
+												Grid.Column="2" />
+											<Label
+												Content="DCC: "
+												HorizontalContentAlignment="Right"
+												Grid.Row="6" />
+											<Ctrls:IntegerUpDown
+												Minimum="50"
+												Grid.Row="6"
+												Grid.Column="2" />
+											<Label
+												Content="Networks: "
+												HorizontalContentAlignment="Right"
+												Grid.Row="8" />
+											<Ctrls:IntegerUpDown
+												Name="iudGlobalScrollbackNet"
+												Minimum="50"
+												Grid.Row="8"
+												Grid.Column="2" />
+											<Label
+												Content="Users: "
+												HorizontalContentAlignment="Right"
+												Grid.Row="10" />
+											<Ctrls:IntegerUpDown
+												x:Name="iudGlobalScrollBackUsers"
+												Minimum="50"
+												Grid.Row="10"
+												Grid.Column="2" />
+										</Grid>
+									</GroupBox>
+									<GroupBox
+										Header="Message Notifications Configuration"
+										Grid.Row="20"
+										Grid.ColumnSpan="6">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<CheckBox
+												Content="Globally Enabled" />
+											<CheckBox
+												Content="Only When Window not Active"
+												Grid.Row="2" />
+										</Grid>
+									</GroupBox>
+									<GroupBox
+										Header="Sound Configuration"
+										Grid.Row="22"
+										Grid.ColumnSpan="6">
+										<Grid
+											VerticalAlignment="Center">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition
+													Width="Auto" />
+												<ColumnDefinition
+													Width="4" />
+												<ColumnDefinition
+													Width="Auto"
+													MinWidth="100" />
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition
+													Height="Auto" />
+												<RowDefinition
+													Height="4" />
+												<RowDefinition
+													Height="Auto" />
+											</Grid.RowDefinitions>
+											<CheckBox
+												x:Name="chkGlobalSoundEnabled"
+												Content="Enabled"
+												Grid.ColumnSpan="3" />
+											<Label
+												Content="Overlap Delay: "
+												HorizontalContentAlignment="Right"
+												Grid.Row="2"
+												VerticalAlignment="Center"
+												IsEnabled="{Binding IsEnabled, ElementName=iudGlobalSoundOverlapDelay, NotifyOnSourceUpdated=True}" />
+											<Ctrls:IntegerUpDown
+												x:Name="iudGlobalSoundOverlapDelay"
+												Minimum="0"
+												Grid.Row="2"
+												Grid.Column="2"
+												IsEnabled="{Binding IsChecked, ElementName=chkGlobalSoundEnabled, NotifyOnSourceUpdated=True}" />
+											<Label
+												Content="milliseconds"
+												Grid.Row="2"
+												Grid.Column="3" />
+										</Grid>
+									</GroupBox>
+								</Grid>
+							</ScrollViewer>
+						</TabItem>
+						<TabItem
+							Header="Formatting"
+							IsTabStop="False">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition
+										Height="4" />
+									<RowDefinition
+										Height="Auto" />
+								</Grid.RowDefinitions>
+								<CheckBox
+									x:Name="chkFmtBold"
+									Content="Recognize and format bold text" />
+								<CheckBox
+									x:Name="chkFmtChanLinks"
+									Content="Make Channel names into links if the name is prefixed with the #"
+									Grid.Row="2" />
+								<CheckBox
+									x:Name="chkFmtCtrlChar"
+									Content="Make Best Chat display numeric codes for characters it doesn't understand"
+									Grid.Row="4" />
+								<GroupBox
+									Grid.Row="6">
+									<GroupBox.Header>
+										<CheckBox
+											x:Name="chkFmtGraphicalEmojiReplacement"
+											Content="Change emoticons into emoji" />
+									</GroupBox.Header>
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition
+												Width="20" />
+											<ColumnDefinition />
+										</Grid.ColumnDefinitions>
+										<Grid.RowDefinitions>
+											<RowDefinition
+												Height="4" />
+											<RowDefinition
+												Height="Auto" />
+											<RowDefinition
+												Height="4" />
+											<RowDefinition
+												Height="Auto" />
+										</Grid.RowDefinitions>
+										<RadioButton
+											Content="As Unicode Characters"
+											Grid.Column="1"
+											Grid.Row="1"
+											IsEnabled="{Binding IsChecked, ElementName=chkFmtGraphicalEmojiReplacement}" />
+										<RadioButton
+											Content="As Images"
+											Grid.Column="1"
+											Grid.Row="3"
+											IsEnabled="{Binding IsChecked, ElementName=chkFmtGraphicalEmojiReplacement}" />
+									</Grid>
+								</GroupBox>
+								<CheckBox
+									x:Name="chkFmtHyphenateLongWords"
+									Content="Hyphenate long words"
+									Grid.Row="8" />
+								<CheckBox
+									x:Name="chkFmtItalics"
+									Content="Recognize and format italics text"
+									Grid.Row="10" />
+								<CheckBox
+									x:Name="chkFmtMailLinks"
+									Content="Recognize e-mail addresses and make them hyperlinks"
+									Grid.Row="12" />
+								<CheckBox
+									x:Name="chkFmtUseTypographicalQuotes"
+									Content="Attempt to replace normal quotes with typographical quotes"
+									Grid.Row="14" />
+								<CheckBox
+									x:Name="chkFmtTalkBackLinks"
+									Grid.Row="16">
+									<CheckBox.Content>
+										<RichTextBox
+											BorderThickness="0"
+											IsReadOnly="True">
+											<FlowDocument>
+												<Paragraph>Makes Best Chat hyperlink
+													<Span
+														FontFamily="Courier New"
+														Background="LightGray">TB&lt;numbers&gt;&lt;character&gt;</Span> to the specified talkback trace
+												</Paragraph>
+											</FlowDocument>
+										</RichTextBox>
+									</CheckBox.Content>
+								</CheckBox>
+								<CheckBox
+									x:Name="chkFmtFixedWidthText"
+									Content="Recognize teletype markers (the pipe character) and switch to a fixed width font"
+									Grid.Row="18" />
+								<CheckBox
+									x:Name="chkFmtUnderline"
+									Content="Recognize and format underlined text"
+									Grid.Row="20" />
+								<CheckBox
+									x:Name="chkFmtWebLinks"
+									Content="Recognize links to the Internet and turn them into hyperlinks"
+									Grid.Row="22" />
+								<CheckBox
+									x:Name="chkFmtEnableMircColors"
+									Content="Enable mIRC colors"
+									Grid.Row="24" />
+								<CheckBox
+									x:Name="chkFmtStrikeOut"
+									Content="Recognize and format strike out text"
+									Grid.Row="26" />
+								<CheckBox
+									x:Name="chkFmtHideSpoilerText"
+									Content="Hide Spoiler Text"
+									Grid.Row="28" />
+							</Grid>
+						</TabItem>
+					</TabControl>
+				</TabItem>
+			</TabControl>
+		</Grid>
+	</DockPanel>
+</Window>

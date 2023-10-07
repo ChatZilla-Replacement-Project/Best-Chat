@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ciZGchAMT2QO5kgsvoNR5EwZkkGGBf8moMxRl2okM6Di2XpWnK93+ujaMW+wAV2JtBbzAXqVM65pBpfb5ejgzw==",
+  "success": true,
+  "projectFilePath": "B:\\Contents\\Best Chat\\Code\\IRC\\ModuleInterfaces\\IRC.ModuleInterfaces.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\willp\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.29\\microsoft.windows.sdk.net.ref.10.0.22621.29.nupkg.sha512"
+  ],
+  "logs": []
+}

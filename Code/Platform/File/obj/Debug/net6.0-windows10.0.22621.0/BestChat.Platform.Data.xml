@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BestChat.Platform.Data</name>
+    </assembly>
+    <members>
+        <member name="T:BestChat.Platform.Data.HierarchicalObj`2">
+            <summary>
+            Abstract class that describes some tools for hierarchical data objects.
+            </summary>
+            <typeparam name="TypeOfObj">A type derived from <see cref="T:BestChat.Platform.Data.HierarchicalObj`2"/></typeparam>
+            <typeparam name="ChildType">The type of the child entries.  Must be derived from <see cref="T:BestChat.Platform.Data.HierarchicalObj`2.IChildObj"/>
+            	</typeparam>
+        </member>
+        <member name="T:BestChat.Platform.Data.HierarchicalObj`2.IChildObj">
+            <summary>
+            Interface that describes the child of a <see cref="T:BestChat.Platform.Data.HierarchicalObj`2"/> instance.
+            </summary>
+        </member>
+        <member name="P:BestChat.Platform.Data.HierarchicalObj`2.IChildObj.Name">
+            <summary>
+            Returns the name of this object.  Assumes the child object can be identified by a path containing it's parent's name plus this one.  Derived classes
+            are responsible for implementing paths.
+            </summary>
+        </member>
+        <member name="P:BestChat.Platform.Data.HierarchicalObj`2.IChildObj.IsDirty">
+            <summary>
+            Returns if the Child is dirty or not.  Normally, this will be implemented by <see cref="P:BestChat.Platform.Data.Obj`1.IsDirty"/>.
+            </summary>
+        </member>
+        <member name="M:BestChat.Platform.Data.HierarchicalObj`2.#ctor(`0)">
+            <summary>
+            Constructs this part of a <see cref="T:BestChat.Platform.Data.HierarchicalObj`2"/> instance.
+            </summary>
+            <param name="parent">The parent object or <see langword="null"/> if there is no parent.</param>
+        </member>
+        <member name="M:BestChat.Platform.Data.HierarchicalObj`2.Finalize">
+            <summary>
+            Removes this instance's <see cref="T:System.Guid"/> from the list of all instances.
+            </summary>
+        </member>
+        <member name="F:BestChat.Platform.Data.HierarchicalObj`2.parent">
+            <summary>
+            Provides readonly access to the parent.  This will be <see langword="null"/> if there is no parent.
+            </summary>
+        </member>
+        <member name="F:BestChat.Platform.Data.HierarchicalObj`2.mapChildrenByName">
+            <summary>
+            Stores a all children indexed by their <see cref="P:BestChat.Platform.Data.HierarchicalObj`2.IChildObj.Name"/> attribute.
+            </summary>
+        </member>
+        <member name="P:BestChat.Platform.Data.HierarchicalObj`2.Name">
+            <summary>
+            The name of this <see cref="T:BestChat.Platform.Data.HierarchicalObj`2"/> instance.  Override to have the name be something other than  blank string.
+            </summary>
+        </member>
+        <member name="P:BestChat.Platform.Data.HierarchicalObj`2.ChildrenByName">
+            <summary>
+            Returns a readonly dictionary of all children indexed by their <see cref="P:BestChat.Platform.Data.HierarchicalObj`2.IChildObj.Name"/> attribute.
+            </summary>
+        </member>
+        <member name="F:BestChat.Platform.Data.HierarchicalObj`2.mapAllInstances">
+            <summary>
+            Indexes all instances of <see cref="T:BestChat.Platform.Data.HierarchicalObj`2"/> by their <see cref="T:System.Guid"/>.
+            </summary>
+            <remarks>
+            <para>
+            	Note: Each expansion of <see cref="T:BestChat.Platform.Data.HierarchicalObj`2"/> has its own copy of this list.  Change one of the type parameters and
+            	.NET sees it as a new type.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:BestChat.Platform.Data.HierarchicalObj`2.AllInstancesByGUID">
+            <summary>
+            Returns a readonly dictionary of all <see cref="T:BestChat.Platform.Data.HierarchicalObj`2"/> indexed by <see cref="T:System.Guid"/>.
+            </summary>
+            <remarks>
+            <para>
+            	Note: Each expansion of <see cref="T:BestChat.Platform.Data.HierarchicalObj`2"/> has its own copy of this list.  Change one of the type parameters and
+            	.NET sees it as a new type.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:BestChat.Platform.Data.HierarchicalObj`2.IsDirty">
+            <summary>
+            Returns <see langword="true"/> if the <see cref="P:BestChat.Platform.Data.Obj`1.IsDirty"/> returns <see langword="true"/> or any child is dirty.
+            </summary>
+        </member>
+        <member name="M:BestChat.Platform.Data.HierarchicalObj`2.NewChild(`1)">
+            <summary>
+            Called by derived classes when they have a new child.  This child doesn't have to be exclusive to this parent.
+            </summary>
+            <param name="childNew">Which child was added.</param>
+        </member>
+        <member name="M:BestChat.Platform.Data.HierarchicalObj`2.ChildRemoved(`1)">
+            <summary>
+            Called by derived classes when a child was removed.
+            </summary>
+            <param name="childRemoved"></param>
+        </member>
+        <member name="T:BestChat.Platform.Data.ObjBase">
+            <summary>
+            Provides a means to access some aspects of <see cref="T:BestChat.Platform.Data.Obj`1"/> even if you don't know the type parameters.
+            </summary>
+        </member>
+        <member name="M:BestChat.Platform.Data.ObjBase.#ctor">
+            <summary>
+            Constructs a new <see cref="T:BestChat.Platform.Data.ObjBase"/> instance.
+            </summary>
+        </member>
+        <member name="M:BestChat.Platform.Data.ObjBase.Finalize">
+            <summary>
+            Removes this instance from the list of all instances.
+            </summary>
+        </member>
+        <member name="F:BestChat.Platform.Data.ObjBase.guid">
+            <summary>
+            The <see cref="T:System.Guid"/> that uniquely identifies this <see cref="T:BestChat.Platform.Data.ObjBase"/> instance.
+            </summary>
+        </member>
+        <member name="F:BestChat.Platform.Data.ObjBase.mapAllInstances">
+            <summary>
+            Stores a list of all <see cref="T:BestChat.Platform.Data.ObjBase"/> instances indexed by their <see cref="T:System.Guid"/>.
+            </summary>
+        </member>
+        <member name="P:BestChat.Platform.Data.ObjBase.AllInstancesByGUID">
+            <summary>
+            Returns a readonly dictionary of all <see cref="T:BestChat.Platform.Data.ObjBase"/> instances indexed by their <see cref="T:System.Guid"/>.  Derived classes should provide their
+            own version that typecasts the entries to the derived class.
+            </summary>
+        </member>
+        <member name="M:BestChat.Platform.Data.ObjBase.op_Implicit(BestChat.Platform.Data.ObjBase)~System.Guid">
+            <summary>
+            Provides a way to implicitly convert from a <see cref="T:BestChat.Platform.Data.ObjBase"/> of any derivation to its <see cref="T:System.Guid"/>.
+            </summary>
+            <param name="obj">The <see cref="T:BestChat.Platform.Data.ObjBase"/> to convert</param> 
+        </member>
+        <member name="M:BestChat.Platform.Data.ObjBase.op_Explicit(System.Guid)~BestChat.Platform.Data.ObjBase">
+            <summary>
+            Declares an explicit type cast operator that can attempt to convert any <see cref="T:System.Guid"/> to a <see cref="T:BestChat.Platform.Data.ObjBase"/> instance.  If no <see
+            cref="T:BestChat.Platform.Data.ObjBase"/> exists for the value specified by <paramref name="guidToLookup"/>, <see langword="null"/> will be returned.
+            </summary>
+            <param name="guidToLookup">Which <see cref="T:System.Guid"/> to lookup</param>
+        </member>
+        <member name="M:BestChat.Platform.Data.ObjBase.GetHashCode">
+            <summary>
+            Causes the hash code associated by <see cref="T:System.Object"/> to be the hash code for <see cref="F:BestChat.Platform.Data.ObjBase.guid"/>.
+            </summary>
+            <returns>The required hash code</returns>
+        </member>
+        <member name="T:BestChat.Platform.Data.ObjBase.CollectionChangeType">
+            <summary>
+            Indicates how a collection changed.
+            </summary>
+        </member>
+        <member name="F:BestChat.Platform.Data.ObjBase.CollectionChangeType.add">
+            <summary>
+            A new member was added
+            </summary>
+        </member>
+        <member name="F:BestChat.Platform.Data.ObjBase.CollectionChangeType.changed">
+            <summary>
+            An existing member was changed
+            </summary>
+        </member>
+        <member name="F:BestChat.Platform.Data.ObjBase.CollectionChangeType.removed">
+            <summary>
+            An existing member was removed from the collection
+            </summary>
+        </member>
+        <member name="F:BestChat.Platform.Data.ObjBase.CollectionChangeType.other">
+            <summary>
+            No other value is valid.
+            </summary>
+        </member>
+        <member name="T:BestChat.Platform.Data.Obj`1">
+            <summary>
+            This is meant to be the base class of all data types in this system.  It provides the ability to be marked dirty as well as some other functions. 
+             (Technically, this is derived from <see cref="T:BestChat.Platform.Data.ObjBase"/> and <see cref="T:System.Object"/>.)
+            </summary>
+            <typeparam name="TypeOfObj">Any type derived from <see cref="T:BestChat.Platform.Data.Obj`1"/></typeparam>
+        </member>
+        <member name="M:BestChat.Platform.Data.Obj`1.#ctor">
+            <summary>
+            Constructs a new <see cref="T:BestChat.Platform.Data.Obj`1"/> by adding this to the list of all instances.
+            </summary>
+        </member>
+        <member name="M:BestChat.Platform.Data.Obj`1.Finalize">
+            <summary>
+            Removes this instance of <see cref="T:BestChat.Platform.Data.Obj`1"/> from the list of all instances
+            </summary>
+        </member>
+        <member name="T:BestChat.Platform.Data.Obj`1.OnDirtyChanged">
+            <summary>
+            Provides a way to notify interested callers that an instance of <see cref="T:BestChat.Platform.Data.Obj`1"/> either became dirty or was dirty but no longer is
+            </summary>
+            <param name="objSender">The object that sent the notification</param>
+            <param name="bIsNowDirty">The new state</param>
+        </member>
+        <member name="T:BestChat.Platform.Data.Obj`1.DFieldChanged`1">
+            <summary>
+            Provides a way to notify interested callers that a field has changed values
+            </summary>
+            <typeparam name="FieldType">The type of the field</typeparam>
+            <param name="objSender">The sender of this notification</param>
+            <param name="oldVal">The old value of the field</param>
+            <param name="newVal">The new value of the field</param>
+        </member>
+        <member name="T:BestChat.Platform.Data.Obj`1.DBoolFieldChanged">
+            <summary>
+            Like <see cref="T:BestChat.Platform.Data.Obj`1.DFieldChanged`1"/>, but for <see cref="T:System.Boolean"/> fields.  This omits the old value as it's always <c>!<paramref
+            name="bNewVal"/></c>.
+            </summary>
+            <param name="objSender">The sender of this notification</param>
+            <param name="bNewVal">The new value</param>
+        </member>
+        <member name="T:BestChat.Platform.Data.Obj`1.DCollectionFieldChanged`1">
+            <summary>
+            Provides a way to notify interested callers that a collection has changed in some way.  Details of how these parameters are used are up to the code
+            that implements the event.
+            </summary>
+            <typeparam name="CollectionType">The type of the collection.  This can be any collection type</typeparam>
+            <param name="objSender">The sender of this notification</param>
+            <param name="collectionThatChanged">Which collection changed</param>
+            <param name="howTheCollectionChanged">How it changed</param>
+        </member>
+        <member name="T:BestChat.Platform.Data.Obj`1.OnNewInstanceCreated">
+            <summary>
+            Provides a way to notify interested callers that you have a new instance.  This will normally be an event on the owner of the <typeparamref
+            name="TypeOfObj"/> instance.
+            </summary>
+            <param name="objNewInstance">The new instance of <typeparamref name="TypeOfObj"/></param>
+        </member>
+        <member name="E:BestChat.Platform.Data.Obj`1.evtDirtyChanged">
+            <summary>
+            Fired when the dirty flag changes.  It either wasn't dirty, but now is, or was dirty, but now isn't.
+            </summary>
+        </member>
+        <member name="F:BestChat.Platform.Data.Obj`1.bIsDirty">
+            <summary>
+            Stores if we are dirty or not
+            </summary>
+        </member>
+        <member name="F:BestChat.Platform.Data.Obj`1.objIsDirtyLock">
+            <summary>
+            Stores our lock object.  Pass this to <see langword="lock"/> to lock the instance.
+            </summary>
+        </member>
+        <member name="F:BestChat.Platform.Data.Obj`1.mapAllInstances">
+            <summary>
+            Stores a dictionary of all instances of <see cref="T:BestChat.Platform.Data.Obj`1"/> indexed by their <see cref="T:System.Guid"/>
+            </summary>
+        </member>
+        <member name="P:BestChat.Platform.Data.Obj`1.IsDirty">
+            <summary>
+            Returns <see langword="true"/> if this <see cref="T:BestChat.Platform.Data.Obj`1"/> is dirty and <see langword="false"/> if it isn't.
+            </summary>
+        </member>
+        <member name="P:BestChat.Platform.Data.Obj`1.AllInstancesByGUID">
+            <summary>
+            Returns a readonly dictionary of all <see cref="T:BestChat.Platform.Data.Obj`1"/> instances indexed by their <see cref="T:System.Guid"/>
+            </summary>
+        </member>
+        <member name="M:BestChat.Platform.Data.Obj`1.MakeDirty">
+            <summary>
+            Marks this instance as dirty.  <see cref="E:BestChat.Platform.Data.Obj`1.evtDirtyChanged"/> will be fired.
+            </summary>
+        </member>
+        <member name="M:BestChat.Platform.Data.Obj`1.ClearIsDirty">
+            <summary>
+            Clears the <see cref="F:BestChat.Platform.Data.Obj`1.bIsDirty"/> flag.  <see cref="P:BestChat.Platform.Data.Obj`1.IsDirty"/> will now return <see langword="false"/>.  <see cref="E:BestChat.Platform.Data.Obj`1.evtDirtyChanged"/> will be fired.
+            </summary>
+        </member>
+        <member name="M:BestChat.Platform.Data.Obj`1.ActAsThoughDirty">
+            <summary>
+            Fires the <see cref="E:BestChat.Platform.Data.Obj`1.evtDirtyChanged"/> even though the flag hasn't changed
+            </summary>
+        </member>
+        <member name="M:BestChat.Platform.Data.Obj`1.op_Explicit(System.Guid)~BestChat.Platform.Data.Obj{`0}">
+            <summary>
+            Explicit type cast operator to convert from a <see cref="T:System.Guid"/> to <see cref="T:BestChat.Platform.Data.Obj`1"/>.  Returns <see langword="null"/> if the value
+            in <paramref name="guidToLookup"/> can't be found.
+            </summary>
+            <param name="guidToLookup">Which value to look up</param>
+        </member>
+    </members>
+</doc>

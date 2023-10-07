@@ -1,0 +1,70 @@
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.csproj.AssemblyReference.cache
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\MainWnd.g.cs
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\App.g.cs
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI_MarkupCompile.cache
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI_MarkupCompile.lref
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.exe
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.deps.json
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.runtimeconfig.json
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.xml
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\CalcBinding.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\DynamicExpresso.Core.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Microsoft.Windows.SDK.NET.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\WinRT.Runtime.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.GUI.Ctrls.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Util.Collections.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Util.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Util.Ext.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.GUI.Ctrls.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Util.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Util.xml
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Util.Collections.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Util.Ext.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\PrefsWnd.g.cs
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\MainWnd.baml
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\PrefsWnd.baml
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.g.resources
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.GeneratedMSBuildEditorConfig.editorconfig
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.AssemblyInfoInputs.cache
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.AssemblyInfo.cs
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.csproj.CoreCompileInputs.cache
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.csproj.CopyComplete
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\refint\Best Chat.GUI.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.xml
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.genruntimeconfig.cache
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\ref\Best Chat.GUI.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Util.Ext.WPF.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Util.Ext.WPF.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Util.Ext.WPF.xml
+B:\Contents\Best Chat\Code\Best Chat.GUI\obj\Debug\net7.0-windows10.0.22621.0\App.baml
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Best Chat.GUI.dll.config
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\Newtonsoft.Json.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Data.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Global.Model.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Global.View.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Platform.Common.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Platform.Data.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Platform.HttpClientOwner.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\IRC.ModuleInterfaces.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Global.View.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Global.View.xml
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Platform.HttpClientOwner.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Platform.HttpClientOwner.xml
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Data.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Global.Model.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Global.Model.xml
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Platform.Common.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Platform.Common.xml
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Platform.Data.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Platform.Data.xml
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\IRC.ModuleInterfaces.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Global.View.Ctrls.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Global.View.Ctrls.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Global.View.Ctrls.xml
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Platform.DataLoc.dll
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Platform.DataLoc.pdb
+B:\Contents\Best Chat\Code\Best Chat.GUI\bin\Debug\net7.0-windows10.0.22621.0\BestChat.Platform.DataLoc.xml

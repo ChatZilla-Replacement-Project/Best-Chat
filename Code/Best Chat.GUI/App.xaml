@@ -1,0 +1,93 @@
+﻿<Application
+	x:Class="BestChat.GUI.App"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:BestChat.GUI"
+	xmlns:ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
+	StartupUri="MainWnd.xaml">
+	<Application.Resources>
+		<Style
+			x:Key="ResetPrefBtn"
+			TargetType="Button">
+			<Setter
+				Property="BorderThickness"
+				Value="0" />
+			<Setter
+				Property="Background"
+				Value="Transparent" />
+			<Setter
+				Property="Content">
+				<Setter.Value>
+					<Image
+						Source="/Reset Pref.png" />
+				</Setter.Value>
+			</Setter>
+			<Setter
+				Property="ToolTip"
+				Value="Reset this preference to the default" />
+		</Style>
+		<Style
+			x:Key="HelpText"
+			TargetType="RichTextBox">
+			<Setter
+				Property="IsReadOnly"
+				Value="True" />
+			<Setter
+				Property="BorderThickness"
+				Value="0,0,0,1" />
+			<Setter
+				Property="Margin"
+				Value="0,4,0,20" />
+			<Setter
+				Property="Foreground"
+				Value="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" />
+			<Setter
+				Property="Background"
+				Value="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" />
+			<Setter
+				Property="Padding"
+				Value="0,0,0,2" />
+		</Style>
+		<Style
+			TargetType="ToolTip">
+			<Setter
+				Property="Background"
+				Value="{x:Static SystemColors.InfoBrush}" />
+			<Setter
+				Property="Foreground"
+				Value="{x:Static SystemColors.InfoTextBrush}" />
+		</Style>
+		<Style
+			x:Key="TextBoxWithInvalidCtnts"
+			TargetType="TextBox">
+			<Setter
+				Property="Background"
+				Value="LightYellow" />
+			<Setter
+				Property="BorderBrush"
+				Value="Red" />
+			<Setter
+				Property="BorderThickness"
+				Value="2" />
+		</Style>
+		<Style
+			x:Key="ValidationErrorMsg"
+			TargetType="Label">
+			<Setter
+				Property="Background"
+				Value="Yellow" />
+			<Setter
+				Property="BorderBrush"
+				Value="Red" />
+			<Setter
+				Property="BorderThickness"
+				Value="2" />
+			<Setter
+				Property="Foreground"
+				Value="Red" />
+			<Setter
+				Property="FontWeight"
+				Value="Bold" />
+		</Style>
+	</Application.Resources>
+</Application>

@@ -1,0 +1,74 @@
+﻿<Window
+	x:Class="BestChat.GUI.MainWnd"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:BestChat.GUI"
+	mc:Ignorable="d"
+	Title="Best Chat (GUI mode)"
+	Height="450"
+	Width="800"
+	FontFamily="Times New Roman"
+	WindowStyle="ThreeDBorderWindow"
+	ResizeMode="CanResizeWithGrip"
+	WindowStartupLocation="CenterScreen"
+	WindowState="Maximized"
+	BorderThickness="1"
+	ToolTipService.HasDropShadow="True"
+	ToolTipService.Placement="Right"
+	RenderTransformOrigin="0.5,0.5">
+	<DockPanel
+		RenderTransformOrigin="0.5,0.5">
+		<DockPanel.LayoutTransform>
+			<TransformGroup>
+				<ScaleTransform
+					x:Name="scale"
+					ScaleX="1.1" />
+				</TransformGroup>
+		</DockPanel.LayoutTransform>
+		<Menu
+			FontFamily="Times New Roman"
+			DockPanel.Dock="Top">
+			<MenuItem
+				Header="_File">
+				<MenuItem
+					Header="IRC">
+					<MenuItem
+						x:Name="miFileIrcNetworkList"
+						Header="IRC _Network List…"
+						Click="OnIrcNetworkListClicked"
+						ToolTip="Shows the list of IRC networks" />
+					<MenuItem
+						x:Name="miFileIrcBncList"
+						Header="Bouncer List…"
+						ToolTip="Shows the list of known bouncers"
+						Click="OnFileIrcBouncerListClicked" />
+				</MenuItem>
+				<Separator />
+				<MenuItem
+					x:Name="miFilePrefs"
+					Header="Preferences…"
+					Click="OnPrefsClicked"
+					ToolTip="Opens the Preferences window" />
+				<MenuItem
+					x:Name="miFileExit"
+					Header="E_xit"
+					Click="OnFileExitClicked"
+					ToolTip="Exit Best Chat" />
+			</MenuItem>
+		</Menu>
+		<StatusBar
+			DockPanel.Dock="Bottom">
+			<Button
+				x:Name="btnZoomIn"
+				Content="🔍 In"
+				Click="OnZoomInClicked" />
+			<Button
+				x:Name="btnZoomOut"
+				Content="🔍 Out"
+				Click="OnZoomOutClicked" />
+		</StatusBar>
+		<Grid></Grid>
+	</DockPanel>
+</Window>

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "mnRVj2kZP19/k/HmmQQl6Yw2EfnPsa1w/I5/dCp7xQ4GEzZPG1qXP2zIF0+xICiOCXadX66u1lhgN1jvDgE62g==",
+  "success": true,
+  "projectFilePath": "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\IRC.Global.View.Ctrls\\IRC.Global.View.Ctrls.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\willp\\.nuget\\packages\\calcbinding\\2.5.2\\calcbinding.2.5.2.nupkg.sha512",
+    "C:\\Users\\willp\\.nuget\\packages\\dynamicexpresso.core\\2.3.1\\dynamicexpresso.core.2.3.1.nupkg.sha512",
+    "C:\\Users\\willp\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\willp\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.29\\microsoft.windows.sdk.net.ref.10.0.22621.29.nupkg.sha512"
+  ],
+  "logs": []
+}
