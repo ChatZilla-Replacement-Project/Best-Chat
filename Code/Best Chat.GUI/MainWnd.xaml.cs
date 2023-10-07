@@ -5,13 +5,15 @@ namespace BestChat.GUI
 	/// <summary>
 	/// Interaction logic for MainWnd.xaml
 	/// </summary>
-	public partial class MainWnd : System.Windows.Window
+	public partial class MainWnd : System.Windows.Window, System.ComponentModel.INotifyPropertyChanged
 	{
 		public MainWnd() => InitializeComponent();
 
 		private static PrefsWnd? prefsDlg = null;
 		private static IRC.Global.View.NetworkListDlg? networkListDlg = null;
 		private static IRC.Global.View.BncListEditor? bncListEditor = null;
+
+		public event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
 
 		private void OnIrcNetworkListClicked(object objSender, System.Windows.RoutedEventArgs e)
 		{
@@ -90,6 +92,21 @@ namespace BestChat.GUI
 			[10] = 2,
 		};
 
+		public System.Windows.GridLength ExtendedToolBarRowTwoHeight
+		{
+			get
+			{
+				if(tbExtended == null || chkExtendedToolBarShow == null)
+					System.Diagnostics.Debug.WriteLine("Nulls");
+				else
+					System.Diagnostics.Debug.WriteLine($"Extended: {tbExtended.IsMouseDirectlyOver}\tCheckbox: {chkExtendedToolBarShow.IsChecked}");
+				return tbExtended !=
+			null && chkExtendedToolBarShow != null && (tbExtended
+			.IsMouseDirectlyOver || chkExtendedToolBarShow.IsChecked == true) ? System.Windows.GridLength.Auto :
+			new(0);
+			}
+		}
+
 		private void OnPrefsDlgClosed(object? objSender, System.EventArgs e) => prefsDlg = null;
 
 		private void OnNetworkListDlgClosed(object? objSender, System.EventArgs e) => networkListDlg = null;
@@ -114,9 +131,22 @@ namespace BestChat.GUI
 			}
 		}
 
-		private void OnFileIrcBouncerListClicked(object sender, System.Windows.RoutedEventArgs e)
+		private void OnFileIrcBouncerListClicked(object objSender, System.Windows.RoutedEventArgs e)
 		{
 
 		}
+
+
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused " +
+			"parameter", Justification = "Signature must match what's provided by Microsoft")]
+		private void OnExtendedToolBarMouseDirectlyOverChanged(object objSender, System.Windows
+			.DependencyPropertyChangedEventArgs e) => PropertyChanged?.Invoke(this, new
+			(nameof(ExtendedToolBarRowTwoHeight)));
+
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused " +
+			"parameter", Justification = "Signature must match what's provided by Microsoft")]
+		private void OnUserChangedIfExtendedToolBarShouldBePinned(object objSender, System.Windows
+			.RoutedEventArgs e) => PropertyChanged?.Invoke(this, new
+			(nameof(ExtendedToolBarRowTwoHeight)));
 	}
 }

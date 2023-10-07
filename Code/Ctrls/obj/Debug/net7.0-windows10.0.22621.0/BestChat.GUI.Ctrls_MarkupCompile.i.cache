@@ -16,5 +16,5 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 215-5818672
 DropMenuBtn.xaml;FileBrowserCtrl.xaml;FolderBrowserCtrl.xaml;FontSelectionComboBox.xaml;FontWeightComboBox.xaml;IntegerUpDown.xaml;ResetPrefBtn.xaml;ShowHelpBtn.xaml;Themes\Generic.xaml;
 
-False
+True
 
