@@ -1,0 +1,13 @@
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\bin\Release\net7.0-windows10.0.22621.0\BestChat.Platform.HttpClientOwner.deps.json
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\bin\Release\net7.0-windows10.0.22621.0\BestChat.Platform.HttpClientOwner.dll
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\bin\Release\net7.0-windows10.0.22621.0\BestChat.Platform.HttpClientOwner.pdb
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\bin\Release\net7.0-windows10.0.22621.0\BestChat.Platform.HttpClientOwner.xml
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\obj\Release\net7.0-windows10.0.22621.0\Platform.HttpClientOwner.GeneratedMSBuildEditorConfig.editorconfig
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\obj\Release\net7.0-windows10.0.22621.0\Platform.HttpClientOwner.AssemblyInfoInputs.cache
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\obj\Release\net7.0-windows10.0.22621.0\Platform.HttpClientOwner.AssemblyInfo.cs
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\obj\Release\net7.0-windows10.0.22621.0\Platform.HttpClientOwner.csproj.CoreCompileInputs.cache
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\obj\Release\net7.0-windows10.0.22621.0\BestChat.Platform.HttpClientOwner.dll
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\obj\Release\net7.0-windows10.0.22621.0\refint\BestChat.Platform.HttpClientOwner.dll
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\obj\Release\net7.0-windows10.0.22621.0\BestChat.Platform.HttpClientOwner.xml
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\obj\Release\net7.0-windows10.0.22621.0\BestChat.Platform.HttpClientOwner.pdb
+B:\Contents\Best Chat\Code\Platform\Platform.HttpClientOwner\obj\Release\net7.0-windows10.0.22621.0\ref\BestChat.Platform.HttpClientOwner.dll

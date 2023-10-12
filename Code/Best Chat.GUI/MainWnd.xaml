@@ -131,7 +131,6 @@
 				Grid.Column="4">
 				<Grid
 					x:Name="tbExtended"
-					Visibility="{Binding ExtendedToolBarRowTwoHeight, ElementName=window, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
 					DockPanel.Dock="Bottom"
 					IsMouseDirectlyOverChanged="OnExtendedToolBarMouseDirectlyOverChanged">
 					<Grid.ColumnDefinitions>
@@ -181,6 +180,7 @@
 							Width="4" />
 						<ColumnDefinition
 							Width="Auto" />
+						<ColumnDefinition />
 					</Grid.ColumnDefinitions>
 					<Grid.RowDefinitions>
 						<RowDefinition
@@ -191,7 +191,7 @@
 					<Separator
 						VerticalContentAlignment="Center"
 						HorizontalContentAlignment="Stretch"
-						Grid.ColumnSpan="24"
+						Grid.ColumnSpan="25"
 						Height="1" />
 					<CheckBox
 						x:Name="chkExtendedToolBarShow"
@@ -350,6 +350,257 @@
 						Grid.Row="2"
 						Style="{StaticResource ResourceKey={x:Static ToolBar.ButtonStyleKey}}"
 						Visibility="{CalcBinding:Binding IsChecked, ElementName=chkInputExpander}" />
+				</Grid>
+				<Grid
+					DockPanel.Dock="Top">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="Auto" />
+					</Grid.RowDefinitions>
+					<Label
+						Content="Topic: " />
+					<TextBox
+						x:Name="editTopic"
+						Grid.Column="2"
+						ToolTip="{Binding Text, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, RelativeSource={RelativeSource Self}}"
+						TextWrapping="Wrap"
+						IsReadOnly="{Binding IsChecked, ElementName=chkTopicLockMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" />
+					<CheckBox
+						x:Name="chkModes"
+						Content="Modes"
+						Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}"
+						ToolTip="Displays a window where you can change or view the channel's modes."
+						Grid.Column="4" />
+					<Ctrls:DropMenuBtn
+						x:Name="dbtnLists"
+						Ctnts="Lists"
+						Grid.Column="6">
+						<Ctrls:DropMenuBtn.Menu>
+							<ContextMenu>
+								<MenuItem
+									Header="Ops…" />
+								<MenuItem
+									Header="Quiet…" />
+								<MenuItem
+									Header="Exemptions…" />
+								<MenuItem
+									Header="Invite Exemptions…" />
+							</ContextMenu>
+						</Ctrls:DropMenuBtn.Menu>
+					</Ctrls:DropMenuBtn>
+				</Grid>
+				<Grid
+					DockPanel.Dock="Top"
+					Visibility="{CalcBinding:Binding IsChecked, ElementName=chkModes, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+					VerticalAlignment="Center">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="8" />
+						<RowDefinition
+							Height="Auto" />
+					</Grid.RowDefinitions>
+					<Separator
+						VerticalAlignment="Center" />
+					<WrapPanel
+						Grid.Row="1">
+						<CheckBox
+							x:Name="chkStripColorsMode"
+							Content="c"
+							ToolTip="This mode causes colors to be stripped"
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+						<CheckBox
+							x:Name="chkNoOutsideMsgMode"
+							Content="n"
+							ToolTip="This mode prevents messages from being set from outisde the channel.  When set, users or bots must be in the channel to post."
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+						<CheckBox
+							x:Name="chkTopicLockMode"
+							Content="t"
+							ToolTip="This mode prevents changes to the topic by users who aren't ops or half ops.  Note: Services like ChanServ or Q may prevent such topic changes even if this mode is off."
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+						<CheckBox
+							x:Name="chkInviteOnlyMode"
+							Content="i"
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}">
+							<CheckBox.ToolTip>
+								<TextBlock
+									TextWrapping="Wrap">This mode causes the channel to be invite only.  People must get an invite via either the ChanServ/Q's invite function or the <Span
+										Style="{DynamicResource FixedWidthHilight}">/invite</Span> command.</TextBlock>
+							</CheckBox.ToolTip>
+						</CheckBox>
+						<CheckBox
+							x:Name="chkModMode"
+							Content="m"
+							ToolTip="When this mode is on, only users with op, half-op, or voice may talk in the channel."
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+						<CheckBox
+							x:Name="chkSecretMode"
+							Content="s"
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}">
+							<CheckBox.ToolTip>
+								<TextBlock
+									TextWrapping="Wrap">If this mode is set, the channel won't be listed in <Span
+										Style="{DynamicResource FixedWidthHilight}">/whois</Span> or <Span
+										Style="{DynamicResource FixedWidthHilight}">/list</Span></TextBlock>
+							</CheckBox.ToolTip>
+						</CheckBox>
+						<CheckBox
+							x:Name="chkPrivateMode"
+							Content="p"
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}">
+							<CheckBox.ToolTip>
+								<TextBlock
+									TextWrapping="Wrap">Private channels disable
+								<Span
+										Style="{DynamicResource FixedWidthHilight}">/knock</Span></TextBlock></CheckBox.ToolTip>
+						</CheckBox>
+						<CheckBox
+							x:Name="chkRegisteredOnlyMode"
+							Content="r"
+							ToolTip="This mode, when set, prevents users who aren't registered from joining.  If you set this, be sure to set a forwarding location with 'f'."
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+						<CheckBox
+							x:Name="chkBlockMsgFromUnregisteredMode"
+							Content="R"
+							ToolTip="Prevents users who aren't registered from posting.  Unlike the 'r' mode, 'R' allows the user to join, but not post.  The network administrator has to make this available."
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+						<CheckBox
+							x:Name="chkFreeInviteMode"
+							Content="g"
+							ToolTip="This mode allows anyone to issue an invite.  This weakens +i.  However, remember, anyone with a link or the channel name can join unless the channel is +i or has a key (+k)."
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+						<CheckBox
+							x:Name="chkUnfilteredMode"
+							Content="u"
+							ToolTip="This mode causes the network to disable filtering of messages for this channel.  Use with care and only if you think messages are being blocked that shouldn't be.   The network administrator has to make this available."
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+						<CheckBox
+							x:Name="chkOpModMode"
+							Content="z"
+							ToolTip="When this mode is set, all posts from anyone without voice or op privileges are sent to ops instead of the channel as a whole."
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+						<CheckBox
+							x:Name="chkFreeTargetMode"
+							Content="F"
+							ToolTip="Designates this channel as a “Free Target”.  When set, anyone can set this channel as a forward from their channel with 'f'.  Otherwise, users must be an op here first."
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+						<CheckBox
+							x:Name="chkDisableForwardMode"
+							Content="Q"
+							ToolTip="When set, this mode prevents all forwarding to this channel except when override by 'F'."
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+						<CheckBox
+							x:Name="chkDisableCtcpMode"
+							Content="C"
+							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}">
+							<CheckBox.ToolTip>
+								<TextBlock>Prevents use of all CTCP commands except <Span
+										Style="{DynamicResource FixedWidthHilight}">ACTION</Span>.</TextBlock>
+							</CheckBox.ToolTip>
+						</CheckBox>
+						<StackPanel
+							Orientation="Horizontal">
+							<CheckBox
+								x:Name="chkForwardMode"
+								Content="f"
+								ToolTip="Forwards users who can't join to another channel.  This can be because of +i, +j, +l, or +r."
+								Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}"
+								Margin="0,0,4,0" />
+							<Label
+								Content="Destination: "
+								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkForwardMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+								ToolTip="{Binding ToolTip, ElementName=editChanToForwardTo}" />
+							<TextBox
+								x:Name="editChanToForwardTo"
+								MinWidth="70"
+								ToolTip="Enter the name of the channel you want the forward to go to."
+								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkForwardMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" />
+						</StackPanel>
+						<StackPanel
+							Orientation="Horizontal">
+							<CheckBox
+								x:Name="chkJoinThrottleMode"
+								Content="j"
+								ToolTip="Used to prevent flooding of new users in a given amount of time."
+								Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+							<Label
+								Content="Rate: "
+								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkJoinThrottleMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+								ToolTip="{Binding ToolTip, ElementName=iudJoinThrottleLimit}" />
+							<Ctrls:IntegerUpDown
+								x:Name="iudJoinThrottleLimit"
+								ToolTip="Enter the maximum number of allowed users for the time amount."
+								Minimum="1"
+								Value="1"
+								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkJoinThrottleMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" />
+							<Label
+								Content="Reset time: "
+								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkJoinThrottleMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+								ToolTip="{Binding ToolTip, ElementName=iudJoinThrottleResetTime}" />
+							<Ctrls:IntegerUpDown
+								x:Name="iudJoinThrottleResetTime"
+								ToolTip="Select how long the channel should wait before assuming the join flood has ended.  This is measured in seconds."
+								Minimum="1"
+								Value="1"
+								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkJoinThrottleMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" />
+							<Label
+								Content="seconds"
+								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkJoinThrottleMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+								ToolTip="{Binding ToolTip, ElementName=iudJoinThrottleResetTime}" />
+						</StackPanel>
+						<StackPanel
+							Orientation="Horizontal">
+							<CheckBox
+								x:Name="chkKeyMode"
+								Content="k"
+								ToolTip="Setting a key requires anyone who wants to join to enter a key in order to join."
+								Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+							<Label
+								Content="Key: "
+								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkKeyMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+								ToolTip="{Binding ToolTip, ElementName=editKeyForChan}" />
+							<TextBox
+								x:Name="editKeyForChan"
+								ToolTip="Enter the key for this channel"
+								MinWidth="70" 
+								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkKeyMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" />
+						</StackPanel>
+						<StackPanel Orientation="Horizontal">
+							<CheckBox
+								x:Name="chkLimitMode"
+								Content="l"
+								ToolTip="Imposes a maximum number of people in the channel"
+								Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+							<Label
+								Content="Limit: "
+								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkLimitMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+								ToolTip="{Binding ToolTip, ElementName=iudLimitOfUsersForChan}" />
+							<Ctrls:IntegerUpDown
+								x:Name="iudLimitOfUsersForChan"
+								ToolTip="Enter the maximum users in this channel" 
+								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkLimitMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+								Minimum="1"
+								Value="1" />
+						</StackPanel>
+					</WrapPanel>
 				</Grid>
 				<Border
 					Background="Black" />

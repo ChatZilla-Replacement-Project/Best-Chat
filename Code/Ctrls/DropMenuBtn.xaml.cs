@@ -220,7 +220,7 @@ namespace BestChat.GUI.Ctrls
 			{
 				if(Menu != null)
 				{
-					System.Windows.Data.Binding binding = new("Menu.IsOpen")
+					System.Windows.Data.Binding binding = new("IsOpen")
 					{
 						Source = Menu,
 						NotifyOnSourceUpdated = true,

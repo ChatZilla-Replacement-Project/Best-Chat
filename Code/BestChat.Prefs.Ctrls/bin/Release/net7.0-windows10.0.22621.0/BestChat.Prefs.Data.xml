@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BestChat.Prefs.Data</name>
+    </assembly>
+    <members>
+        <member name="T:BestChat.Prefs.Data.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strDefQuitMsg">
+            <summary>
+              Looks up a localized string similar to Best Chat user {1} has left {2}..
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnAutoReconnectName">
+            <summary>
+              Looks up a localized string similar to Reconnect when disconnected unexpectedly.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnAutoReconnectToolTipText">
+            <summary>
+              Looks up a localized string similar to When your connection is lost unexpectedly, Best Chat can automatically reconnect to the server for you..
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnCharEncodingName">
+            <summary>
+              Looks up a localized string similar to C_haracter Encoding.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnCharEncodingToolTipName">
+            <summary>
+              Looks up a localized string similar to For multiple clients to correctly read messages with non-ASCII characters on IRC, they need to use the same character encoding..
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnDefQuitMsgName">
+            <summary>
+              Looks up a localized string similar to Default Quit _Message.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnDefQuitMsgToolTipText">
+            <summary>
+              Looks up a localized string similar to Specifies a default quit message to use when on is not explicitly specified for a network or via the /quit command..
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnEnableIdentName">
+            <summary>
+              Looks up a localized string similar to Enable _Identification Server during connection process.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnEnableIdentToolTipText">
+            <summary>
+              Looks up a localized string similar to Allows Best Chat to connect to servers that require an ident response.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnMaxAttemptsName">
+            <summary>
+              Looks up a localized string similar to Maximum Connection _Attempts:.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnMaxAttemptsToolTipText">
+            <summary>
+              Looks up a localized string similar to This is number of times Best Chat attempts to connect to a server or network.  A value of 1 means Best Chat will never attempt to reconnect to the server..
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnName">
+            <summary>
+              Looks up a localized string similar to _Connection.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnRejoinAfterKickName">
+            <summary>
+              Looks up a localized string similar to R_ejoin when kicked.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnRejoinAfterKickToolTipText">
+            <summary>
+              Looks up a localized string similar to If this is turned on, Best Chat will try (only once) to rejoin a channel you got kicked from.  Note: Some channels dislike auto-rejoin and will ban you.  So be careful..
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnToolTipText">
+            <summary>
+              Looks up a localized string similar to These preferences affect how Best Chat connects to the Internet..
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnUnlimitedAttemptsName">
+            <summary>
+              Looks up a localized string similar to Unlimited Attempts?.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralConnUnlimitedAttemptsToolTipText">
+            <summary>
+              Looks up a localized string similar to If checked, Best Chat will attempt to reconnect to any server forever.  If unchecked, the limit will be to the right..
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralName">
+            <summary>
+              Looks up a localized string similar to _General.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalGeneralToolTipText">
+            <summary>
+              Looks up a localized string similar to Many preferences that don&apos;t have anywhere else go here..
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalName">
+            <summary>
+              Looks up a localized string similar to _Global.
+            </summary>
+        </member>
+        <member name="P:BestChat.Prefs.Data.Resources.strGlobalNameToolTipText">
+            <summary>
+              Looks up a localized string similar to These preferences affect the entire application..
+            </summary>
+        </member>
+    </members>
+</doc>

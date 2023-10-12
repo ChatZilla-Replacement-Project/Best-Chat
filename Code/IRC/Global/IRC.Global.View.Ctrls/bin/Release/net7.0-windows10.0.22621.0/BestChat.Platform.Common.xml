@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BestChat.Platform.Common</name>
+    </assembly>
+    <members>
+        <member name="T:BestChat.Platform.Common.IDieable">
+            <summary>
+            Provides a way to inform interested callers that the sender isn't valid any more and should be discarded.
+            </summary>
+        </member>
+        <member name="T:BestChat.Platform.Common.IDieable.OnDieing">
+            <summary>
+            Tells the caller the object is going away.
+            </summary>
+            <param name="dieing">Which object is dieing</param>
+        </member>
+        <member name="E:BestChat.Platform.Common.IDieable.evtDieing">
+            <summary>
+            Fired when the object is dieing
+            </summary>
+        </member>
+    </members>
+</doc>

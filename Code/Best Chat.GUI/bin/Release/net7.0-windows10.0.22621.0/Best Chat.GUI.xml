@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Best Chat.GUI</name>
+    </assembly>
+    <members>
+        <member name="T:BestChat.GUI.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:BestChat.GUI.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:BestChat.GUI.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:BestChat.GUI.MainWnd">
+            <summary>
+            Interaction logic for MainWnd.xaml
+            </summary>
+            <summary>
+            MainWnd
+            </summary>
+        </member>
+        <member name="M:BestChat.GUI.MainWnd.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:BestChat.GUI.PrefsWnd">
+            <summary>
+            Interaction logic for PrefsWnd.xaml
+            </summary>
+            <summary>
+            PrefsWnd
+            </summary>
+        </member>
+        <member name="M:BestChat.GUI.PrefsWnd.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

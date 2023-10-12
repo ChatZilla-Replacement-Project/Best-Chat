@@ -1,0 +1,15 @@
+B:\Contents\Best Chat\Code\Platform\Util.Ext\bin\Release\net7.0-windows\Util.Ext.deps.json
+B:\Contents\Best Chat\Code\Platform\Util.Ext\bin\Release\net7.0-windows\Util.Ext.dll
+B:\Contents\Best Chat\Code\Platform\Util.Ext\bin\Release\net7.0-windows\Util.Ext.pdb
+B:\Contents\Best Chat\Code\Platform\Util.Ext\bin\Release\net7.0-windows\Util.Collections.dll
+B:\Contents\Best Chat\Code\Platform\Util.Ext\bin\Release\net7.0-windows\Util.Collections.pdb
+B:\Contents\Best Chat\Code\Platform\Util.Ext\obj\Release\net7.0-windows\Util.Ext.csproj.AssemblyReference.cache
+B:\Contents\Best Chat\Code\Platform\Util.Ext\obj\Release\net7.0-windows\Util.Ext.GeneratedMSBuildEditorConfig.editorconfig
+B:\Contents\Best Chat\Code\Platform\Util.Ext\obj\Release\net7.0-windows\Util.Ext.AssemblyInfoInputs.cache
+B:\Contents\Best Chat\Code\Platform\Util.Ext\obj\Release\net7.0-windows\Util.Ext.AssemblyInfo.cs
+B:\Contents\Best Chat\Code\Platform\Util.Ext\obj\Release\net7.0-windows\Util.Ext.csproj.CoreCompileInputs.cache
+B:\Contents\Best Chat\Code\Platform\Util.Ext\obj\Release\net7.0-windows\Util.Ext.csproj.CopyComplete
+B:\Contents\Best Chat\Code\Platform\Util.Ext\obj\Release\net7.0-windows\Util.Ext.dll
+B:\Contents\Best Chat\Code\Platform\Util.Ext\obj\Release\net7.0-windows\refint\Util.Ext.dll
+B:\Contents\Best Chat\Code\Platform\Util.Ext\obj\Release\net7.0-windows\Util.Ext.pdb
+B:\Contents\Best Chat\Code\Platform\Util.Ext\obj\Release\net7.0-windows\ref\Util.Ext.dll
