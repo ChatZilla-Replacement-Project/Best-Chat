@@ -1,0 +1,490 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0-windows10.0.22621": {
+      "CalcBinding/2.5.2": {
+        "type": "package",
+        "dependencies": {
+          "DynamicExpresso.Core": "2.3.1"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/CalcBinding.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/CalcBinding.dll": {}
+        }
+      },
+      "DynamicExpresso.Core/2.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/DynamicExpresso.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DynamicExpresso.Core.dll": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "BestChat.GUI.Ctrls/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "BestChat.Util.Ext.WPF": "1.0.0",
+          "CalcBinding": "2.5.2",
+          "Util": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BestChat.GUI.Ctrls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.GUI.Ctrls.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "BestChat.IRC.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "BestChat.Platform.Common": "1.0.0",
+          "BestChat.Platform.Data": "1.0.0",
+          "BestChat.Platform.DataLoc": "1.0.0",
+          "BestChat.Platform.HttpClientOwner": "1.0.0",
+          "IRC.ModuleInterfaces": "1.0.0",
+          "Newtonsoft.Json": "13.0.3",
+          "Util": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BestChat.IRC.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.IRC.Data.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "BestChat.IRC.Global.View/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "BestChat.IRC.Data": "1.0.0",
+          "BestChat.IRC.Global.View.Ctrls": "1.0.0",
+          "CalcBinding": "2.5.2",
+          "Util.Ext": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BestChat.IRC.Global.View.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.IRC.Global.View.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "BestChat.IRC.Global.View.Ctrls/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "BestChat.GUI.Ctrls": "1.0.0",
+          "BestChat.IRC.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BestChat.IRC.Global.View.Ctrls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.IRC.Global.View.Ctrls.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "BestChat.Platform.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BestChat.Platform.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.Platform.Common.dll": {}
+        }
+      },
+      "BestChat.Platform.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BestChat.Platform.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.Platform.Data.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "BestChat.Platform.DataLoc/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BestChat.Platform.DataLoc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.Platform.DataLoc.dll": {}
+        }
+      },
+      "BestChat.Platform.HttpClientOwner/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BestChat.Platform.HttpClientOwner.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.Platform.HttpClientOwner.dll": {}
+        }
+      },
+      "BestChat.Platform.Prefs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "BestChat.Platform.Data": "1.0.0",
+          "CalcBinding": "2.5.2",
+          "Util.Ext": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BestChat.Platform.Prefs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.Platform.Prefs.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "BestChat.Prefs.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "BestChat.Platform.DataLoc": "1.0.0",
+          "BestChat.Platform.Prefs": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BestChat.Prefs.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.Prefs.Data.dll": {}
+        }
+      },
+      "BestChat.Util.Ext.WPF/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BestChat.Util.Ext.WPF.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestChat.Util.Ext.WPF.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
+      "IRC.ModuleInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/IRC.ModuleInterfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IRC.ModuleInterfaces.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Util/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Util.Ext": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Util.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Util.Collections/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Util.Collections.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.Collections.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Util.Ext/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Util.Collections": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Util.Ext.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.Ext.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "CalcBinding/2.5.2": {
+      "sha512": "hbMnS12GUmWTFVROhKJMAQNv5Cqx+AjVGOGGjUOidEaRQ5oGr87PCZih5kfEA/8qlRMzpBsMPQ0fiOahPWwmXQ==",
+      "type": "package",
+      "path": "calcbinding/2.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "calcbinding.2.5.2.nupkg.sha512",
+        "calcbinding.nuspec",
+        "lib/net40/CalcBinding.dll",
+        "lib/net45/CalcBinding.dll",
+        "lib/netcoreapp3.0/CalcBinding.dll"
+      ]
+    },
+    "DynamicExpresso.Core/2.3.1": {
+      "sha512": "gAoOdAA7KypwC2aEWbm72ZcNj9ERn0GBrFyFrLm9tRZGd+z1rgnKlh+BtWJi9X32ldzOwItY/Ty5ao6CqbG5ig==",
+      "type": "package",
+      "path": "dynamicexpresso.core/2.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dynamicexpresso.core.2.3.1.nupkg.sha512",
+        "dynamicexpresso.core.nuspec",
+        "lib/net45/DynamicExpresso.Core.dll",
+        "lib/net461/DynamicExpresso.Core.dll",
+        "lib/netstandard2.0/DynamicExpresso.Core.dll"
+      ]
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "BestChat.GUI.Ctrls/1.0.0": {
+      "type": "project",
+      "path": "../Ctrls/BestChat.GUI.Ctrls.csproj",
+      "msbuildProject": "../Ctrls/BestChat.GUI.Ctrls.csproj"
+    },
+    "BestChat.IRC.Data/1.0.0": {
+      "type": "project",
+      "path": "../IRC/Data/IRC.Data.csproj",
+      "msbuildProject": "../IRC/Data/IRC.Data.csproj"
+    },
+    "BestChat.IRC.Global.View/1.0.0": {
+      "type": "project",
+      "path": "../IRC/Global/View/IRC.Global.View.csproj",
+      "msbuildProject": "../IRC/Global/View/IRC.Global.View.csproj"
+    },
+    "BestChat.IRC.Global.View.Ctrls/1.0.0": {
+      "type": "project",
+      "path": "../IRC/Global/IRC.Global.View.Ctrls/IRC.Global.View.Ctrls.csproj",
+      "msbuildProject": "../IRC/Global/IRC.Global.View.Ctrls/IRC.Global.View.Ctrls.csproj"
+    },
+    "BestChat.Platform.Common/1.0.0": {
+      "type": "project",
+      "path": "../Platform/Common/Platform.Common.csproj",
+      "msbuildProject": "../Platform/Common/Platform.Common.csproj"
+    },
+    "BestChat.Platform.Data/1.0.0": {
+      "type": "project",
+      "path": "../Platform/Data/Platform.Data.csproj",
+      "msbuildProject": "../Platform/Data/Platform.Data.csproj"
+    },
+    "BestChat.Platform.DataLoc/1.0.0": {
+      "type": "project",
+      "path": "../Platform/Platform.DataLoc/Platform.DataLoc.csproj",
+      "msbuildProject": "../Platform/Platform.DataLoc/Platform.DataLoc.csproj"
+    },
+    "BestChat.Platform.HttpClientOwner/1.0.0": {
+      "type": "project",
+      "path": "../Platform/Platform.HttpClientOwner/Platform.HttpClientOwner.csproj",
+      "msbuildProject": "../Platform/Platform.HttpClientOwner/Platform.HttpClientOwner.csproj"
+    },
+    "BestChat.Platform.Prefs/1.0.0": {
+      "type": "project",
+      "path": "../Platform/Platform.Prefs/Platform.Prefs.csproj",
+      "msbuildProject": "../Platform/Platform.Prefs/Platform.Prefs.csproj"
+    },
+    "BestChat.Prefs.Data/1.0.0": {
+      "type": "project",
+      "path": "../BestChat.Prefs.Data/BestChat.Prefs.Data.csproj",
+      "msbuildProject": "../BestChat.Prefs.Data/BestChat.Prefs.Data.csproj"
+    },
+    "BestChat.Util.Ext.WPF/1.0.0": {
+      "type": "project",
+      "path": "../Platform/Util.Ext.WPF/Util.Ext.WPF.csproj",
+      "msbuildProject": "../Platform/Util.Ext.WPF/Util.Ext.WPF.csproj"
+    },
+    "IRC.ModuleInterfaces/1.0.0": {
+      "type": "project",
+      "path": "../IRC/ModuleInterfaces/IRC.ModuleInterfaces.csproj",
+      "msbuildProject": "../IRC/ModuleInterfaces/IRC.ModuleInterfaces.csproj"
+    },
+    "Util/1.0.0": {
+      "type": "project",
+      "path": "../Platform/Util/Util.csproj",
+      "msbuildProject": "../Platform/Util/Util.csproj"
+    },
+    "Util.Collections/1.0.0": {
+      "type": "project",
+      "path": "../Platform/Util.Collections/Util.Collections.csproj",
+      "msbuildProject": "../Platform/Util.Collections/Util.Collections.csproj"
+    },
+    "Util.Ext/1.0.0": {
+      "type": "project",
+      "path": "../Platform/Util.Ext/Util.Ext.csproj",
+      "msbuildProject": "../Platform/Util.Ext/Util.Ext.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0-windows10.0.22621": [
+      "BestChat.GUI.Ctrls >= 1.0.0",
+      "BestChat.IRC.Global.View >= 1.0.0",
+      "BestChat.Platform.Prefs >= 1.0.0",
+      "BestChat.Prefs.Data >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\willp\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "B:\\Contents\\Best Chat\\Code\\BestChat.Prefs.Ctrls\\BestChat.Prefs.Ctrls.csproj",
+      "projectName": "BestChat.Prefs.Ctrls",
+      "projectPath": "B:\\Contents\\Best Chat\\Code\\BestChat.Prefs.Ctrls\\BestChat.Prefs.Ctrls.csproj",
+      "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
+      "outputPath": "B:\\Contents\\Best Chat\\Code\\BestChat.Prefs.Ctrls\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0-windows10.0.22621.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0-windows10.0.22621": {
+          "targetAlias": "net7.0-windows10.0.22621.0",
+          "projectReferences": {
+            "B:\\Contents\\Best Chat\\Code\\BestChat.Prefs.Data\\BestChat.Prefs.Data.csproj": {
+              "projectPath": "B:\\Contents\\Best Chat\\Code\\BestChat.Prefs.Data\\BestChat.Prefs.Data.csproj"
+            },
+            "B:\\Contents\\Best Chat\\Code\\Ctrls\\BestChat.GUI.Ctrls.csproj": {
+              "projectPath": "B:\\Contents\\Best Chat\\Code\\Ctrls\\BestChat.GUI.Ctrls.csproj"
+            },
+            "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\View\\IRC.Global.View.csproj": {
+              "projectPath": "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\View\\IRC.Global.View.csproj"
+            },
+            "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.Prefs\\Platform.Prefs.csproj": {
+              "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.Prefs\\Platform.Prefs.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0-windows10.0.22621": {
+        "targetAlias": "net7.0-windows10.0.22621.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.Windows.SDK.NET.Ref",
+            "version": "[10.0.22621.29, 10.0.22621.29]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.Windows.SDK.NET.Ref": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

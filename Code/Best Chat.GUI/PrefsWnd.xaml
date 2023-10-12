@@ -6,6 +6,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
 	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
+	xmlns:IrcView="clr-namespace:BestChat.IRC.Global.View;assembly=BestChat.IRC.Global.View"
 	xmlns:local="clr-namespace:BestChat.GUI"
 	mc:Ignorable="d"
 	Title="Best Chat (GUI Mode) Preferences"
@@ -159,10 +160,6 @@
 												<ColumnDefinition
 													Width="4" />
 												<ColumnDefinition
-													Width="Auto" />
-												<ColumnDefinition
-													Width="4" />
-												<ColumnDefinition
 													Width="Auto"
 													MinWidth="100" />
 												<ColumnDefinition
@@ -172,17 +169,7 @@
 												<RowDefinition
 													Height="Auto" />
 												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
 													Height="4" />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
-													Height="4" />
-												<RowDefinition
-													Height="Auto" />
 												<RowDefinition
 													Height="Auto" />
 												<RowDefinition
@@ -190,212 +177,126 @@
 												<RowDefinition
 													Height="Auto" />
 												<RowDefinition
+													Height="4" />
+												<RowDefinition
 													Height="Auto" />
 												<RowDefinition
 													Height="4" />
 												<RowDefinition
 													Height="Auto" />
 												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
 													Height="4" />
 												<RowDefinition
 													Height="Auto" />
 												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
 													Height="4" />
-												<RowDefinition
-													Height="Auto" />
 												<RowDefinition
 													Height="Auto" />
 											</Grid.RowDefinitions>
 											<Ctrls:ResetPrefBtn
 												x:Name="btnGeneralConnectionEnableIdentServerReset" />
-											<Ctrls:ShowHelpBtn
-												x:Name="chkGeneralConnectionEnableIdentServerHelp"
-												Grid.Column="2" />
 											<CheckBox
 												x:Name="chkGeneralConnectionEnableIdentServer"
 												Content="Enable _Identification Server during connection process"
 												Grid.ColumnSpan="6"
 												ToolTip="Allows Best Chat to connect to servers that require an ident response"
-												Grid.Column="4" />
-											<RichTextBox
-												Grid.ColumnSpan="10"
-												Grid.Row="1"
-												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionEnableIdentServerHelp, NotifyOnSourceUpdated=True}"
-												Style="{DynamicResource HelpText}">
-												<FlowDocument>
-													<Paragraph>Allows Best Chat to connect to servers that require an ident response</Paragraph>
-												</FlowDocument>
-											</RichTextBox>
+												Grid.Column="2" />
 											<Ctrls:ResetPrefBtn
 												x:Name="btnGeneralConnectionReconnect"
-												Grid.Row="3" />
-											<Ctrls:ShowHelpBtn
-												x:Name="chkGeneralConnectionReconnectHelp"
-												Grid.Column="2"
-												Grid.Row="3" />
+												Grid.Row="2" />
 											<CheckBox
 												x:Name="chkGeneralConnectionReconnect"
 												Content="Reconnect when disconnected unexpectedly"
-												Grid.Row="3"
+												Grid.Row="2"
 												Grid.ColumnSpan="6"
-												Grid.Column="4" />
-											<RichTextBox
-												Grid.ColumnSpan="10"
-												Grid.Row="4"
-												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionReconnectHelp, NotifyOnSourceUpdated=True}"
-												Style="{DynamicResource HelpText}">
-												<FlowDocument>
-													<Paragraph>When your connection is lost unexpectedly, Best Chat can automatically reconnect to the server for you.</Paragraph>
-												</FlowDocument>
-											</RichTextBox>
+												Grid.Column="2"
+												ToolTip="When your connection is lost unexpectedly, Best Chat can automatically reconnect to the server for you."/>
 											<Ctrls:ResetPrefBtn
 												x:Name="btnGeneralConnectionAutoRejoinReset"
-												Grid.Row="6" />
-											<Ctrls:ShowHelpBtn
-												x:Name="chkGeneralConnectionAutoRejoinHelp"
-												Grid.Column="2"
-												Grid.Row="6" />
+												Grid.Row="4" />
 											<CheckBox
 												x:Name="chkGeneralConnectionAutoRejoin"
 												Content="R_ejoin when kicked"
-												Grid.Row="6"
+												Grid.Row="4"
 												Grid.ColumnSpan="6"
-												Grid.Column="4" />
-											<RichTextBox
-												Grid.ColumnSpan="10"
-												Grid.Row="7"
-												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionAutoRejoinHelp, NotifyOnSourceUpdated=True}"
-												Style="{DynamicResource HelpText}">
-												<FlowDocument>
-													<Paragraph>If this is turned on, Best Chat will try (only once) to rejoin a channel you got kicked from.  Note: Some channels dislike auto-rejoin and will ban you.  So be careful.</Paragraph>
-												</FlowDocument>
-											</RichTextBox>
+												Grid.Column="2"
+												ToolTip="If this is turned on, Best Chat will try (only once) to rejoin a channel you got kicked from.  Note: Some channels dislike auto-rejoin and will ban you.  So be careful." />
 											<Ctrls:ResetPrefBtn
 												x:Name="btnGeneralConnectionCharEncodingReset"
-												Grid.Row="9" />
-											<Ctrls:ShowHelpBtn
-												x:Name="chkGeneralConnectionCharEncodingHelp"
-												Grid.Column="2"
-												Grid.Row="9" />
+												Grid.Row="6" />
 											<Label
-												Content="C_haracter Encoding:"
-												Grid.Row="9"
+												Content="C_haracter Encoding: "
+												Grid.Row="6"
 												HorizontalContentAlignment="Right"
 												VerticalContentAlignment="Center"
-												Grid.Column="4" />
+												Grid.Column="2" />
 											<TextBox
 												x:Name="editGeneralConnectionCharEncoding"
-												Grid.Row="9"
-												Grid.Column="6"
-												Grid.ColumnSpan="4" />
-											<RichTextBox
-												Grid.ColumnSpan="10"
-												Grid.Row="10"
-												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionCharEncodingHelp, NotifyOnSourceUpdated=True}"
-												Style="{DynamicResource HelpText}">
-												<FlowDocument>
-													<Paragraph>For multiple clients to correctly read messages with non-ASCII characters on IRC, they need to use the same character encoding.</Paragraph>
-												</FlowDocument>
-											</RichTextBox>
+												Grid.Row="6"
+												Grid.Column="4"
+												Grid.ColumnSpan="4"
+												ToolTip="For multiple clients to correctly read messages with non-ASCII characters on IRC, they need to use the same character encoding." />
 											<Ctrls:ResetPrefBtn
-												x:Name="btnGeneralConnectionAttemptLimitReset"
-												Grid.Row="12" />
-											<Ctrls:ShowHelpBtn
-												x:Name="chkGeneralConnectionAttemptLimitHelp"
-												Grid.Column="2"
-												Grid.Row="12" />
+												x:Name="btnMaxConnAttemptsReset"
+												Grid.Row="8" />
 											<Label
 												Content="Maximum Connection _Attempts:"
-												Grid.Row="12"
+												Grid.Row="8"
 												HorizontalContentAlignment="Right"
 												ToolTip="{Binding ToolTip, ElementName=iudMaxConnectionAttempts}"
 												VerticalContentAlignment="Center"
-												Grid.Column="4" />
+												Grid.Column="2" />
 											<CheckBox
 												x:Name="chkGeneralConnectUnlimited"
 												Content="Unlimited Attempts?"
-												Grid.Row="12"
-												Grid.Column="6"
+												Grid.Row="8"
+												Grid.Column="4"
 												VerticalContentAlignment="Center"
 												ToolTip="If checked, Best Chat will attempt to reconnect to any server forever.  If unchecked, the limit will be to the right." />
 											<Ctrls:IntegerUpDown
 												x:Name="iudMaxConnectionAttempts"
-												Grid.Row="12"
-												Grid.Column="8"
+												Grid.Row="8"
+												Grid.Column="6"
 												Minimum="1"
-												Value="1" />
-											<RichTextBox
-												Grid.ColumnSpan="10"
-												Grid.Row="13"
-												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionAttemptLimitHelp, NotifyOnSourceUpdated=True}"
-												Style="{DynamicResource HelpText}">
-												<FlowDocument>
-													<Paragraph>This is number of times Best Chat attempts to connect to a server or network.  A value of 1 means Best Chat will never attempt to reconnect to the server.</Paragraph>
-												</FlowDocument>
-											</RichTextBox>
+												Value="1"
+												ToolTip="This is number of times Best Chat attempts to connect to a server or network.  A value of 1 means Best Chat will never attempt to reconnect to the server."/>
 											<Ctrls:ResetPrefBtn
 												x:Name="btnGeneralConnectionDefQuitMsgReset"
-												Grid.Row="15" />
-											<Ctrls:ShowHelpBtn
-												x:Name="chkGeneralConnectionDefQuitMsgHelp"
-												Grid.Column="2"
-												Grid.Row="15" />
+												Grid.Row="10" />
 											<Label
 												Content="Default Quit _Message: "
-												Grid.Row="15"
+												Grid.Row="10"
 												HorizontalContentAlignment="Right"
 												VerticalContentAlignment="Center"
 												ToolTip="{Binding ToolTip, ElementName=editDefQuitMessage}"
-												Grid.Column="4" />
+												Grid.Column="2" />
 											<TextBox
 												x:Name="editDefQuitMessage"
-												Grid.Column="6"
-												Grid.Row="15"
-												Grid.ColumnSpan="4" />
-											<RichTextBox
-												Grid.ColumnSpan="10"
-												Grid.Row="16"
-												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionDefQuitMsgHelp, NotifyOnSourceUpdated=True}"
-												Style="{DynamicResource HelpText}">
-												<FlowDocument>
-													<Paragraph>Specifies a default quit message to use when on is not explicitly specified for a network or via the
-														<Span
-															FontFamily="Courier New">/quit</Span> command.
-													</Paragraph>
-												</FlowDocument>
-											</RichTextBox>
+												Grid.Column="4"
+												Grid.Row="10"
+												Grid.ColumnSpan="4">
+												<TextBox.ToolTip>
+													<TextBlock>Specifies a default quit message to use when on is not explicitly specified for a network or via the
+													<Span
+														FontFamily="Courier New">/quit</Span> command.</TextBlock>
+												</TextBox.ToolTip>
+											</TextBox>
 											<Ctrls:ResetPrefBtn
 												x:Name="btnGeneralConnectionProxyTypeReset"
-												Grid.Row="18" />
-											<Ctrls:ShowHelpBtn
-												x:Name="chkGeneralConnectionProxyTypeHelp"
-												Grid.Column="2"
-												Grid.Row="18" />
+												Grid.Row="14" />
 											<Label
 												Content="_Proxy Type: "
-												Grid.Row="18"
+												Grid.Row="14"
 												HorizontalContentAlignment="Right"
 												VerticalContentAlignment="Center"
 												ToolTip="{Binding ToolTip, ElementName=editProxyType}"
-												Grid.Column="4" />
+												Grid.Column="2" />
 											<TextBox
 												x:Name="editProxyType"
-												Grid.Row="18"
+												Grid.Row="14"
 												Grid.Column="6"
-												Grid.ColumnSpan="4" />
-											<RichTextBox
-												Grid.ColumnSpan="10"
-												Grid.Row="19"
-												Visibility="{CalcBinding:Binding IsChecked, ElementName=chkGeneralConnectionProxyTypeHelp, NotifyOnSourceUpdated=True}"
-												Style="{DynamicResource HelpText}">
-												<FlowDocument>
-													<Paragraph>Override the normal proxy choice by specifying “HTTP” to use your browser's HTTP proxy or “none” to force no proxy to be used (not even the SOCKS proxy).  Note that this usually works only when the browser is set to use a manual proxy configuration.</Paragraph>
-												</FlowDocument>
-											</RichTextBox>
+												Grid.ColumnSpan="4"
+												ToolTip="Override the normal proxy choice by specifying “HTTP” to use your browser's HTTP proxy or “none” to force no proxy to be used (not even the SOCKS proxy).  Note that this usually works only when the browser is set to use a manual proxy configuration."/>
 										</Grid>
 									</GroupBox>
 									<GroupBox
@@ -926,612 +827,6 @@
 									</GroupBox>
 								</StackPanel>
 							</ScrollViewer>
-						</TabItem>
-						<TabItem
-							Header="_Aliases"
-							IsTabStop="False">
-							<DockPanel>
-								<Grid
-									DockPanel.Dock="Right">
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition
-											Width="Auto" />
-									</Grid.ColumnDefinitions>
-									<Grid.RowDefinitions>
-										<RowDefinition />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition
-											Height="4" />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition
-											Height="4" />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition />
-									</Grid.RowDefinitions>
-									<Button
-										x:Name="btnAddAlias"
-										Content="Add…"
-										Grid.Row="1" />
-									<Button
-										x:Name="btnEditAlias"
-										Content="Edit…"
-										Grid.Row="3" />
-									<Button
-										x:Name="btnDelAlias"
-										Content="Delete"
-										Grid.Row="5" />
-								</Grid>
-								<Separator
-									Width="4"
-									DockPanel.Dock="Right" />
-								<DockPanel>
-									<RichTextBox
-										IsUndoEnabled="False"
-										AllowDrop="False"
-										IsHitTestVisible="False"
-										Focusable="False"
-										IsTabStop="False"
-										BorderThickness="0"
-										Grid.ColumnSpan="4"
-										DockPanel.Dock="Top">
-										<FlowDocument>
-											<Paragraph
-												TextIndent="20">Allows you to make shortcuts to various commands or sequences of commands.  Each item has a name and a command list.  Best Chat will turn the alias into a command when it starts.  Don't include the leading “/” in the string.  If you enter $(x) where x is a number, it will put the xth parameter to your alias in that spot.  Use $(x+) to include all parameters after the xth parameter.</Paragraph>
-										</FlowDocument>
-									</RichTextBox>
-									<Separator
-										DockPanel.Dock="Top"
-										Height="4" />
-									<DataGrid
-										AutoGenerateColumns="False">
-										<DataGrid.Columns>
-											<DataGridTextColumn
-												Header="Alias"
-												IsReadOnly="True" />
-											<DataGridTextColumn
-												Header="What it does"
-												IsReadOnly="True" />
-											<DataGridTextColumn
-												Header="Description"
-												IsReadOnly="True" />
-										</DataGrid.Columns>
-									</DataGrid>
-								</DockPanel>
-							</DockPanel>
-						</TabItem>
-						<TabItem
-							Header="Auto _Perform"
-							IsTabStop="False">
-							<TabControl
-								Focusable="False">
-								<TabItem
-									Header="When Starting Best Chat"
-									IsTabStop="False">
-									<DockPanel>
-										<Grid
-											DockPanel.Dock="Right">
-											<Grid.ColumnDefinitions>
-												<ColumnDefinition
-													Width="Auto" />
-											</Grid.ColumnDefinitions>
-											<Grid.RowDefinitions>
-												<RowDefinition />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
-													Height="4" />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
-													Height="4" />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition />
-											</Grid.RowDefinitions>
-											<Button
-												x:Name="btnAddAutoPerformOnStartUp"
-												Content="Add…"
-												Grid.Row="1" />
-											<Button
-												x:Name="btnEditAutoPerformOnStartUp"
-												Content="Edit…"
-												Grid.Row="3" />
-											<Button
-												x:Name="btnDelAutoPerformOnStartUp"
-												Content="Delete"
-												Grid.Row="5" />
-										</Grid>
-										<Separator
-											Width="4"
-											DockPanel.Dock="Right" />
-										<DockPanel>
-											<RichTextBox
-												IsUndoEnabled="False"
-												AllowDrop="False"
-												IsHitTestVisible="False"
-												Focusable="False"
-												IsTabStop="False"
-												BorderThickness="0"
-												Grid.ColumnSpan="4"
-												DockPanel.Dock="Top">
-												<FlowDocument>
-													<Paragraph
-														TextIndent="20">Enter any commands to run when joining any channel.  This can include aliases.  Don't put a “/” on the start of the string.</Paragraph>
-												</FlowDocument>
-											</RichTextBox>
-											<Separator
-												DockPanel.Dock="Top"
-												Height="4" />
-											<ListBox
-												x:Name="listAutoPerformOnStartUp"></ListBox>
-										</DockPanel>
-									</DockPanel>
-								</TabItem>
-								<TabItem
-									Header="When Joining a Network"
-									IsTabStop="False">
-									<DockPanel>
-										<Grid
-											DockPanel.Dock="Right">
-											<Grid.ColumnDefinitions>
-												<ColumnDefinition
-													Width="Auto" />
-											</Grid.ColumnDefinitions>
-											<Grid.RowDefinitions>
-												<RowDefinition />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
-													Height="4" />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
-													Height="4" />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition />
-											</Grid.RowDefinitions>
-											<Button
-												x:Name="btnAddAutoPerformOnJoinNet"
-												Content="Add…"
-												Grid.Row="1" />
-											<Button
-												x:Name="btnEditAutoPerformOnJoinNet"
-												Content="Edit…"
-												Grid.Row="3" />
-											<Button
-												x:Name="btnDelAutoPerformOnJoinNet"
-												Content="Delete"
-												Grid.Row="5" />
-										</Grid>
-										<Separator
-											Width="4"
-											DockPanel.Dock="Right" />
-										<DockPanel>
-											<RichTextBox
-												IsUndoEnabled="False"
-												AllowDrop="False"
-												IsHitTestVisible="False"
-												Focusable="False"
-												IsTabStop="False"
-												BorderThickness="0"
-												Grid.ColumnSpan="4"
-												DockPanel.Dock="Top">
-												<FlowDocument>
-													<Paragraph
-														TextIndent="20">Enter any commands to run when joining any network.  This can include aliases.  Don't put a “/” on the start of the string.</Paragraph>
-												</FlowDocument>
-											</RichTextBox>
-											<Separator
-												DockPanel.Dock="Top"
-												Height="4" />
-											<ListBox
-												x:Name="listAutoPerformOnJoinNet"></ListBox>
-										</DockPanel>
-									</DockPanel>
-								</TabItem>
-								<TabItem
-									Header="When _Joining a Channel"
-									IsTabStop="False">
-									<DockPanel>
-										<Grid
-											DockPanel.Dock="Right">
-											<Grid.ColumnDefinitions>
-												<ColumnDefinition
-													Width="Auto" />
-											</Grid.ColumnDefinitions>
-											<Grid.RowDefinitions>
-												<RowDefinition />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
-													Height="4" />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
-													Height="4" />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition />
-											</Grid.RowDefinitions>
-											<Button
-												x:Name="btnAddAutoPerformOnChanJoin"
-												Content="Add…"
-												Grid.Row="1" />
-											<Button
-												x:Name="btnEditAutoPerformOnChanJoin"
-												Content="Edit…"
-												Grid.Row="3" />
-											<Button
-												x:Name="btnDelAutoPerformOnChanJoin"
-												Content="Delete"
-												Grid.Row="5" />
-										</Grid>
-										<Separator
-											Width="4"
-											DockPanel.Dock="Right" />
-										<DockPanel>
-											<RichTextBox
-												IsUndoEnabled="False"
-												AllowDrop="False"
-												IsHitTestVisible="False"
-												Focusable="False"
-												IsTabStop="False"
-												BorderThickness="0"
-												Grid.ColumnSpan="4"
-												DockPanel.Dock="Top">
-												<FlowDocument>
-													<Paragraph
-														TextIndent="20">Enter any commands to run when joining any channel.  This can include aliases.  Don't put a “/” on the start of the string.</Paragraph>
-												</FlowDocument>
-											</RichTextBox>
-											<Separator
-												DockPanel.Dock="Top"
-												Height="4" />
-											<ListBox
-												x:Name="listAutoPerformOnChanJoin"></ListBox>
-										</DockPanel>
-									</DockPanel>
-								</TabItem>
-								<TabItem
-									Header="When Opening a User's Chat"
-									IsTabStop="False">
-									<DockPanel>
-										<Grid
-											DockPanel.Dock="Right">
-											<Grid.ColumnDefinitions>
-												<ColumnDefinition
-													Width="Auto" />
-											</Grid.ColumnDefinitions>
-											<Grid.RowDefinitions>
-												<RowDefinition />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
-													Height="4" />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition
-													Height="4" />
-												<RowDefinition
-													Height="Auto" />
-												<RowDefinition />
-											</Grid.RowDefinitions>
-											<Button
-												x:Name="btnAddAutoPerformOnUserChat"
-												Content="Add…"
-												Grid.Row="1" />
-											<Button
-												x:Name="btnEditAutoPerformOnUserChat"
-												Content="Edit…"
-												Grid.Row="3" />
-											<Button
-												x:Name="btnDelAutoPerformOnUserChat"
-												Content="Delete"
-												Grid.Row="5" />
-										</Grid>
-										<Separator
-											Width="4"
-											DockPanel.Dock="Right" />
-										<DockPanel>
-											<RichTextBox
-												IsUndoEnabled="False"
-												AllowDrop="False"
-												IsHitTestVisible="False"
-												Focusable="False"
-												IsTabStop="False"
-												BorderThickness="0"
-												Grid.ColumnSpan="4"
-												DockPanel.Dock="Top">
-												<FlowDocument>
-													<Paragraph
-														TextIndent="20">Enter any commands to run when opening the tab for a user's chat.  This can include aliases.  Don't put a “/” on the start of the string.</Paragraph>
-												</FlowDocument>
-											</RichTextBox>
-											<Separator
-												DockPanel.Dock="Top"
-												Height="4" />
-											<ListBox
-												x:Name="listAutoPerformOnUserChat"></ListBox>
-										</DockPanel>
-									</DockPanel>
-								</TabItem>
-							</TabControl>
-						</TabItem>
-						<TabItem
-							Header="Alternate Nicks"
-							IsTabStop="False">
-							<DockPanel>
-								<Grid
-									DockPanel.Dock="Right">
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition
-											Width="Auto" />
-									</Grid.ColumnDefinitions>
-									<Grid.RowDefinitions>
-										<RowDefinition />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition
-											Height="4" />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition
-											Height="20" />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition
-											Height="4" />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition
-											Height="4" />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition />
-									</Grid.RowDefinitions>
-									<Button
-										x:Name="btnMoveUpAltNick"
-										Content="Move Up ▲"
-										Grid.Row="1" />
-									<Button
-										x:Name="btnMoveDownAltNick"
-										Content="▼ Move Down"
-										Grid.Row="3" />
-									<Button
-										x:Name="btnAddAltNick"
-										Content="Add…"
-										Grid.Row="5" />
-									<Button
-										x:Name="btnEditAltNick"
-										Content="Edit…"
-										Grid.Row="7" />
-									<Button
-										x:Name="btnDelAltNick"
-										Content="Delete"
-										Grid.Row="9" />
-								</Grid>
-								<Separator
-									Width="4"
-									DockPanel.Dock="Right" />
-								<DockPanel>
-									<RichTextBox
-										IsUndoEnabled="False"
-										AllowDrop="False"
-										IsHitTestVisible="False"
-										Focusable="False"
-										IsTabStop="False"
-										BorderThickness="0"
-										Grid.ColumnSpan="4"
-										DockPanel.Dock="Top">
-										<FlowDocument>
-											<Paragraph
-												TextIndent="20">This is a list of nicknames you want Best Chat to try if the default is in use.  Your normal nick doesn't need to be included.  The order is important.</Paragraph>
-										</FlowDocument>
-									</RichTextBox>
-									<Separator
-										DockPanel.Dock="Top"
-										Height="4" />
-									<ListBox
-										x:Name="listAltNickList"></ListBox>
-								</DockPanel>
-							</DockPanel>
-						</TabItem>
-						<TabItem
-							Header="Stalk Words"
-							IsTabStop="False">
-							<DockPanel>
-								<Grid
-									DockPanel.Dock="Right">
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition
-											Width="Auto" />
-									</Grid.ColumnDefinitions>
-									<Grid.RowDefinitions>
-										<RowDefinition />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition
-											Height="4" />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition
-											Height="4" />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition />
-									</Grid.RowDefinitions>
-									<Button
-										x:Name="btnAddStalkWord"
-										Content="Add…"
-										Grid.Row="1" />
-									<Button
-										x:Name="btnEditStalkWord"
-										Content="Edit…"
-										Grid.Row="3" />
-									<Button
-										x:Name="btnDelStalkWord"
-										Content="Delete"
-										Grid.Row="5" />
-								</Grid>
-								<Separator
-									Width="4"
-									DockPanel.Dock="Right" />
-								<DockPanel>
-									<RichTextBox
-										IsUndoEnabled="False"
-										AllowDrop="False"
-										IsHitTestVisible="False"
-										Focusable="False"
-										IsTabStop="False"
-										BorderThickness="0"
-										Grid.ColumnSpan="4"
-										DockPanel.Dock="Top">
-										<FlowDocument>
-											<Paragraph
-												TextIndent="20">A list of words that will cause a line to be highlighted.  If you also turn on Aggressive Notify, Best Chat will try to get your attention.</Paragraph>
-										</FlowDocument>
-									</RichTextBox>
-									<Separator
-										DockPanel.Dock="Top"
-										Height="4" />
-									<ListBox
-										x:Name="listStalkWords"></ListBox>
-								</DockPanel>
-							</DockPanel>
-						</TabItem>
-						<TabItem
-							Header="DCC"
-							IsTabStop="False">
-							<StackPanel
-								Orientation="Vertical">
-								<Grid
-									Height="367">
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition
-											Width="Auto" />
-										<ColumnDefinition
-											Width="4" />
-										<ColumnDefinition />
-									</Grid.ColumnDefinitions>
-									<Grid.RowDefinitions>
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition
-											Height="4" />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition
-											Height="4" />
-										<RowDefinition
-											Height="Auto" />
-										<RowDefinition
-											Height="4" />
-										<RowDefinition />
-									</Grid.RowDefinitions>
-									<CheckBox
-										x:Name="chkDccEnabled"
-										Grid.ColumnSpan="3"
-										Content="Enabled" />
-									<CheckBox
-										x:Name="chkDccGetLocalIpFromServer"
-										Content="Get Local IP From Server"
-										Grid.Row="2"
-										Grid.ColumnSpan="3"
-										IsEnabled="{Binding IsChecked, ElementName=chkDccEnabled}" />
-									<Label
-										Content="Downloads Folder: "
-										Grid.Row="4"
-										HorizontalContentAlignment="Right" />
-									<Ctrls:FolderBrowserCtrl
-										Grid.Row="4"
-										Grid.Column="2"
-										IsEnabled="{Binding IsChecked, ElementName=chkDccEnabled}" />
-									<GroupBox
-										Header="Ports"
-										Grid.Row="6"
-										Grid.ColumnSpan="6">
-										<DockPanel>
-											<Grid
-												DockPanel.Dock="Right">
-												<Grid.ColumnDefinitions>
-													<ColumnDefinition
-														Width="Auto" />
-												</Grid.ColumnDefinitions>
-												<Grid.RowDefinitions>
-													<RowDefinition />
-													<RowDefinition
-														Height="Auto" />
-													<RowDefinition
-														Height="4" />
-													<RowDefinition
-														Height="Auto" />
-													<RowDefinition
-														Height="20" />
-													<RowDefinition
-														Height="Auto" />
-													<RowDefinition
-														Height="4" />
-													<RowDefinition
-														Height="Auto" />
-													<RowDefinition
-														Height="4" />
-													<RowDefinition
-														Height="Auto" />
-													<RowDefinition />
-												</Grid.RowDefinitions>
-												<Button
-													x:Name="btnMoveUpDccPortList"
-													Content="Move Up ▲"
-													Grid.Row="1" />
-												<Button
-													x:Name="btnMoveDownDccPortList"
-													Content="▼ Move Down"
-													Grid.Row="3" />
-												<Button
-													x:Name="btnAddDccPortList"
-													Content="Add…"
-													Grid.Row="5" />
-												<Button
-													x:Name="btnEditDccPortList"
-													Content="Edit…"
-													Grid.Row="7" />
-												<Button
-													x:Name="btnDelDccPortList"
-													Content="Delete"
-													Grid.Row="9" />
-											</Grid>
-											<Separator
-												Width="4"
-												DockPanel.Dock="Right" />
-											<DockPanel>
-												<RichTextBox
-													IsUndoEnabled="False"
-													AllowDrop="False"
-													IsHitTestVisible="False"
-													Focusable="False"
-													IsTabStop="False"
-													BorderThickness="0"
-													Grid.ColumnSpan="4"
-													DockPanel.Dock="Top">
-													<FlowDocument>
-														<Paragraph
-															TextIndent="20">List of ports that other users can connect to remotely.  Each item may be a single port or a range of ports.  Leave empty to use a random OS-picked port.  Each time you offer a DCC connection to someone, the next port listed is picked.</Paragraph>
-													</FlowDocument>
-												</RichTextBox>
-												<Separator
-													DockPanel.Dock="Top"
-													Height="4" />
-												<ListBox
-													x:Name="listDccPorts"></ListBox>
-											</DockPanel>
-										</DockPanel>
-									</GroupBox>
-								</Grid>
-							</StackPanel>
 						</TabItem>
 						<TabItem
 							Header="Plugins"
@@ -2711,6 +2006,7 @@
 						</TabItem>
 					</TabControl>
 				</TabItem>
+				<IrcView:GlobalOptTab />
 			</TabControl>
 		</Grid>
 	</DockPanel>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b525s0s7CrTKIDOOrEAsBZvsPyIkpjForPYbbvRz1A60VR79dnoL6mNMYcDaWSNfafU9DAZdG5072nIoHUP42w==",
+  "dgSpecHash": "Uf3uCq1zbcbjzjSjTrAipQb1L8xAz2bKoT4CaQiDTopbTA2FEAy4GSe8tnvAoud+NVe6N8JbpPE4OKWPYqbHaw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj",
+  "projectFilePath": "B:\\Contents\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\willp\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.29\\microsoft.windows.sdk.net.ref.10.0.22621.29.nupkg.sha512"
   ],

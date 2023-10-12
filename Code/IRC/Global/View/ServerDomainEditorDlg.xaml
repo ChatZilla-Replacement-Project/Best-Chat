@@ -7,6 +7,7 @@
 	xmlns:local="clr-namespace:BestChat.IRC.Global.View"
 	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
 	xmlns:defs="clr-namespace:BestChat.IRC.Data.Defs;assembly=BestChat.IRC.Data"
+	d:DataContext="{d:DesignInstance Type=defs:ServerInfo}"
 	mc:Ignorable="d"
 	Title="ServerDomainEditorDlg"
 	WindowStartupLocation="CenterScreen"

@@ -22,9 +22,9 @@
     <ProjectReference Include="..\..\Platform\Platform.DataLoc\Platform.DataLoc.csproj" />
     <ProjectReference Include="..\..\Platform\Platform.HttpClientOwner\Platform.HttpClientOwner.csproj" />
     <ProjectReference Include="..\ModuleInterfaces\IRC.ModuleInterfaces.csproj" />
-    <ProjectReference Include="C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Common\Platform.Common.csproj" />
-    <ProjectReference Include="C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\File\Platform.Data.csproj" />
-    <ProjectReference Include="C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util\Util.csproj" />
+    <ProjectReference Include="..\..\Platform\Common\Platform.Common.csproj" />
+    <ProjectReference Include="..\..\Platform\Data\Platform.Data.csproj" />
+    <ProjectReference Include="..\..\Platform\Util\Util.csproj" />
   </ItemGroup>
 
   <ItemGroup>

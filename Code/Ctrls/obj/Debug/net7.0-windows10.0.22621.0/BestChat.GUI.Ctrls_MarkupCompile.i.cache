@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 
-9866313566
+8-1496744243
 
-131533428429
-215-5818672
-DropMenuBtn.xaml;FileBrowserCtrl.xaml;FolderBrowserCtrl.xaml;FontSelectionComboBox.xaml;FontWeightComboBox.xaml;IntegerUpDown.xaml;ResetPrefBtn.xaml;ShowHelpBtn.xaml;Themes\Generic.xaml;
+12331331032
+215807445750
+DropMenuBtn.xaml;FileBrowserCtrl.xaml;FolderBrowserCtrl.xaml;FontSelectionComboBox.xaml;FontWeightComboBox.xaml;IntegerUpDown.xaml;ResetPrefBtn.xaml;Themes\Generic.xaml;
 
-True
+False
 

@@ -120,18 +120,18 @@
     },
     "Util/1.0.0": {
       "type": "project",
-      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj",
-      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj"
+      "path": "../Platform/Util/Util.csproj",
+      "msbuildProject": "../Platform/Util/Util.csproj"
     },
     "Util.Collections/1.0.0": {
       "type": "project",
-      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj",
-      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj"
+      "path": "../Platform/Util.Collections/Util.Collections.csproj",
+      "msbuildProject": "../Platform/Util.Collections/Util.Collections.csproj"
     },
     "Util.Ext/1.0.0": {
       "type": "project",
-      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj",
-      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj"
+      "path": "../Platform/Util.Ext/Util.Ext.csproj",
+      "msbuildProject": "../Platform/Util.Ext/Util.Ext.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -171,8 +171,8 @@
             "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext.WPF\\Util.Ext.WPF.csproj": {
               "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext.WPF\\Util.Ext.WPF.csproj"
             },
-            "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj": {
-              "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj"
+            "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj": {
+              "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj"
             }
           }
         }
@@ -220,7 +220,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

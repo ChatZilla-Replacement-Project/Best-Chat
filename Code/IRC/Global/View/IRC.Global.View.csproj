@@ -25,8 +25,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\IRC.Data.csproj" />
     <ProjectReference Include="..\IRC.Global.View.Ctrls\IRC.Global.View.Ctrls.csproj" />
-    <ProjectReference Include="..\Model\IRC.Global.Model.csproj" />
-    <ProjectReference Include="C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util.Ext\Util.Ext.csproj" />
+    <ProjectReference Include="..\..\..\Platform\Util.Ext\Util.Ext.csproj" />
   </ItemGroup>
 
   <ItemGroup>

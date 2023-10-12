@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 
-7-97578389
+8-1664410819
 
-9294915596
-225-1385105689
-BncEditorDlg.xaml;BncListEditor.xaml;NetworkEditorDlg.xaml;NetworkListDlg.xaml;PortEditorDlg.xaml;PredefinedNetworkViewerDlg.xaml;ServerDomainEditorDlg.xaml;
+10913773398
+224-1732140268
+BncEditorDlg.xaml;BncListEditor.xaml;GlobalOptTab.xaml;NetworkEditorDlg.xaml;NetworkListDlg.xaml;PortEditorDlg.xaml;PredefinedNetworkViewerDlg.xaml;ServerDomainEditorDlg.xaml;
 
 False
 

@@ -23,9 +23,6 @@
     <Compile Update="ResetPrefBtn.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ShowHelpBtn.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="DropMenuBtn.xaml">
@@ -47,9 +44,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ResetPrefBtn.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="ShowHelpBtn.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\Generic.xaml">

@@ -56,11 +56,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj",
+      "projectUniqueName": "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj",
       "projectName": "Util",
-      "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj",
+      "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj",
       "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\obj\\",
+      "outputPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -77,8 +77,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj": {
-              "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj"
+            "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj": {
+              "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj"
             }
           }
         }
@@ -111,7 +111,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

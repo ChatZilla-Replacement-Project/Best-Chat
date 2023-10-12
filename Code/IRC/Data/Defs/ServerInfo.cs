@@ -1,4 +1,4 @@
-﻿// Ignore Spelling: IRC Defs eunet evt Ssl dserver
+﻿// Ignore Spelling: IRC Defs eunet evt Ssl dserver eus unet
 
 namespace BestChat.IRC.Data.Defs
 {
@@ -38,8 +38,10 @@ namespace BestChat.IRC.Data.Defs
 				setSslPorts.UnionWith(serverCopyThis.SslPorts);
 			}
 
-			public ServerInfo(in DTO.ServerInfoDTO dserverUs)
+			public ServerInfo(in Network netParent, in DTO.ServerInfoDTO dserverUs)
 			{
+				this.netParent = netParent;
+
 				strDomain = dserverUs.Domain;
 				bEnabled = dserverUs.IsEnabled;
 				setPorts.UnionWith(dserverUs.Ports);

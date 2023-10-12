@@ -12,15 +12,16 @@
           "BestChat.IRC.Global.View": "1.0.0",
           "BestChat.Platform.DataLoc": "1.0.0",
           "BestChat.Platform.HttpClientOwner": "1.0.0",
+          "BestChat.Platform.Prefs": "1.0.0",
           "CalcBinding": "2.5.2",
           "BestChat.IRC.Data.Reference": "1.0.0.0",
-          "BestChat.IRC.Global.Model.Reference": "1.0.0.0",
           "BestChat.IRC.Global.View.Ctrls.Reference": "1.0.0.0",
           "BestChat.IRC.Global.View.Reference": "1.0.0.0",
           "BestChat.Platform.Common.Reference": "1.0.0.0",
           "BestChat.Platform.Data.Reference": "1.0.0.0",
           "BestChat.Platform.DataLoc.Reference": "1.0.0.0",
           "BestChat.Platform.HttpClientOwner.Reference": "1.0.0.0",
+          "BestChat.Platform.Prefs.Reference": "1.0.0.0",
           "BestChat.Util.Ext.WPF.Reference": "1.0.0.0",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.22621.29"
         },
@@ -91,21 +92,9 @@
           "BestChat.IRC.Data.dll": {}
         }
       },
-      "BestChat.IRC.Global.Model/1.0.0": {
-        "dependencies": {
-          "BestChat.IRC.Data": "1.0.0",
-          "BestChat.Platform.Data": "1.0.0",
-          "BestChat.Platform.HttpClientOwner": "1.0.0",
-          "IRC.ModuleInterfaces": "1.0.0"
-        },
-        "runtime": {
-          "BestChat.IRC.Global.Model.dll": {}
-        }
-      },
       "BestChat.IRC.Global.View/1.0.0": {
         "dependencies": {
           "BestChat.IRC.Data": "1.0.0",
-          "BestChat.IRC.Global.Model": "1.0.0",
           "BestChat.IRC.Global.View.Ctrls": "1.0.0",
           "CalcBinding": "2.5.2",
           "Util.Ext": "1.0.0"
@@ -143,6 +132,16 @@
           "BestChat.Platform.HttpClientOwner.dll": {}
         }
       },
+      "BestChat.Platform.Prefs/1.0.0": {
+        "dependencies": {
+          "BestChat.Platform.Data": "1.0.0",
+          "CalcBinding": "2.5.2",
+          "Util.Ext": "1.0.0"
+        },
+        "runtime": {
+          "BestChat.Platform.Prefs.dll": {}
+        }
+      },
       "BestChat.Util.Ext.WPF/1.0.0": {
         "runtime": {
           "BestChat.Util.Ext.WPF.dll": {}
@@ -177,14 +176,6 @@
       "BestChat.IRC.Data.Reference/1.0.0.0": {
         "runtime": {
           "BestChat.IRC.Data.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "BestChat.IRC.Global.Model.Reference/1.0.0.0": {
-        "runtime": {
-          "BestChat.IRC.Global.Model.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -233,6 +224,14 @@
       "BestChat.Platform.HttpClientOwner.Reference/1.0.0.0": {
         "runtime": {
           "BestChat.Platform.HttpClientOwner.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "BestChat.Platform.Prefs.Reference/1.0.0.0": {
+        "runtime": {
+          "BestChat.Platform.Prefs.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -290,11 +289,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "BestChat.IRC.Global.Model/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "BestChat.IRC.Global.View/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -321,6 +315,11 @@
       "sha512": ""
     },
     "BestChat.Platform.HttpClientOwner/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BestChat.Platform.Prefs/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -355,11 +354,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "BestChat.IRC.Global.Model.Reference/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "BestChat.IRC.Global.View.Ctrls.Reference/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -386,6 +380,11 @@
       "sha512": ""
     },
     "BestChat.Platform.HttpClientOwner.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BestChat.Platform.Prefs.Reference/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

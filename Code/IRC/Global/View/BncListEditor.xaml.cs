@@ -39,7 +39,7 @@ namespace BestChat.IRC.Global.View
 			{
 				base.OnInitialized(e);
 
-				DataContext = Model.NetworkMgr.mgr.AllNetworksSortedByName;
+				//DataContext = Data.BncMgr.mgr.AllItemsSortedByName;
 			}
 		#endregion
 
@@ -53,7 +53,7 @@ namespace BestChat.IRC.Global.View
 				};
 
 				if(dlg.ShowDialog() == true)
-					Model.NetworkMgr.mgr.AddNetwork(dlg.eunetWhatsBeingEdited.unetOriginal);
+					Data.NetworkMgr.mgr.Add(dlg.eunetWhatsBeingEdited.unetOriginal);
 			}
 
 			private void OnEditClicked(object sender, System.Windows.RoutedEventArgs e)
@@ -74,7 +74,7 @@ namespace BestChat.IRC.Global.View
 			private void OnDelClicked(object sender, System.Windows.RoutedEventArgs e)
 			{
 				if(dgMain.SelectedItem != null)
-					Model.NetworkMgr.mgr.RemoveNetwork(((Data.Defs.UserNetwork)dgMain.SelectedItem).Name);
+					Data.NetworkMgr.mgr.Remove(((Data.Defs.UserNetwork)dgMain.SelectedItem).Name);
 			}
 
 			private void OnCloseClicked(object objSender, System.Windows.RoutedEventArgs e) => Close();

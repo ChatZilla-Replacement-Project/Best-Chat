@@ -65,7 +65,7 @@ namespace BestChat.IRC.Global.View
 				};
 
 				if(dlg.ShowDialog() == true)
-					Model.NetworkMgr.mgr.AddNetwork(dlg.eunetWhatsBeingEdited.unetOriginal);
+					Data.NetworkMgr.mgr.Add(dlg.eunetWhatsBeingEdited.unetOriginal);
 			}
 
 			private void OnEditClicked(object objSender, System.Windows.RoutedEventArgs e)
@@ -86,7 +86,7 @@ namespace BestChat.IRC.Global.View
 			private void OnDelClicked(object objSender, System.Windows.RoutedEventArgs e)
 			{
 				if(dgUser.SelectedItem != null)
-					Model.NetworkMgr.mgr.RemoveNetwork(((Data.Defs.UserNetwork)dgUser.SelectedItem).Name);
+					Data.NetworkMgr.mgr.Remove(((Data.Defs.UserNetwork)dgUser.SelectedItem).Name);
 			}
 
 			private void OnCloseClicked(object objSender, System.Windows.RoutedEventArgs e) => Close();

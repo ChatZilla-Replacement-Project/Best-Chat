@@ -8,6 +8,9 @@
     <Compile Update="BncListEditor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GlobalOptTab.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="NetworkEditorDlg.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -29,6 +32,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="BncListEditor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GlobalOptTab.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="NetworkEditorDlg.xaml">

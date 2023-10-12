@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Platform\Util.Ext.WPF\Util.Ext.WPF.csproj" />
-    <ProjectReference Include="C:\Users\willp\Documents\Projects\Best Chat\Code\Platform\Util\Util.csproj" />
+    <ProjectReference Include="..\Platform\Util\Util.csproj" />
   </ItemGroup>
 
   <ItemGroup>

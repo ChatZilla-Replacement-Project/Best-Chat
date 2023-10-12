@@ -1,4 +1,4 @@
-﻿// Ignore Spelling: Ssl
+﻿// Ignore Spelling: Ssl Defs DTO
 
 namespace BestChat.IRC.Data.Defs.DTO
 {

@@ -1,4 +1,4 @@
-﻿// Ignore Spelling: enet IRC
+﻿// Ignore Spelling: enet IRC eunet
 
 namespace BestChat.IRC.Global.View
 {
@@ -57,20 +57,22 @@ namespace BestChat.IRC.Global.View
 		#endregion
 
 		#region Properties
-			public bool CanSave => !eunetWhatsBeingEdited.Name.IsEmpty() && !Model.NetworkMgr.mgr.AllNetworks
-				.ContainsKey(eunetWhatsBeingEdited.Name) && Model.NetworkMgr.mgr.AllNetworks[eunetWhatsBeingEdited.Name] !=
-				eunetWhatsBeingEdited.unetOriginal && eunetWhatsBeingEdited.AllUnsortedServers.Count > 0;
+			public bool CanSave => !eunetWhatsBeingEdited.Name.IsEmpty() && !Data.NetworkMgr.mgr.AllItems
+				.ContainsKey(eunetWhatsBeingEdited.Name) && Data.NetworkMgr.mgr.AllItems[eunetWhatsBeingEdited
+				.Name] != eunetWhatsBeingEdited.unetOriginal && eunetWhatsBeingEdited.AllUnsortedServers.Count >
+				0;
 
-			public string ValidationErrorMsg => eunetWhatsBeingEdited.Name.IsEmpty() ? View.Resources.strValidationNameBlank : !Model.NetworkMgr.mgr.AllNetworks
-				.ContainsKey(eunetWhatsBeingEdited.Name) && Model.NetworkMgr.mgr.AllNetworks[eunetWhatsBeingEdited.Name] !=
-				eunetWhatsBeingEdited.unetOriginal ? View.Resources.strValidationNameTaken : eunetWhatsBeingEdited
-				.AllUnsortedServers.Count == 0 ? View.Resources.strValidationEnterAtLeastOneDomainName : "";
+			public string ValidationErrorMsg => eunetWhatsBeingEdited.Name.IsEmpty() ? View.Resources
+				.strValidationNameBlank : !Data.NetworkMgr.mgr.AllItems.ContainsKey(eunetWhatsBeingEdited.Name) &&
+				Data.NetworkMgr.mgr.AllItems[eunetWhatsBeingEdited.Name] != eunetWhatsBeingEdited.unetOriginal ?
+				View.Resources.strValidationNameTaken : eunetWhatsBeingEdited.AllUnsortedServers.Count == 0 ? View
+				.Resources.strValidationEnterAtLeastOneDomainName : "";
 
-			public System.Windows.Style NameTextBoxStyle => (System.Windows.Style)System.Windows.Application.Current
-				.Resources[!eunetWhatsBeingEdited.Name.IsEmpty() && !Model.NetworkMgr.mgr.AllNetworks
-				.ContainsKey(eunetWhatsBeingEdited.Name) && Model.NetworkMgr.mgr.AllNetworks[eunetWhatsBeingEdited.Name] !=
-				eunetWhatsBeingEdited.unetOriginal ? "TextBoxWithInvalidCtnts" : typeof(System.Windows.Controls.Primitives
-				.TextBoxBase)];
+			public System.Windows.Style NameTextBoxStyle => (System.Windows.Style)System.Windows.Application
+				.Current.Resources[!eunetWhatsBeingEdited.Name.IsEmpty() && !Data.NetworkMgr.mgr.AllItems
+				.ContainsKey(eunetWhatsBeingEdited.Name) && Data.NetworkMgr.mgr.AllItems[eunetWhatsBeingEdited
+				.Name] != eunetWhatsBeingEdited.unetOriginal ? "TextBoxWithInvalidCtnts" : typeof(System.Windows
+				.Controls.Primitives.TextBoxBase)];
 		#endregion
 
 		#region Methods

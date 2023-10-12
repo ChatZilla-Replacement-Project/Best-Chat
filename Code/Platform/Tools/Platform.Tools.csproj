@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0-windows10.0.22621.0</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    <AssemblyName>TransformedWebsites.Tools</AssemblyName>
-    <RootNamespace>TransformedWebsites.Tools</RootNamespace>
+    <AssemblyName>BestChat.Platform.Tools</AssemblyName>
+    <RootNamespace>BestChat.Platform.Tools</RootNamespace>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
@@ -15,7 +15,6 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>B:\TransformedWebsites\Tools\TransformedWebsites.Tools.xml</DocumentationFile>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
   </PropertyGroup>
 

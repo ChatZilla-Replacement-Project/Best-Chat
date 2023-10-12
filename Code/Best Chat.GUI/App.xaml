@@ -27,28 +27,6 @@
 				Value="Reset this preference to the default" />
 		</Style>
 		<Style
-			x:Key="HelpText"
-			TargetType="RichTextBox">
-			<Setter
-				Property="IsReadOnly"
-				Value="True" />
-			<Setter
-				Property="BorderThickness"
-				Value="0,0,0,1" />
-			<Setter
-				Property="Margin"
-				Value="0,4,0,20" />
-			<Setter
-				Property="Foreground"
-				Value="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" />
-			<Setter
-				Property="Background"
-				Value="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" />
-			<Setter
-				Property="Padding"
-				Value="0,0,0,2" />
-		</Style>
-		<Style
 			TargetType="ToolTip">
 			<Setter
 				Property="Background"
@@ -88,6 +66,22 @@
 			<Setter
 				Property="FontWeight"
 				Value="Bold" />
+		</Style>
+		<Style
+			x:Key="FixedWidthHilight"
+			TargetType="Span">
+			<Setter
+				Property="FontFamily"
+				Value="Courier New" />
+			<Setter
+				Property="Background"
+				Value="LightGray" />
+		</Style>
+		<Style
+			TargetType="TextBlock">
+			<Setter
+				Property="TextAlignment"
+				Value="Justify" />
 		</Style>
 	</Application.Resources>
 </Application>

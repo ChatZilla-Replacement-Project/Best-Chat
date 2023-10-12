@@ -316,7 +316,6 @@
 					<Ctrls:DropMenuBtn
 						x:Name="dbtnNick"
 						Content="Your Nick"
-						ShowLeftBtn="True"
 						Grid.RowSpan="3"
 						VerticalAlignment="Center">
 						<Ctrls:DropMenuBtn.Menu>

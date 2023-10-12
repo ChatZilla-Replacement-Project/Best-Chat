@@ -30,6 +30,19 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:BestChat.IRC.Global.View.GlobalOptTab">
+            <summary>
+            Interaction logic for GlobalOptTab.xaml
+            </summary>
+            <summary>
+            GlobalOptTab
+            </summary>
+        </member>
+        <member name="M:BestChat.IRC.Global.View.GlobalOptTab.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:BestChat.IRC.Global.View.NetworkEditorDlg">
             <summary>
             Interaction logic for NetworkEditorDlg.xaml

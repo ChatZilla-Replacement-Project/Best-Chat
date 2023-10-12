@@ -1,4 +1,6 @@
-﻿namespace BestChat.Platform.DataLoc
+﻿// Ignore Spelling: Loc
+
+namespace BestChat.Platform.DataLoc
 {
 	public interface IDataLocProvider
 	{

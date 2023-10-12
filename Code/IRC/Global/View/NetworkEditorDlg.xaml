@@ -9,6 +9,7 @@
 	xmlns:defs="clr-namespace:BestChat.IRC.Data.Defs;assembly=BestChat.IRC.Data"
 	xmlns:IrcCtrls="clr-namespace:BestChat.IRC.Global.View.Ctrls;assembly=BestChat.IRC.Global.View.Ctrls"
 	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
+	d:DataContext="{d:DesignInstance Type=defs:UserNetwork}"
 	mc:Ignorable="d"
 	FontFamily="Times New Roman"
 	WindowStartupLocation="CenterOwner"
@@ -214,7 +215,7 @@
 				Grid.Row="8"
 				Visibility="{CalcBinding:Binding !HasPredefinition}"
 				SelVal="{Binding NickServ}"
-				ToolTip="This is a list of known and unknown NickServ options.  “Unknown”, that just means the the network has a NickServ, but it's unknown what implementation the network uses.  “None available” means the network doesn't provide a NickServ.  This field isn't editable because the network is predefined.  We know the correct value and have provided it for you." />
+				ToolTip="This is a list of known and unknown NickServ options.  “Unknown” means the the network has a NickServ, but it's unknown what implementation the network uses.  “None available” means the network doesn't provide a NickServ.  If this field isn't editable, that's because the network is predefined.  We know the correct value and have provided it for you." />
 			<Label
 				Content="ChanServ availability and type: "
 				Grid.Row="10"

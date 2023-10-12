@@ -76,22 +76,6 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "BestChat.IRC.Global.Model/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "BestChat.IRC.Data": "1.0.0",
-          "BestChat.Platform.Data": "1.0.0",
-          "BestChat.Platform.HttpClientOwner": "1.0.0",
-          "IRC.ModuleInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/BestChat.IRC.Global.Model.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BestChat.IRC.Global.Model.dll": {}
-        }
-      },
       "BestChat.IRC.Global.View.Ctrls/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -121,7 +105,7 @@
       },
       "BestChat.Platform.Data/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
           "bin/placeholder/BestChat.Platform.Data.dll": {}
         },
@@ -295,11 +279,6 @@
       "path": "../../Data/IRC.Data.csproj",
       "msbuildProject": "../../Data/IRC.Data.csproj"
     },
-    "BestChat.IRC.Global.Model/1.0.0": {
-      "type": "project",
-      "path": "../Model/IRC.Global.Model.csproj",
-      "msbuildProject": "../Model/IRC.Global.Model.csproj"
-    },
     "BestChat.IRC.Global.View.Ctrls/1.0.0": {
       "type": "project",
       "path": "../IRC.Global.View.Ctrls/IRC.Global.View.Ctrls.csproj",
@@ -307,13 +286,13 @@
     },
     "BestChat.Platform.Common/1.0.0": {
       "type": "project",
-      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj",
-      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj"
+      "path": "../../../Platform/Common/Platform.Common.csproj",
+      "msbuildProject": "../../../Platform/Common/Platform.Common.csproj"
     },
     "BestChat.Platform.Data/1.0.0": {
       "type": "project",
-      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj",
-      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj"
+      "path": "../../../Platform/Data/Platform.Data.csproj",
+      "msbuildProject": "../../../Platform/Data/Platform.Data.csproj"
     },
     "BestChat.Platform.DataLoc/1.0.0": {
       "type": "project",
@@ -337,24 +316,23 @@
     },
     "Util/1.0.0": {
       "type": "project",
-      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj",
-      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj"
+      "path": "../../../Platform/Util/Util.csproj",
+      "msbuildProject": "../../../Platform/Util/Util.csproj"
     },
     "Util.Collections/1.0.0": {
       "type": "project",
-      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj",
-      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj"
+      "path": "../../../Platform/Util.Collections/Util.Collections.csproj",
+      "msbuildProject": "../../../Platform/Util.Collections/Util.Collections.csproj"
     },
     "Util.Ext/1.0.0": {
       "type": "project",
-      "path": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj",
-      "msbuildProject": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj"
+      "path": "../../../Platform/Util.Ext/Util.Ext.csproj",
+      "msbuildProject": "../../../Platform/Util.Ext/Util.Ext.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows10.0.22621": [
       "BestChat.IRC.Data >= 1.0.0",
-      "BestChat.IRC.Global.Model >= 1.0.0",
       "BestChat.IRC.Global.View.Ctrls >= 1.0.0",
       "CalcBinding >= 2.5.2",
       "Util.Ext >= 1.0.0"
@@ -393,11 +371,8 @@
             "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\IRC.Global.View.Ctrls\\IRC.Global.View.Ctrls.csproj": {
               "projectPath": "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\IRC.Global.View.Ctrls\\IRC.Global.View.Ctrls.csproj"
             },
-            "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\Model\\IRC.Global.Model.csproj": {
-              "projectPath": "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\Model\\IRC.Global.Model.csproj"
-            },
-            "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj": {
-              "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj"
+            "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj": {
+              "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj"
             }
           }
         }
@@ -445,7 +420,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

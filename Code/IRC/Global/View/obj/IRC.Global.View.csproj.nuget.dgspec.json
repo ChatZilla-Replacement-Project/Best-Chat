@@ -31,8 +31,8 @@
               "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext.WPF\\Util.Ext.WPF.csproj": {
                 "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext.WPF\\Util.Ext.WPF.csproj"
               },
-              "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj": {
-                "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj"
+              "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj": {
+                "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj"
               }
             }
           }
@@ -80,7 +80,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -111,20 +111,20 @@
               "B:\\Contents\\Best Chat\\Code\\IRC\\ModuleInterfaces\\IRC.ModuleInterfaces.csproj": {
                 "projectPath": "B:\\Contents\\Best Chat\\Code\\IRC\\ModuleInterfaces\\IRC.ModuleInterfaces.csproj"
               },
+              "B:\\Contents\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj": {
+                "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj"
+              },
+              "B:\\Contents\\Best Chat\\Code\\Platform\\Data\\Platform.Data.csproj": {
+                "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Data\\Platform.Data.csproj"
+              },
               "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.DataLoc\\Platform.DataLoc.csproj": {
                 "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.DataLoc\\Platform.DataLoc.csproj"
               },
               "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.HttpClientOwner\\Platform.HttpClientOwner.csproj": {
                 "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.HttpClientOwner\\Platform.HttpClientOwner.csproj"
               },
-              "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj": {
-                "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj"
-              },
-              "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj": {
-                "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj"
-              },
-              "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj": {
-                "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj"
+              "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj": {
+                "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj"
               }
             }
           }
@@ -172,7 +172,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -246,84 +246,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\Model\\IRC.Global.Model.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\Model\\IRC.Global.Model.csproj",
-        "projectName": "BestChat.IRC.Global.Model",
-        "projectPath": "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\Model\\IRC.Global.Model.csproj",
-        "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
-        "outputPath": "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\Model\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0-windows10.0.22621.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0-windows10.0.22621": {
-            "targetAlias": "net7.0-windows10.0.22621.0",
-            "projectReferences": {
-              "B:\\Contents\\Best Chat\\Code\\IRC\\Data\\IRC.Data.csproj": {
-                "projectPath": "B:\\Contents\\Best Chat\\Code\\IRC\\Data\\IRC.Data.csproj"
-              },
-              "B:\\Contents\\Best Chat\\Code\\IRC\\ModuleInterfaces\\IRC.ModuleInterfaces.csproj": {
-                "projectPath": "B:\\Contents\\Best Chat\\Code\\IRC\\ModuleInterfaces\\IRC.ModuleInterfaces.csproj"
-              },
-              "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.HttpClientOwner\\Platform.HttpClientOwner.csproj": {
-                "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.HttpClientOwner\\Platform.HttpClientOwner.csproj"
-              },
-              "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj": {
-                "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0-windows10.0.22621": {
-          "targetAlias": "net7.0-windows10.0.22621.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.22621.29, 10.0.22621.29]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Windows.SDK.NET.Ref": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -357,11 +280,8 @@
               "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\IRC.Global.View.Ctrls\\IRC.Global.View.Ctrls.csproj": {
                 "projectPath": "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\IRC.Global.View.Ctrls\\IRC.Global.View.Ctrls.csproj"
               },
-              "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\Model\\IRC.Global.Model.csproj": {
-                "projectPath": "B:\\Contents\\Best Chat\\Code\\IRC\\Global\\Model\\IRC.Global.Model.csproj"
-              },
-              "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj": {
-                "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj"
+              "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj": {
+                "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj"
               }
             }
           }
@@ -409,7 +329,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -476,7 +396,129 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "B:\\Contents\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "B:\\Contents\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj",
+        "projectName": "BestChat.Platform.Common",
+        "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj",
+        "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
+        "outputPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0-windows10.0.22621.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0-windows10.0.22621": {
+            "targetAlias": "net7.0-windows10.0.22621.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0-windows10.0.22621": {
+          "targetAlias": "net7.0-windows10.0.22621.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.Windows.SDK.NET.Ref",
+              "version": "[10.0.22621.29, 10.0.22621.29]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.Windows.SDK.NET.Ref": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "B:\\Contents\\Best Chat\\Code\\Platform\\Data\\Platform.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "B:\\Contents\\Best Chat\\Code\\Platform\\Data\\Platform.Data.csproj",
+        "projectName": "BestChat.Platform.Data",
+        "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Data\\Platform.Data.csproj",
+        "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
+        "outputPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0-windows7.0": {
+            "targetAlias": "net7.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -540,7 +582,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -558,15 +600,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net7.0-windows10.0.22621.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net7.0-windows10.0.22621": {
+            "targetAlias": "net7.0-windows10.0.22621.0",
             "projectReferences": {}
           }
         },
@@ -577,8 +619,72 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net7.0-windows10.0.22621": {
+          "targetAlias": "net7.0-windows10.0.22621.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.Windows.SDK.NET.Ref",
+              "version": "[10.0.22621.29, 10.0.22621.29]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.Windows.SDK.NET.Ref": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj",
+        "projectName": "Util.Collections",
+        "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj",
+        "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
+        "outputPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Collections\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0-windows7.0": {
+            "targetAlias": "net7.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
           "imports": [
             "net461",
             "net462",
@@ -593,9 +699,12 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -662,207 +771,18 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj": {
+    "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj",
-        "projectName": "BestChat.Platform.Common",
-        "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\Platform.Common.csproj",
-        "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Common\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0-windows10.0.22621.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0-windows10.0.22621": {
-            "targetAlias": "net7.0-windows10.0.22621.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0-windows10.0.22621": {
-          "targetAlias": "net7.0-windows10.0.22621.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.22621.29, 10.0.22621.29]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Windows.SDK.NET.Ref": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj",
-        "projectName": "BestChat.Platform.Data",
-        "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\Platform.Data.csproj",
-        "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\File\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0-windows10.0.22621.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0-windows10.0.22621": {
-            "targetAlias": "net6.0-windows10.0.22621.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0-windows10.0.22621": {
-          "targetAlias": "net6.0-windows10.0.22621.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.22621.29, 10.0.22621.29]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Windows.SDK.NET.Ref": {
-              "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WPF": {
-              "privateAssets": "none"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj",
-        "projectName": "Util.Collections",
-        "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj",
-        "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0-windows"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0-windows7.0": {
-            "targetAlias": "net7.0-windows",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0-windows7.0": {
-          "targetAlias": "net7.0-windows",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WPF": {
-              "privateAssets": "none"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj",
+        "projectUniqueName": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj",
         "projectName": "Util.Ext",
-        "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj",
+        "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj",
         "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\obj\\",
+        "outputPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -879,8 +799,8 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj": {
-                "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj"
+              "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj": {
+                "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Collections\\Util.Collections.csproj"
               }
             }
           }
@@ -913,18 +833,18 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj": {
+    "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj",
+        "projectUniqueName": "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj",
         "projectName": "Util",
-        "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\Util.csproj",
+        "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj",
         "packagesPath": "C:\\Users\\willp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util\\obj\\",
+        "outputPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\willp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -941,8 +861,8 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj": {
-                "projectPath": "C:\\Users\\willp\\Documents\\Projects\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj"
+              "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj": {
+                "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Ext\\Util.Ext.csproj"
               }
             }
           }
@@ -975,7 +895,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

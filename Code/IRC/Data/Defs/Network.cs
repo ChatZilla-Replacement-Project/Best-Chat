@@ -39,7 +39,7 @@ namespace BestChat.IRC.Data.Defs
 				strName = dnetworkUs.Name;
 				uriHomepage = dnetworkUs.Homepage;
 				foreach(DTO.ServerInfoDTO dserverCur in dnetworkUs.Servers)
-					mapServers[dserverCur.Domain] = new(dserverCur);
+					mapServers[dserverCur.Domain] = new(this, dserverCur);
 				nickServ = dnetworkUs.NickServ;
 				chanServ = dnetworkUs.ChanServ;
 				bHasAlis = dnetworkUs.HasAlis;

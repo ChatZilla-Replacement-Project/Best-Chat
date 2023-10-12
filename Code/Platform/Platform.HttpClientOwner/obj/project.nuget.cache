@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kSkgCTQuOb1CO65cxoxLhwGfElHJ9dNEKxiqYtjxwLWMbIznOfE7kxj6u0FDhJYRZnAAkEkRGFt17pUoL8MAYw==",
+  "dgSpecHash": "7xUglTCbJs3IZW186uLsYwnv2mROertQteeiqgUmhu6U0mhl5E1ldvRtQK4rUHSn0X85NKvIrvaKOQO7p0hnNg==",
   "success": true,
   "projectFilePath": "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.HttpClientOwner\\Platform.HttpClientOwner.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\willp\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.29\\microsoft.windows.sdk.net.ref.10.0.22621.29.nupkg.sha512"
+  ],
   "logs": []
 }
