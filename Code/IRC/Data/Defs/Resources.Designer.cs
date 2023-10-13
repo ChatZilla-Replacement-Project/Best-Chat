@@ -115,6 +115,195 @@ namespace BestChat.IRC.Data.Defs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to join throttling to be sent to another channel..
+        /// </summary>
+        internal static string strDefChanModeForwardDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModeForwardDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the name of the channel you want the forward to go to..
+        /// </summary>
+        internal static string strDefChanModeForwardDestParamDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModeForwardDestParamDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destination.
+        /// </summary>
+        internal static string strDefChanModeForwardDetParamName {
+            get {
+                return ResourceManager.GetString("strDefChanModeForwardDetParamName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This mode causes the channel to be invite only.  People must get an invite via either the ChanServ/Q&apos;s invite function or the |/invite| command..
+        /// </summary>
+        internal static string strDefChanModeInviteOnlyDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModeInviteOnlyDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setting a key requires anyone who wants to join to enter a key in order to join..
+        /// </summary>
+        internal static string strDefChanModeKeyDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModeKeyDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the key for this channel.
+        /// </summary>
+        internal static string strDefChanModeKeyParamDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModeKeyParamDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Key.
+        /// </summary>
+        internal static string strDefChanModeKeyParamName {
+            get {
+                return ResourceManager.GetString("strDefChanModeKeyParamName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When this mode is on, only users with op, half-op, or voice may talk in the channel..
+        /// </summary>
+        internal static string strDefChanModeModDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModeModDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This mode causes colors to be stripped.
+        /// </summary>
+        internal static string strDefChanModeNoColorDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModeNoColorDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This mode prevents messages from being set from outside the channel.  When set, users or bots must be in the channel to post..
+        /// </summary>
+        internal static string strDefChanModeNoExternMsgDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModeNoExternMsgDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When this mode is set, all posts from anyone without voice or op privileges are sent to ops instead of the channel as a whole..
+        /// </summary>
+        internal static string strDefChanModeOpsModDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModeOpsModDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Private channels disable |/knock|..
+        /// </summary>
+        internal static string strDefChanModePrivateDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModePrivateDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This mode, when set, prevents users who aren&apos;t registered from joining.  If you set this, be sure to set a forwarding location with &apos;f&apos;..
+        /// </summary>
+        internal static string strDefChanModeRegisteredUserOnlyDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModeRegisteredUserOnlyDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If this mode is set, the channel won&apos;t be listed in |/whois| or |/list|..
+        /// </summary>
+        internal static string strDefChanModeSecretDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModeSecretDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This mode prevents changes to the topic by users who aren&apos;t ops or half ops.  Note: Services like ChanServ or Q may prevent such topic changes even if this mode is off..
+        /// </summary>
+        internal static string strDefChanModeTopicLockDesc {
+            get {
+                return ResourceManager.GetString("strDefChanModeTopicLockDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Designates this client as “invisible”..
+        /// </summary>
+        internal static string strDefUserModeInvisibleDesc {
+            get {
+                return ResourceManager.GetString("strDefUserModeInvisibleDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Designates the user as a IRC operator.  Use |/oper| to obtain this..
+        /// </summary>
+        internal static string strDefUserModeIrcOpDesc {
+            get {
+                return ResourceManager.GetString("strDefUserModeIrcOpDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prevents users not in your |/accept| list from messaging you and inviting you to channels.
+        /// </summary>
+        internal static string strDefUserModeMsgRestrictDesc {
+            get {
+                return ResourceManager.GetString("strDefUserModeMsgRestrictDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prevent users not on your |/accept| list and not in a channel with you from messaging you or inviting you to channels.  This is a softer form of +g..
+        /// </summary>
+        internal static string strDefUserModeMsgRestrictSoftDesc {
+            get {
+                return ResourceManager.GetString("strDefUserModeMsgRestrictSoftDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prevents unidentified users that you haven&apos;t accepted from messaging you..
+        /// </summary>
+        internal static string strDefUserModeRestrictMsgUnidentUsersDesc {
+            get {
+                return ResourceManager.GetString("strDefUserModeRestrictMsgUnidentUsersDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Can see wallops.
+        /// </summary>
+        internal static string strDefUserModeWallopsDesc {
+            get {
+                return ResourceManager.GetString("strDefUserModeWallopsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to False / Not Available.
         /// </summary>
         internal static string strHasAlisFalse {

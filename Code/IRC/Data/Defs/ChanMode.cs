@@ -6,14 +6,29 @@ namespace BestChat.IRC.Data.Defs
 	public class ChanMode
 	{
 		#region Constructors & Deconstructors
-			public ChanMode(DTO.ChanModeDTO dcmUs)
+			internal ChanMode(in char chModeChar, in LocalizedTextSystem textDesc, in bool bNotAlwaysAvailable =
+				false, in System.Collections.Generic.IEnumerable<ModeParam>? @params = null, in string
+				strFmtAsSentToNetwork = "", in bool bIsOperRequiredToChange = false)
+			{
+				this.chModeChar = chModeChar;
+				this.textDesc = textDesc;
+				this.bNotAlwaysAvailable = bNotAlwaysAvailable;
+				if(@params != null)
+					foreach(ModeParam mpCur in @params)
+						mapParamsByName[mpCur.Name] = mpCur;
+				this.strFmtAsSentToNetwork = strFmtAsSentToNetwork;
+				this.bIsOperRequiredToChange = bIsOperRequiredToChange;
+			}
+
+			internal ChanMode(DTO.ChanModeDTO dcmUs)
 			{
 				chModeChar = dcmUs.Mode;
 				textDesc = new(dcmUs.LocalizedDesc, dcmUs.DefaultDesc);
 				bNotAlwaysAvailable = dcmUs.NotAlwaysAvailable;
 				foreach(DTO.ModeParamDTO dmpCurParam in dcmUs.Parameters)
-					mapModesByName[dmpCurParam.Name] = new(dmpCurParam);
+					mapParamsByName[dmpCurParam.Name] = new(dmpCurParam);
 				strFmtAsSentToNetwork = dcmUs.FmtAsSentToNetwork;
+				bIsOperRequiredToChange = dcmUs.IsOperRequiredToChange;
 			}
 		#endregion
 
@@ -36,10 +51,12 @@ namespace BestChat.IRC.Data.Defs
 
 			public readonly bool bNotAlwaysAvailable;
 
-			private readonly System.Collections.Generic.SortedDictionary<string, ModeParam> mapModesByName = new
-				();
+			private readonly System.Collections.Generic.SortedDictionary<string, ModeParam> mapParamsByName =
+				new();
 
 			public readonly string strFmtAsSentToNetwork;
+
+			public readonly bool bIsOperRequiredToChange;
 		#endregion
 
 		#region Properties
@@ -49,10 +66,12 @@ namespace BestChat.IRC.Data.Defs
 
 			public bool NotAlwaysAvailable => bNotAlwaysAvailable;
 
-			public System.Collections.Generic.IReadOnlyDictionary<string, ModeParam> ModesByName =>
-				mapModesByName;
+			public System.Collections.Generic.IReadOnlyDictionary<string, ModeParam> ParamsByName =>
+				mapParamsByName;
 
 			public string FmtAsSentToNetwork => strFmtAsSentToNetwork;
+
+			public bool IsOperRequiredToChange => bIsOperRequiredToChange;
 		#endregion
 
 		#region Methods

@@ -299,7 +299,16 @@ namespace BestChat.IRC.Data.Defs
 			public virtual bool IsServerListDefaulted => false;
 
 			public bool IsCustomized => UserNetworkMgr.mgr.AllItems.ContainsKey(strName);
-		#endregion
+
+			public abstract System.Collections.Generic.IReadOnlyDictionary<char, ChanMode> ChanModesByModeChar
+			{
+				get;
+			}
+
+			public abstract System.Collections.Generic.IReadOnlyDictionary<char, UserMode> UserModesByModeChar
+			{
+				get;
+			}
 
 		#region Methods
 			protected void FirePropChanged(string strPropName) => PropertyChanged?.Invoke(this, new

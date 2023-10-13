@@ -135,6 +135,73 @@
   <data name="strChanServOptUnknownToolTip" xml:space="preserve">
     <value>Select this if the network has a ChanServ, but you don't know much about it</value>
   </data>
+  <data name="strDefChanModeForwardDesc" xml:space="preserve">
+    <value>join throttling to be sent to another channel.</value>
+  </data>
+  <data name="strDefChanModeForwardDestParamDesc" xml:space="preserve">
+    <value>Enter the name of the channel you want the forward to go to.</value>
+  </data>
+  <data name="strDefChanModeForwardDetParamName" xml:space="preserve">
+    <value>Destination</value>
+  </data>
+  <data name="strDefChanModeInviteOnlyDesc" xml:space="preserve">
+    <value>This mode causes the channel to be invite only.  People must get an invite via either the ChanServ/Q's invite function or the |/invite| command.</value>
+    <comment>Note: The text in pipes will be formatted at runtime as fixed with.  Also, don't translate text in pipes as they're always special.</comment>
+  </data>
+  <data name="strDefChanModeKeyDesc" xml:space="preserve">
+    <value>Setting a key requires anyone who wants to join to enter a key in order to join.</value>
+  </data>
+  <data name="strDefChanModeKeyParamDesc" xml:space="preserve">
+    <value>Enter the key for this channel</value>
+  </data>
+  <data name="strDefChanModeKeyParamName" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="strDefChanModeModDesc" xml:space="preserve">
+    <value>When this mode is on, only users with op, half-op, or voice may talk in the channel.</value>
+  </data>
+  <data name="strDefChanModeNoColorDesc" xml:space="preserve">
+    <value>This mode causes colors to be stripped</value>
+  </data>
+  <data name="strDefChanModeNoExternMsgDesc" xml:space="preserve">
+    <value>This mode prevents messages from being set from outside the channel.  When set, users or bots must be in the channel to post.</value>
+  </data>
+  <data name="strDefChanModeOpsModDesc" xml:space="preserve">
+    <value>When this mode is set, all posts from anyone without voice or op privileges are sent to ops instead of the channel as a whole.</value>
+  </data>
+  <data name="strDefChanModePrivateDesc" xml:space="preserve">
+    <value>Private channels disable |/knock|.</value>
+    <comment>Note: The text in pipes will be formatted at runtime as fixed with.  Also, don't translate text in pipes as they're always special.</comment>
+  </data>
+  <data name="strDefChanModeRegisteredUserOnlyDesc" xml:space="preserve">
+    <value>This mode, when set, prevents users who aren't registered from joining.  If you set this, be sure to set a forwarding location with 'f'.</value>
+  </data>
+  <data name="strDefChanModeSecretDesc" xml:space="preserve">
+    <value>If this mode is set, the channel won't be listed in |/whois| or |/list|.</value>
+    <comment>Note: The text in pipes will be formatted at runtime as fixed with.  Also, don't translate text in pipes as they're always special.</comment>
+  </data>
+  <data name="strDefChanModeTopicLockDesc" xml:space="preserve">
+    <value>This mode prevents changes to the topic by users who aren't ops or half ops.  Note: Services like ChanServ or Q may prevent such topic changes even if this mode is off.</value>
+  </data>
+  <data name="strDefUserModeInvisibleDesc" xml:space="preserve">
+    <value>Designates this client as “invisible”.</value>
+  </data>
+  <data name="strDefUserModeIrcOpDesc" xml:space="preserve">
+    <value>Designates the user as a IRC operator.  Use |/oper| to obtain this.</value>
+    <comment>Note: The text in pipes will be formatted at runtime as fixed with.  Also, don't translate text in pipes as they're always special.</comment>
+  </data>
+  <data name="strDefUserModeMsgRestrictDesc" xml:space="preserve">
+    <value>Prevents users not in your |/accept| list from messaging you and inviting you to channels</value>
+  </data>
+  <data name="strDefUserModeMsgRestrictSoftDesc" xml:space="preserve">
+    <value>Prevent users not on your |/accept| list and not in a channel with you from messaging you or inviting you to channels.  This is a softer form of +g.</value>
+  </data>
+  <data name="strDefUserModeRestrictMsgUnidentUsersDesc" xml:space="preserve">
+    <value>Prevents unidentified users that you haven't accepted from messaging you.</value>
+  </data>
+  <data name="strDefUserModeWallopsDesc" xml:space="preserve">
+    <value>Can see wallops</value>
+  </data>
   <data name="strHasAlisFalse" xml:space="preserve">
     <value>False / Not Available</value>
   </data>

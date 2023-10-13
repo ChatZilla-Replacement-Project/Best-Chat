@@ -6,8 +6,8 @@ namespace BestChat.IRC.Data.Defs
 	public partial class LocalizedTextSystem
 	{
 		#region Constructors & Deconstructors
-			public LocalizedTextSystem(System.Collections.Generic.IEnumerable<DTO.LocalizedTextDTO> translations,
-				string strDef)
+			internal LocalizedTextSystem(System.Collections.Generic.IEnumerable<DTO.LocalizedTextDTO>
+				translations, string strDef)
 			{
 				this.strDef = strDef;
 				foreach(DTO.LocalizedTextDTO dtextCur in translations)

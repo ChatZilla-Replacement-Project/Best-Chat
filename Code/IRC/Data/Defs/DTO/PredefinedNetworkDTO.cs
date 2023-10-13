@@ -6,7 +6,8 @@ namespace BestChat.IRC.Data.Defs.DTO
 	(
 		string Name,
 		ServerInfoDTO[] Servers,
-		ChanModeDTO[] Modes,
+		ChanModeDTO[] ChanModes,
+		UserModeDTO[] UserModes,
 		System.Uri? Homepage = null,
 		NickServOpts? NickServ = null,
 		ChanServOpts? ChanServ = null,

@@ -6,7 +6,32 @@ namespace BestChat.IRC.Data.Defs
 	public class ModeParam
 	{
 		#region Constructors & Deconstructors
-			public ModeParam(DTO.ModeParamDTO dmpUs)
+			internal ModeParam(in string strName, in Types type, in LocalizedTextSystem textDisplayName, in
+				LocalizedTextSystem textDesc, in LocalizedTextSystem? textPostFixLabel = null)
+			{
+				this.strName = strName;
+				this.type = type;
+				this.textDisplayName = textDisplayName;
+				this.textDesc = textDesc;
+				this.textPostFixLabel = textPostFixLabel;
+				iMinForNum = null;
+				iMaxForNum = null;
+			}
+
+			internal ModeParam(in string strName, in LocalizedTextSystem textDisplayName, in
+				LocalizedTextSystem textDesc, in LocalizedTextSystem? textPostFixLabel = null, in int? iMin =
+				null, in int? iMax = null)
+			{
+				this.strName = strName;
+				type = Types.number;
+				this.textDisplayName = textDisplayName;
+				this.textDesc = textDesc;
+				this.textPostFixLabel = textPostFixLabel;
+				iMinForNum = iMin;
+				iMaxForNum = iMax;
+			}
+
+			internal ModeParam(DTO.ModeParamDTO dmpUs)
 			{
 				strName = dmpUs.Name;
 				type = dmpUs.Type switch

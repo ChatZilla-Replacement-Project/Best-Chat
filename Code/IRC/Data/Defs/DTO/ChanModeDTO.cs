@@ -7,8 +7,9 @@ namespace BestChat.IRC.Data.Defs.DTO
 		char Mode,
 		LocalizedTextDTO[] LocalizedDesc,
 		string DefaultDesc,
-		bool NotAlwaysAvailable,
 		ModeParamDTO[] Parameters,
-		string FmtAsSentToNetwork
+		string FmtAsSentToNetwork = "",
+		bool NotAlwaysAvailable = false,
+		bool IsOperRequiredToChange = false
 	);
 }

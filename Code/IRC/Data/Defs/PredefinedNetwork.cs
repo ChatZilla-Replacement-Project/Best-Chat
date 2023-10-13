@@ -12,8 +12,10 @@ namespace BestChat.IRC.Data.Defs
 
 			public PredefinedNetwork(in DTO.PredefinedNetworkDTO dpnetworkUs) : base(dpnetworkUs)
 			{
-				foreach(DTO.ChanModeDTO dcmCur in dpnetworkUs.Modes)
-					mapModesByModeChar[dcmCur.Mode] = new(dcmCur);
+				foreach(DTO.ChanModeDTO dcmCur in dpnetworkUs.ChanModes)
+					mapChanModesByModeChar[dcmCur.Mode] = new(dcmCur);
+				foreach(DTO.UserModeDTO dumCur in dpnetworkUs.UserModes)
+					mapUserModesByModeChar[dumCur.Mode] = new(dumCur);
 			}
 		#endregion
 
@@ -30,13 +32,19 @@ namespace BestChat.IRC.Data.Defs
 		#endregion
 
 		#region Members
-			private readonly System.Collections.Generic.SortedDictionary<char, ChanMode> mapModesByModeChar =
+			private readonly System.Collections.Generic.SortedDictionary<char, ChanMode> mapChanModesByModeChar
+				= new();
+
+			private readonly System.Collections.Generic.SortedDictionary<char, UserMode> mapUserModesByModeChar =
 				new();
 		#endregion
 
 		#region Properties
-			public System.Collections.Generic.IReadOnlyDictionary<char, ChanMode> ModesByModeChar =>
-				mapModesByModeChar;
+			public override System.Collections.Generic.IReadOnlyDictionary<char, ChanMode> ChanModesByModeChar
+				=> mapChanModesByModeChar;
+
+			public override System.Collections.Generic.IReadOnlyDictionary<char, UserMode> UserModesByModeChar
+				=> mapUserModesByModeChar;
 		#endregion
 
 		#region Methods
