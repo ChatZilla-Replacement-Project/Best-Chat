@@ -64,7 +64,8 @@
           "BestChat.Platform.HttpClientOwner": "1.0.0",
           "IRC.ModuleInterfaces": "1.0.0",
           "Newtonsoft.Json": "13.0.3",
-          "Util": "1.0.0"
+          "Util": "1.0.0",
+          "Util.Exceptions": "1.0.0"
         },
         "compile": {
           "bin/placeholder/BestChat.IRC.Data.dll": {}
@@ -228,6 +229,22 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Util.Exceptions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Util.Ext": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Util.Exceptions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.Exceptions.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Util.Ext/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -370,6 +387,11 @@
       "type": "project",
       "path": "../Platform/Util.Collections/Util.Collections.csproj",
       "msbuildProject": "../Platform/Util.Collections/Util.Collections.csproj"
+    },
+    "Util.Exceptions/1.0.0": {
+      "type": "project",
+      "path": "../Platform/Util.Exceptions/Util.Exceptions.csproj",
+      "msbuildProject": "../Platform/Util.Exceptions/Util.Exceptions.csproj"
     },
     "Util.Ext/1.0.0": {
       "type": "project",

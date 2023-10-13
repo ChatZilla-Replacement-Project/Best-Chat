@@ -86,7 +86,8 @@
           "BestChat.Platform.HttpClientOwner": "1.0.0",
           "IRC.ModuleInterfaces": "1.0.0",
           "Newtonsoft.Json": "13.0.3",
-          "Util": "1.0.0"
+          "Util": "1.0.0",
+          "Util.Exceptions": "1.0.0"
         },
         "runtime": {
           "BestChat.IRC.Data.dll": {}
@@ -163,6 +164,14 @@
       "Util.Collections/1.0.0": {
         "runtime": {
           "Util.Collections.dll": {}
+        }
+      },
+      "Util.Exceptions/1.0.0": {
+        "dependencies": {
+          "Util.Ext": "1.0.0"
+        },
+        "runtime": {
+          "Util.Exceptions.dll": {}
         }
       },
       "Util.Ext/1.0.0": {
@@ -340,6 +349,11 @@
       "sha512": ""
     },
     "Util.Collections/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Util.Exceptions/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

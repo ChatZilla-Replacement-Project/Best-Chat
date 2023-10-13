@@ -65,7 +65,7 @@ namespace BestChat.IRC.Global.View
 				};
 
 				if(dlg.ShowDialog() == true)
-					Data.NetworkMgr.mgr.Add(dlg.eunetWhatsBeingEdited.unetOriginal);
+					Data.UserNetworkMgr.mgr.Add(dlg.eunetWhatsBeingEdited.unetOriginal);
 			}
 
 			private void OnEditClicked(object objSender, System.Windows.RoutedEventArgs e)

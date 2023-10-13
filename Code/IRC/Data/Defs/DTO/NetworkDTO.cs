@@ -2,7 +2,8 @@
 
 namespace BestChat.IRC.Data.Defs.DTO
 {
-	public record NetworkDTO(
+	public abstract record NetworkDTO
+	(
 		string Name,
 		ServerInfoDTO[] Servers,
 		System.Uri? Homepage = null,
@@ -10,7 +11,6 @@ namespace BestChat.IRC.Data.Defs.DTO
 		ChanServOpts? ChanServ = null,
 		bool? HasAlis = null,
 		bool? HasQ = null,
-		bool AutoConnect = false,
-		bool Hidden = false,
-		bool UseSSL = true) : IDataDefBasic<NetworkDTO>;
+		bool AutoConnect = false
+	) : IDataDefBasic<NetworkDTO>;
 }

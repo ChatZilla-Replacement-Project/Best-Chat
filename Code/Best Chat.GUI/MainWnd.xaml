@@ -470,7 +470,8 @@
 								<TextBlock
 									TextWrapping="Wrap">Private channels disable
 								<Span
-										Style="{DynamicResource FixedWidthHilight}">/knock</Span></TextBlock></CheckBox.ToolTip>
+										Style="{DynamicResource FixedWidthHilight}">/knock</Span></TextBlock>
+							</CheckBox.ToolTip>
 						</CheckBox>
 						<CheckBox
 							x:Name="chkRegisteredOnlyMode"
@@ -505,7 +506,7 @@
 						<CheckBox
 							x:Name="chkDisableForwardMode"
 							Content="Q"
-							ToolTip="When set, this mode prevents all forwarding to this channel except when override by 'F'."
+							ToolTip="When set, this mode prevents all forwarding to this channel except when overriden by 'F'."
 							Style="{DynamicResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
 						<CheckBox
 							x:Name="chkDisableCtcpMode"
@@ -580,10 +581,11 @@
 							<TextBox
 								x:Name="editKeyForChan"
 								ToolTip="Enter the key for this channel"
-								MinWidth="70" 
+								MinWidth="70"
 								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkKeyMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" />
 						</StackPanel>
-						<StackPanel Orientation="Horizontal">
+						<StackPanel
+							Orientation="Horizontal">
 							<CheckBox
 								x:Name="chkLimitMode"
 								Content="l"
@@ -595,10 +597,26 @@
 								ToolTip="{Binding ToolTip, ElementName=iudLimitOfUsersForChan}" />
 							<Ctrls:IntegerUpDown
 								x:Name="iudLimitOfUsersForChan"
-								ToolTip="Enter the maximum users in this channel" 
+								ToolTip="Enter the maximum users in this channel"
 								Visibility="{CalcBinding:Binding IsChecked, ElementName=chkLimitMode, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
 								Minimum="1"
 								Value="1" />
+						</StackPanel>
+						<StackPanel
+							Orientation="Horizontal">
+							<Label
+								Content="Other modes that are on: " />
+							<TextBox
+								x:Name="editOtherActiveModes"
+								MinWidth="70" />
+						</StackPanel>
+						<StackPanel
+							Orientation="Horizontal">
+							<Label
+								Content="Other modes that are off: " />
+							<TextBox
+								x:Name="editOtherInactiveModes"
+								MinWidth="70" />
 						</StackPanel>
 					</WrapPanel>
 				</Grid>

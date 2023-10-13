@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace BestChat.IRC.Data.Defs
 {
-	public class Network : Platform.Data.Obj<Network>, ModuleInterfaces.INetwork, IDataDef<Network>
+	public abstract class Network : Platform.Data.Obj<Network>, ModuleInterfaces.INetwork, IDataDef<Network>
 	{
 		#region Constructors & Deconstructors
 			public Network()

@@ -1,4 +1,4 @@
-﻿// Ignore Spelling: Dto
+﻿// Ignore Spelling: Dto evt
 
 namespace BestChat.IRC.Data
 {
@@ -140,7 +140,7 @@ namespace BestChat.IRC.Data
 		#endregion
 	}
 
-	public class NetworkMgr : MgrBase<Defs.Network, Defs.Network, Defs.DTO.NetworkDTO>
+	public class NetworkMgr : MgrBase<Defs.PredefinedNetwork, Defs.Network, Defs.DTO.PredefinedNetworkDTO>
 	{
 		private NetworkMgr() : base(new System.Uri("https://raw.githubusercontent.com/ChatZilla"
 			+ "-Replacement-Project/JSON-Data/main/Defaults/Network-def.json"), MakeNetworkFromDto)
@@ -149,10 +149,11 @@ namespace BestChat.IRC.Data
 
 		public static readonly NetworkMgr mgr = new();
 
-		private static Defs.Network MakeNetworkFromDto(Defs.DTO.NetworkDTO dnet) => new(dnet);
+		private static Defs.PredefinedNetwork MakeNetworkFromDto(Defs.DTO.PredefinedNetworkDTO dpnet) => new
+			(dpnet);
 	}
 
-	public class UserNetworkMgr : MgrBase<Defs.UserNetwork, Defs.Network, Defs.DTO.NetworkDTO>
+	public class UserNetworkMgr : MgrBase<Defs.UserNetwork, Defs.Network, Defs.DTO.UserNetworkDTO>
 	{
 		private UserNetworkMgr() : base(new System.IO.FileInfo(System.IO.Path.Combine(((Platform
 			.DataLoc.IDataLocProvider)System.Windows.Application.Current).LocalDataLoc.FullName,
@@ -171,6 +172,7 @@ namespace BestChat.IRC.Data
 
 		public static readonly UserNetworkMgr mgr;
 
-		private static Defs.UserNetwork MakeNetworkFromDto(Defs.DTO.NetworkDTO dnet) => new(dnet);
+		private static Defs.UserNetwork MakeNetworkFromDto(Defs.DTO.UserNetworkDTO dunet) => new
+			(dunet);
 	}
 }

@@ -2,9 +2,11 @@
 
 namespace BestChat.IRC.Data.Defs.DTO
 {
-	public record ServerInfoDTO(
+	public record ServerInfoDTO
+	(
 		string Domain,
 		ushort[] Ports,
 		ushort[] SslPorts,
-		bool IsEnabled = true);
+		bool IsEnabled = true
+	);
 }

@@ -100,6 +100,22 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Util.Exceptions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Util.Ext": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Util.Exceptions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.Exceptions.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Util.Ext/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -184,6 +200,11 @@
       "path": "../../Platform/Util.Collections/Util.Collections.csproj",
       "msbuildProject": "../../Platform/Util.Collections/Util.Collections.csproj"
     },
+    "Util.Exceptions/1.0.0": {
+      "type": "project",
+      "path": "../../Platform/Util.Exceptions/Util.Exceptions.csproj",
+      "msbuildProject": "../../Platform/Util.Exceptions/Util.Exceptions.csproj"
+    },
     "Util.Ext/1.0.0": {
       "type": "project",
       "path": "../../Platform/Util.Ext/Util.Ext.csproj",
@@ -198,7 +219,8 @@
       "BestChat.Platform.HttpClientOwner >= 1.0.0",
       "IRC.ModuleInterfaces >= 1.0.0",
       "Newtonsoft.Json >= 13.0.3",
-      "Util >= 1.0.0"
+      "Util >= 1.0.0",
+      "Util.Exceptions >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -242,6 +264,9 @@
             },
             "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.HttpClientOwner\\Platform.HttpClientOwner.csproj": {
               "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Platform.HttpClientOwner\\Platform.HttpClientOwner.csproj"
+            },
+            "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Exceptions\\Util.Exceptions.csproj": {
+              "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util.Exceptions\\Util.Exceptions.csproj"
             },
             "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj": {
               "projectPath": "B:\\Contents\\Best Chat\\Code\\Platform\\Util\\Util.csproj"

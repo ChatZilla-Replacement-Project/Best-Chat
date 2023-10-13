@@ -57,20 +57,20 @@ namespace BestChat.IRC.Global.View
 		#endregion
 
 		#region Properties
-			public bool CanSave => !eunetWhatsBeingEdited.Name.IsEmpty() && !Data.NetworkMgr.mgr.AllItems
-				.ContainsKey(eunetWhatsBeingEdited.Name) && Data.NetworkMgr.mgr.AllItems[eunetWhatsBeingEdited
+			public bool CanSave => !eunetWhatsBeingEdited.Name.IsEmpty() && !Data.UserNetworkMgr.mgr.AllItems
+				.ContainsKey(eunetWhatsBeingEdited.Name) && Data.UserNetworkMgr.mgr.AllItems[eunetWhatsBeingEdited
 				.Name] != eunetWhatsBeingEdited.unetOriginal && eunetWhatsBeingEdited.AllUnsortedServers.Count >
 				0;
 
 			public string ValidationErrorMsg => eunetWhatsBeingEdited.Name.IsEmpty() ? View.Resources
-				.strValidationNameBlank : !Data.NetworkMgr.mgr.AllItems.ContainsKey(eunetWhatsBeingEdited.Name) &&
-				Data.NetworkMgr.mgr.AllItems[eunetWhatsBeingEdited.Name] != eunetWhatsBeingEdited.unetOriginal ?
-				View.Resources.strValidationNameTaken : eunetWhatsBeingEdited.AllUnsortedServers.Count == 0 ? View
-				.Resources.strValidationEnterAtLeastOneDomainName : "";
+				.strValidationNameBlank : !Data.UserNetworkMgr.mgr.AllItems.ContainsKey(eunetWhatsBeingEdited
+				.Name) && Data.UserNetworkMgr.mgr.AllItems[eunetWhatsBeingEdited.Name] != eunetWhatsBeingEdited
+				.unetOriginal ? View.Resources.strValidationNameTaken : eunetWhatsBeingEdited.AllUnsortedServers
+				.Count == 0 ? View.Resources.strValidationEnterAtLeastOneDomainName : "";
 
 			public System.Windows.Style NameTextBoxStyle => (System.Windows.Style)System.Windows.Application
-				.Current.Resources[!eunetWhatsBeingEdited.Name.IsEmpty() && !Data.NetworkMgr.mgr.AllItems
-				.ContainsKey(eunetWhatsBeingEdited.Name) && Data.NetworkMgr.mgr.AllItems[eunetWhatsBeingEdited
+				.Current.Resources[!eunetWhatsBeingEdited.Name.IsEmpty() && !Data.UserNetworkMgr.mgr.AllItems
+				.ContainsKey(eunetWhatsBeingEdited.Name) && Data.UserNetworkMgr.mgr.AllItems[eunetWhatsBeingEdited
 				.Name] != eunetWhatsBeingEdited.unetOriginal ? "TextBoxWithInvalidCtnts" : typeof(System.Windows
 				.Controls.Primitives.TextBoxBase)];
 		#endregion

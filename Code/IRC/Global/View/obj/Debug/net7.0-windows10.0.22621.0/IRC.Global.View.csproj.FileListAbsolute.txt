@@ -65,3 +65,5 @@ B:\Contents\Best Chat\Code\IRC\Global\View\obj\Debug\net7.0-windows10.0.22621.0\
 B:\Contents\Best Chat\Code\IRC\Global\View\obj\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Global.View.xml
 B:\Contents\Best Chat\Code\IRC\Global\View\obj\Debug\net7.0-windows10.0.22621.0\BestChat.IRC.Global.View.pdb
 B:\Contents\Best Chat\Code\IRC\Global\View\obj\Debug\net7.0-windows10.0.22621.0\ref\BestChat.IRC.Global.View.dll
+B:\Contents\Best Chat\Code\IRC\Global\View\bin\Debug\net7.0-windows10.0.22621.0\Util.Exceptions.dll
+B:\Contents\Best Chat\Code\IRC\Global\View\bin\Debug\net7.0-windows10.0.22621.0\Util.Exceptions.pdb

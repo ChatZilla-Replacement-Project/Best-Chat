@@ -39,7 +39,7 @@ namespace BestChat.IRC.Data.Defs
 				bUseSSL = unetCopyThis.UseSSL;
 			}
 
-			public UserNetwork(in DTO.NetworkDTO dunetworkUs) : base(dunetworkUs)
+			public UserNetwork(in DTO.UserNetworkDTO dunetworkUs) : base(dunetworkUs)
 			{
 				bAutoConnect = dunetworkUs.AutoConnect;
 				bHidden = dunetworkUs.Hidden;

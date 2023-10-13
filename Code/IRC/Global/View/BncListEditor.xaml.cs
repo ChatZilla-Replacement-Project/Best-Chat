@@ -46,35 +46,14 @@ namespace BestChat.IRC.Global.View
 		#region Event Handlers
 			private void OnAddClicked(object sender, System.Windows.RoutedEventArgs e)
 			{
-				NetworkEditorDlg dlg = new(false, new Data.Defs.UserNetwork()
-					.MakeEditableVersion())
-				{
-					Owner = this,
-				};
-
-				if(dlg.ShowDialog() == true)
-					Data.NetworkMgr.mgr.Add(dlg.eunetWhatsBeingEdited.unetOriginal);
 			}
 
 			private void OnEditClicked(object sender, System.Windows.RoutedEventArgs e)
 			{
-				if(dgMain.SelectedItem != null)
-				{
-					NetworkEditorDlg dlg = new(true, ((Data.Defs.UserNetwork)dgMain
-						.SelectedItem).MakeEditableVersion())
-					{
-						Owner = this,
-					};
-
-					if(dlg.ShowDialog() == true)
-						dlg.eunetWhatsBeingEdited.Save();
-				}
 			}
 
 			private void OnDelClicked(object sender, System.Windows.RoutedEventArgs e)
 			{
-				if(dgMain.SelectedItem != null)
-					Data.NetworkMgr.mgr.Remove(((Data.Defs.UserNetwork)dgMain.SelectedItem).Name);
 			}
 
 			private void OnCloseClicked(object objSender, System.Windows.RoutedEventArgs e) => Close();
