@@ -146,6 +146,11 @@ namespace BestChat.IRC.Data.Defs
 				where curServer.IsEnabled
 				select curServer.Domain;
 
+			public System.Collections.Generic.IEnumerable<ServerInfo> EnabledServersInSearchOrder => 
+				from ServerInfo curServer in mapServers.Values
+				where curServer.IsEnabled
+				select curServer;
+
 			public System.Collections.Generic.IReadOnlyCollection<ServerInfo> AllUnsortedServers => mapServers
 				.Values;
 
@@ -309,9 +314,10 @@ namespace BestChat.IRC.Data.Defs
 			{
 				get;
 			}
+		#endregion
 
 		#region Methods
-			protected void FirePropChanged(string strPropName) => PropertyChanged?.Invoke(this, new
+		protected void FirePropChanged(string strPropName) => PropertyChanged?.Invoke(this, new
 				(strPropName));
 
 			protected void FireNameChanged(string strOldVal)

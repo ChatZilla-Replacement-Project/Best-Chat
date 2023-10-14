@@ -1,4 +1,6 @@
-﻿namespace BestChat.IRC.Data.Defs.DTO
+﻿// Ignore Spelling: Defs DTO
+
+namespace BestChat.IRC.Data.Defs.DTO
 {
 	public record UserModeDTO
 	(

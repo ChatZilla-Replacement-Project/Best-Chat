@@ -3,7 +3,7 @@
 namespace BestChat.IRC.Data.Defs
 {
 	[System.ComponentModel.ImmutableObject(true)]
-	public class UserMode
+	public class UserMode : IMode
 	{
 		#region Constructors & Deconstructors
 			internal UserMode(in char chModeChar, in LocalizedTextSystem textDesc, in bool bNotAlwaysAvailable =

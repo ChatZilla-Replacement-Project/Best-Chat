@@ -248,51 +248,32 @@ namespace BestChat.IRC.Data.Defs
 			private static readonly System.Collections.Generic.SortedDictionary<char, ChanMode>
 				mapDefChanModesByChar = new()
 				{
-					['n'] = new('n', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModeNoExternMsgDesc)),
-					['t'] = new('t', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModeTopicLockDesc)),
-					['s'] = new('s', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModeSecretDesc)),
-					['p'] = new('p', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModePrivateDesc)),
-					['m'] = new('m', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModeModDesc)),
-					['i'] = new('i', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModeInviteOnlyDesc)),
-					['r'] = new('r', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModeRegisteredUserOnlyDesc)),
-					['c'] = new('c', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModeNoColorDesc)),
-					['z'] = new('z', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModeOpsModDesc)),
-					['f'] = new('f', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModeForwardDesc), @params: new ModeParam[] {new
-						("Destination", ModeParam.Types.chanName, new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModeForwardDetParamName), new(System
-						.Array.Empty<DTO.LocalizedTextDTO>(), Resources.strDefChanModeForwardDestParamDesc))}),
-					['k'] = new('k', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModeKeyDesc), @params: new ModeParam[] {new
-						("Key", ModeParam.Types.@string, new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefChanModeKeyParamName), new(System.Array
-						.Empty<DTO.LocalizedTextDTO>(), Resources.strDefChanModeKeyParamDesc))})
+					['n'] = new('n', Resources.strDefChanModeNoExternMsgDesc),
+					['t'] = new('t', Resources.strDefChanModeTopicLockDesc),
+					['s'] = new('s', Resources.strDefChanModeSecretDesc),
+					['p'] = new('p', Resources.strDefChanModePrivateDesc),
+					['m'] = new('m', Resources.strDefChanModeModDesc),
+					['i'] = new('i', Resources.strDefChanModeInviteOnlyDesc),
+					['r'] = new('r', Resources.strDefChanModeRegisteredUserOnlyDesc),
+					['c'] = new('c', Resources.strDefChanModeNoColorDesc),
+					['z'] = new('z', Resources.strDefChanModeOpsModDesc),
+					['f'] = new('f', Resources.strDefChanModeForwardDesc, @params: new
+						ModeParam[] {new("Destination", ModeParam.Types.chanName,
+						Resources.strDefChanModeForwardDetParamName, Resources.strDefChanModeForwardDestParamDesc)}),
+					['k'] = new('k', Resources.strDefChanModeKeyDesc, @params: new ModeParam[]
+					{new("Key", ModeParam.Types.@string, Resources.strDefChanModeKeyParamName,
+						Resources.strDefChanModeKeyParamDesc)})
 				};
 
 			private static readonly System.Collections.Generic.SortedDictionary<char, UserMode>
 				mapDefUserModesByChar = new()
 				{
-					['o'] = new('o', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefUserModeIrcOpDesc)),
-					['i'] = new('i', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefUserModeInvisibleDesc)),
-					['g'] = new('g', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefUserModeMsgRestrictDesc)),
-					['w'] = new('w', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefUserModeWallopsDesc)),
-					['G'] = new('g', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefUserModeMsgRestrictSoftDesc)),
-					['R'] = new('R', new(System.Array.Empty<DTO
-						.LocalizedTextDTO>(), Resources.strDefUserModeRestrictMsgUnidentUsersDesc))
+					['o'] = new('o', Resources.strDefUserModeIrcOpDesc),
+					['i'] = new('i', Resources.strDefUserModeInvisibleDesc),
+					['g'] = new('g', Resources.strDefUserModeMsgRestrictDesc),
+					['w'] = new('w', Resources.strDefUserModeWallopsDesc),
+					['G'] = new('g', Resources.strDefUserModeMsgRestrictSoftDesc),
+					['R'] = new('R', Resources.strDefUserModeRestrictMsgUnidentUsersDesc)
 				};
 		#endregion
 
@@ -429,10 +410,17 @@ namespace BestChat.IRC.Data.Defs
 
 			public override System.Collections.Generic.IReadOnlyDictionary<char, UserMode> UserModesByModeChar
 				=> netPredefinedParent != null ? netPredefinedParent.UserModesByModeChar : mapDefUserModesByChar;
+
+
+			public System.Collections.Generic.IEnumerable<System.Uri> AllEnabledServerUris =>
+				from ServerInfo serverCur in EnabledServersInSearchOrder
+					from ushort usCurPortOnCurServer in bUseSSL ? serverCur.SslPorts : serverCur.Ports
+						select new System.Uri((bUseSSL ? "ircs://" : "irc://") + $"{serverCur.Domain}:{
+							usCurPortOnCurServer}");
 		#endregion
 
 		#region Methods
-		protected void FireAutoConnectChanged()
+			protected void FireAutoConnectChanged()
 			{
 				FirePropChanged(nameof(AutoConnect));
 

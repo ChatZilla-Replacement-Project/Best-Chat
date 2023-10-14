@@ -13,6 +13,8 @@ namespace BestChat.IRC.Data.Defs
 				foreach(DTO.LocalizedTextDTO dtextCur in translations)
 					mapTranslationByLang[dtextCur.Lang] = dtextCur.Translation;
 			}
+
+			internal LocalizedTextSystem(string strDefToWrap) => strDef = strDefToWrap;
 		#endregion
 
 		#region Delegates
@@ -69,6 +71,11 @@ namespace BestChat.IRC.Data.Defs
 		#region Methods
 			[System.Text.RegularExpressions.GeneratedRegex("([a-z][a-z])(-[A-Z][A-Z])")]
 			private static partial System.Text.RegularExpressions.Regex InitParentLangObtainer();
+		#endregion
+
+		#region Operators
+			public static implicit operator LocalizedTextSystem(string strDefToWrap) => new
+				(strDefToWrap);
 		#endregion
 
 		#region Event Handlers

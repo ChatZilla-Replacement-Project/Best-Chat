@@ -61,6 +61,24 @@ namespace BestChat.IRC.Data.Defs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Off.
+        /// </summary>
+        internal static string strBoolModeStateOffDesc {
+            get {
+                return ResourceManager.GetString("strBoolModeStateOffDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On.
+        /// </summary>
+        internal static string strBoolModeStateOnDesc {
+            get {
+                return ResourceManager.GetString("strBoolModeStateOnDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to AtTheme.
         /// </summary>
         internal static string strChanServOptAtTheme {
@@ -561,6 +579,33 @@ namespace BestChat.IRC.Data.Defs {
         internal static string strSASL {
             get {
                 return ResourceManager.GetString("strSASL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ChanServ is preventing this mode from being set..
+        /// </summary>
+        internal static string strThreeWayModeStateForcedOff {
+            get {
+                return ResourceManager.GetString("strThreeWayModeStateForcedOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ChanServ is ensuring this mode is set.
+        /// </summary>
+        internal static string strThreeWayModeStateLockedOnDesc {
+            get {
+                return ResourceManager.GetString("strThreeWayModeStateLockedOnDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ChanServ isn&apos;t controlling this mode.
+        /// </summary>
+        internal static string strThreeWayModeStateNoPrefDesc {
+            get {
+                return ResourceManager.GetString("strThreeWayModeStateNoPrefDesc", resourceCulture);
             }
         }
     }

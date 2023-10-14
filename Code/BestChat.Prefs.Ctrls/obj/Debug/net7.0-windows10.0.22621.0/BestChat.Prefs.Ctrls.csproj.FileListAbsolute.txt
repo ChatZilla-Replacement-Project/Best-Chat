@@ -60,3 +60,5 @@ B:\Contents\Best Chat\Code\BestChat.Prefs.Ctrls\obj\Debug\net7.0-windows10.0.226
 B:\Contents\Best Chat\Code\BestChat.Prefs.Ctrls\obj\Debug\net7.0-windows10.0.22621.0\BestChat.Prefs.Ctrls.xml
 B:\Contents\Best Chat\Code\BestChat.Prefs.Ctrls\obj\Debug\net7.0-windows10.0.22621.0\BestChat.Prefs.Ctrls.pdb
 B:\Contents\Best Chat\Code\BestChat.Prefs.Ctrls\obj\Debug\net7.0-windows10.0.22621.0\ref\BestChat.Prefs.Ctrls.dll
+B:\Contents\Best Chat\Code\BestChat.Prefs.Ctrls\bin\Debug\net7.0-windows10.0.22621.0\Util.Exceptions.dll
+B:\Contents\Best Chat\Code\BestChat.Prefs.Ctrls\bin\Debug\net7.0-windows10.0.22621.0\Util.Exceptions.pdb

@@ -3,7 +3,7 @@
 namespace BestChat.IRC.Data.Defs
 {
 	[System.ComponentModel.ImmutableObject(true)]
-	public class ChanMode
+	public class ChanMode : IMode
 	{
 		#region Constructors & Deconstructors
 			internal ChanMode(in char chModeChar, in LocalizedTextSystem textDesc, in bool bNotAlwaysAvailable =

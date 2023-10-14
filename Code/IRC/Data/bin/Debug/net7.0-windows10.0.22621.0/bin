@@ -32,6 +32,16 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strBoolModeStateOffDesc">
+            <summary>
+              Looks up a localized string similar to Off.
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strBoolModeStateOnDesc">
+            <summary>
+              Looks up a localized string similar to On.
+            </summary>
+        </member>
         <member name="P:BestChat.IRC.Data.Defs.Resources.strChanServOptAtTheme">
             <summary>
               Looks up a localized string similar to AtTheme.
@@ -60,6 +70,111 @@
         <member name="P:BestChat.IRC.Data.Defs.Resources.strChanServOptUnknownToolTip">
             <summary>
               Looks up a localized string similar to Select this if the network has a ChanServ, but you don&apos;t know much about it.
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeForwardDesc">
+            <summary>
+              Looks up a localized string similar to join throttling to be sent to another channel..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeForwardDestParamDesc">
+            <summary>
+              Looks up a localized string similar to Enter the name of the channel you want the forward to go to..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeForwardDetParamName">
+            <summary>
+              Looks up a localized string similar to Destination.
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeInviteOnlyDesc">
+            <summary>
+              Looks up a localized string similar to This mode causes the channel to be invite only.  People must get an invite via either the ChanServ/Q&apos;s invite function or the |/invite| command..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeKeyDesc">
+            <summary>
+              Looks up a localized string similar to Setting a key requires anyone who wants to join to enter a key in order to join..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeKeyParamDesc">
+            <summary>
+              Looks up a localized string similar to Enter the key for this channel.
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeKeyParamName">
+            <summary>
+              Looks up a localized string similar to Key.
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeModDesc">
+            <summary>
+              Looks up a localized string similar to When this mode is on, only users with op, half-op, or voice may talk in the channel..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeNoColorDesc">
+            <summary>
+              Looks up a localized string similar to This mode causes colors to be stripped.
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeNoExternMsgDesc">
+            <summary>
+              Looks up a localized string similar to This mode prevents messages from being set from outside the channel.  When set, users or bots must be in the channel to post..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeOpsModDesc">
+            <summary>
+              Looks up a localized string similar to When this mode is set, all posts from anyone without voice or op privileges are sent to ops instead of the channel as a whole..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModePrivateDesc">
+            <summary>
+              Looks up a localized string similar to Private channels disable |/knock|..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeRegisteredUserOnlyDesc">
+            <summary>
+              Looks up a localized string similar to This mode, when set, prevents users who aren&apos;t registered from joining.  If you set this, be sure to set a forwarding location with &apos;f&apos;..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeSecretDesc">
+            <summary>
+              Looks up a localized string similar to If this mode is set, the channel won&apos;t be listed in |/whois| or |/list|..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefChanModeTopicLockDesc">
+            <summary>
+              Looks up a localized string similar to This mode prevents changes to the topic by users who aren&apos;t ops or half ops.  Note: Services like ChanServ or Q may prevent such topic changes even if this mode is off..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefUserModeInvisibleDesc">
+            <summary>
+              Looks up a localized string similar to Designates this client as “invisible”..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefUserModeIrcOpDesc">
+            <summary>
+              Looks up a localized string similar to Designates the user as a IRC operator.  Use |/oper| to obtain this..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefUserModeMsgRestrictDesc">
+            <summary>
+              Looks up a localized string similar to Prevents users not in your |/accept| list from messaging you and inviting you to channels.
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefUserModeMsgRestrictSoftDesc">
+            <summary>
+              Looks up a localized string similar to Prevent users not on your |/accept| list and not in a channel with you from messaging you or inviting you to channels.  This is a softer form of +g..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefUserModeRestrictMsgUnidentUsersDesc">
+            <summary>
+              Looks up a localized string similar to Prevents unidentified users that you haven&apos;t accepted from messaging you..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strDefUserModeWallopsDesc">
+            <summary>
+              Looks up a localized string similar to Can see wallops.
             </summary>
         </member>
         <member name="P:BestChat.IRC.Data.Defs.Resources.strHasAlisFalse">
@@ -205,6 +320,21 @@
         <member name="P:BestChat.IRC.Data.Defs.Resources.strSASL">
             <summary>
               Looks up a localized string similar to Use SASL.
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strThreeWayModeStateForcedOff">
+            <summary>
+              Looks up a localized string similar to ChanServ is preventing this mode from being set..
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strThreeWayModeStateLockedOnDesc">
+            <summary>
+              Looks up a localized string similar to ChanServ is ensuring this mode is set.
+            </summary>
+        </member>
+        <member name="P:BestChat.IRC.Data.Defs.Resources.strThreeWayModeStateNoPrefDesc">
+            <summary>
+              Looks up a localized string similar to ChanServ isn&apos;t controlling this mode.
             </summary>
         </member>
         <member name="T:System.Text.RegularExpressions.Generated.InitParentLangObtainer_0">
