@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Platform\Platform.DataLoc\Platform.DataLoc.csproj" />
-    <ProjectReference Include="..\Platform\Platform.Prefs\Platform.Prefs.csproj" />
+    <ProjectReference Include="..\Platform\Prefs\Platform.Prefs.Data\Platform.Prefs.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

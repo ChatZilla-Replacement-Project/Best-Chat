@@ -2,7 +2,7 @@
 
 namespace BestChat.Prefs.Data
 {
-	public class Prefs : Platform.Prefs.Mgr
+	public class Prefs : Platform.Prefs.Data.AbstractMgr
 	{
 		#region Constructors & Deconstructors
 			internal Prefs()

@@ -20,7 +20,6 @@
     <ProjectReference Include="..\BestChat.Prefs.Data\BestChat.Prefs.Data.csproj" />
     <ProjectReference Include="..\Ctrls\BestChat.GUI.Ctrls.csproj" />
     <ProjectReference Include="..\IRC\Global\View\IRC.Global.View.csproj" />
-    <ProjectReference Include="..\Platform\Platform.Prefs\Platform.Prefs.csproj" />
   </ItemGroup>
 
   <ItemGroup>

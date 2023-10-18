@@ -28,7 +28,6 @@
     <ProjectReference Include="..\IRC\Global\View\IRC.Global.View.csproj" />
     <ProjectReference Include="..\Platform\Platform.DataLoc\Platform.DataLoc.csproj" />
     <ProjectReference Include="..\Platform\Platform.HttpClientOwner\Platform.HttpClientOwner.csproj" />
-    <ProjectReference Include="..\Platform\Platform.Prefs\Platform.Prefs.csproj" />
   </ItemGroup>
 
   <ItemGroup>
