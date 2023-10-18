@@ -1,12 +1,12 @@
-﻿<Base:VisualTabCtrl
+﻿<UserControl
 	x:Class="BestChat.Prefs.Ctrls.Global"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:local="clr-namespace:BestChat.Prefs.Ctrls"
-	xmlns:Base="clr-namespace:BestChat.Platform.Prefs;assembly=BestChat.Platform.Prefs"
 	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
+	xmlns:Base="clr-namespace:BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
 	xmlns:IrcView="clr-namespace:BestChat.IRC.Global.View;assembly=BestChat.IRC.Global.View"
 	mc:Ignorable="d">
@@ -1902,4 +1902,4 @@
 			</TabItem>
 		</TabControl>
 	</ScrollViewer>
-</Base:VisualTabCtrl>
+</UserControl>

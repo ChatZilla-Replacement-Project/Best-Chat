@@ -13,9 +13,9 @@ namespace BestChat.IRC.Data.Defs
 
 			public UserNetwork(in Network netPredefinedParent)
 			{
-				if(netPredefinedParent != null && netPredefinedParent.GetType() != typeof(Network))
+				if(netPredefinedParent != null && netPredefinedParent.GetType() != typeof(PredefinedNetwork))
 					throw new System.InvalidProgramException("The parent network for a user network must be " +
-						$"predefined unless {nameof(netPredefinedParent)} is {null}.");
+						$"predefined unless {nameof(netPredefinedParent)} is null.");
 
 				this.netPredefinedParent = netPredefinedParent;
 			}
@@ -23,9 +23,9 @@ namespace BestChat.IRC.Data.Defs
 			public UserNetwork(in Network netPredefinedParent, in string strName, in System.Uri uriHomepage,
 				params ServerInfo[] allServers) : base(strName, uriHomepage, allServers)
 			{
-				if(netPredefinedParent != null && netPredefinedParent.GetType() != typeof(Network))
+				if(netPredefinedParent != null && netPredefinedParent.GetType() != typeof(PredefinedNetwork))
 					throw new System.InvalidProgramException("The parent network for a user network must be " +
-						$"predefined unless {nameof(netPredefinedParent)} is {null}.");
+						$"predefined unless {nameof(netPredefinedParent)} is null.");
 
 				this.netPredefinedParent = netPredefinedParent;
 			}

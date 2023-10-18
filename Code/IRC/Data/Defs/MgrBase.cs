@@ -1,12 +1,12 @@
-﻿// Ignore Spelling: Dto evt
+﻿// Ignore Spelling: Dto evt Defs
 
-namespace BestChat.IRC.Data
+namespace BestChat.IRC.Data.Defs
 {
 	public abstract class MgrBase<ItemType, ItemBaseType, ItemDtoType> : Platform.Data.Obj<MgrBase<ItemType,
-		ItemBaseType, ItemDtoType>>
-		where ItemType : ItemBaseType
-		where ItemBaseType : Platform.Data.Obj<ItemBaseType>, IDataDef<ItemBaseType>
-		where ItemDtoType : IDataDefBasic<ItemDtoType>
+			ItemBaseType, ItemDtoType>>
+			where ItemType : ItemBaseType
+			where ItemBaseType : Platform.Data.Obj<ItemBaseType>, IDataDef<ItemBaseType>
+			where ItemDtoType : IDataDefBasic<ItemDtoType>
 	{
 		#region Constructors & Deconstructors
 			protected MgrBase(System.IO.FileInfo fileUserData, DGetItemFromDTO dItemMaker)
@@ -16,26 +16,26 @@ namespace BestChat.IRC.Data
 					{
 						Init(fileUserData.OpenText().ReadToEnd(), dItemMaker);
 					}
-					catch (System.Exception e)
+					catch(System.Exception e)
 					{
-						System.Windows.MessageBox.Show(System.Windows.Application.Current.MainWindow, 
-							 $"Unable to reload your custom IRC networks due to {e.Message}.", 
-							 "IRC Network load failure.", System.Windows.MessageBoxButton.OK, System.Windows
-							 .MessageBoxImage.Error);
+						System.Windows.MessageBox.Show(System.Windows.Application.Current.MainWindow,
+								 $"Unable to reload your custom IRC networks due to {e.Message}.",
+								 "IRC Network load failure.", System.Windows.MessageBoxButton.OK, System.Windows
+								 .MessageBoxImage.Error);
 					}
 			}
 
 			protected MgrBase(System.Uri uriPredefinedData, DGetItemFromDTO itemMaker) => Init(client
-				.GetStringAsync(uriPredefinedData.AbsoluteUri).Result, itemMaker);
+					.GetStringAsync(uriPredefinedData.AbsoluteUri).Result, itemMaker);
 
 			static MgrBase()
 			{
 				if(System.Windows.Application.Current is not Platform.HttpClientOwner.IHttpClientOwner)
 					throw new System.InvalidProgramException("Mgr objects can only be used by applications that " +
-						"implement BestChat.Platform.HttpClientOwner.IHttpClientOwner.");
+							"implement BestChat.Platform.HttpClientOwner.IHttpClientOwner.");
 
 				client = ((Platform.HttpClientOwner.IHttpClientOwner)System.Windows.Application.Current)
-					.HttpClient;
+						.HttpClient;
 			}
 		#endregion
 
@@ -45,7 +45,7 @@ namespace BestChat.IRC.Data
 
 		#region Events
 			public event DCollectionFieldChanged<System.Collections.Generic.IEnumerable<ItemType>>?
-				evtListChanged;
+					evtListChanged;
 
 			public override event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
 		#endregion
@@ -61,10 +61,14 @@ namespace BestChat.IRC.Data
 
 			private static readonly System.Text.Json.JsonSerializerOptions jso = new()
 			{
+				AllowTrailingCommas = true,
 				Converters =
 				{
-					new System.Text.Json.Serialization.JsonStringEnumConverter(),
-				}
+						new System.Text.Json.Serialization.JsonStringEnumConverter(),
+				},
+				WriteIndented = true,
+				NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System
+					.Text.Json.Serialization.JsonNumberHandling.AllowNamedFloatingPointLiterals,
 			};
 
 			private readonly System.Collections.Generic.SortedDictionary<string, ItemType>
@@ -73,17 +77,17 @@ namespace BestChat.IRC.Data
 
 		#region Properties
 			public System.Collections.Generic.IEnumerable<ItemType> AllItemsSortedByName =>
-				mapAllItemsSortedByName.Values;
+					mapAllItemsSortedByName.Values;
 
 			public System.Collections.Generic.IReadOnlyDictionary<string, ItemType> AllItems =>
-				mapAllItemsSortedByName;
+					mapAllItemsSortedByName;
 		#endregion
 
 		#region Methods
 			private void Init(string strUserDataCtnts, DGetItemFromDTO itemMaker)
 			{
 				ItemDtoType[]? anet = System.Text.Json.JsonSerializer
-					.Deserialize<ItemDtoType[]>(strUserDataCtnts, jso);
+						.Deserialize<ItemDtoType[]>(strUserDataCtnts, jso);
 
 				if(anet != null)
 					foreach(ItemDtoType dnetCur in anet)
@@ -94,7 +98,7 @@ namespace BestChat.IRC.Data
 			{
 				if(mapAllItemsSortedByName.ContainsKey(@new.Name))
 					throw new System.ArgumentException("The IRC network manager already has a network named" +
-						$" {@new.Name} and can't accommodate a second with the same name.", nameof(@new));
+							$" {@new.Name} and can't accommodate a second with the same name.", nameof(@new));
 
 				mapAllItemsSortedByName[@new.Name] = @new;
 
@@ -110,8 +114,7 @@ namespace BestChat.IRC.Data
 			public void Remove(string strNameOfItemToRemove)
 			{
 				if(!mapAllItemsSortedByName.ContainsKey(strNameOfItemToRemove))
-					throw new System.ArgumentException($"The network manager can't remove the network named {
-						strNameOfItemToRemove} as no such network exists.", nameof(strNameOfItemToRemove));
+					throw new System.ArgumentException($"The network manager can't remove the network named {strNameOfItemToRemove} as no such network exists.", nameof(strNameOfItemToRemove));
 
 				mapAllItemsSortedByName.Remove(strNameOfItemToRemove);
 
@@ -128,8 +131,8 @@ namespace BestChat.IRC.Data
 			{
 				if(sender is not ItemType)
 					throw new System.InvalidProgramException($"Some how an item in {GetType().FullName} " +
-						$"isn't of type {typeof(ItemType)} as was expected.  Instead, an item of type {sender
-						.GetType()} was found.");
+							$"isn't of type {typeof(ItemType)} as was expected.  Instead, an item of type {sender
+							.GetType()} was found.");
 				ItemType senderAsDerivedType = (ItemType)sender;
 
 				if(mapAllItemsSortedByName.ContainsKey(strOldVal))
@@ -140,24 +143,24 @@ namespace BestChat.IRC.Data
 		#endregion
 	}
 
-	public class NetworkMgr : MgrBase<Defs.PredefinedNetwork, Defs.Network, Defs.DTO.PredefinedNetworkDTO>
+	public class NetworkMgr : MgrBase<PredefinedNetwork, Network, DTO.PredefinedNetworkDTO>
 	{
 		private NetworkMgr() : base(new System.Uri("https://raw.githubusercontent.com/ChatZilla"
-			+ "-Replacement-Project/JSON-Data/main/Defaults/Network-def.json"), MakeNetworkFromDto)
+				+ "-Replacement-Project/JSON-Data/main/Defaults/Network-def.json"), MakeNetworkFromDto)
 		{
 		}
 
 		public static readonly NetworkMgr mgr = new();
 
-		private static Defs.PredefinedNetwork MakeNetworkFromDto(Defs.DTO.PredefinedNetworkDTO dpnet) => new
-			(dpnet);
+		private static PredefinedNetwork MakeNetworkFromDto(DTO.PredefinedNetworkDTO dpnet) => new
+				(dpnet);
 	}
 
-	public class UserNetworkMgr : MgrBase<Defs.UserNetwork, Defs.Network, Defs.DTO.UserNetworkDTO>
+	public class UserNetworkMgr : MgrBase<UserNetwork, Network, DTO.UserNetworkDTO>
 	{
 		private UserNetworkMgr() : base(new System.IO.FileInfo(System.IO.Path.Combine(((Platform
-			.DataLoc.IDataLocProvider)System.Windows.Application.Current).LocalDataLoc.FullName,
-			"User Networks.json")), MakeNetworkFromDto)
+				.DataLoc.IDataLocProvider)System.Windows.Application.Current).LocalDataLoc.FullName,
+				"User Networks.json")), MakeNetworkFromDto)
 		{
 		}
 
@@ -165,14 +168,14 @@ namespace BestChat.IRC.Data
 		{
 			if(System.Windows.Application.Current is not Platform.DataLoc.IDataLocProvider)
 				throw new System.InvalidProgramException("UserNetworkMgr can only be used by applications that " +
-					"implement BestChat.Platform.DataLoc.IDataLocProvider.");
+						"implement BestChat.Platform.DataLoc.IDataLocProvider.");
 
 			mgr = new();
 		}
 
 		public static readonly UserNetworkMgr mgr;
 
-		private static Defs.UserNetwork MakeNetworkFromDto(Defs.DTO.UserNetworkDTO dunet) => new
-			(dunet);
+		private static UserNetwork MakeNetworkFromDto(DTO.UserNetworkDTO dunet) => new
+				(dunet);
 	}
 }

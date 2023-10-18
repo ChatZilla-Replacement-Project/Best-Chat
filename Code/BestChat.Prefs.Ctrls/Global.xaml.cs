@@ -1,13 +1,14 @@
-﻿namespace BestChat.Prefs.Ctrls
+﻿// Ignore Spelling: Prefs Ctrls
+
+namespace BestChat.Prefs.Ctrls
 {
 	/// <summary>
 	/// Interaction logic for Global.xaml
 	/// </summary>
-	public partial class Global : Platform.Prefs.VisualTabCtrl
+	public partial class Global : System.Windows.Controls.UserControl
 	{
 		#region Constructors & Deconstructors
-			public Global() : base(Ctrls.Resources.strGlobalName, Ctrls.Resources.strGlobalNameToolTipText, Data
-				.Prefs.Instance.Global) => InitializeComponent();
+			public Global() => InitializeComponent();
 		#endregion
 
 		#region Delegates

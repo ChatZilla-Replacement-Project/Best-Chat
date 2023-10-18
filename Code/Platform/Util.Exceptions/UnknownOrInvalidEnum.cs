@@ -1,4 +1,6 @@
-﻿namespace BestChat.Util.Exceptions
+﻿// Ignore Spelling: Util
+
+namespace BestChat.Util.Exceptions
 {
 	public class UnknownOrInvalidEnum<EnumType> : System.Exception
 	{

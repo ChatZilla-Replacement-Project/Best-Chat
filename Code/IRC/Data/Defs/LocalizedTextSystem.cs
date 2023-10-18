@@ -10,8 +10,9 @@ namespace BestChat.IRC.Data.Defs
 				translations, string strDef)
 			{
 				this.strDef = strDef;
-				foreach(DTO.LocalizedTextDTO dtextCur in translations)
-					mapTranslationByLang[dtextCur.Lang] = dtextCur.Translation;
+				if(translations != null)
+					foreach(DTO.LocalizedTextDTO dtextCur in translations)
+						mapTranslationByLang[dtextCur.Lang] = dtextCur.Translation;
 			}
 
 			internal LocalizedTextSystem(string strDefToWrap) => strDef = strDefToWrap;

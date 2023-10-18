@@ -9,6 +9,8 @@
 			{
 				this.val = val;
 				this.strDescOfVal = strDescOfVal;
+
+				mapAllInstancesByVal[val] = this;
 			}
 		#endregion
 
@@ -28,6 +30,11 @@
 			public readonly EnumTypeAssociatedWithThisEventType val;
 
 			public readonly string strDescOfVal;
+
+			private static readonly System.Collections.Generic
+				.SortedDictionary<EnumTypeAssociatedWithThisEventType,
+				AbstractEventType<EnumTypeAssociatedWithThisEventType>> mapAllInstancesByVal = new
+				();
 		#endregion
 
 		#region Properties
@@ -37,6 +44,18 @@
 		#endregion
 
 		#region Methods
+		#endregion
+
+		#region Operators
+			public static implicit operator
+				EnumTypeAssociatedWithThisEventType(AbstractEventType<EnumTypeAssociatedWithThisEventType>
+				convertThis) => convertThis.val;
+
+			public static implicit operator
+				AbstractEventType<EnumTypeAssociatedWithThisEventType>(EnumTypeAssociatedWithThisEventType
+				convertThis) => !mapAllInstancesByVal.ContainsKey(convertThis) ? throw new Util.Exceptions
+				.UnknownOrInvalidEnum<EnumTypeAssociatedWithThisEventType>(convertThis, "While looking up the " +
+				"AbstractEventType for the value") : mapAllInstancesByVal[convertThis];
 		#endregion
 
 		#region Event Handlers

@@ -39,6 +39,19 @@ namespace BestChat.Platform.Prefs.Data
 		#endregion
 
 		#region Methods
+			public System.Collections.Generic.IReadOnlyDictionary<string, object> ToTupleList()
+			{
+				System.Collections.Generic.SortedDictionary<string, object> mapFieldsByName = new
+					();
+
+				foreach(ItemBase itemCur in mapItemsByName.Values)
+					mapFieldsByName[itemCur.ItemName] = itemCur.ValAsText;
+
+				foreach(AbstractChildMgr cmgrCur in mapChildMgrByName.Values)
+					mapFieldsByName[cmgrCur.Name] = cmgrCur.ToTupleList();
+
+				return mapFieldsByName;
+			}
 		#endregion
 
 		#region Event Handlers

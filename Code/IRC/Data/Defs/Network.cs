@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace BestChat.IRC.Data.Defs
 {
-	public abstract class Network : Platform.Data.Obj<Network>, ModuleInterfaces.INetwork, IDataDef<Network>
+    public abstract class Network : Platform.Data.Obj<Network>, ModuleInterfaces.INetwork, IDataDef<Network>
 	{
 		#region Constructors & Deconstructors
 			public Network()
@@ -179,18 +179,18 @@ namespace BestChat.IRC.Data.Defs
 			public string NickServAsText =>
 				nickServ switch
 				{
-					null => Defs.Resources.strNickServOptNull,
-					NickServOpts.unknown => Defs.Resources.strNickServOptUnknown,
-					NickServOpts.atTheme => Defs.Resources.strNickServOptAtTheme,
+					null => Resources.strNickServOptNull,
+					NickServOpts.unknown => Resources.strNickServOptUnknown,
+					NickServOpts.atTheme => Resources.strNickServOptAtTheme,
 					_ => throw new System.NotImplementedException(),
 				};
 
 			public string NickServToolTip =>
 				nickServ switch
 				{
-					null => Defs.Resources.strNickServOptNullToolTip,
-					NickServOpts.unknown => Defs.Resources.strNickServOptUnknownToolTip,
-					NickServOpts.atTheme => Defs.Resources.strNickServOptAtThemeToolTip,
+					null => Resources.strNickServOptNullToolTip,
+					NickServOpts.unknown => Resources.strNickServOptUnknownToolTip,
+					NickServOpts.atTheme => Resources.strNickServOptAtThemeToolTip,
 					_ => throw new System.NotImplementedException(),
 				};
 
@@ -216,18 +216,18 @@ namespace BestChat.IRC.Data.Defs
 			public string ChanServAsText =>
 				chanServ switch
 				{
-					null => Defs.Resources.strChanServOptNull,
-					ChanServOpts.unknown => Defs.Resources.strChanServOptUnknown,
-					ChanServOpts.atTheme => Defs.Resources.strChanServOptAtTheme,
+					null => Resources.strChanServOptNull,
+					ChanServOpts.unknown => Resources.strChanServOptUnknown,
+					ChanServOpts.atTheme => Resources.strChanServOptAtTheme,
 					_ => throw new System.NotImplementedException(),
 				};
 
 			public string ChanServToolTip =>
 				chanServ switch
 				{
-					null => Defs.Resources.strChanServOptNullToolTip,
-					ChanServOpts.unknown => Defs.Resources.strChanServOptUnknownToolTip,
-					ChanServOpts.atTheme => Defs.Resources.strChanServOptAtThemeToolTip,
+					null => Resources.strChanServOptNullToolTip,
+					ChanServOpts.unknown => Resources.strChanServOptUnknownToolTip,
+					ChanServOpts.atTheme => Resources.strChanServOptAtThemeToolTip,
 					_ => throw new System.NotImplementedException(),
 				};
 
@@ -253,17 +253,17 @@ namespace BestChat.IRC.Data.Defs
 			public string HasAlisAsText =>
 				bHasAlis switch
 				{
-					null => Defs.Resources.strHasAlisUnknown,
-					false => Defs.Resources.strHasAlisFalse,
-					true => Defs.Resources.strHasAlisTrue,
+					null => Resources.strHasAlisUnknown,
+					false => Resources.strHasAlisFalse,
+					true => Resources.strHasAlisTrue,
 				};
 
 			public string HasAlisToolTip =>
 				bHasAlis switch
 				{
-					null => Defs.Resources.strHasAlisUnknownToolTip,
-					false => Defs.Resources.strHasAlisFalseToolTip,
-					true => Defs.Resources.strHasAlisTrueToolTip,
+					null => Resources.strHasAlisUnknownToolTip,
+					false => Resources.strHasAlisFalseToolTip,
+					true => Resources.strHasAlisTrueToolTip,
 				};
 
 			public bool? HasQ
@@ -288,17 +288,17 @@ namespace BestChat.IRC.Data.Defs
 			public string HasQAsText =>
 				bHasQ switch
 				{
-					null => Defs.Resources.strHasQUnknown,
-					false => Defs.Resources.strHasQFalse,
-					true => Defs.Resources.strHasQTrue,
+					null => Resources.strHasQUnknown,
+					false => Resources.strHasQFalse,
+					true => Resources.strHasQTrue,
 				};
 
 			public string HasQToolTip =>
 				bHasQ switch
 				{
-					null => Defs.Resources.strHasQUnknownToolTip,
-					false => Defs.Resources.strHasQFalseToolTip,
-					true => Defs.Resources.strHasQTrueToolTip,
+					null => Resources.strHasQUnknownToolTip,
+					false => Resources.strHasQFalseToolTip,
+					true => Resources.strHasQTrueToolTip,
 				};
 
 			public virtual bool IsServerListDefaulted => false;

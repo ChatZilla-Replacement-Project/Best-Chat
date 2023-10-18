@@ -4,8 +4,10 @@
 		.INotifyPropertyChanged
 	{
 		#region Constructors & Deconstructors
-			public AbstractConversation()
+			public AbstractConversation(in string strName, in string strLongDesc)
 			{
+				Name = strName;
+				LongDesc = strLongDesc;
 			}
 		#endregion
 
@@ -14,6 +16,8 @@
 
 		#region Events
 			public abstract event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
+
+			public abstract event Common.IDieable.OnDieing? evtDieing;
 		#endregion
 
 		#region Constants
@@ -31,9 +35,11 @@
 		#endregion
 
 		#region Properties
-			public abstract string Name
+			public string Name
 			{
 				get;
+
+				private init;
 			}
 
 			public abstract string ProperName
@@ -46,7 +52,29 @@
 				get;
 			}
 
+			public abstract string LocalizedName
+			{
+				get;
+			}
+
+			public string LongDesc
+			{
+				get;
+
+				private init;
+			}
+
+			public string LocalizedLongDesc
+			{
+				get;
+			}
+
 			public abstract string Path
+			{
+				get;
+			}
+
+			public abstract IViewOrConversation.Types Type
 			{
 				get;
 			}
@@ -55,6 +83,11 @@
 				AllEventsByWhenTheyHappened => mapEventsByTime;
 
 			public System.Collections.Generic.IReadOnlyList<IEventInfo> UnsortedEvents => ocEvents;
+
+			public abstract string Icon
+			{
+				get;
+			}
 		#endregion
 
 		#region Methods

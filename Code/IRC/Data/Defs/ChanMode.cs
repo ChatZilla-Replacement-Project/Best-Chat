@@ -25,8 +25,9 @@ namespace BestChat.IRC.Data.Defs
 				chModeChar = dcmUs.Mode;
 				textDesc = new(dcmUs.LocalizedDesc, dcmUs.DefaultDesc);
 				bNotAlwaysAvailable = dcmUs.NotAlwaysAvailable;
-				foreach(DTO.ModeParamDTO dmpCurParam in dcmUs.Parameters)
-					mapParamsByName[dmpCurParam.Name] = new(dmpCurParam);
+				if(dcmUs.Parameters != null)
+					foreach(DTO.ModeParamDTO dmpCurParam in dcmUs.Parameters)
+						mapParamsByName[dmpCurParam.Name] = new(dmpCurParam);
 				strFmtAsSentToNetwork = dcmUs.FmtAsSentToNetwork;
 				bIsOperRequiredToChange = dcmUs.IsOperRequiredToChange;
 			}

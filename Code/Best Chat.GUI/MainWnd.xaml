@@ -8,6 +8,8 @@
 	xmlns:local="clr-namespace:BestChat.GUI"
 	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
 	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
+	xmlns:TreeData="clr-namespace:BestChat.Platform.TreeData;assembly=BestChat.Platform.TreeData"
+	xmlns:Emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
 	mc:Ignorable="d"
 	Title="Best Chat (GUI mode)"
 	Height="450"
@@ -95,13 +97,23 @@
 					Header="Logical Layout">
 					<TreeView
 						x:Name="treeLogicalSelector">
-						<TreeViewItem
-							Header="Libera">
-							<TreeViewItem
-								Header="##space" />
-							<TreeViewItem
-								Header="#Best-Chat" />
-						</TreeViewItem>
+						<TreeView.ItemTemplate>
+							<HierarchicalDataTemplate
+								DataType="TreeData:VisualTreeData"
+								ItemsSource="{Binding Children}">
+								<TreeViewItem
+									ToolTip="{Binding LocalizedLongDesc}">
+									<TreeViewItem.Header>
+										<StackPanel
+											Orientation="Horizontal">
+											<Emoji:TextBlock Text="{Binding Icon}" />
+											<Label
+												Content="{Binding LocalizedName}" />
+										</StackPanel>
+									</TreeViewItem.Header>
+								</TreeViewItem>
+							</HierarchicalDataTemplate>
+						</TreeView.ItemTemplate>
 					</TreeView>
 				</TabItem>
 				<TabItem

@@ -1,5 +1,7 @@
 ﻿// Ignore Spelling: IRC
 
+using BestChat.IRC.Data.Defs;
+
 namespace BestChat.IRC.Global.View
 {
 	/// <summary>
@@ -37,13 +39,13 @@ namespace BestChat.IRC.Global.View
 				dgPredefined.SetBinding(System.Windows.Controls.ItemsControl.ItemsSourceProperty, new System
 					.Windows.Data.Binding("AllItemsSortedByName")
 					{
-						Source = Data.NetworkMgr.mgr,
+						Source = NetworkMgr.mgr,
 						NotifyOnTargetUpdated = true,
 					});
 				dgUser.SetBinding(System.Windows.Controls.ItemsControl.ItemsSourceProperty, new System
 					.Windows.Data.Binding("AllItemsSortedByName")
 					{
-						Source = Data.UserNetworkMgr.mgr,
+						Source = UserNetworkMgr.mgr,
 						NotifyOnTargetUpdated = true,
 					});
 
@@ -65,7 +67,7 @@ namespace BestChat.IRC.Global.View
 				};
 
 				if(dlg.ShowDialog() == true)
-					Data.UserNetworkMgr.mgr.Add(dlg.eunetWhatsBeingEdited.unetOriginal);
+					UserNetworkMgr.mgr.Add(dlg.eunetWhatsBeingEdited.unetOriginal);
 			}
 
 			private void OnEditClicked(object objSender, System.Windows.RoutedEventArgs e)
@@ -86,7 +88,7 @@ namespace BestChat.IRC.Global.View
 			private void OnDelClicked(object objSender, System.Windows.RoutedEventArgs e)
 			{
 				if(dgUser.SelectedItem != null)
-					Data.NetworkMgr.mgr.Remove(((Data.Defs.UserNetwork)dgUser.SelectedItem).Name);
+					NetworkMgr.mgr.Remove(((Data.Defs.UserNetwork)dgUser.SelectedItem).Name);
 			}
 
 			private void OnCloseClicked(object objSender, System.Windows.RoutedEventArgs e) => Close();
@@ -101,7 +103,7 @@ namespace BestChat.IRC.Global.View
 				=> new PredefinedNetworkViewerDlg(this, (Data.Defs.Network)dgPredefined.SelectedValue).ShowDialog();
 
 			private void OnHidePredefinedNetworkClicked(object objSender, System.Windows.RoutedEventArgs e) =>
-				Data.UserNetworkMgr.mgr.Add(new((Data.Defs.Network)dgPredefined.SelectedValue)
+				UserNetworkMgr.mgr.Add(new((Data.Defs.Network)dgPredefined.SelectedValue)
 				{
 					IsHidden = true,
 				});

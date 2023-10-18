@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+﻿using System;
 
 namespace BestChat.GUI
 {
@@ -14,6 +14,13 @@ namespace BestChat.GUI
 		private static IRC.Global.View.BncListEditor? bncListEditor = null;
 
 		public event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
+
+		protected override void OnInitialized(EventArgs e)
+		{
+			base.OnInitialized(e);
+
+			treeLogicalSelector.Items.Add(ClientConversation.instance);
+		}
 
 		private void OnIrcNetworkListClicked(object objSender, System.Windows.RoutedEventArgs e)
 		{
@@ -35,7 +42,7 @@ namespace BestChat.GUI
 		private void OnFileExitClicked(object objSender, System.Windows.RoutedEventArgs e) => App.Current
 			.Shutdown();
 
-		protected override void OnClosing(CancelEventArgs e)
+		protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
 		{
 			base.OnClosing(e);
 

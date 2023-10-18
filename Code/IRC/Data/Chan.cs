@@ -1,9 +1,15 @@
-﻿namespace BestChat.IRC.Data
+﻿// Ignore Spelling: evt
+
+namespace BestChat.IRC.Data
 {
-	public class Chan
+	using Util.Ext;
+
+	public class Chan : Platform.Conversations.AbstractConversation, Platform.TreeData.VisualTreeData
+		.IItemInfo
 	{
 		#region Constructors & Deconstructors
-			public Chan(in ActiveNetwork anetOwner, in string strName)
+			public Chan(in ActiveNetwork anetOwner, in string strName) : base(strName, Resources
+				.strChanNameDescForTree.Fmt(strName, anetOwner.unetDef.Name))
 			{
 				this.anetOwner = anetOwner;
 				this.strName = strName;
@@ -11,23 +17,29 @@
 				// TODO: Get the real modes for the channel on this network
 				foreach(Defs.ChanMode cmdCur in anetOwner.unetDef.ChanModesByModeChar.Values)
 				{
-					Mode<BoolModeState, BoolModeStates> modeNew = new(cmdCur,
-						BoolModeState.off);
+					Defs.Mode<Defs.BoolModeState, Defs.BoolModeStates> modeNew = new
+					 (cmdCur, Defs.BoolModeState.off);
 
 					mapModesOnChan[cmdCur.ModeChar] = modeNew;
 
 					modeNew.evtStateChanged += OnStateOfModeChanged;
 
-					foreach(Mode<BoolModeState, BoolModeStates>.Param mpCur in modeNew.AllParamsByName.Values)
+					foreach(Defs.Mode<Defs.BoolModeState, Defs.BoolModeStates>.Param mpCur in modeNew
+							.AllParamsByName.Values)
 						mpCur.evtValChanged += OnValOfModeParamChanged;
 				}
 			}
+
+			~Chan() => evtDieing?.Invoke(this);
 		#endregion
 
 		#region Delegates
 		#endregion
 
 		#region Events
+			public override event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
+
+			public override event Platform.Common.IDieable.OnDieing? evtDieing;
 		#endregion
 
 		#region Constants
@@ -45,8 +57,8 @@
 
 			public readonly string strName;
 
-			private readonly System.Collections.Generic.SortedDictionary<char, Mode<BoolModeState,
-				BoolModeStates>> mapModesOnChan = new();
+			private readonly System.Collections.Generic.SortedDictionary<char, Defs.Mode<Defs.BoolModeState,
+				Defs.BoolModeStates>> mapModesOnChan = new();
 
 			// TODO: We need a way to update this map when the remote user's nick changes.
 			private readonly System.Collections.Generic.SortedDictionary<string, RemoteUser>
@@ -56,17 +68,23 @@
 		#region Properties
 			public ActiveNetwork Owner => anetOwner;
 
-			public string Name => strName;
+			public override string ProperName => strName.StartsWith(chPrefix) ? strName : $"{chPrefix}{strName}";
 
-			public string ProperName => strName.StartsWith(chPrefix) ? strName : $"{chPrefix}{strName}";
+			public override string SafeName => System.Net.WebUtility.UrlEncode(ProperName);
 
-			public string SafeName => System.Net.WebUtility.UrlEncode(ProperName);
+			public override string Path => $"{anetOwner.unetDef.Name}/{Resources.strOneChannel}/{strName}";
 
-			public string Path => $"{anetOwner.unetDef.Name}/Chan={strName}";
+			public override string LocalizedName => ProperName;
+
+			public override string Icon => "🪟";
 
 
-			public System.Collections.Generic.IReadOnlyDictionary<char, Mode<BoolModeState, BoolModeStates>>
-				AllModesOnChan => mapModesOnChan;
+			public override Platform.Conversations.IViewOrConversation.Types Type => Platform.Conversations
+				.IViewOrConversation.Types.channelOrRoom;
+
+
+		public System.Collections.Generic.IReadOnlyDictionary<char, Defs.Mode<Defs.BoolModeState, Defs
+			.BoolModeStates>> AllModesOnChan => mapModesOnChan;
 
 			public System.Collections.Generic.IReadOnlyDictionary<string, RemoteUser> AllChanMembersByNick =>
 				mapChanMembersByNick;
@@ -74,17 +92,20 @@
 
 		#region Methods
 			public override string? ToString() => strName;
+
+			protected override void FirePropChanged(string strPropName) => PropertyChanged?.Invoke(this, new
+				(strPropName));
 		#endregion
 
 		#region Event Handlers
-			private void OnStateOfModeChanged(Mode<BoolModeState, BoolModeStates> modeSender, BoolModeState
-				stateOld, BoolModeState stateNew)
+			private void OnStateOfModeChanged(Defs.Mode<Defs.BoolModeState, Defs.BoolModeStates> modeSender,
+				Defs.BoolModeState stateOld, Defs.BoolModeState stateNew)
 			{
 				// TODO: Attempt to change the mode on the network
 			}
 
-			private void OnValOfModeParamChanged(Mode<BoolModeState, BoolModeStates>.Param mpSender, object?
-				objOldVal, object? objNewVal)
+			private void OnValOfModeParamChanged(Defs.Mode<Defs.BoolModeState, Defs.BoolModeStates>.Param
+				mpSender, object? objOldVal, object? objNewVal)
 			{
 				if(objNewVal != null)
 				{

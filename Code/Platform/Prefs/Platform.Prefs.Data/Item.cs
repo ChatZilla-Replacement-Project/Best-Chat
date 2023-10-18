@@ -1,48 +1,82 @@
-﻿namespace BestChat.Platform.Prefs.Data
+﻿// Ignore Spelling: Prefs evt
+
+namespace BestChat.Platform.Prefs.Data
 {
-	public abstract class ItemBase
+	public abstract class ItemBase : Platform.Data.Obj<ItemBase>
 	{
 		#region Constructors & Deconstructors
-			public ItemBase(in string strItemName, in string strItemLongDesc)
+			public ItemBase(in AbstractMgr mgrParent, in string strItemName, in string strLocalizedName, in
+				string strLocalizedLongDesc)
 			{
+				this.mgrParent = mgrParent;
 				this.strItemName = strItemName;
-				this.strItemLongDesc = strItemLongDesc;
+				this.strLocalizedName = strLocalizedName;
+				this.strLocalizedLongDesc = strLocalizedLongDesc;
 			}
 		#endregion
 
 		#region Members
+			public readonly AbstractMgr mgrParent;
+
 			public readonly string strItemName;
 
-			public readonly string strItemLongDesc;
+			public readonly string strLocalizedName;
+
+			public readonly string strLocalizedLongDesc;
 		#endregion
 
 		#region Properties
+			public AbstractMgr Parent => mgrParent;
+
 			public string ItemName => strItemName;
 
-			public string ItemLongDesc => strItemLongDesc;
+			public string LocalizedName => strLocalizedName;
+
+			public string LocalizedLongDesc => strLocalizedLongDesc;
+		#endregion
+
+		#region Methods
+			public abstract string ValAsText
+			{
+				get;
+			}
 		#endregion
 	}
 
 	public class Item<TypeOfItem> : ItemBase, System.ComponentModel.INotifyPropertyChanged
 	{
 		#region Constructors & Deconstructors
-			public Item(in TypeOfItem def, in string strItemName, in string strItemLongDesc, in TypeOfItem
-				valCur) : base(strItemName, strItemLongDesc)
+			public Item(in AbstractMgr mgrParent, in string strItemName, in string strLocalizedName, in string
+				strLocalizedLongDesc, in TypeOfItem def, in TypeOfItem? valCur) : base(mgrParent, strItemName,
+				strLocalizedName, strLocalizedLongDesc)
 			{
+				if(typeof(TypeOfItem) == typeof(int) && GetType() == typeof(Item<int>))
+					throw new System.InvalidProgramException("Instead of directly using Item<int>, use " +
+						"IntItem.  It provides and enforces minimum and maximum values.");
+
 				this.def = def;
-				this.valCur = valCur;
+				this.valCur = valCur ?? def;
+			}
+
+			public Item(in AbstractMgr mgrParent, in string strItemName, in string strLocalizedName, in string
+				strLocalizedLongDesc, in TypeOfItem def) : base(mgrParent, strItemName, strLocalizedName,
+				strLocalizedLongDesc)
+			{
+				if(typeof(TypeOfItem) == typeof(int) && GetType() == typeof(Item<int>))
+					throw new System.InvalidProgramException("Instead of directly using Item<int>, use " +
+						"IntItem.  It provides and enforces minimum and maximum values.");
+
+				valCur = this.def = def;
 			}
 		#endregion
 
 		#region Delegates
-			public delegate void DCurValChanged(Item<TypeOfItem> itemSender, TypeOfItem oldVal, TypeOfItem
-				newVal);
 		#endregion
 
 		#region Events
-			public event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
+			public override event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
 
-			public event DCurValChanged? evtCurValChanged;
+			public event DFieldChanged<TypeOfItem>? evtCurValChanged;
 		#endregion
 
 		#region Constants
@@ -61,7 +95,7 @@
 		#region Properties
 			public TypeOfItem Def => def;
 
-			public TypeOfItem CurVal
+			public virtual TypeOfItem CurVal
 			{
 				get => valCur;
 
@@ -79,6 +113,8 @@
 					}
 				}
 			}
+
+			public override string ValAsText => valCur?.ToString() ?? "";
 		#endregion
 
 		#region Methods
@@ -87,5 +123,85 @@
 
 		#region Event Handlers
 		#endregion
+	}
+
+	public class IntItem : Item<int>
+	{
+		public IntItem(in AbstractMgr mgrParent, in string strItemName, in string strLocalizedName, in string
+			strLocalizedLongDesc, int iDef) : base(mgrParent, strItemName,
+			strLocalizedName, strLocalizedLongDesc, iDef)
+		{
+			iMinVal = null;
+			iMaxVal = null;
+		}
+
+		public IntItem(in AbstractMgr mgrParent, in string strItemName, in string strLocalizedName,
+			in string strLocalizedLongDesc, int iDef, in int? iMinVal = null, in int?
+			iMaxVal = null) :
+			base(mgrParent, strItemName, strLocalizedName, strLocalizedLongDesc, iDef)
+		{
+			this.iMinVal = iMinVal;
+			this.iMaxVal = iMaxVal;
+		}
+
+		public IntItem(in AbstractMgr mgrParent, in string strItemName, in string strLocalizedName, in string
+			strLocalizedLongDesc, int iDef, in int iCurVal) : base(mgrParent, strItemName,
+			strLocalizedName, strLocalizedLongDesc, iDef, iCurVal)
+		{
+			iMinVal = null;
+			iMaxVal = null;
+		}
+
+		public IntItem(in AbstractMgr mgrParent, in string strItemName, in string strLocalizedName,
+			in string strLocalizedLongDesc, int iDef, in int iCurVal, in int? iMinVal = null, in int?
+			iMaxVal = null) :
+			base(mgrParent, strItemName, strLocalizedName, strLocalizedLongDesc, iDef, iCurVal)
+		{
+			this.iMinVal = iMinVal;
+			this.iMaxVal = iMaxVal;
+		}
+
+		public readonly int? iMinVal;
+
+		public readonly int? iMaxVal;
+
+		public int? MinVal => iMinVal;
+
+		public int? MaxVal => iMaxVal;
+
+		public static bool bThrowExceptionOnValSetOutSideRange = false;
+
+		public class ValOutsideRangeException : System.Exception
+		{
+			internal ValOutsideRangeException(in int iValFound, in int? iMinVal, in int? iMaxVal, in string
+				strMsg, System.Exception? exceptInner = null) : base(strMsg, exceptInner)
+			{
+				this.iValFound = iValFound;
+				this.iMinVal = iMinVal;
+				this.iMaxVal = iMaxVal;
+			}
+
+			public readonly int iValFound;
+
+			public readonly int? iMinVal;
+
+			public readonly int? iMaxVal;
+		}
+
+		public override int CurVal
+		{
+			set
+			{
+				if(iMinVal != null && value < iMinVal || iMaxVal != null && value > iMaxVal)
+				{
+					if(bThrowExceptionOnValSetOutSideRange)
+						throw new ValOutsideRangeException(value, iMinVal, iMinVal, "Value was outside range");
+
+					return;
+				}
+
+				base.CurVal = value;
+			}
+		}
 	}
 }

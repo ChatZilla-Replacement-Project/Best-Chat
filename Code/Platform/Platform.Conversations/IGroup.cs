@@ -1,28 +1,14 @@
 ﻿namespace BestChat.Platform.Conversations
 {
-	public interface IGroup
+	public interface IGroup : IGroupViewOrConversation, System.Collections.Specialized
+		.INotifyCollectionChanged, TreeData.VisualTreeData.IChildOwner
 	{
-		public string Name
+		public System.Collections.Generic.IReadOnlyDictionary<string, IGroupViewOrConversation> ChildrenByName
 		{
 			get;
 		}
 
-		public string ProperName
-		{
-			get;
-		}
-
-		public string SafeName
-		{
-			get;
-		}
-
-		public string Path
-		{
-			get;
-		}
-
-		public System.Collections.Generic.IEnumerable<IViewOrConversation> Children
+		public System.Collections.Generic.IEnumerable<IGroupViewOrConversation> UnsortedChildren
 		{
 			get;
 		}

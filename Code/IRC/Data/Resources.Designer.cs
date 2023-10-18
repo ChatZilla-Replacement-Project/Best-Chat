@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BestChat.IRC.Data.Defs {
+namespace BestChat.IRC.Data {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace BestChat.IRC.Data.Defs {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BestChat.IRC.Data.Defs.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BestChat.IRC.Data.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,6 +61,177 @@ namespace BestChat.IRC.Data.Defs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The user {0} was banned from the channel by {1}..
+        /// </summary>
+        internal static string strActionEventTypeBanOfUserDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeBanOfUserDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The modes {0} were just added to the channel while modes {1} were removed..
+        /// </summary>
+        internal static string strActionEventTypeChanModeAddedAndRemovedDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeChanModeAddedAndRemovedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The modes {0} were just added to the channel..
+        /// </summary>
+        internal static string strActionEventTypeChanModeAddedDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeChanModeAddedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The modes {0} were just removed from the channel..
+        /// </summary>
+        internal static string strActionEventTypeChanModeRemovedDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeChanModeRemovedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user {0} has just joined the channel..
+        /// </summary>
+        internal static string strActionEventTypeJoinDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeJoinDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user {0} was kicked from the channel by {1}..
+        /// </summary>
+        internal static string strActionEventTypeKickOfUserDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeKickOfUserDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user formerly known as {0} is now known as {1}..
+        /// </summary>
+        internal static string strActionEventTypeNickOfUserChangedDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeNickOfUserChangedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user {0} just left the channel..
+        /// </summary>
+        internal static string strActionEventTypePartDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypePartDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user {0} was quieted in the channel by {1}..
+        /// </summary>
+        internal static string strActionEventTypeQuietOfUserDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeQuietOfUserDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user {0} just left the network {1} of which this channel is part of..
+        /// </summary>
+        internal static string strActionEventTypeQuitDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeQuitDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The topic for {0} has been changed to “{1}”..
+        /// </summary>
+        internal static string strActionEventTypeTopicChangedDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeTopicChangedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user {0} was unbanned from the channel by {1}..
+        /// </summary>
+        internal static string strActionEventTypeUnbanOfUserDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeUnbanOfUserDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {1} is now permitting {0} to talk again in the channel..
+        /// </summary>
+        internal static string strActionEventTypeUnquietOfUserDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeUnquietOfUserDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user {0} just revoked half-op status from the user {1}..
+        /// </summary>
+        internal static string strActionEventTypeUserDehalfOppedDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeUserDehalfOppedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user {0} just revoked op status from the user {1}..
+        /// </summary>
+        internal static string strActionEventTypeUserDeoppedDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeUserDeoppedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user {0} just lost voice in this channel.  This action was taken by {1}..
+        /// </summary>
+        internal static string strActionEventTypeUserDevoicedDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeUserDevoicedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user {0} just issued half-op status to the user {1}..
+        /// </summary>
+        internal static string strActionEventTypeUserHalfOppedDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeUserHalfOppedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user {0} just issued op status to the user {1}..
+        /// </summary>
+        internal static string strActionEventTypeUserOppedDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeUserOppedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user {0} just gained voice in this channel.  This action was taken by {1}..
+        /// </summary>
+        internal static string strActionEventTypeUserVoicedDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeUserVoicedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Off.
         /// </summary>
         internal static string strBoolModeStateOffDesc {
@@ -75,6 +246,15 @@ namespace BestChat.IRC.Data.Defs {
         internal static string strBoolModeStateOnDesc {
             get {
                 return ResourceManager.GetString("strBoolModeStateOnDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is an IRC channel on the network {1}..
+        /// </summary>
+        internal static string strChanNameDescForTree {
+            get {
+                return ResourceManager.GetString("strChanNameDescForTree", resourceCulture);
             }
         }
         
@@ -129,6 +309,42 @@ namespace BestChat.IRC.Data.Defs {
         internal static string strChanServOptUnknownToolTip {
             get {
                 return ResourceManager.GetString("strChanServOptUnknownToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All your channels on this IRC network are here..
+        /// </summary>
+        internal static string strConversationGroupChannelsDesc {
+            get {
+                return ResourceManager.GetString("strConversationGroupChannelsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anytime you PM another user, a service, or a bot on this network, that conversation will show up here..
+        /// </summary>
+        internal static string strConversationGroupRemoteUsersDesc {
+            get {
+                return ResourceManager.GetString("strConversationGroupRemoteUsersDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Channels.
+        /// </summary>
+        internal static string strConversationGroupTypeChannels {
+            get {
+                return ResourceManager.GetString("strConversationGroupTypeChannels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        internal static string strConversationGroupTypeRemoteUsers {
+            get {
+                return ResourceManager.GetString("strConversationGroupTypeRemoteUsers", resourceCulture);
             }
         }
         
@@ -511,6 +727,15 @@ namespace BestChat.IRC.Data.Defs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Every channel join and user (or service/bot) you talk in the network “{0}” will be listed here..
+        /// </summary>
+        internal static string strNetworkNameDescForTree {
+            get {
+                return ResourceManager.GetString("strNetworkNameDescForTree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Attempt to use NickServ (Requires a network that provides NickServ).
         /// </summary>
         internal static string strNickServ {
@@ -570,6 +795,51 @@ namespace BestChat.IRC.Data.Defs {
         internal static string strNickServOptUnknownToolTip {
             get {
                 return ResourceManager.GetString("strNickServOptUnknownToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Channel.
+        /// </summary>
+        internal static string strOneChannel {
+            get {
+                return ResourceManager.GetString("strOneChannel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remote User.
+        /// </summary>
+        internal static string strOneRemoteUser {
+            get {
+                return ResourceManager.GetString("strOneRemoteUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to me.
+        /// </summary>
+        internal static string strPostActionMeDesc {
+            get {
+                return ResourceManager.GetString("strPostActionMeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to say.
+        /// </summary>
+        internal static string strPostActionSayDesc {
+            get {
+                return ResourceManager.GetString("strPostActionSayDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is a remote user on the IRC network {1}..
+        /// </summary>
+        internal static string strRemoteUserDescForTree {
+            get {
+                return ResourceManager.GetString("strRemoteUserDescForTree", resourceCulture);
             }
         }
         

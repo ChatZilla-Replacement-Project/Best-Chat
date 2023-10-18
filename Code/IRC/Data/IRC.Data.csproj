@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
@@ -19,9 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Platform.TreeData\Platform.TreeData.csproj" />
+    <ProjectReference Include="..\..\Platform\Platform.Conversations\Platform.Conversations.csproj" />
     <ProjectReference Include="..\..\Platform\Platform.DataLoc\Platform.DataLoc.csproj" />
     <ProjectReference Include="..\..\Platform\Platform.HttpClientOwner\Platform.HttpClientOwner.csproj" />
     <ProjectReference Include="..\..\Platform\Util.Exceptions\Util.Exceptions.csproj" />
+    <ProjectReference Include="..\..\Platform\Util.Ext\Util.Ext.csproj" />
     <ProjectReference Include="..\ModuleInterfaces\IRC.ModuleInterfaces.csproj" />
     <ProjectReference Include="..\..\Platform\Common\Platform.Common.csproj" />
     <ProjectReference Include="..\..\Platform\Data\Platform.Data.csproj" />
@@ -29,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Defs\Resources.Designer.cs">
+    <Compile Update="Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -37,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Defs\Resources.resx">
+    <EmbeddedResource Update="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>

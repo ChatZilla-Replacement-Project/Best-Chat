@@ -38,17 +38,17 @@ namespace BestChat.Prefs.Data
 		#endregion
 
 		#region Helper Types
-			public class GlobalPrefs : Platform.Prefs.ChildMgr
+			public class GlobalPrefs : Platform.Prefs.Data.AbstractChildMgr
 			{
 				#region Constructors & Deconstructors
-					public GlobalPrefs(Platform.Prefs.Mgr mgrParent) : base(mgrParent, "Global",
+					public GlobalPrefs(Platform.Prefs.Data.AbstractMgr mgrParent) : base(mgrParent, "Global",
 						Resources.strGlobalName, Resources.strGlobalNameToolTipText)
 					{
 						general = new(this);
 						general.evtDirtyChanged += OnChildMgrDirtyChanged;
 					}
 
-					internal GlobalPrefs(Platform.Prefs.Mgr mgrParent, DTO.PrefsDTO.GlobalDTO dto) :
+					internal GlobalPrefs(Platform.Prefs.Data.AbstractMgr mgrParent, DTO.PrefsDTO.GlobalDTO dto) :
 						base(mgrParent, "Global", Resources.strGlobalName, Resources
 						.strGlobalNameToolTipText)
 					{
@@ -68,17 +68,17 @@ namespace BestChat.Prefs.Data
 				#endregion
 
 				#region Helper Types
-					public class GeneralPrefs : Platform.Prefs.ChildMgr
+					public class GeneralPrefs : Platform.Prefs.Data.AbstractChildMgr
 					{
 						#region Constructors & Deconstructors
-							public GeneralPrefs(Platform.Prefs.Mgr mgrParent) : base(mgrParent, "General", Resources.strGlobalGeneralName,
+							public GeneralPrefs(Platform.Prefs.Data.AbstractMgr mgrParent) : base(mgrParent, "General", Resources.strGlobalGeneralName,
 								Resources.strGlobalGeneralToolTipText)
 							{
 								conn = new(this);
 								conn.evtDirtyChanged += OnChildMgrDirtyChanged;
 							}
 
-							internal GeneralPrefs(Platform.Prefs.Mgr mgrParent, DTO.PrefsDTO.GlobalDTO.GeneralDTO dto) :
+							internal GeneralPrefs(Platform.Prefs.Data.AbstractMgr mgrParent, DTO.PrefsDTO.GlobalDTO.GeneralDTO dto) :
 								base(mgrParent, "General", Resources.strGlobalGeneralName, Resources
 								.strGlobalGeneralToolTipText)
 							{
@@ -98,10 +98,10 @@ namespace BestChat.Prefs.Data
 						#endregion
 
 						#region Helper Types
-							public class ConnPrefs : Platform.Prefs.ChildMgr
+							public class ConnPrefs : Platform.Prefs.Data.AbstractChildMgr
 							{
 								#region Constructors & Deconstructors
-									public ConnPrefs(Platform.Prefs.Mgr mgrParent) : base(mgrParent,
+									public ConnPrefs(Platform.Prefs.Data.AbstractMgr mgrParent) : base(mgrParent,
 										"Connection", Resources.strGlobalName, Resources
 										.strGlobalNameToolTipText)
 									{
@@ -141,7 +141,7 @@ namespace BestChat.Prefs.Data
 										itemDefQuitMsg.evtDirtyChanged += OnChildDirtyChanged;
 									}
 
-									internal ConnPrefs(Platform.Prefs.Mgr mgrParent, DTO.PrefsDTO.GlobalDTO.GeneralDTO
+									internal ConnPrefs(Platform.Prefs.Data.AbstractMgr mgrParent, DTO.PrefsDTO.GlobalDTO.GeneralDTO
 										.ConnDTO dto) : base(mgrParent, "Connection", Resources.strGlobalName,
 										Resources.strGlobalNameToolTipText)
 									{
@@ -175,7 +175,7 @@ namespace BestChat.Prefs.Data
 
 										itemMaxAttempts = new(this, "Maximum Attempts to Reconnect",
 											Resources.strGlobalGeneralConnMaxAttemptsName, Resources
-											.strGlobalGeneralConnMaxAttemptsToolTipText, 1, iMinVal: 1, iValCur: dto
+											.strGlobalGeneralConnMaxAttemptsToolTipText, 1, iMinVal: 1, iCurVal: dto
 											.MaxAttempts);
 										itemMaxAttempts.evtDirtyChanged += OnChildDirtyChanged;
 
@@ -202,57 +202,44 @@ namespace BestChat.Prefs.Data
 								#endregion
 
 								#region Members
-									public readonly Platform.Prefs.Item<bool> itemEnableIndent;
-									public readonly Platform.Prefs.Item<bool> itemAutoReconnect;
-									public readonly Platform.Prefs.Item<bool> itemRejoinAfterKick;
-									public readonly Platform.Prefs.Item<string> itemCharEncoding;
-									public readonly Platform.Prefs.Item<bool> itemUnlimitedAttempts;
-									public readonly Platform.Prefs.IntItem itemMaxAttempts;
-									public readonly Platform.Prefs.Item<string> itemDefQuitMsg;
+									public readonly Platform.Prefs.Data.Item<bool> itemEnableIndent;
+									public readonly Platform.Prefs.Data.Item<bool> itemAutoReconnect;
+									public readonly Platform.Prefs.Data.Item<bool> itemRejoinAfterKick;
+									public readonly Platform.Prefs.Data.Item<string> itemCharEncoding;
+									public readonly Platform.Prefs.Data.Item<bool> itemUnlimitedAttempts;
+									public readonly Platform.Prefs.Data.IntItem itemMaxAttempts;
+									public readonly Platform.Prefs.Data.Item<string> itemDefQuitMsg;
 									// TODO: Add proxy once we know what we're doing with that.
 								#endregion
 
 								#region Properties
-									public Platform.Prefs.Item<bool> EnableIdent => itemEnableIndent;
+									public Platform.Prefs.Data.Item<bool> EnableIdent => itemEnableIndent;
 
-									public Platform.Prefs.Item<bool> AutoReconnect => itemAutoReconnect;
+									public Platform.Prefs.Data.Item<bool> AutoReconnect => itemAutoReconnect;
 
-									public Platform.Prefs.Item<bool> RejoinAfterKick => itemRejoinAfterKick;
+									public Platform.Prefs.Data.Item<bool> RejoinAfterKick => itemRejoinAfterKick;
 
-									public Platform.Prefs.Item<string> CharEncoding => itemCharEncoding;
+									public Platform.Prefs.Data.Item<string> CharEncoding => itemCharEncoding;
 
-									public Platform.Prefs.Item<bool> UnlimitedAttempts => itemUnlimitedAttempts;
+									public Platform.Prefs.Data.Item<bool> UnlimitedAttempts => itemUnlimitedAttempts;
 
-									public Platform.Prefs.IntItem MaxAttempts => itemMaxAttempts;
+									public Platform.Prefs.Data.IntItem MaxAttempts => itemMaxAttempts;
 
-									public Platform.Prefs.Item<string> DefQuitMsg => itemDefQuitMsg;
+									public Platform.Prefs.Data.Item<string> DefQuitMsg => itemDefQuitMsg;
 								#endregion
 
 								#region Methods
 								#endregion
 
 								#region Event Handlers
-									private void OnChildDirtyChanged(Platform.Prefs.Mgr mgrSender, bool bIsNowDirty)
-									{
-										if(bIsNowDirty)
-											MakeDirty();
-									}
-
-									private void OnChildDirtyChanged(Platform.Prefs.Item<bool> mgrSender, bool
+									private void OnChildDirtyChanged(Platform.Prefs.Data.AbstractMgr mgrSender, bool
 										bIsNowDirty)
 									{
 										if(bIsNowDirty)
 											MakeDirty();
 									}
 
-									private void OnChildDirtyChanged(Platform.Prefs.Item<string> mgrSender, bool
-										bIsNowDirty)
-									{
-										if(bIsNowDirty)
-											MakeDirty();
-									}
-
-									private void OnChildDirtyChanged(Platform.Prefs.Item<int> mgrSender, bool
+									private void OnChildDirtyChanged(Platform.Prefs.Data.ItemBase mgrSender, bool
 										bIsNowDirty)
 									{
 										if(bIsNowDirty)
@@ -274,7 +261,7 @@ namespace BestChat.Prefs.Data
 						#endregion
 
 						#region Event Handlers
-							private void OnChildMgrDirtyChanged(Platform.Prefs.Mgr mgrSender, bool bIsNowDirty)
+							private void OnChildMgrDirtyChanged(Platform.Prefs.Data.AbstractMgr mgrSender, bool bIsNowDirty)
 							{
 								if(bIsNowDirty)
 									MakeDirty();
@@ -296,7 +283,7 @@ namespace BestChat.Prefs.Data
 				#endregion
 
 				#region Event Handlers
-					private void OnChildMgrDirtyChanged(Platform.Prefs.Mgr mgrSender, bool bIsNowDirty)
+					private void OnChildMgrDirtyChanged(Platform.Prefs.Data.AbstractMgr mgrSender, bool bIsNowDirty)
 					{
 						if(bIsNowDirty)
 							MakeDirty();
@@ -333,7 +320,7 @@ namespace BestChat.Prefs.Data
 		#endregion
 
 		#region Event Handlers
-			private void OnChildMgrDirtyChanged(Platform.Prefs.Mgr mgrSender, bool bIsNowDirty)
+			private void OnChildMgrDirtyChanged(Platform.Prefs.Data.AbstractMgr mgrSender, bool bIsNowDirty)
 			{
 				if(bIsNowDirty)
 					MakeDirty();

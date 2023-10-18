@@ -1,23 +1,17 @@
 ﻿namespace BestChat.Platform.Conversations
 {
-	public interface IViewOrConversation
+	public interface IViewOrConversation : IGroupViewOrConversation
 	{
-		public string Name
+		public enum Types
 		{
-			get;
+			channelOrRoom,
+			virtualGroup,
+			group,
+			user,
+			client,
 		}
 
-		public string ProperName
-		{
-			get;
-		}
-
-		public string SafeName
-		{
-			get;
-		}
-
-		public string Path
+		public Types Type
 		{
 			get;
 		}

@@ -1,4 +1,4 @@
-﻿// Ignore Spelling: evt
+﻿// Ignore Spelling: evt jso
 
 namespace BestChat.Platform.Data
 {

@@ -1,8 +1,11 @@
-﻿using System.Linq;
+﻿// Ignore Spelling: evt Chans Loc
+
+using System.Linq;
+using BestChat.IRC.Data.Defs;
 
 namespace BestChat.IRC.Data
 {
-	public class RemoteUser : System.ComponentModel.INotifyPropertyChanged
+    public class RemoteUser : System.ComponentModel.INotifyPropertyChanged
 	{
 		#region Constructors & Deconstructors
 			internal RemoteUser(in ActiveNetwork anetOwner, string strCurNick, System.Collections.Generic
@@ -25,7 +28,7 @@ namespace BestChat.IRC.Data
 		#region Events
 			public event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
 
-			public event DCurNickChanged evtCurNickChanged;
+			public event DCurNickChanged? evtCurNickChanged;
 		#endregion
 
 		#region Constants

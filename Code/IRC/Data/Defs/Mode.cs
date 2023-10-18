@@ -1,6 +1,6 @@
-﻿// Ignore Spelling: Esc evt
+﻿// Ignore Spelling: Esc evt Defs
 
-namespace BestChat.IRC.Data
+namespace BestChat.IRC.Data.Defs
 {
 	public interface IModeState<StateType>
 		where StateType : struct, System.Enum
@@ -59,10 +59,10 @@ namespace BestChat.IRC.Data
 		#endregion
 
 		#region Constants
-			public static readonly BoolModeState on = new(BoolModeStates.on, Defs.Resources
+			public static readonly BoolModeState on = new(BoolModeStates.on, Resources
 				.strBoolModeStateOnDesc, '+');
 
-			public static readonly BoolModeState off = new(BoolModeStates.off, Defs.Resources
+			public static readonly BoolModeState off = new(BoolModeStates.off, Resources
 				.strBoolModeStateOffDesc, null);
 		#endregion
 
@@ -130,13 +130,13 @@ namespace BestChat.IRC.Data
 
 		#region Constants
 			public static readonly ThreeWayModeState lockedOn = new(ThreeWayModeStates.lockedOn,
-				Defs.Resources.strThreeWayModeStateLockedOnDesc, '+');
+				Resources.strThreeWayModeStateLockedOnDesc, '+');
 
 			public static readonly ThreeWayModeState noPref = new(ThreeWayModeStates.noPref,
-				Defs.Resources.strThreeWayModeStateNoPrefDesc, null);
+				Resources.strThreeWayModeStateNoPrefDesc, null);
 
 			public static readonly ThreeWayModeState forcedOff = new(ThreeWayModeStates.forcedOff,
-				Defs.Resources.strThreeWayModeStateForcedOff, '-');
+				Resources.strThreeWayModeStateForcedOff, '-');
 		#endregion
 
 		#region Helper Types
@@ -276,7 +276,7 @@ namespace BestChat.IRC.Data
 				#region Events
 					public event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
 
-					public event DValChanged evtValChanged;
+					public event DValChanged? evtValChanged;
 				#endregion
 
 				#region Constants
