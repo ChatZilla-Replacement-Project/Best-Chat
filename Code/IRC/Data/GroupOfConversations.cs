@@ -16,6 +16,7 @@ namespace BestChat.IRC.Data
 				foreach(Platform.Conversations.IGroupViewOrConversation viewCur in childrenToAdd)
 				{
 					mapChildrenByName[viewCur.Name] = viewCur;
+					ocUnsortedChildren.Add(viewCur);
 
 					if(viewCur is Platform.Conversations.IGroup groupCur)
 						groupCur.CollectionChanged += OnChildChildrenChanged;

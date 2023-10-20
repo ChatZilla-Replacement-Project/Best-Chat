@@ -31,16 +31,22 @@ namespace BestChat.IRC.Data
 						modeNew.evtStateChanged += OnStateOfModeChanged;
 					}
 
+					// TODO: Replace the list of channels with a real list loaded from storage
 					mapConversationGroupsByName["Channels"] = cgroupChannels = new
 					 (GroupOfConversations.Types.channels, Resources.strConversationGroupTypeChannels, Resources
 						.strConversationGroupChannelsDesc, new Chan(this, "##space"), new Chan(this,
 						"#best-chat"));
+					ocUnsortedConversationGroups.Add(cgroupChannels);
 					cgroupChannels.CollectionChanged += OnChildGroupChildrenChanged;
 
+					// TODO: Replace the list of users with a real list loaded from storage
 					mapConversationGroupsByName["Users"] = cgroupRemoteUsers = new
 						(GroupOfConversations.Types.users, Resources.strConversationGroupTypeRemoteUsers, Resources
 						.strConversationGroupRemoteUsersDesc, new ConversationWithRemoteUser(this, new
-						(this, "peter", mapModesOnUser.Values, System.Array.Empty<Chan>())));
+						(this, "Peter", mapModesOnUser.Values, System.Array.Empty<Chan>())), new
+						ConversationWithRemoteUser(this, new(this, "Micheal", mapModesOnUser.Values,
+						System.Array.Empty<Chan>())));
+					ocUnsortedConversationGroups.Add(cgroupRemoteUsers);
 					cgroupRemoteUsers.CollectionChanged += OnChildGroupChildrenChanged;
 				}
 			#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
@@ -91,7 +97,7 @@ namespace BestChat.IRC.Data
 				mapConversationGroupsByName = new();
 
 			private readonly System.Collections.ObjectModel.ObservableCollection<GroupOfConversations>
-				ocUnsortedConversationGroups;
+				ocUnsortedConversationGroups = new();
 
 
 			public readonly GroupOfConversations cgroupChannels;

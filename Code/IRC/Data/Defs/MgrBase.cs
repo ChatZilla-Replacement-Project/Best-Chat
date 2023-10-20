@@ -146,21 +146,21 @@ namespace BestChat.IRC.Data.Defs
 	public class NetworkMgr : MgrBase<PredefinedNetwork, Network, DTO.PredefinedNetworkDTO>
 	{
 		private NetworkMgr() : base(new System.Uri("https://raw.githubusercontent.com/ChatZilla"
-				+ "-Replacement-Project/JSON-Data/main/Defaults/Network-def.json"), MakeNetworkFromDto)
+			+ "-Replacement-Project/JSON-Data/main/Defaults/Network-def.json"), MakeNetworkFromDto)
 		{
 		}
 
 		public static readonly NetworkMgr mgr = new();
 
 		private static PredefinedNetwork MakeNetworkFromDto(DTO.PredefinedNetworkDTO dpnet) => new
-				(dpnet);
+			(dpnet);
 	}
 
 	public class UserNetworkMgr : MgrBase<UserNetwork, Network, DTO.UserNetworkDTO>
 	{
 		private UserNetworkMgr() : base(new System.IO.FileInfo(System.IO.Path.Combine(((Platform
-				.DataLoc.IDataLocProvider)System.Windows.Application.Current).LocalDataLoc.FullName,
-				"User Networks.json")), MakeNetworkFromDto)
+			.DataLoc.IDataLocProvider)System.Windows.Application.Current).LocalDataLoc.FullName,
+			"User Networks.json")), MakeNetworkFromDto)
 		{
 		}
 
@@ -168,7 +168,7 @@ namespace BestChat.IRC.Data.Defs
 		{
 			if(System.Windows.Application.Current is not Platform.DataLoc.IDataLocProvider)
 				throw new System.InvalidProgramException("UserNetworkMgr can only be used by applications that " +
-						"implement BestChat.Platform.DataLoc.IDataLocProvider.");
+					"implement BestChat.Platform.DataLoc.IDataLocProvider.");
 
 			mgr = new();
 		}

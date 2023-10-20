@@ -11,7 +11,7 @@ namespace BestChat.IRC.Data.Defs
 			{
 			}
 
-			public UserNetwork(in Network netPredefinedParent)
+			public UserNetwork(in Network netPredefinedParent) : base(netPredefinedParent)
 			{
 				if(netPredefinedParent != null && netPredefinedParent.GetType() != typeof(PredefinedNetwork))
 					throw new System.InvalidProgramException("The parent network for a user network must be " +
@@ -233,7 +233,7 @@ namespace BestChat.IRC.Data.Defs
 		#endregion
 
 		#region Members
-			public readonly Network? netPredefinedParent = null;
+			public readonly Network? netPredefinedParent;
 
 
 			private bool bAutoConnect;

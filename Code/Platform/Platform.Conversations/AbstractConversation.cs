@@ -7,7 +7,7 @@
 			public AbstractConversation(in string strName, in string strLongDesc)
 			{
 				Name = strName;
-				LongDesc = strLongDesc;
+				LocalizedLongDesc = LongDesc = strLongDesc;
 			}
 		#endregion
 

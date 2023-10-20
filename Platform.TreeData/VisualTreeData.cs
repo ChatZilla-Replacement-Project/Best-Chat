@@ -5,13 +5,13 @@ namespace BestChat.Platform.TreeData
 	public sealed class VisualTreeData : System.Windows.DependencyObject
 	{
 		#region Constructors & Deconstructors
-			public VisualTreeData(in DMakeCtrl funcCtrlMaker, in IItemInfo itemUs, in string
-				strLocalizedName, in string strLocalizedLongDesc, in IChildOwner? ownerOfChildren = null)
+			public VisualTreeData(in DMakeCtrl funcCtrlMaker, in IItemInfo itemUs)
 			{
 				UI = funcCtrlMaker(itemUs);
-				LocalizedName = strLocalizedName;
-				LocalizedLongDesc = strLocalizedLongDesc;
-				this.ownerOfChildren = ownerOfChildren;
+				LocalizedName = itemUs.LocalizedName;
+				LocalizedLongDesc = itemUs.LocalizedLongDesc;
+				IChildOwner? ownerOfChildren = itemUs is IChildOwner owner ? (IChildOwner)itemUs : null;
+				Icon = itemUs.Icon;
 
 				if(ownerOfChildren != null)
 				{
@@ -21,12 +21,11 @@ namespace BestChat.Platform.TreeData
 					{
 						itemCur.evtDieing += OnChildDieing;
 
-						VisualTreeData vtdChild = itemCur is IChildOwner ownerOfGrandChildren ? new
-							(funcCtrlMaker, itemCur, ownerOfGrandChildren.LocalizedName, ownerOfGrandChildren
-							.LocalizedLongDesc, ownerOfGrandChildren) : new(funcCtrlMaker, itemCur,
-							itemCur.LocalizedName, itemCur.LocalizedLongDesc);
+						ocChildren.Add(new(funcCtrlMaker, itemCur));
 					}
 				}
+
+				Children = ocChildren;
 			}
 		#endregion
 
@@ -36,7 +35,7 @@ namespace BestChat.Platform.TreeData
 
 		#region Constants
 			#region Dependency Properties
-				public static readonly System.Windows.DependencyProperty CtrlMakerProperty = System.Windows
+				public static readonly System.Windows.DependencyProperty UIProperty = System.Windows
 					.DependencyProperty.Register(nameof(UI), typeof(System.Windows.Controls.UserControl),
 					typeof(VisualTreeData));
 
@@ -50,6 +49,9 @@ namespace BestChat.Platform.TreeData
 				public static readonly System.Windows.DependencyProperty ChildrenProperty = System.Windows
 					.DependencyProperty.Register(nameof(Children), typeof(System.Collections.Generic
 					.IEnumerable<VisualTreeData>), typeof(VisualTreeData));
+
+				public static readonly System.Windows.DependencyProperty IconProperty = System.Windows
+					.DependencyProperty.Register(nameof(Icon), typeof(string), typeof(VisualTreeData));
 			#endregion
 
 			#region Routed Events
@@ -90,29 +92,43 @@ namespace BestChat.Platform.TreeData
 
 			private readonly System.Collections.ObjectModel.ObservableCollection<VisualTreeData> ocChildren =
 				new();
-
-			public readonly IChildOwner? ownerOfChildren;
 		#endregion
 
 		#region Properties
 			public System.Windows.Controls.UserControl UI
 			{
-				get;
+				get => (System.Windows.Controls.UserControl)GetValue(UIProperty);
+
+				init => SetValue(UIProperty, value);
 			}
 
 			public string LocalizedName
 			{
-				get;
+				get => (string)GetValue(LocalizedNameProperty);
+
+				init => SetValue(LocalizedNameProperty, value);
 			}
 
 			public string LocalizedLongDesc
 			{
-				get;
+				get => (string)GetValue(LocalizedLongDescProperty);
+
+				init => SetValue(LocalizedLongDescProperty, value);
 			}
 
-			public System.Collections.Generic.IEnumerable<VisualTreeData> Children => ocChildren;
+			public System.Collections.Specialized.INotifyCollectionChanged Children
+			{
+				get => ocChildren;
 
-			public string Icon => ownerOfChildren == null ? "" : ownerOfChildren.Icon;
+				init => SetValue(ChildrenProperty, value);
+			}
+
+			public string Icon
+			{
+				get => (string)GetValue(IconProperty);
+
+				init => SetValue(IconProperty, value);
+			}
 		#endregion
 
 		#region Methods

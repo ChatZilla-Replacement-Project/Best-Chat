@@ -19,7 +19,8 @@ namespace BestChat.GUI
 		{
 			base.OnInitialized(e);
 
-			treeLogicalSelector.Items.Add(ClientConversation.instance);
+			treeLogicalSelector.Items.Add(new Platform.TreeData.VisualTreeData(e => new System
+				.Windows.Controls.UserControl(), ClientConversation.instance));
 		}
 
 		private void OnIrcNetworkListClicked(object objSender, System.Windows.RoutedEventArgs e)
