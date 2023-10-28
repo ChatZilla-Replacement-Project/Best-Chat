@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Code\BestChat.ProtocolMgr\BestChat.ProtocolMgr.csproj" />
+    <ProjectReference Include="..\Code\Platform\Prefs\Platform.Prefs.Ctrls\Platform.Prefs.Ctrls.csproj" />
+    <ProjectReference Include="..\Code\Platform\Prefs\Platform.Prefs.Data\Platform.Prefs.Data.csproj" />
+  </ItemGroup>
+
+</Project>

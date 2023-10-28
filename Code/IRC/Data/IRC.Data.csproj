@@ -23,9 +23,9 @@
     <ProjectReference Include="..\..\Platform\Platform.Conversations\Platform.Conversations.csproj" />
     <ProjectReference Include="..\..\Platform\Platform.DataLoc\Platform.DataLoc.csproj" />
     <ProjectReference Include="..\..\Platform\Platform.HttpClientOwner\Platform.HttpClientOwner.csproj" />
+    <ProjectReference Include="..\..\Platform\Prefs\Platform.Prefs.Data\Platform.Prefs.Data.csproj" />
     <ProjectReference Include="..\..\Platform\Util.Exceptions\Util.Exceptions.csproj" />
     <ProjectReference Include="..\..\Platform\Util.Ext\Util.Ext.csproj" />
-    <ProjectReference Include="..\ModuleInterfaces\IRC.ModuleInterfaces.csproj" />
     <ProjectReference Include="..\..\Platform\Common\Platform.Common.csproj" />
     <ProjectReference Include="..\..\Platform\Data\Platform.Data.csproj" />
     <ProjectReference Include="..\..\Platform\Util\Util.csproj" />

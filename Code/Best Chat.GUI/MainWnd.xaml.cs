@@ -107,11 +107,11 @@ namespace BestChat.GUI
 				if(tbExtended == null || chkExtendedToolBarShow == null)
 					System.Diagnostics.Debug.WriteLine("Nulls");
 				else
-					System.Diagnostics.Debug.WriteLine($"Extended: {tbExtended.IsMouseDirectlyOver}\tCheckbox: {chkExtendedToolBarShow.IsChecked}");
-				return tbExtended !=
-			null && chkExtendedToolBarShow != null && (tbExtended
-			.IsMouseDirectlyOver || chkExtendedToolBarShow.IsChecked == true) ? System.Windows.GridLength.Auto :
-			new(0);
+					System.Diagnostics.Debug.WriteLine($"Extended: {tbExtended.IsMouseDirectlyOver
+						}\tCheckbox: {chkExtendedToolBarShow.IsChecked}");
+				return tbExtended != null && chkExtendedToolBarShow != null && (tbExtended.IsMouseDirectlyOver ||
+					chkExtendedToolBarShow.IsChecked == true) ? System.Windows.GridLength.Auto : new
+					(0);
 			}
 		}
 

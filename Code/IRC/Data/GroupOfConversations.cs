@@ -78,6 +78,8 @@ namespace BestChat.IRC.Data
 
 			public string Icon => "📚";
 
+			public bool CanBeSelected => false;
+
 
 			public System.Collections.Generic.IReadOnlyDictionary<string, Platform.Conversations
 				.IGroupViewOrConversation> ChildrenByName => mapChildrenByName;

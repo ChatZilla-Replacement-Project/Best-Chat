@@ -26,8 +26,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Platform.TreeData\Platform.TreeData.csproj" />
+    <ProjectReference Include="..\BestChat.Prefs.Data\BestChat.Prefs.Data.csproj" />
     <ProjectReference Include="..\Ctrls\BestChat.GUI.Ctrls.csproj" />
     <ProjectReference Include="..\IRC\Global\View\IRC.Global.View.csproj" />
+    <ProjectReference Include="..\IRC\IRC.Protocol Module\IRC.Protocol Module.csproj" />
     <ProjectReference Include="..\Platform\Platform.DataLoc\Platform.DataLoc.csproj" />
     <ProjectReference Include="..\Platform\Platform.HttpClientOwner\Platform.HttpClientOwner.csproj" />
   </ItemGroup>

@@ -646,6 +646,24 @@ namespace BestChat.IRC.Data {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Holds preferences for the Internet Relay Chat protocol.  Items under here are the network you&apos;ve connected to in the past.  These settings don&apos;t include how to connect to those networks or how to log into it.  For those, see the network list editor..
+        /// </summary>
+        internal static string strIrcLongDesc {
+            get {
+                return ResourceManager.GetString("strIrcLongDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IRC.
+        /// </summary>
+        internal static string strIrcName {
+            get {
+                return ResourceManager.GetString("strIrcName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in manually.
         /// </summary>
         internal static string strManual {
@@ -831,6 +849,15 @@ namespace BestChat.IRC.Data {
         internal static string strPostActionSayDesc {
             get {
                 return ResourceManager.GetString("strPostActionSayDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you&apos;ll find all preferences for this “{0}”. Items under here are for channels and users you&apos;ve talked with directly..
+        /// </summary>
+        internal static string strPrefsForNetwork {
+            get {
+                return ResourceManager.GetString("strPrefsForNetwork", resourceCulture);
             }
         }
         

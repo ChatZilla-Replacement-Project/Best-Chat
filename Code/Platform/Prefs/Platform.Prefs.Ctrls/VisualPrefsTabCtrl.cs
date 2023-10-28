@@ -1,14 +1,12 @@
 ﻿// Ignore Spelling: Prefs Ctrls Ctrl
 
-using BestChat.Platform.Prefs.Data;
-
 namespace BestChat.Platform.Prefs.Ctrls
 {
 	public abstract class VisualPrefsTabCtrl : GUI.Ctrls.AbstractVisualTabCtrl
 	{
 		#region Constructors & Deconstructors
 			public VisualPrefsTabCtrl(in string strLocalizedShortName, in string strLocalizedLongDesc, in
-				AbstractMgr mgrUs) : base(strLocalizedShortName, strLocalizedLongDesc) => this.mgrUs = mgrUs;
+				Data.AbstractMgr mgrUs) : base(strLocalizedShortName, strLocalizedLongDesc) => this.mgrUs = mgrUs;
 		#endregion
 
 		#region Delegates
@@ -29,11 +27,11 @@ namespace BestChat.Platform.Prefs.Ctrls
 		#endregion
 
 		#region Members
-			public readonly AbstractMgr mgrUs;
+			public readonly Data.AbstractMgr mgrUs;
 		#endregion
 
 		#region Properties
-			public AbstractMgr Mgr => mgrUs;
+			public Data.AbstractMgr Mgr => mgrUs;
 		#endregion
 
 		#region Methods

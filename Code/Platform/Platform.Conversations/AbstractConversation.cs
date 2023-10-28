@@ -1,4 +1,6 @@
-﻿namespace BestChat.Platform.Conversations
+﻿// Ignore Spelling: evt
+
+namespace BestChat.Platform.Conversations
 {
 	public abstract class AbstractConversation : IViewOrConversation, System.ComponentModel
 		.INotifyPropertyChanged
@@ -21,6 +23,14 @@
 		#endregion
 
 		#region Constants
+			public static readonly System.Collections.Generic.IReadOnlySet<IViewOrConversation.Types>
+				setTypesThatCanBeSelected = new System.Collections.Generic.SortedSet<IViewOrConversation.Types>()
+			{
+				IViewOrConversation.Types.channelOrRoom,
+				IViewOrConversation.Types.group,
+				IViewOrConversation.Types.user,
+				IViewOrConversation.Types.client,
+			};
 		#endregion
 
 		#region Helper Types
@@ -88,6 +98,8 @@
 			{
 				get;
 			}
+
+			public bool CanBeSelected => setTypesThatCanBeSelected.Contains(Type);
 		#endregion
 
 		#region Methods

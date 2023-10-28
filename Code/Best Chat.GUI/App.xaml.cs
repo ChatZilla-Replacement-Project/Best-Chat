@@ -1,4 +1,6 @@
-﻿namespace BestChat.GUI
+﻿// Ignore Spelling: Loc
+
+namespace BestChat.GUI
 {
 	/// <summary>
 	/// Interaction logic for App.xaml
@@ -6,7 +8,13 @@
 	public partial class App : System.Windows.Application, Platform.HttpClientOwner.IHttpClientOwner,
 		Platform.DataLoc.IDataLocProvider
 	{
-		static App() => client = new();
+		static App()
+		{
+			client = new();
+
+			IRC.Protocol_Module.ProtocolDef.instance.Init(Prefs.Data.Prefs.instance, ClientConversation
+				.instance);
+		}
 
 		private static readonly System.Net.Http.HttpClient client;
 

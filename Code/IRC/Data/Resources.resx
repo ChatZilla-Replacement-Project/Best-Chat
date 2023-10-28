@@ -336,6 +336,12 @@
   <data name="strHasQUnknownToolTip" xml:space="preserve">
     <value>Q might or might not be present on this network</value>
   </data>
+  <data name="strIrcLongDesc" xml:space="preserve">
+    <value>Holds preferences for the Internet Relay Chat protocol.  Items under here are the network you've connected to in the past.  These settings don't include how to connect to those networks or how to log into it.  For those, see the network list editor.</value>
+  </data>
+  <data name="strIrcName" xml:space="preserve">
+    <value>IRC</value>
+  </data>
   <data name="strManual" xml:space="preserve">
     <value>Log in manually</value>
   </data>
@@ -403,6 +409,10 @@
   </data>
   <data name="strPostActionSayDesc" xml:space="preserve">
     <value>say</value>
+  </data>
+  <data name="strPrefsForNetwork" xml:space="preserve">
+    <value>Here you'll find all preferences for this “{0}”. Items under here are for channels and users you've talked with directly.</value>
+    <comment>All instances of "{0}" will be replaced by the network name.</comment>
   </data>
   <data name="strRemoteUserDescForTree" xml:space="preserve">
     <value>{0} is a remote user on the IRC network {1}.</value>

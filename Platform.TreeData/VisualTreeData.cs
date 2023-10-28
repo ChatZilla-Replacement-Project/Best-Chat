@@ -7,6 +7,7 @@ namespace BestChat.Platform.TreeData
 		#region Constructors & Deconstructors
 			public VisualTreeData(in DMakeCtrl funcCtrlMaker, in IItemInfo itemUs)
 			{
+				this.itemUs = itemUs;
 				UI = funcCtrlMaker(itemUs);
 				LocalizedName = itemUs.LocalizedName;
 				LocalizedLongDesc = itemUs.LocalizedLongDesc;
@@ -30,7 +31,7 @@ namespace BestChat.Platform.TreeData
 		#endregion
 
 		#region Delegates
-			public delegate System.Windows.Controls.UserControl DMakeCtrl(IItemInfo item);
+			public delegate System.Windows.Controls.UserControl? DMakeCtrl(IItemInfo item);
 		#endregion
 
 		#region Constants
@@ -75,6 +76,11 @@ namespace BestChat.Platform.TreeData
 				{
 					get;
 				}
+
+				bool CanBeSelected
+				{
+					get;
+				}
 			}
 
 			public interface IChildOwner : IItemInfo, System.Collections.Specialized.INotifyCollectionChanged
@@ -87,6 +93,8 @@ namespace BestChat.Platform.TreeData
 		#endregion
 
 		#region Members
+			public readonly IItemInfo itemUs;
+
 			private readonly System.Collections.Generic.Dictionary<Common.IDieable, VisualTreeData>
 				mapDieableToVisualTreeDataInstance = new();
 
@@ -95,7 +103,7 @@ namespace BestChat.Platform.TreeData
 		#endregion
 
 		#region Properties
-			public System.Windows.Controls.UserControl UI
+			public System.Windows.Controls.UserControl? UI
 			{
 				get => (System.Windows.Controls.UserControl)GetValue(UIProperty);
 
@@ -129,6 +137,8 @@ namespace BestChat.Platform.TreeData
 
 				init => SetValue(IconProperty, value);
 			}
+
+			public bool CanBeSelected => itemUs.CanBeSelected;
 		#endregion
 
 		#region Methods
