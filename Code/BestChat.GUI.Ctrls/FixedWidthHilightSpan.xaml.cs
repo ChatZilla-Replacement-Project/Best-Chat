@@ -1,6 +1,6 @@
 ﻿// Ignore Spelling: Hilight Ctrls
 
-namespace Best_Chat.Ctrls
+namespace BestChat.GUI.Ctrls
 {
 	/// <summary>
 	/// Interaction logic for FixedWidthHilightSpan.xaml

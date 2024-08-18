@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿// Ignore Spelling: Ctrls
+
+using System.Linq;
 
 namespace BestChat.GUI.Ctrls
 {

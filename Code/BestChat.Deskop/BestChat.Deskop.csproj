@@ -3,10 +3,11 @@
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net8.0-windows</TargetFramework>
-		<RootNamespace>Best_Chat.Deskop</RootNamespace>
+		<RootNamespace></RootNamespace>
 		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
+		<ImplicitUsings>disable</ImplicitUsings>
 		<UseWPF>true</UseWPF>
+		<AssemblyName />
 	</PropertyGroup>
 
 	<ItemGroup>

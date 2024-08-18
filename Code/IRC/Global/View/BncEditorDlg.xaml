@@ -6,7 +6,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:local="clr-namespace:BestChat.IRC.Global.View"
 	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
-	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.Ctrls"
+	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
 	mc:Ignorable="d"
 	FontFamily="Times New Roman"
 	ShowInTaskbar="False"

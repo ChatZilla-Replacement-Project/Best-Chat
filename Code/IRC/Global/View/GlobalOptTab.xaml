@@ -5,7 +5,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:local="clr-namespace:BestChat.IRC.Global.View"
-	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.Ctrls"
+	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
 	mc:Ignorable="d"
 	MinWidth="649"
 	MinHeight="300">
@@ -57,7 +57,7 @@
 				<DockPanel>
 					<TextBlock
 						DockPanel.Dock="Top"
-						TextWrapping="WrapWithOverflow">Allows you to make shortcuts to various commands or sequences of commands.  Each item has a name and a command list.  Best Chat will turn the alias into a command when it starts.  Don't include the leading “<Ctrls:FixedWidthHilightSpan>/</Ctrls:FixedWidthHilightSpan> ” in the string.  If you enter <Ctrls:FixedWidthHilightSpan>$(x)</Ctrls:FixedWidthHilightSpan> where <Ctrls:FixedWidthHilightSpan>x</Ctrls:FixedWidthHilightSpan> is a number, it will put the <Ctrls:FixedWidthHilightSpan>x</Ctrls:FixedWidthHilightSpan> parameter to your alias in that spot.  Use <Ctrls:FixedWidthHilightSpan>$(x+)</Ctrls:FixedWidthHilightSpan> to include all parameters after the <Ctrls:FixedWidthHilightSpan>x</Ctrls:FixedWidthHilightSpan> parameter.</TextBlock>
+						TextWrapping="WrapWithOverflow">Allows you to make shortcuts to various commands or sequences of commands.  Each item has a name and a command list.  Best Chat will turn the alias into a command when it starts.  Don't include the leading “<Ctrls:FixedWidthHilightSpan>/</Ctrls:FixedWidthHilightSpan>” in the string.  If you enter <Ctrls:FixedWidthHilightSpan>$(x)</Ctrls:FixedWidthHilightSpan> where <Ctrls:FixedWidthHilightSpan>x</Ctrls:FixedWidthHilightSpan> is a number, it will put the <Ctrls:FixedWidthHilightSpan>x</Ctrls:FixedWidthHilightSpan> parameter to your alias in that spot.  Use <Ctrls:FixedWidthHilightSpan>$(x+)</Ctrls:FixedWidthHilightSpan> to include all parameters after the <Ctrls:FixedWidthHilightSpan>x</Ctrls:FixedWidthHilightSpan> parameter.</TextBlock>
 					<Separator
 						DockPanel.Dock="Top"
 						Height="1"

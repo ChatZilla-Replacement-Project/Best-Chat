@@ -1,14 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<OutputType>WinExe</OutputType>
+		<OutputType>Library</OutputType>
 		<TargetFramework>net8.0-windows</TargetFramework>
-		<RootNamespace>BestChat.GUI</RootNamespace>
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
-		<StartupObject>BestChat.GUI.App</StartupObject>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -22,7 +20,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Platform\Platform.Conversations\Platform.Conversations.csproj" />
 		<ProjectReference Include="..\Platform\Platform.Common\Platform.Common.csproj" />
-		<ProjectReference Include="..\IRC\Data\IRC.Data.csproj"/>
+		<ProjectReference Include="..\IRC\Data\IRC.Data.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

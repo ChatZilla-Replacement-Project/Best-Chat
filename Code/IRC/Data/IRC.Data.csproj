@@ -6,7 +6,6 @@
     <UseWPF>true</UseWPF>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>\bin</DocumentationFile>
     <Copyright>2023</Copyright>
     <NeutralLanguage>en</NeutralLanguage>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>

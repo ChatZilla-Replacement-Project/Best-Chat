@@ -1,7 +1,5 @@
 ﻿// Ignore Spelling: Loc
 
-using System.Windows;
-
 namespace BestChat.Desktop
 {
 	/// <summary>
@@ -14,7 +12,7 @@ namespace BestChat.Desktop
 
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0022:Use expression body " +
 			"for method", Justification = "Not fully implemented")]
-		protected override void OnStartup(StartupEventArgs e)
+		protected override void OnStartup(System.Windows.StartupEventArgs e)
 		{
 			base.OnStartup(e);
 
