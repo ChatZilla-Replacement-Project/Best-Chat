@@ -28,15 +28,7 @@ namespace BestChat.IRC.Data.Defs
 			protected MgrBase(System.Uri uriPredefinedData, DGetItemFromDTO itemMaker) => Init(client
 					.GetStringAsync(uriPredefinedData.AbsoluteUri).Result, itemMaker);
 
-			static MgrBase()
-			{
-				if(System.Windows.Application.Current is not Platform.HttpClientOwner.IHttpClientOwner)
-					throw new System.InvalidProgramException("Mgr objects can only be used by applications that " +
-							"implement BestChat.Platform.HttpClientOwner.IHttpClientOwner.");
-
-				client = ((Platform.HttpClientOwner.IHttpClientOwner)System.Windows.Application.Current)
-						.HttpClient;
-			}
+			static MgrBase() => client = Platform.HttpClientOwner.HttpClientOwner.hc;
 		#endregion
 
 		#region Delegates

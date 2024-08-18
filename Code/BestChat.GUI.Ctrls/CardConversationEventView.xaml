@@ -1,0 +1,54 @@
+﻿<UserControl
+	x:Class="BestChat.GUI.Ctrls.CardConversationEventView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:BestChat.GUI.Ctrls"
+	xmlns:Emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
+	xmlns:conversations="clr-namespace:BestChat.Platform.Conversations;assembly=BestChat.Platform.Conversations"
+	d:DataContext="{d:DesignInstance Type=conversations:IMsgEventInfo, IsDesignTimeCreatable=False}"
+	mc:Ignorable="d"
+	SizeChanged="OnSizeChanged">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="Auto" />
+			<ColumnDefinition />
+			<ColumnDefinition
+				Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<ContentControl
+			x:Name="ccIcon"
+			Content="{Binding SenderIcon}"/>
+		<Label
+			Grid.Column="1"
+			Content="{Binding Sender}" />
+		<Grid
+			Grid.Row="1"
+			Grid.Column="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition
+					Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition
+					Height="Auto" />
+			</Grid.RowDefinitions>
+			<Emoji:TextBlock
+				x:Name="textDescOfEvent"
+				Text="{Binding DescOfEvent}" />
+			<Label
+				Content="{Binding WhenItHappened}"
+				Grid.Row="1"
+				Grid.Column="1" />
+		</Grid>
+	</Grid>
+</UserControl>

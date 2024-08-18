@@ -13,20 +13,23 @@ namespace BestChat.IRC.Data.Events.Types
 		#endregion
 
 		#region Constants
-			public static readonly ActionEventType aetKickOfUser = new(Types.kickOfUser, Resources
-				.strActionEventTypeKickOfUserDesc);
+			public static readonly ActionEventType aetKickOfUser = new(Types.kickOfUser,
+				Resources.strActionEventTypeKickOfUserDesc);
 
-			public static readonly ActionEventType aetBanOfUser = new(Types.banOfUser, Resources
-				.strActionEventTypeBanOfUserDesc);
+			public static readonly ActionEventType aetBanOfUser = new(Types.banOfUser,
+				Resources.strActionEventTypeBanOfUserDesc);
 
-			public static readonly ActionEventType aetUnbanOfUser = new(Types.unbanOfUser, Resources
-				.strActionEventTypeUnbanOfUserDesc);
+			public static readonly ActionEventType aetUnbanOfUser = new(Types.unbanOfUser,
+				Resources.strActionEventTypeUnbanOfUserDesc);
 
-			public static readonly ActionEventType aetQuietOfUser = new(Types.quietOfUser, Resources
-				.strActionEventTypeQuietOfUserDesc);
+			public static readonly ActionEventType aetQuietOfUser = new(Types.quietOfUser,
+				Resources.strActionEventTypeQuietOfUserDesc);
 
-			public static readonly ActionEventType aetUnquietOfUser = new(Types.unquietOfUser,
-				Resources.strActionEventTypeUnquietOfUserDesc);
+			public static readonly ActionEventType aetUnquietOfUser = new(Types
+				.unquietOfUser, Resources.strActionEventTypeUnquietOfUserDesc);
+
+			public static readonly ActionEventType aetSelfJoin = new(Types.selfJoin, Resources
+				.strActionEventTypeSelfJoinDesc);
 
 			public static readonly ActionEventType aetJoin = new(Types.join, Resources
 				.strActionEventTypeJoinDesc);
@@ -40,29 +43,29 @@ namespace BestChat.IRC.Data.Events.Types
 			public static readonly ActionEventType aetChanModeAdded = new(Types.chanModeAdded,
 				Resources.strActionEventTypeChanModeAddedDesc);
 
-			public static readonly ActionEventType aetChanModeRemoved = new(Types.chanModeRemoved,
-				Resources.strActionEventTypeChanModeRemovedDesc);
+			public static readonly ActionEventType aetChanModeRemoved = new(Types
+				.chanModeRemoved, Resources.strActionEventTypeChanModeRemovedDesc);
 
 			public static readonly ActionEventType aetChanModeAddedAndRemoved = new(Types
 				.chanModeAddedAndRemoved, Resources.strActionEventTypeChanModeAddedAndRemovedDesc);
 
-			public static readonly ActionEventType aetUserVoiced = new(Types.userVoiced, Resources
-				.strActionEventTypeUserVoicedDesc);
+			public static readonly ActionEventType aetUserVoiced = new(Types.userVoiced,
+				Resources.strActionEventTypeUserVoicedDesc);
 
 			public static readonly ActionEventType aetUserDevoiced = new(Types.userDevoiced,
 				Resources.strActionEventTypeUserDevoicedDesc);
 
-			public static readonly ActionEventType aetUserOpped = new(Types.userOpped, Resources
-				.strActionEventTypeUserOppedDesc);
+			public static readonly ActionEventType aetUserOpped = new(Types.userOpped,
+				Resources.strActionEventTypeUserOppedDesc);
 
-			public static readonly ActionEventType aetUserDeopped = new(Types.userDeopped, Resources
-				.strActionEventTypeUserDeoppedDesc);
+			public static readonly ActionEventType aetUserDeopped = new(Types.userDeopped,
+				Resources.strActionEventTypeUserDeoppedDesc);
 
-			public static readonly ActionEventType aetUserHalfOpped = new(Types.userHalfOpped,
-				Resources.strActionEventTypeUserHalfOppedDesc);
+			public static readonly ActionEventType aetUserHalfOpped = new(Types
+				.userHalfOpped, Resources.strActionEventTypeUserHalfOppedDesc);
 
-			public static readonly ActionEventType aetUserDehalfOpped = new(Types.userDehalfOpped,
-				Resources.strActionEventTypeUserDehalfOppedDesc);
+			public static readonly ActionEventType aetUserDehalfOpped = new(Types
+				.userDehalfOpped, Resources.strActionEventTypeUserDehalfOppedDesc);
 
 			public static readonly ActionEventType aetNickOfUserChanged = new(Types
 				.nickOfUserChanged, Resources.strActionEventTypeNickOfUserChangedDesc);
@@ -76,6 +79,7 @@ namespace BestChat.IRC.Data.Events.Types
 				unbanOfUser,
 				quietOfUser,
 				unquietOfUser,
+				selfJoin,
 				join,
 				quit,
 				part,
@@ -90,6 +94,7 @@ namespace BestChat.IRC.Data.Events.Types
 				userHalfOpped,
 				userDehalfOpped,
 				nickOfUserChanged,
+				userModeChanged
 			}
 		#endregion
 
@@ -103,6 +108,8 @@ namespace BestChat.IRC.Data.Events.Types
 			public static ActionEventType QuietOfUser => aetQuietOfUser;
 
 			public static ActionEventType UnquietOfUser => aetUnquietOfUser;
+
+			public static ActionEventType SelfJoin => aetSelfJoin;
 
 			public static ActionEventType Join => aetJoin;
 

@@ -4,17 +4,22 @@ namespace BestChat.IRC.Data.Defs
 {
 	public interface IMode
 	{
-		public char ModeChar
+		char ModeChar
 		{
 			get;
 		}
 
-		public LocalizedTextSystem Desc
+		LocalizedTextSystem Desc
 		{
 			get;
 		}
 
-		public bool NotAlwaysAvailable
+		bool NotAlwaysAvailable
+		{
+			get;
+		}
+
+		System.Collections.Generic.IReadOnlyDictionary<string, ModeParam>? ParamsByName
 		{
 			get;
 		}

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<RootNamespace>Best_Chat.Deskop</RootNamespace>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\BestChat.ClientConversation\BestChat.ClientConversation.csproj" />
+		<ProjectReference Include="..\BestChat.GUI.Ctrls\BestChat.GUI.Ctrls.csproj" />
+		<ProjectReference Include="..\IRC\Data\IRC.Data.csproj" />
+		<ProjectReference Include="..\IRC\Global\View\IRC.Global.View.csproj" />
+		<ProjectReference Include="..\Platform\Platform.DataLoc\Platform.DataLoc.csproj" />
+		<ProjectReference Include="..\Platform\Platform.Common\Platform.Common.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -63,8 +63,8 @@ namespace BestChat.IRC.Data.Defs
 			}
 
 			public string this[System.Globalization.CultureInfo culture] => mapTranslationByLang
-				.ContainsKey(culture.Name) ? mapTranslationByLang[culture.Name] : culture.Parent != null ?
-				this[culture.Parent] : strDef;
+				.ContainsKey(culture.Name) ? mapTranslationByLang[culture.Name] : culture.Parent != null &&
+				culture.Parent != culture ? this[culture.Parent] : strDef;
 
 			public string TranslationForCurCulture => this[System.Globalization.CultureInfo.CurrentCulture];
 		#endregion

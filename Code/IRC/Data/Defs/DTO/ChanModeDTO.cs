@@ -10,6 +10,20 @@ namespace BestChat.IRC.Data.Defs.DTO
 		ModeParamDTO[] Parameters,
 		string FmtAsSentToNetwork = "",
 		bool NotAlwaysAvailable = false,
-		bool IsOperRequiredToChange = false
-	);
+		bool IsOperRequiredToChange = false,
+		ChanModeDTO.StdModeTypes? StdModeType = null
+	)
+	{
+		public enum StdModeTypes
+		{
+			TopicLock,
+			Moderated,
+			ColorStrip,
+			NoOutsideMsg,
+			InviteOnly,
+			Keyword,
+			Private,
+			Secret
+		}
+	}
 }

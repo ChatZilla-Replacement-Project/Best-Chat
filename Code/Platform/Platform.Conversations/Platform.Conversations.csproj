@@ -1,25 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <ImplicitUsings>disable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <AssemblyName>BestChat.$(MSBuildProjectName)</AssemblyName>
-    <RootNamespace>BestChat.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AssemblyName>BestChat.$(MSBuildProjectName)</AssemblyName>
+		<RootNamespace>BestChat.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Platform.TreeData\Platform.TreeData.csproj" />
-    <ProjectReference Include="..\Util.Exceptions\Util.Exceptions.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Platform.Conversations.PlaceHolder\Platform.Conversations.PlaceHolder.csproj" />
+		<ProjectReference Include="..\Platform.TreeData\Platform.TreeData.csproj" />
+		<ProjectReference Include="..\Util.Exceptions\Util.Exceptions.csproj" />
+	</ItemGroup>
 
 </Project>

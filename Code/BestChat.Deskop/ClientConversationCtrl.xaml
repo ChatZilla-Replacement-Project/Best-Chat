@@ -1,0 +1,10 @@
+﻿<Base:AbstractVisualConversationCtrl
+	x:Class="BestChat.Desktop.ClientConversationCtrl"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:Base="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
+	xmlns:local="clr-namespace:BestChat.Desktop"
+	mc:Ignorable="d">
+</Base:AbstractVisualConversationCtrl>

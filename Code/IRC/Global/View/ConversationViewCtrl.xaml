@@ -1,0 +1,223 @@
+﻿<Base:AbstractVisualConversationCtrl
+	x:Class="BestChat.IRC.Global.View.ConversationViewCtrl"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:BestChat.IRC.Global.View"
+	xmlns:Base="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.Ctrls"
+	xmlns:OurDataCtxt="BestChat.Platform.Conversations;Assembly=BestChat.Platform.Conversations"
+	xmlns:DataDefs="clr-namespace:BestChat.IRC.Data.Defs;assembly=BestChat.IRC.Data"
+	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
+	xmlns:Emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
+	xmlns:Ctrls="clr-namespace:BestChat.IRC.Global.View.Ctrls;assembly=BestChat.IRC.Global.View.Ctrls"
+	xmlns:GuiCtrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.Ctrls"
+	xmlns:data="clr-namespace:BestChat.IRC.Data;assembly=BestChat.IRC.Data"
+	d:DataContext="{d:DesignInstance Type=data:AbstractConversation}"
+	mc:Ignorable="d">
+	<Base:AbstractVisualConversationCtrl.Resources>
+		<DataTemplate
+			x:Key="ModeIntParamWithOutPostFix"
+			DataType="DataDefs:AbstractModeParam">
+			<StackPanel
+				Orientation="Horizontal">
+				<Label
+					Content="{Binding Def.DisplayName.TranslationForCurCulture}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+				<Ctrls:IntegerUpDown
+					Value="{Binding }"
+					Minimum="{Binding Def.MinForNumSafe}"
+					Maximum="{Binding Def.MaxForNumSafe}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate
+			x:Key="ModeIntParamWithPostFix"
+			DataType="DataDefs:AbstractModeParam">
+			<StackPanel
+				Orientation="Horizontal">
+				<Label
+					Content="{Binding Def.DisplayName.TranslationForCurCulture}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+				<Base:IntegerUpDown
+					Value="{Binding Val}"
+					Minimum="{Binding Def.MinForNumSafe}"
+					Maximum="{Binding Def.MaxForNumSafe}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+				<Label
+					Content="{Binding Def.PostFixLabel.TranslationForCurCulture}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate
+			x:Key="ModeStrParamWithOutPostFix"
+			DataType="DataDefs:AbstractModeParam">
+			<StackPanel
+				Orientation="Horizontal">
+				<Label
+					Content="{Binding Def.DisplayName.TranslationForCurCulture}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+				<Emoji:TextBox
+					Text="{Binding Val}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate
+			x:Key="ModeStrParamWithPostFix"
+			DataType="DataDefs:AbstractModeParam">
+			<StackPanel
+				Orientation="Horizontal">
+				<Label
+					Content="{Binding Def.DisplayName.TranslationForCurCulture}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+				<Emoji:TextBox
+					Text="{Binding Val}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+				<Label
+					Content="{Binding Def.PostFixLabel.TranslationForCurCulture}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate
+			x:Key="ModeChanParamWithOutPostFix"
+			DataType="DataDefs:AbstractModeParam">
+			<StackPanel
+				Orientation="Horizontal">
+				<Label
+					Content="{Binding Def.DisplayName.TranslationForCurCulture}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+				<Ctrls:ChanListCtrl
+					Sel="{Binding Val}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}"
+					OwnerOfChans="{Binding DataContext.Owner, ElementName=window}" />
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate
+			x:Key="ModeChanParamWithPostFix"
+			DataType="DataDefs:AbstractModeParam">
+			<StackPanel
+				Orientation="Horizontal">
+				<Label
+					Content="{Binding Def.DisplayName.TranslationForCurCulture}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+				<Ctrls:ChanListCtrl
+					Sel="{Binding Val}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}"
+					OwnerOfChans="{Binding DataContext.Owner, ElementName=window}" />
+				<Label
+					Content="{Binding Def.PostFixLabel.TranslationForCurCulture}"
+					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate
+			x:Key="ModeWithParam"
+			DataType="DataDefs:TwoWayMode">
+			<StackPanel
+				Orientation="Horizontal">
+				<CheckBox
+					Content="{Binding Def.ModeChar}"
+					IsChecked="{CalcBinding:Binding StateAsBool, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+					ToolTip="Def.Desc"
+					Style="{StaticResource ResourceKey={x:Static ToolBar.ToggleButtonStyleKey}}" />
+				<ItemsControl
+					ItemTemplateSelector="{Binding ItemTemplateSelector, ElementName=icModeBar}"
+					Visibility="{CalcBinding:Binding StateAsBool, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+					ItemsSource="{Binding AllParams}">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<StackPanel
+								Orientation="Horizontal" />
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+				</ItemsControl>
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate
+			x:Key="ModeWithOutParam"
+			DataType="DataDefs:TwoWayMode">
+			<StackPanel
+				Orientation="Horizontal">
+				<CheckBox
+					Content="{Binding Def.ModeChar}"
+					IsChecked="{CalcBinding:Binding StateAsBool, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+					ToolTip="Def.Desc"
+					Style="{StaticResource ResourceKey={x:Static ToolBar.ToggleButtonStyleKey}}" />
+			</StackPanel>
+		</DataTemplate>
+	</Base:AbstractVisualConversationCtrl.Resources>
+	<Base:AbstractVisualConversationCtrl.Hdr>
+		<DockPanel>
+			<Grid
+				x:Name="gridTopicBar"
+				DockPanel.Dock="Top"
+				Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition
+						Width="Auto" />
+					<ColumnDefinition
+						Width="4" />
+					<ColumnDefinition />
+					<ColumnDefinition
+						Width="4" />
+					<ColumnDefinition
+						Width="Auto" />
+					<ColumnDefinition
+						Width="4" />
+					<ColumnDefinition
+						Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition
+						Height="Auto" />
+				</Grid.RowDefinitions>
+				<Label
+					Content="Topic: " />
+				<Emoji:TextBox
+					x:Name="editTopic"
+					Grid.Column="2"
+					ToolTip="{Binding Topic, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}"
+					TextWrapping="Wrap"
+					Text="{Binding Topic, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}"
+					IsReadOnly="{Binding IsTopicLocked, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" />
+				<CheckBox
+					x:Name="chkModes"
+					Content="Modes"
+					Style="{DynamicResource ResourceKey={x:Static ToolBar.ToggleButtonStyleKey}}"
+					ToolTip="Displays a window where you can change or view the channel's modes."
+					Grid.Column="4"
+					Checked="OnModesCheckedChanged"
+					BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" />
+				<GuiCtrls:DropMenuBtn
+					x:Name="dbtnLists"
+					Ctnts="Lists"
+					Grid.Column="6">
+					<GuiCtrls:DropMenuBtn.Menu>
+						<ContextMenu>
+							<MenuItem
+								Header="Ops…" />
+							<MenuItem
+								Header="Quiet…" />
+							<MenuItem
+								Header="Exemptions…" />
+							<MenuItem
+								Header="Invite Exemptions…" />
+						</ContextMenu>
+					</GuiCtrls:DropMenuBtn.Menu>
+				</GuiCtrls:DropMenuBtn>
+			</Grid>
+			<ItemsControl
+				x:Name="icModeBar"
+				DockPanel.Dock="Top"
+				Visibility="{Binding ShouldModeBarBeShown, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=20}, Mode=OneWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}"
+				Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel
+							Orientation="Horizontal" />
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+			</ItemsControl>
+		</DockPanel>
+	</Base:AbstractVisualConversationCtrl.Hdr>
+	<!--Note: The contents of the main control are set in one of the base classes-->
+</Base:AbstractVisualConversationCtrl>

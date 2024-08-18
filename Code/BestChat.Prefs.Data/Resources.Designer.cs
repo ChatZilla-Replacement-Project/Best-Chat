@@ -70,6 +70,303 @@ namespace BestChat.Prefs.Data {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to When collapsing messages in conference mode, Best Chat can also collapse actions.  Do you want this behavior?.
+        /// </summary>
+        internal static string strGlobalAppearanceConfModeCollapseActionsDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceConfModeCollapseActionsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Collapse Actions When Collapsing Messages?.
+        /// </summary>
+        internal static string strGlobalAppearanceConfModeCollapseActionsTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceConfModeCollapseActionsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In Conference Mode, Best Chat can collapse messages.  Do you want that?.
+        /// </summary>
+        internal static string strGlobalAppearanceConfModeCollapseMsgsDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceConfModeCollapseMsgsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Collapse Messages?.
+        /// </summary>
+        internal static string strGlobalAppearanceConfModeCollapseMsgsTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceConfModeCollapseMsgsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These settings control the configuration of Conference Mode.  It lets you hide joins, parts, and quits in busy channels.  All hidden events can be viewed by hovering your mouse over the event..
+        /// </summary>
+        internal static string strGlobalAppearanceConfModeDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceConfModeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check this if you want Conference Mode enabled.  Uncheck it if you always want to see parts, joins, and quits..
+        /// </summary>
+        internal static string strGlobalAppearanceConfModeEnabledDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceConfModeEnabledDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable Conference Mode?.
+        /// </summary>
+        internal static string strGlobalAppearanceConfModeEnabledTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceConfModeEnabledTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If the number of users in the system goes above this number, Conference Mode would be activated.  That would cause parts, joins, and quits to be hidden unless you hover over the event marker..
+        /// </summary>
+        internal static string strGlobalAppearanceConfModeLimitDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceConfModeLimitDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Limit Before Trigger.
+        /// </summary>
+        internal static string strGlobalAppearanceConfModeLimitTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceConfModeLimitTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conference Mode.
+        /// </summary>
+        internal static string strGlobalAppearanceConfModeTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceConfModeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These settings control the font used.  By default, the font is specified by your theme, but you can override it here..
+        /// </summary>
+        internal static string strGlobalAppearanceFontDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceFontDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Best Chat switches forts when the formatting calls for a fixed width font.  Most fonts are what they call variable pitch.  That means the width in pixels of a &apos;I&quot; is far less than the width of a &apos;W&apos;.  By contrast, a fixed width font uses the same width for all characters..
+        /// </summary>
+        internal static string strGlobalAppearanceFontFixedWidthFamilyDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceFontFixedWidthFamilyDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fixed Width Family.
+        /// </summary>
+        internal static string strGlobalAppearanceFontFixedWidthFamilyTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceFontFixedWidthFamilyTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use this to override the normal font family specified by your theme.  Set the fixed width font separately below..
+        /// </summary>
+        internal static string strGlobalAppearanceFontNormalFamilyDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceFontNormalFamilyDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal Family.
+        /// </summary>
+        internal static string strGlobalAppearanceFontNormalFamilyTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceFontNormalFamilyTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use this to make all fonts larger or smaller.  The value shown is measured in pixels..
+        /// </summary>
+        internal static string strGlobalAppearanceFontSizeDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceFontSizeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Size.
+        /// </summary>
+        internal static string strGlobalAppearanceFontSizeTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceFontSizeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font.
+        /// </summary>
+        internal static string strGlobalAppearanceFontTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceFontTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Weight.
+        /// </summary>
+        internal static string strGlobalAppearanceFontWeightTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceFontWeightTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configures the overall appearance of the entire application.
+        /// </summary>
+        internal static string strGlobalAppearancePageDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearancePageDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Appearance.
+        /// </summary>
+        internal static string strGlobalAppearancePageTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearancePageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Best Chat records when each event happens and can show or hide those.   You can control if they&apos;re shown or not along with their format..
+        /// </summary>
+        internal static string strGlobalAppearanceTimeStampDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceTimeStampDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you want to use a custom time stamp format, specify it here.  Read the notes above on how to specify it.  Certain characters in the value will be treated special..
+        /// </summary>
+        internal static string strGlobalAppearanceTimeStampFmtDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceTimeStampFmtDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Format.
+        /// </summary>
+        internal static string strGlobalAppearanceTimeStampFmtTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceTimeStampFmtTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check this if you want to see time stamps and uncheck it if you don&apos;t..
+        /// </summary>
+        internal static string strGlobalAppearanceTimeStampShowDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceTimeStampShowDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show the time stamp?.
+        /// </summary>
+        internal static string strGlobalAppearanceTimeStampShowTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceTimeStampShowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time Stamps.
+        /// </summary>
+        internal static string strGlobalAppearanceTimeStampTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceTimeStampTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Places the user list on the left side of the client area..
+        /// </summary>
+        internal static string strGlobalAppearanceUserListLeftDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserListLeftDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left.
+        /// </summary>
+        internal static string strGlobalAppearanceUserListLeftTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserListLeftTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify if you want the user list on the left or right..
+        /// </summary>
+        internal static string strGlobalAppearanceUserListLocDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserListLocDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        internal static string strGlobalAppearanceUserListLocTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserListLocTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Places the user list on the right side of the client area..
+        /// </summary>
+        internal static string strGlobalAppearanceUserListRightDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserListRightDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right.
+        /// </summary>
+        internal static string strGlobalAppearanceUserListRightTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserListRightTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reconnect when disconnected unexpectedly.
         /// </summary>
         internal static string strGlobalGeneralConnAutoReconnectName {

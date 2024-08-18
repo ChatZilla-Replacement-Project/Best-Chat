@@ -1,0 +1,114 @@
+﻿<Window
+	x:Class="BestChat.Desktop.PrefsWnd"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
+	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
+	xmlns:IrcView="clr-namespace:BestChat.IRC.Global.View;assembly=BestChat.IRC.Global.View"
+	xmlns:local="clr-namespace:BestChat.Desktop"
+	mc:Ignorable="d"
+	Title="Best Chat (GUI Mode) Preferences"
+	Height="450"
+	Width="800"
+	FontFamily="Times New Roman"
+	WindowStyle="ThreeDBorderWindow"
+	ResizeMode="CanResizeWithGrip"
+	WindowStartupLocation="CenterOwner"
+	ToolTipService.HasDropShadow="True"
+	ToolTipService.Placement="Right"
+	BorderThickness="1"
+	ShowInTaskbar="False">
+	<DockPanel>
+		<Grid
+			x:Name="panelBtnBar"
+			DockPanel.Dock="Bottom"
+			Margin="4,0,4,4">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition
+					Width="4" />
+				<ColumnDefinition
+					Width="Auto" />
+				<ColumnDefinition
+					Width="4" />
+				<ColumnDefinition
+					Width="Auto" />
+				<ColumnDefinition
+					Width="4" />
+				<ColumnDefinition
+					Width="Auto" />
+				<ColumnDefinition
+					Width="10" />
+			</Grid.ColumnDefinitions>
+			<Button
+				Background="Transparent"
+				BorderThickness="0"
+				Click="OnHomePageLinkClicked"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center">
+				<TextBlock
+					Foreground="Blue"
+					FontWeight="Bold"
+					ToolTip="Will open https://github.com/ChatZilla-Replacement-Project in your browser as specified in Best Chat"
+					Cursor="Hand"
+					TextDecorations="Underline"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center">Open the Best Chat homepage</TextBlock>
+			</Button>
+			<Button
+				Content="OK"
+				Grid.Column="2"
+				IsDefault="True" />
+			<Button
+				Content="_Apply"
+				Grid.Column="4" />
+			<Button
+				Content="Cancel"
+				Grid.Column="6"
+				IsCancel="True" />
+		</Grid>
+		<Grid
+			Margin="4">
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="Auto" />
+				<ColumnDefinition
+					Width="4" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition />
+					<RowDefinition
+						Height="4" />
+					<RowDefinition
+						Height="Auto" />
+				</Grid.RowDefinitions>
+				<TreeView
+					x:Name="treeMain"
+					ToolTip="Use this to select a view whose properties will be shown to the right.  &quot;Global&quot; properties aren't really for a view, but rather for the entire app.  You can remove all non-global properties from the list using the &quot;Remove&quot; button below.  That will reset all those controls to their default.">Global</TreeView>
+				<Button
+					x:Name="btnRemoveItemFromPrefs"
+					Grid.Row="2"
+					Content="Remove Item…" />
+			</Grid>
+			<GridSplitter
+				x:Name="splitterMain"
+				ResizeDirection="Columns"
+				Grid.Column="1" />
+			<ContentControl />
+		</Grid>
+	</DockPanel>
+</Window>

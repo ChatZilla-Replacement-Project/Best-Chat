@@ -1,24 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>\bin</DocumentationFile>
-    <Copyright>2023</Copyright>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\..\..\.editorconfig" Link=".editorconfig" />
-  </ItemGroup>
-
-</Project>
+    <TargetFramework>net8.0-windows</Project>

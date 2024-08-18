@@ -1,4 +1,4 @@
-﻿// Ignore Spelling: evt
+﻿// Ignore Spelling: evt evti
 
 namespace BestChat.Platform.Conversations
 {
@@ -6,10 +6,15 @@ namespace BestChat.Platform.Conversations
 		.INotifyPropertyChanged
 	{
 		#region Constructors & Deconstructors
-			public AbstractConversation(in string strName, in string strLongDesc)
+			public AbstractConversation(in string strName, in string strLongDesc, in System.Collections.Generic
+				.IEnumerable<IEventInfo>? events = null)
 			{
 				Name = strName;
 				LocalizedLongDesc = LongDesc = strLongDesc;
+
+				if(events != null)
+					foreach(IEventInfo evtiCur in events)
+						RecordEvent(evtiCur);
 			}
 		#endregion
 
@@ -104,6 +109,13 @@ namespace BestChat.Platform.Conversations
 
 		#region Methods
 			protected abstract void FirePropChanged(string strPropName);
+
+			protected void RecordEvent(IEventInfo evti)
+			{
+				mapEventsByTime[evti.WhenItHappened] = evti;
+
+				ocEvents.Add(evti);
+			}
 		#endregion
 
 		#region Event Handlers

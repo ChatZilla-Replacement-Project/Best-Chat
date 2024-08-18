@@ -54,6 +54,8 @@ namespace BestChat.IRC.Data.Defs
 			public bool NotAlwaysAvailable => bNotAlwaysAvailable;
 
 			public bool IsReadOnly => bIsReadOnly;
+
+			public System.Collections.Generic.IReadOnlyDictionary<string, ModeParam>? ParamsByName => null;
 		#endregion
 
 		#region Methods

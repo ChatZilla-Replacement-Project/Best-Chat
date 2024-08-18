@@ -1,8 +1,8 @@
-﻿// Ignore Spelling: Prefs Ctrls Ctrl
+﻿// Ignore Spelling: Prefs Ctrls Ctrl Mgrs Mgr
 
 namespace BestChat.Platform.Prefs.Ctrls
 {
-	public abstract class VisualPrefsTabCtrl : GUI.Ctrls.AbstractVisualTabCtrl
+	public abstract class VisualPrefsTabCtrl : GUI.Ctrls.AbstractVisualCtrl
 	{
 		#region Constructors & Deconstructors
 			public VisualPrefsTabCtrl(in string strLocalizedShortName, in string strLocalizedLongDesc, in
@@ -32,6 +32,8 @@ namespace BestChat.Platform.Prefs.Ctrls
 
 		#region Properties
 			public Data.AbstractMgr Mgr => mgrUs;
+
+			public virtual System.Collections.Generic.IEnumerable<Data.AbstractChildMgr> HandlesChildMgrsOfType => [];
 		#endregion
 
 		#region Methods

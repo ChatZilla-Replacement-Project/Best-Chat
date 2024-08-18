@@ -1,26 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\BestChat.Prefs.Data\BestChat.Prefs.Data.csproj" />
-    <ProjectReference Include="..\Ctrls\BestChat.GUI.Ctrls.csproj" />
-    <ProjectReference Include="..\IRC\Global\View\IRC.Global.View.csproj" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Resources.Designer.cs">

@@ -11,9 +11,6 @@
     <Compile Update="GlobalOptTab.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="NetworkConversationTabCtrl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="NetworkEditorDlg.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,16 +37,13 @@
     <Page Update="BncListEditor.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ChanConversationTabCtrl.xaml">
+    <Page Update="ChanPrefCtrl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ChanPrefVisualTabCtrl.xaml">
+    <Page Update="ConversationViewCtrl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GlobalOptTab.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="NetworkConversationTabCtrl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="NetworkEditorDlg.xaml">
@@ -65,12 +59,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PredefinedNetworkViewerDlg.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="RemoteUserConversationTabCtrl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="RemoteUserPrefVisualTabCtrl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ServerDomainEditorDlg.xaml">

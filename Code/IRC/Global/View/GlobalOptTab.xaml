@@ -5,7 +5,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:local="clr-namespace:BestChat.IRC.Global.View"
-	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
+	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.Ctrls"
 	mc:Ignorable="d"
 	MinWidth="649"
 	MinHeight="300">
@@ -55,31 +55,9 @@
 					HorizontalContentAlignment="Center"
 					VerticalContentAlignment="Stretch" />
 				<DockPanel>
-					<RichTextBox
-						IsUndoEnabled="False"
-						AllowDrop="False"
-						IsHitTestVisible="False"
-						Focusable="False"
-						IsTabStop="False"
-						BorderThickness="0"
-						DockPanel.Dock="Top">
-						<FlowDocument>
-							<Paragraph
-								TextIndent="20">Allows you to make shortcuts to various commands or sequences of commands.  Each item has a name and a command list.  Best Chat will turn the alias into a command when it starts.  Don't include the leading “
-								<Span
-									Style="{DynamicResource FixedWidthHilight}">/</Span> ” in the string.  If you enter
-								<Span
-									Style="{DynamicResource FixedWidthHilight}">$(x)</Span> where
-								<Span
-									Style="{DynamicResource FixedWidthHilight}">x</Span> is a number, it will put the
-								<Span
-									Style="{DynamicResource FixedWidthHilight}">x</Span> parameter to your alias in that spot.  Use
-								<Span
-									Style="{DynamicResource FixedWidthHilight}">$(x+)</Span> to include all parameters after the
-								<Span
-									Style="{DynamicResource FixedWidthHilight}">x</Span> parameter.</Paragraph>
-						</FlowDocument>
-					</RichTextBox>
+					<TextBlock
+						DockPanel.Dock="Top"
+						TextWrapping="WrapWithOverflow">Allows you to make shortcuts to various commands or sequences of commands.  Each item has a name and a command list.  Best Chat will turn the alias into a command when it starts.  Don't include the leading “<Ctrls:FixedWidthHilightSpan>/</Ctrls:FixedWidthHilightSpan> ” in the string.  If you enter <Ctrls:FixedWidthHilightSpan>$(x)</Ctrls:FixedWidthHilightSpan> where <Ctrls:FixedWidthHilightSpan>x</Ctrls:FixedWidthHilightSpan> is a number, it will put the <Ctrls:FixedWidthHilightSpan>x</Ctrls:FixedWidthHilightSpan> parameter to your alias in that spot.  Use <Ctrls:FixedWidthHilightSpan>$(x+)</Ctrls:FixedWidthHilightSpan> to include all parameters after the <Ctrls:FixedWidthHilightSpan>x</Ctrls:FixedWidthHilightSpan> parameter.</TextBlock>
 					<Separator
 						DockPanel.Dock="Top"
 						Height="1"
@@ -147,22 +125,10 @@
 							Width="4"
 							DockPanel.Dock="Right" />
 						<DockPanel>
-							<RichTextBox
-								IsUndoEnabled="False"
-								AllowDrop="False"
-								IsHitTestVisible="False"
-								Focusable="False"
-								IsTabStop="False"
-								BorderThickness="0"
-								Grid.ColumnSpan="4"
-								DockPanel.Dock="Top">
-								<FlowDocument>
-									<Paragraph
-										TextIndent="20">Enter any commands to run when joining any channel.  This can include aliases.  Don't put a “
-										<Span
-											Style="{DynamicResource FixedWidthHilight}">/</Span>” on the start of the string.</Paragraph>
-								</FlowDocument>
-							</RichTextBox>
+							<TextBlock
+								DockPanel.Dock="Top"
+								TextWrapping="WrapWithOverflow">Enter any commands to run when joining any channel.  This can include aliases.  Don't put a “<Span
+									Style="{DynamicResource FixedWidthHilight}">/</Span> ” on the start of the string.</TextBlock>
 							<Separator
 								DockPanel.Dock="Top"
 								Height="4" />
@@ -212,22 +178,10 @@
 							Width="4"
 							DockPanel.Dock="Right" />
 						<DockPanel>
-							<RichTextBox
-								IsUndoEnabled="False"
-								AllowDrop="False"
-								IsHitTestVisible="False"
-								Focusable="False"
-								IsTabStop="False"
-								BorderThickness="0"
-								Grid.ColumnSpan="4"
-								DockPanel.Dock="Top">
-								<FlowDocument>
-									<Paragraph
-										TextIndent="20">Enter any commands to run when joining any network.  This can include aliases.  Don't put a “
-										<Span
-											Style="{DynamicResource FixedWidthHilight}">/</Span> ” on the start of the string.</Paragraph>
-								</FlowDocument>
-							</RichTextBox>
+							<TextBlock
+								DockPanel.Dock="Top"
+								TextWrapping="WrapWithOverflow">Enter any commands to run when joining any network.  This can include aliases.  Don't put a “<Span
+									Style="{DynamicResource FixedWidthHilight}">/</Span> ” on the start of the string.</TextBlock>
 							<Separator
 								DockPanel.Dock="Top"
 								Height="4" />
@@ -277,22 +231,10 @@
 							Width="4"
 							DockPanel.Dock="Right" />
 						<DockPanel>
-							<RichTextBox
-								IsUndoEnabled="False"
-								AllowDrop="False"
-								IsHitTestVisible="False"
-								Focusable="False"
-								IsTabStop="False"
-								BorderThickness="0"
-								Grid.ColumnSpan="4"
-								DockPanel.Dock="Top">
-								<FlowDocument>
-									<Paragraph
-										TextIndent="20">Enter any commands to run when joining any channel.  This can include aliases.  Don't put a “
-										<Span
-											Style="{DynamicResource FixedWidthHilight}">/</Span> ” on the start of the string.</Paragraph>
-								</FlowDocument>
-							</RichTextBox>
+							<TextBlock
+								DockPanel.Dock="Top"
+								TextWrapping="WrapWithOverflow">Enter any commands to run when joining any channel.  This can include aliases.  Don't put a “<Span
+									Style="{DynamicResource FixedWidthHilight}">/</Span> ” on the start of the string.</TextBlock>
 							<Separator
 								DockPanel.Dock="Top"
 								Height="4" />
@@ -342,22 +284,9 @@
 							Width="4"
 							DockPanel.Dock="Right" />
 						<DockPanel>
-							<RichTextBox
-								IsUndoEnabled="False"
-								AllowDrop="False"
-								IsHitTestVisible="False"
-								Focusable="False"
-								IsTabStop="False"
-								BorderThickness="0"
-								Grid.ColumnSpan="4"
-								DockPanel.Dock="Top">
-								<FlowDocument>
-									<Paragraph
-										TextIndent="20">Enter any commands to run when opening the tab for a user's chat.  This can include aliases.  Don't put a “
-										<Span
-											Style="{DynamicResource FixedWidthHilight}">/</Span> ” on the start of the string.</Paragraph>
-								</FlowDocument>
-							</RichTextBox>
+							<TextBlock
+								DockPanel.Dock="Top">Enter any commands to run when opening the tab for a user's chat.  This can include aliases.  Don't put a “<Span
+									Style="{DynamicResource FixedWidthHilight}">/</Span> ” on the start of the string.</TextBlock>
 							<Separator
 								DockPanel.Dock="Top"
 								Height="4" />
@@ -425,25 +354,15 @@
 					Width="4"
 					DockPanel.Dock="Right" />
 				<DockPanel>
-					<RichTextBox
-						IsUndoEnabled="False"
-						AllowDrop="False"
-						IsHitTestVisible="False"
-						Focusable="False"
-						IsTabStop="False"
-						BorderThickness="0"
-						Grid.ColumnSpan="4"
-						DockPanel.Dock="Top">
-						<FlowDocument>
-							<Paragraph
-								TextIndent="20">This is a list of nicknames you want Best Chat to try if the default is in use.  Your normal nick doesn't need to be included.  The order is important.</Paragraph>
-						</FlowDocument>
-					</RichTextBox>
+					<TextBlock
+						DockPanel.Dock="Top"
+						Text="This is a list of nicknames you want Best Chat to try if the default is in use.  Your normal nick doesn't need to be included.  The order is important"
+						TextWrapping="WrapWithOverflow" />
 					<Separator
 						DockPanel.Dock="Top"
 						Height="4" />
 					<ListBox
-						x:Name="listAltNickList"></ListBox>
+						x:Name="listAltNickList" />
 				</DockPanel>
 			</DockPanel>
 		</TabItem>
@@ -488,20 +407,10 @@
 					Width="4"
 					DockPanel.Dock="Right" />
 				<DockPanel>
-					<RichTextBox
-						IsUndoEnabled="False"
-						AllowDrop="False"
-						IsHitTestVisible="False"
-						Focusable="False"
-						IsTabStop="False"
-						BorderThickness="0"
-						Grid.ColumnSpan="4"
-						DockPanel.Dock="Top">
-						<FlowDocument>
-							<Paragraph
-								TextIndent="20">A list of words that will cause a line to be highlighted.  If you also turn on Aggressive Notify, Best Chat will try to get your attention.</Paragraph>
-						</FlowDocument>
-					</RichTextBox>
+					<TextBlock
+						DockPanel.Dock="Top"
+						Text="A list of words that will cause a line to be highlighted.  If you also turn on Aggressive Notify, Best Chat will try to get your attention."
+						TextWrapping="WrapWithOverflow" />
 					<Separator
 						DockPanel.Dock="Top"
 						Height="4" />
@@ -615,20 +524,10 @@
 								Width="4"
 								DockPanel.Dock="Right" />
 							<DockPanel>
-								<RichTextBox
-									IsUndoEnabled="False"
-									AllowDrop="False"
-									IsHitTestVisible="False"
-									Focusable="False"
-									IsTabStop="False"
-									BorderThickness="0"
-									Grid.ColumnSpan="4"
-									DockPanel.Dock="Top">
-									<FlowDocument>
-										<Paragraph
-											TextIndent="20">List of ports that other users can connect to remotely.  Each item may be a single port or a range of ports.  Leave empty to use a random OS-picked port.  Each time you offer a DCC connection to someone, the next port listed is picked.</Paragraph>
-									</FlowDocument>
-								</RichTextBox>
+								<TextBlock
+									DockPanel.Dock="Top"
+									Text="List of ports that other users can connect to remotely.  Each item may be a single port or a range of ports.  Leave empty to use a random OS-picked port.  Each time you offer a DCC connection to someone, the next port listed is picked."
+									TextWrapping="WrapWithOverflow" />
 								<Separator
 									DockPanel.Dock="Top"
 									Height="4" />

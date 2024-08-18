@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\BestChat.GUI.Ctrls\BestChat.GUI.Ctrls.csproj" />
+	  <ProjectReference Include="..\BestChat.ProtocolDef\BestChat.ProtocolDef.csproj" />
+	  <ProjectReference Include="..\BestChat.ProtocolMgr\BestChat.ProtocolMgr.csproj" />
+	  <ProjectReference Include="..\Platform\Platform.Conversations\Platform.Conversations.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -24,6 +24,11 @@ namespace BestChat.IRC.Data.Defs
 		{
 			get;
 		}
+
+		IModeState<StateType> OnState
+		{
+			get;
+		}
 	}
 
 	public enum BoolModeStates
@@ -92,6 +97,8 @@ namespace BestChat.IRC.Data.Defs
 			public char? CharToDescState => chCharToDescState;
 
 			public IModeState<BoolModeStates> OffState => off;
+
+			public IModeState<BoolModeStates> OnState => on;
 		#endregion
 
 		#region Methods
@@ -166,6 +173,8 @@ namespace BestChat.IRC.Data.Defs
 			public char? CharToDescState => chCharToDescState;
 
 			public IModeState<ThreeWayModeStates> OffState => noPref;
+
+			public IModeState<ThreeWayModeStates> OnState => lockedOn;
 		#endregion
 
 		#region Methods
@@ -188,7 +197,7 @@ namespace BestChat.IRC.Data.Defs
 		where ModeStateType : IModeState<ModeStateTypeInternal>
 		where ModeStateTypeInternal : struct, System.Enum
 	{
-		Defs.IMode Def
+		IMode Def
 		{
 			get;
 		}
@@ -207,7 +216,7 @@ namespace BestChat.IRC.Data.Defs
 				get;
 			}
 
-			Defs.ModeParam Def
+			ModeParam Def
 			{
 				get;
 			}
@@ -226,16 +235,36 @@ namespace BestChat.IRC.Data.Defs
 		}
 	}
 
+	public abstract class AbstractModeParam
+	{
+		public AbstractModeParam(in ModeParam mpDef) => this.mpDef = mpDef;
+
+		public readonly ModeParam mpDef;
+
+		public ModeParam Def => mpDef;
+
+		public abstract object? Val
+		{
+			get;
+
+			set;
+		}
+	}
+
 	public class Mode<ModeStateType, ModeStateTypeInternal> : System.ComponentModel.INotifyPropertyChanged,
 			IReadOnlyMode<ModeStateType, ModeStateTypeInternal>
 		where ModeStateType : IModeState<ModeStateTypeInternal>
 		where ModeStateTypeInternal : struct, System.Enum
 	{
 		#region Constructors & Deconstructors
-			internal Mode(in Defs.IMode mdUs, in ModeStateType state)
+			internal Mode(in IMode mdUs, in ModeStateType state)
 			{
 				this.mdUs = mdUs;
 				this.state = state;
+
+				if(mdUs.ParamsByName != null)
+					foreach(ModeParam mpCur in mdUs.ParamsByName.Values)
+						mapParamsByName[mpCur.Name] = new(this, mpCur);
 			}
 		#endregion
 
@@ -257,14 +286,14 @@ namespace BestChat.IRC.Data.Defs
 		#endregion
 
 		#region Helper Types
-			public class Param : System.ComponentModel.INotifyPropertyChanged, IReadOnlyMode<ModeStateType,
-				ModeStateTypeInternal>.IReadOnlyParam
+			public class Param : AbstractModeParam, System.ComponentModel.INotifyPropertyChanged,
+				IReadOnlyMode<ModeStateType, ModeStateTypeInternal>.IReadOnlyParam
 			{
 				#region Constructors & Deconstructors
-					internal Param(in Mode<ModeStateType, ModeStateTypeInternal> modeOwner, in Defs.ModeParam mpDef, in object? objVal = null)
+					internal Param(in Mode<ModeStateType, ModeStateTypeInternal> modeOwner, in ModeParam mpDef, in
+						object? objVal = null) : base(mpDef)
 					{
 						this.modeOwner = modeOwner;
-						this.mpDef = mpDef;
 						this.objVal = objVal;
 					}
 				#endregion
@@ -288,17 +317,13 @@ namespace BestChat.IRC.Data.Defs
 				#region Members
 					public readonly Mode<ModeStateType, ModeStateTypeInternal> modeOwner;
 
-					public readonly Defs.ModeParam mpDef;
-
 					private object? objVal = null;
 				#endregion
 
 				#region Properties
 					public Mode<ModeStateType, ModeStateTypeInternal> Owner => modeOwner;
 
-					public Defs.ModeParam Def => mpDef;
-
-					public object? Val
+					public override object? Val
 					{
 						get => objVal;
 
@@ -350,7 +375,7 @@ namespace BestChat.IRC.Data.Defs
 		#endregion
 
 		#region Members
-			public readonly Defs.IMode mdUs;
+			public readonly IMode mdUs;
 
 			private ModeStateType state;
 
@@ -359,7 +384,7 @@ namespace BestChat.IRC.Data.Defs
 		#endregion
 
 		#region Properties
-			public Defs.IMode Def => mdUs;
+			public IMode Def => mdUs;
 
 			public ModeStateType State
 			{
@@ -382,6 +407,13 @@ namespace BestChat.IRC.Data.Defs
 				}
 			}
 
+			public bool StateAsBool
+			{
+				get => !State.State.Equals(State.OffState.State);
+
+				set => State = (ModeStateType)(value ? State.OnState : State.OffState);
+			}
+
 			public System.Collections.Generic.IReadOnlyDictionary<string, Param> AllParamsByName =>
 				mapParamsByName;
 
@@ -389,6 +421,9 @@ namespace BestChat.IRC.Data.Defs
 				ModeStateTypeInternal>.IReadOnlyParam> IReadOnlyMode<ModeStateType, ModeStateTypeInternal>
 				.AllParamsByName => (System.Collections.Generic.IReadOnlyDictionary<string,
 				IReadOnlyMode<ModeStateType, ModeStateTypeInternal>.IReadOnlyParam>)mapParamsByName;
+
+			public System.Collections.Generic.IEnumerable<IReadOnlyMode<ModeStateType, ModeStateTypeInternal>
+				.IReadOnlyParam> AllParams => mapParamsByName.Values;
 		#endregion
 
 		#region Methods
@@ -398,6 +433,7 @@ namespace BestChat.IRC.Data.Defs
 			private void FireStateChanged(ModeStateType stateOld)
 			{
 				FirePropChanged(nameof(State));
+				FirePropChanged(nameof(StateAsBool));
 
 				evtStateChanged?.Invoke(this, stateOld, state);
 			}
@@ -550,5 +586,19 @@ namespace BestChat.IRC.Data.Defs
 
 		#region Event Handlers
 		#endregion
+	}
+
+	public class TwoWayMode : Mode<BoolModeState, BoolModeStates>
+	{
+		public TwoWayMode(in IMode mdUs, in BoolModeStates state) : base(mdUs, state)
+		{
+		}
+	}
+
+	public class ThreeWayMode : Mode<ThreeWayModeState, ThreeWayModeStates>
+	{
+		public ThreeWayMode(in IMode mdUs, in ThreeWayModeStates state) : base(mdUs, state)
+		{
+		}
 	}
 }

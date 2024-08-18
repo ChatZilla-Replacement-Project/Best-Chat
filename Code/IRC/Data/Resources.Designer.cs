@@ -151,7 +151,16 @@ namespace BestChat.IRC.Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The topic for {0} has been changed to “{1}”..
+        ///   Looks up a localized string similar to YOU have joined the channel {0}..
+        /// </summary>
+        internal static string strActionEventTypeSelfJoinDesc {
+            get {
+                return ResourceManager.GetString("strActionEventTypeSelfJoinDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The topic for {0} has been changed to “{1}” by {2} at {3}..
         /// </summary>
         internal static string strActionEventTypeTopicChangedDesc {
             get {
@@ -813,6 +822,24 @@ namespace BestChat.IRC.Data {
         internal static string strNickServOptUnknownToolTip {
             get {
                 return ResourceManager.GetString("strNickServOptUnknownToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attempting to connect to {0}..
+        /// </summary>
+        internal static string strNoticeEventTypeConnectionAttemptInProgressDesc {
+            get {
+                return ResourceManager.GetString("strNoticeEventTypeConnectionAttemptInProgressDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        internal static string strNoticeEventTypeInfoName {
+            get {
+                return ResourceManager.GetString("strNoticeEventTypeInfoName", resourceCulture);
             }
         }
         

@@ -1,0 +1,384 @@
+﻿<Window
+	x:Name="window"
+	x:Class="BestChat.Desktop.MainWnd"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:BestChat.Desktop"
+	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
+	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
+	xmlns:TreeData="clr-namespace:BestChat.Platform.TreeData;assembly=BestChat.Platform.TreeData"
+	xmlns:Emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
+	mc:Ignorable="d"
+	Title="Best Chat (GUI mode)"
+	Height="450"
+	Width="800"
+	FontFamily="Times New Roman"
+	WindowStyle="ThreeDBorderWindow"
+	ResizeMode="CanResizeWithGrip"
+	WindowStartupLocation="CenterScreen"
+	WindowState="Maximized"
+	BorderThickness="1"
+	ToolTipService.HasDropShadow="True"
+	ToolTipService.Placement="Right"
+	RenderTransformOrigin="0.5,0.5">
+	<DockPanel
+		RenderTransformOrigin="0.5,0.5">
+		<DockPanel.LayoutTransform>
+			<TransformGroup>
+				<ScaleTransform
+					x:Name="scale"
+					ScaleX="1.1" />
+			</TransformGroup>
+		</DockPanel.LayoutTransform>
+		<Menu
+			FontFamily="Times New Roman"
+			DockPanel.Dock="Top">
+			<MenuItem
+				Header="_File">
+				<MenuItem
+					Header="IRC">
+					<MenuItem
+						x:Name="miFileIrcNetworkList"
+						Header="IRC _Network List…"
+						Click="OnIrcNetworkListClicked"
+						ToolTip="Shows the list of IRC networks" />
+					<MenuItem
+						x:Name="miFileIrcBncList"
+						Header="Bouncer List…"
+						ToolTip="Shows the list of known bouncers"
+						Click="OnFileIrcBouncerListClicked" />
+				</MenuItem>
+				<Separator />
+				<MenuItem
+					x:Name="miFilePrefs"
+					Header="Preferences…"
+					Click="OnPrefsClicked"
+					ToolTip="Opens the Preferences window" />
+				<MenuItem
+					x:Name="miFileExit"
+					Header="E_xit"
+					Click="OnFileExitClicked"
+					ToolTip="Exit Best Chat" />
+			</MenuItem>
+			<MenuItem
+				Header="View">
+				<MenuItem
+					x:Name="miViewThemes"
+					Header="Themes…" />
+			</MenuItem>
+			<MenuItem
+				Header="Help">
+				<MenuItem
+					x:Name="miHelpAbout"
+					Header="About…" />
+			</MenuItem>
+		</Menu>
+		<StatusBar
+			DockPanel.Dock="Bottom">
+			<Button
+				x:Name="btnZoomIn"
+				Content="🔍 In"
+				Click="OnZoomInClicked" />
+			<Button
+				x:Name="btnZoomOut"
+				Content="🔍 Out"
+				Click="OnZoomOutClicked" />
+		</StatusBar>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="0.4*" />
+				<ColumnDefinition
+					Width="4" />
+				<ColumnDefinition
+					Width="0.3*" />
+				<ColumnDefinition
+					Width="4" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TabControl
+				DockPanel.Dock="Left"
+				x:Name="sheetSelector">
+				<TabItem
+					x:Name="tiLogical"
+					Header="Logical Layout">
+					<TreeView
+						x:Name="treeLogicalSelector">
+						<TreeView.ItemTemplate>
+							<HierarchicalDataTemplate
+								DataType="TreeData:VisualTreeData"
+								ItemsSource="{Binding Children}">
+								<StackPanel
+									Orientation="Horizontal"
+									ToolTip="{Binding LocalizedLongDesc}">
+									<Emoji:TextBlock
+										Text="{Binding Icon}"
+										VerticalAlignment="Center" />
+									<Label
+										Content="{Binding LocalizedName}"
+										VerticalAlignment="Center" />
+								</StackPanel>
+							</HierarchicalDataTemplate>
+						</TreeView.ItemTemplate>
+					</TreeView>
+				</TabItem>
+				<TabItem
+					x:Name="tiUserTags"
+					Header="By your tags">
+					<TreeView
+						x:Name="treeUserTagSelector" />
+				</TabItem>
+			</TabControl>
+			<GridSplitter
+				Grid.Column="1"
+				ResizeDirection="Columns"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch" />
+			<GroupBox
+				Header="Users"
+				Grid.Column="2">
+				<ListBox
+					x:Name="lbUserList" />
+			</GroupBox>
+			<GridSplitter
+				Grid.Column="3"
+				ResizeDirection="Columns"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch" />
+			<DockPanel
+				Grid.Column="4">
+				<Grid
+					x:Name="gridExtended"
+					DockPanel.Dock="Bottom"
+					IsMouseDirectlyOverChanged="OnExtendedToolBarMouseDirectlyOverChanged"
+					Background="Transparent">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="15" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="8" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="8" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="9" />
+						<RowDefinition
+							Height="{Binding ExtendedToolBarRowTwoHeight, ElementName=window, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" />
+					</Grid.RowDefinitions>
+					<Separator
+						VerticalContentAlignment="Center"
+						HorizontalContentAlignment="Stretch"
+						Grid.ColumnSpan="25"
+						Padding="0,4"
+						Height="1" />
+					<CheckBox
+						x:Name="chkExtendedToolBarShow"
+						Content="📌"
+						Style="{StaticResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}"
+						Checked="OnUserChangedIfExtendedToolBarShouldBePinned"
+						Grid.Row="1" />
+					<Separator
+						Grid.Column="1"
+						Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"
+						HorizontalContentAlignment="Center"
+						VerticalContentAlignment="Stretch"
+						HorizontalAlignment="Center"
+						Grid.Row="1" />
+					<Button
+						x:Name="btnEditorCopy"
+						Content="Copy"
+						Grid.Column="2"
+						Grid.Row="1" />
+					<Button
+						x:Name="btnEditorCut"
+						Grid.Column="4"
+						Content="Cut"
+						Grid.Row="1" />
+					<Button
+						x:Name="btnEditorPaste"
+						Content="Paste"
+						Grid.Column="6"
+						Grid.Row="1" />
+					<Separator
+						Grid.Column="7"
+						Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"
+						HorizontalContentAlignment="Center"
+						VerticalContentAlignment="Stretch"
+						HorizontalAlignment="Center"
+						Grid.Row="1" />
+					<Button
+						x:Name="btnEditorBold"
+						Content="B"
+						FontWeight="Bold"
+						Grid.Column="8"
+						Grid.Row="1" />
+					<Button
+						x:Name="btnEditorUnderline"
+						Grid.Column="10"
+						Grid.Row="1">
+						<TextBlock
+							Text="U"
+							TextDecorations="Underline" />
+					</Button>
+					<Button
+						x:Name="btnEditorItalics"
+						Content="I"
+						FontStyle="Italic"
+						Grid.Column="12"
+						Grid.Row="1" />
+					<Button
+						x:Name="btnEditorStrikeout"
+						Grid.Column="14"
+						Grid.Row="1">
+						<TextBlock
+							Text="S"
+							TextDecorations="Strikethrough" />
+					</Button>
+					<Button
+						x:Name="btnEditorFixedWidth"
+						Grid.Column="16"
+						Grid.Row="1">
+						<TextBlock>|<Span
+								FontFamily="Courier New">text</Span>|</TextBlock>
+					</Button>
+					<Button
+						x:Name="btnEditorColor"
+						Grid.Column="18"
+						Grid.Row="1">
+						<TextBlock><Span
+								Foreground="Green">C</Span><Span
+								Foreground="Red">o</Span><Span
+								Foreground="Blue">l</Span><Span
+								Foreground="DarkCyan">o</Span><Span
+								Foreground="Brown">r</Span></TextBlock>
+					</Button>
+					<Separator
+						Grid.Column="19"
+						Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"
+						HorizontalContentAlignment="Center"
+						VerticalContentAlignment="Stretch"
+						HorizontalAlignment="Center"
+						Grid.Row="1" />
+					<Button
+						x:Name="btnPasteBinText"
+						Grid.Column="20"
+						Content="PasteBin"
+						Grid.Row="1" />
+					<Button
+						x:Name="btnUpload"
+						Grid.Column="22"
+						Content="Upload"
+						Grid.Row="1" />
+				</Grid>
+				<Grid
+					DockPanel.Dock="Bottom">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition />
+						<ColumnDefinition
+							Width="4" />
+						<ColumnDefinition
+							Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="4" />
+						<RowDefinition
+							Height="Auto" />
+					</Grid.RowDefinitions>
+					<Ctrls:DropMenuBtn
+						x:Name="dbtnNick"
+						Content="Your Nick"
+						Grid.RowSpan="3"
+						VerticalAlignment="Center">
+						<Ctrls:DropMenuBtn.Menu>
+							<ContextMenu>
+								<MenuItem
+									Header="Change…" />
+								<Separator />
+								<MenuItem
+									Header="Mark Away (This network only)" />
+								<MenuItem
+									Header="Mark Away (All Networks)" />
+							</ContextMenu>
+						</Ctrls:DropMenuBtn.Menu>
+					</Ctrls:DropMenuBtn>
+					<RichTextBox
+						x:Name="editInput"
+						Height="{CalcBinding:Binding 'IsChecked ? 60 : 20', ElementName=chkInputExpander, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+						AcceptsReturn="{Binding IsChecked, ElementName=chkInputExpander, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
+						AutoWordSelection="False"
+						Grid.RowSpan="3"
+						Grid.Column="2" />
+					<CheckBox
+						x:Name="chkInputExpander"
+						Content="⇓"
+						Grid.Column="4"
+						Grid.RowSpan="{CalcBinding:Binding IsChecked ? 1 : 3, ElementName=chkInputExpander}"
+						Style="{StaticResource ResourceKey={x:Static ToolBar.CheckBoxStyleKey}}" />
+					<Button
+						x:Name="btnSendReturnToInput"
+						Content="↲"
+						Grid.Column="4"
+						Grid.Row="2"
+						Style="{StaticResource ResourceKey={x:Static ToolBar.ButtonStyleKey}}"
+						Visibility="{CalcBinding:Binding IsChecked, ElementName=chkInputExpander}" />
+				</Grid>
+				<ContentControl
+					Content="{Binding SelectedItem.UI, ElementName=treeLogicalSelector, Mode=OneWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" />
+			</DockPanel>
+		</Grid>
+	</DockPanel>
+</Window>

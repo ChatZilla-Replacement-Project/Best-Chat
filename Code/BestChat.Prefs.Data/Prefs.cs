@@ -1,5 +1,7 @@
 ﻿// Ignore Spelling: prefs
 
+using System.ComponentModel;
+
 namespace BestChat.Prefs.Data
 {
 	public class Prefs : Platform.Prefs.Data.AbstractMgr
@@ -67,12 +69,270 @@ namespace BestChat.Prefs.Data
 
 				#region Events
 					public override event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
-				#endregion
+			#endregion
 
 				#region Constants
 				#endregion
 
 				#region Helper Types
+					public class AppearancePrefs : Platform.Prefs.Data.AbstractChildMgr
+					{
+						#region Constructors & Deconstructors
+							public AppearancePrefs(Platform.Prefs.Data.AbstractMgr mgrParent) : base(mgrParent, "Appearance", Resources
+								.strGlobalAppearancePageTitle, Resources.strGlobalAppearancePageDesc)
+							{
+								confMode = new(this);	
+								font = new(this);
+								timestamp = new(this);
+							}
+						#endregion
+
+						#region Delegates
+						#endregion
+
+						#region Events
+							public override event PropertyChangedEventHandler? PropertyChanged;
+						#endregion
+
+						#region Constants
+						#endregion
+
+						#region Helper Types
+							public class ConfModePrefs : Platform.Prefs.Data.AbstractChildMgr
+							{
+								#region Constructors & Deconstructors
+									public ConfModePrefs(Platform.Prefs.Data.AbstractMgr mgrParent) : base(mgrParent, "Conference Mode", Resources
+										.strGlobalAppearanceConfModeTitle, Resources.strGlobalAppearanceConfModeDesc)
+									{
+										confModeEnabled = new(this, "Conference Mode Enabled?", Resources.strGlobalAppearanceConfModeEnabledTitle,
+											Resources.strGlobalAppearanceConfModeEnabledDesc, false);
+										userLimitBeforeTrigger = new(this, "User Limit Before Trigger", Resources.strGlobalAppearanceConfModeLimitTitle,
+											Resources.strGlobalAppearanceConfModeLimitDesc, 20, iMinVal: 2);
+										actionsCollapsed = new(this, "Collapse Actions When Collapsing Messages", Resources
+											.strGlobalAppearanceConfModeCollapseActionsTitle, Resources.strGlobalAppearanceConfModeCollapseActionsDesc, false);
+										msgsCollapsed = new(this, "Collapse Messages?", Resources.strGlobalAppearanceConfModeCollapseMsgsTitle,
+											Resources.strGlobalAppearanceConfModeCollapseMsgsDesc, false);
+									}
+								#endregion
+
+								#region Delegates
+								#endregion
+
+								#region Events
+									public override event PropertyChangedEventHandler? PropertyChanged;
+								#endregion
+
+								#region Constants
+								#endregion
+
+								#region Helper Types
+								#endregion
+
+								#region Members
+									private readonly Platform.Prefs.Data.Item<bool> confModeEnabled;
+
+									private readonly Platform.Prefs.Data.IntItem userLimitBeforeTrigger;
+
+									private readonly Platform.Prefs.Data.Item<bool> actionsCollapsed;
+
+									private readonly Platform.Prefs.Data.Item<bool> msgsCollapsed;
+								#endregion
+
+								#region Properties
+									public Platform.Prefs.Data.Item<bool> ConfModeEnabled => confModeEnabled;
+
+									public Platform.Prefs.Data.IntItem UserLimitBeforeTrigger => userLimitBeforeTrigger;
+
+									public Platform.Prefs.Data.Item<bool> ActionsCollapsed => actionsCollapsed;
+
+									public Platform.Prefs.Data.Item<bool> MsgsCollapsed => msgsCollapsed;
+								#endregion
+
+								#region Methods
+								#endregion
+
+								#region Event Handlers
+								#endregion
+							}
+
+							public class FontPrefs : Platform.Prefs.Data.AbstractChildMgr
+							{
+								#region Constructors & Deconstructors
+									public FontPrefs(Platform.Prefs.Data.AbstractMgr mgrParent) : base(mgrParent, "Font", Resources
+										.strGlobalAppearanceFontTitle, Resources.strGlobalAppearanceFontDesc)
+									{
+										normalFamily = new(this, "Normal Family", Resources.strGlobalAppearanceFontNormalFamilyTitle,
+											Resources.strGlobalAppearanceFontNormalFamilyDesc, "Times New Roman");
+
+										fixedWidthFamily = new(this, "Fixed Width Family", Resources
+											.strGlobalAppearanceFontFixedWidthFamilyTitle, Resources.strGlobalAppearanceFontFixedWidthFamilyDesc,
+											"Courier New");
+
+										fontsize = new(this, "Font Size", Resources.strGlobalAppearanceFontSizeTitle, Resources
+											.strGlobalAppearanceFontSizeDesc, 12, iMaxVal: 50, iMinVal: 8);
+
+										weight = new(this, "Font Weight", Resources.strGlobalAppearanceFontWeightTitle, Resources
+											.strGlobalAppearanceFontWeightTitle, System.Windows.FontWeights.Normal);
+									}
+								#endregion
+
+								#region Delegates
+								#endregion
+
+								#region Events
+									public override event PropertyChangedEventHandler? PropertyChanged;
+								#endregion
+
+								#region Constants
+								#endregion
+
+								#region Helper Types
+								#endregion
+
+								#region Members
+									private readonly Platform.Prefs.Data.Item<string> normalFamily;
+
+									private readonly Platform.Prefs.Data.Item<string> fixedWidthFamily;
+
+									private readonly Platform.Prefs.Data.IntItem fontsize;
+
+									private readonly Platform.Prefs.Data.Item<System.Windows.FontWeight> weight;
+								#endregion
+
+								#region Properties
+								#endregion
+
+								#region Methods
+								#endregion
+
+								#region Event Handlers
+								#endregion
+							}
+
+							public class TimeStampPrefs : Platform.Prefs.Data.AbstractChildMgr
+							{
+								#region Constructors & Deconstructors
+									public TimeStampPrefs(Platform.Prefs.Data.AbstractMgr mgrParent) : base(mgrParent, "Time Stamp", Resources
+										.strGlobalAppearanceTimeStampTitle, Resources.strGlobalAppearanceTimeStampDesc)
+									{
+										show = new(this, "Show the time stamp", Resources.strGlobalAppearanceTimeStampShowTitle, Resources
+											.strGlobalAppearanceTimeStampShowDesc, true);
+
+										fmt = new(this, "Format", Resources.strGlobalAppearanceTimeStampFmtTitle, Resources
+											.strGlobalAppearanceTimeStampFmtDesc, "");
+									}
+								#endregion
+
+								#region Delegates
+								#endregion
+
+								#region Events
+									public override event PropertyChangedEventHandler? PropertyChanged;
+								#endregion
+
+								#region Constants
+								#endregion
+
+								#region Helper Types
+								#endregion
+
+								#region Members
+									private readonly Platform.Prefs.Data.Item<bool> show;
+
+									private readonly Platform.Prefs.Data.Item<string> fmt;
+								#endregion
+
+								#region Properties
+									public Platform.Prefs.Data.Item<bool> Show => show;
+
+									public Platform.Prefs.Data.Item<string> Fmt => fmt;
+								#endregion
+
+								#region Methods
+								#endregion
+
+								#region Event Handlers
+								#endregion
+							}
+
+							public class UserListPrefs : Platform.Prefs.Data.AbstractChildMgr
+							{
+								#region Constructors & Deconstructors
+									public UserListPrefs(Platform.Prefs.Data.AbstractMgr mgrParent) : base(mgrParent, "Time Stamp", Resources
+										.strGlobalAppearanceUserListLocTitle, Resources.strGlobalAppearanceUserListLocDesc)
+									{
+									}
+								#endregion
+
+								#region Delegates
+								#endregion
+
+								#region Events
+									public override event PropertyChangedEventHandler? PropertyChanged;
+								#endregion
+
+								#region Constants
+								#endregion
+
+								#region Helper Types
+									public enum Location : byte
+									{
+										[Util.Attr.LocalizedDesc(nameof(Resources.strGlobalAppearanceUserListLeftTitle), nameof(Resources
+											.strGlobalAppearanceUserListLeftDesc), "Left", "Places the user list on the left side of" +
+											" the client area.", typeof(Location))]
+										left = 0,
+
+										[Util.Attr.LocalizedDesc(nameof(Resources.strGlobalAppearanceUserListRightTitle), nameof(Resources
+											.strGlobalAppearanceUserListRightDesc), "Left", "Places the user list on the right side " +
+											"of the client area.", typeof(Location))]
+										right = 1,
+									}
+
+									public enum WaysToShowModes
+									{
+										symbols,
+										coloredDiscs,
+										hidden,
+									}
+								#endregion
+
+								#region Members
+								#endregion
+
+								#region Properties
+								#endregion
+
+								#region Methods
+								#endregion
+
+								#region Event Handlers
+								#endregion
+							}
+						#endregion
+
+						#region Members
+							private readonly ConfModePrefs confMode;
+
+							private readonly FontPrefs font;
+
+							private readonly TimeStampPrefs timestamp;
+						#endregion
+
+						#region Properties
+							public ConfModePrefs ConfMode => confMode;
+
+							public FontPrefs Font => font;
+
+							public TimeStampPrefs TimeStamp => timestamp;
+						#endregion
+
+						#region Methods
+						#endregion
+
+						#region Event Handlers
+						#endregion
+					}
+
 					public class GeneralPrefs : Platform.Prefs.Data.AbstractChildMgr
 					{
 						#region Constructors & Deconstructors

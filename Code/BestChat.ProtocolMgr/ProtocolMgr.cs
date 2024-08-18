@@ -48,34 +48,19 @@ namespace BestChat.ProtocolMgr
 		#endregion
 
 		#region Helper Types
-			public interface IProtocolDef
+			public interface IProtocolDef : ProtocolDef.IProtocolDef
 			{
-				string Name
-				{
-					get;
-				}
-
-				string Publisher
-				{
-					get;
-				}
-
-				System.Uri Homepage
-				{
-					get;
-				}
-
-				System.Uri PublisherHomepage
-				{
-					get;
-				}
-
 				Platform.Prefs.Data.AbstractChildMgr? ProtocolMgrForRootPrefObj
 				{
 					get;
 				}
 
 				Platform.Conversations.IGroupViewOrConversation? TopLevelViewGroupOrConversation
+				{
+					get;
+				}
+
+				bool GuiRecommended
 				{
 					get;
 				}

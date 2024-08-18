@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
@@ -14,19 +14,27 @@
     <AssemblyName>BestChat.$(MSBuildProjectName)</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);DemoMode</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);DemoMode</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Platform.TreeData\Platform.TreeData.csproj" />
     <ProjectReference Include="..\..\Platform\Platform.Conversations\Platform.Conversations.csproj" />
     <ProjectReference Include="..\..\Platform\Platform.DataLoc\Platform.DataLoc.csproj" />
     <ProjectReference Include="..\..\Platform\Platform.HttpClientOwner\Platform.HttpClientOwner.csproj" />
+    <ProjectReference Include="..\..\Platform\Platform.TreeData\Platform.TreeData.csproj" />
     <ProjectReference Include="..\..\Platform\Prefs\Platform.Prefs.Data\Platform.Prefs.Data.csproj" />
     <ProjectReference Include="..\..\Platform\Util.Exceptions\Util.Exceptions.csproj" />
     <ProjectReference Include="..\..\Platform\Util.Ext\Util.Ext.csproj" />
-    <ProjectReference Include="..\..\Platform\Common\Platform.Common.csproj" />
+    <ProjectReference Include="..\..\Platform\Platform.Common\Platform.Common.csproj" />
     <ProjectReference Include="..\..\Platform\Data\Platform.Data.csproj" />
     <ProjectReference Include="..\..\Platform\Util\Util.csproj" />
   </ItemGroup>

@@ -8,6 +8,4 @@
 	xmlns:Parent="clr-namespace:BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	xmlns:DataPrefs="clr-namespace:BestChat.IRC.Data.Prefs;assembly=BestChat.IRC.Data"
 	d:DataContext="{d:DesignInstance Type=DataPrefs:PrefsMgr}"
-	mc:Ignorable="d">
-	<Grid></Grid>
-</Parent:VisualPrefsTabCtrl>
+	mc:Ignorable="d" />

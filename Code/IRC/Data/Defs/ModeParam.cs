@@ -95,7 +95,11 @@ namespace BestChat.IRC.Data.Defs
 
 			public int? MinForNum => iMinForNum;
 
+			public int MinForNumSafe => iMinForNum ?? int.MinValue;
+
 			public int? MaxForNum => iMaxForNum;
+
+			public int MaxForNumSafe => iMaxForNum ?? int.MaxValue;
 		#endregion
 	}
 }

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AssemblyName>BestChat.$(MSBuildProjectName)</AssemblyName>
+		<RootNamespace>BestChat.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+		<UseWPF>True</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Platform.Common\Platform.Common.csproj" />
+	  <ProjectReference Include="..\Prefs\Platform.Prefs.Data\Platform.Prefs.Data.csproj" />
+	</ItemGroup>
+
+</Project>

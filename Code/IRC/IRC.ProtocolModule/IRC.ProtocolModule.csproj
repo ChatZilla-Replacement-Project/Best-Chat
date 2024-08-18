@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BestChat.ProtocolMgr.GUI\BestChat.ProtocolMgr.GUI.csproj" />
+    <ProjectReference Include="..\..\BestChat.ProtocolMgr\BestChat.ProtocolMgr.csproj" />
+    <ProjectReference Include="..\Data\IRC.Data.csproj" />
+    <ProjectReference Include="..\Global\View\IRC.Global.View.csproj" />
+  </ItemGroup>
+
+</Project>
