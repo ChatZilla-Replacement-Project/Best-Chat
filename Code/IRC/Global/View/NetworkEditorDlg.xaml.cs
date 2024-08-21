@@ -142,14 +142,13 @@ namespace BestChat.IRC.Global.View
 
 			private void OnEditDomain(object sender, System.Windows.RoutedEventArgs e)
 			{
-				ServerDomainEditorDlg dlg = new(true, ((Data.Defs
-					.ServerInfo)dgServerDomains.SelectedValue).MakeEditableVersion(eunetWhatsBeingEdited))
+				ServerDomainEditorDlg dlg = new(true, ((Data.Defs.ServerInfo)dgServerDomains.SelectedValue).MakeEditableVersion(eunetWhatsBeingEdited))
 				{
-				 Owner = this,
+					Owner = this,
 				};
 
 				if(dlg.ShowDialog() == true)
-					dlg.eserverToEdit.Save();
+				dlg.eserverToEdit.Save();
 			}
 
 			private void OnDelDomain(object sender, System.Windows.RoutedEventArgs e)
@@ -185,11 +184,11 @@ namespace BestChat.IRC.Global.View
 				Close();
 			}
 
-			private void OnMoveDomainUp(object sender, System.Windows.RoutedEventArgs e) => eunetWhatsBeingEdited
-				.MoveServerUpSearchList((Data.Defs.ServerInfo)dgServerDomains.SelectedValue);
+			private void OnMoveDomainUp(object sender, System.Windows.RoutedEventArgs e) =>
+				eunetWhatsBeingEdited.MoveServerUpSearchList((Data.Defs.ServerInfo)dgServerDomains.SelectedValue);
 
-			private void OnMoveDomainDown(object sender, System.Windows.RoutedEventArgs e) => eunetWhatsBeingEdited
-				.MoveServerDownSearchList((Data.Defs.ServerInfo)dgServerDomains.SelectedValue);
+			private void OnMoveDomainDown(object sender, System.Windows.RoutedEventArgs e) =>
+				eunetWhatsBeingEdited .MoveServerDownSearchList((Data.Defs.ServerInfo)dgServerDomains.SelectedValue);
 
 			private void OnReset(object sender, System.Windows.RoutedEventArgs e) => eunetWhatsBeingEdited
 				.ResetServerDomainList();

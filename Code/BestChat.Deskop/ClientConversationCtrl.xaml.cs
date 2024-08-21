@@ -7,7 +7,9 @@ namespace BestChat.Desktop
 	/// </summary>
 	public partial class ClientConversationCtrl : GUI.Ctrls.AbstractVisualConversationCtrl
 	{
-		public ClientConversationCtrl() : base(ClientConversation.ClientConversation.instance) =>
+		public ClientConversationCtrl() : base(ClientConversation.ClientConversation.instance)
+		{
 			InitializeComponent();
+		}
 	}
 }

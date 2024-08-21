@@ -7,33 +7,33 @@ namespace BestChat.IRC.Global.View
 	/// </summary>
 	public partial class ChanPrefCtrl : Platform.Prefs.Ctrls.VisualPrefsTabCtrl
 	{
-		#region Constructors & Deconstructors
-			public ChanPrefCtrl(Platform.Prefs.Data.AbstractChildMgr cmgrUs) : base(cmgrUs
-				.LocalizedName, cmgrUs.LocalizedLongDesc, cmgrUs) => InitializeComponent();
-		#endregion
+        #region Constructors & Deconstructors
+        public ChanPrefCtrl(Platform.Prefs.Data.AbstractChildMgr cmgrUs) : base(cmgrUs
+            .LocalizedName, cmgrUs.LocalizedLongDesc, cmgrUs) => InitializeComponent();
+        #endregion
 
-		#region Delegates
-		#endregion
+        #region Delegates
+        #endregion
 
-		#region Events
-		#endregion
+        #region Events
+        #endregion
 
-		#region Constants
-		#endregion
+        #region Constants
+        #endregion
 
-		#region Helper Types
-		#endregion
+        #region Helper Types
+        #endregion
 
-		#region Members
-		#endregion
+        #region Members
+        #endregion
 
-		#region Properties
-		#endregion
+        #region Properties
+        #endregion
 
-		#region Methods
-		#endregion
+        #region Methods
+        #endregion
 
-		#region Event Handlers
-		#endregion
-	}
+        #region Event Handlers
+        #endregion
+    }
 }

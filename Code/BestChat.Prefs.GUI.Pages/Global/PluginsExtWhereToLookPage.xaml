@@ -1,11 +1,11 @@
-﻿<base:VisualPrefsTabCtrl
+﻿<Parent:VisualPrefsTabCtrl
 	x:Class="BestChat.Prefs.GUI.Pages.Global.PluginsExtWhereToLookPage"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:local="clr-namespace:BestChat.Prefs.GUI.Pages.Global"
-	xmlns:base="BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
+	xmlns:Parent="clr-namespace:BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	xmlns:BestChatCtrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
 	xmlns:BestChatPrefsCtrls="clr-namespace:BestChat.Prefs.GUI.Ctrls;assembly=BestChat.Prefs.GUI.Ctrls"
 	mc:Ignorable="d">
@@ -89,7 +89,10 @@
 				Grid.Row="10"
 				Content="Copy your system path environment variable">
 				<Button.ToolTip>Causes your OS's search path system environment variable, probably called
-					<BestChatCtrls:FixedWidthHilightSpan>PATH</BestChatCtrls:FixedWidthHilightSpan>, to be copied to the list to the left.  Any existing entries are preserved in the order they currently appear.  No duplicates will be included.  Clicking this will turn the “Include OS's search path system environment variable” off.</Button.ToolTip></Button>
+					(TODO) PATH, to be copied to the list to the left.
+                    Any existing entries are preserved in the order they currently appear.  No duplicates will be included.
+                    Clicking this will turn the “Include OS's search path system environment variable” off.</Button.ToolTip>
+            </Button>
 		</Grid>
 		<CheckBox
 			x:Name="checkIncludeSysPath"
@@ -97,4 +100,4 @@
 			Grid.ColumnSpan="3"
 			Content="Include OS's search path system environment variable"/>
 	</Grid>
-</base:VisualPrefsTabCtrl>
+</Parent:VisualPrefsTabCtrl>

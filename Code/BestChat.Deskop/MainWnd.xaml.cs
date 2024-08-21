@@ -4,10 +4,10 @@
 	/// Interaction logic for MainWnd.xaml
 	/// </summary>
 	public partial class MainWnd : System.Windows.Window, System.ComponentModel.INotifyPropertyChanged
-	{
-		public MainWnd() => InitializeComponent();
+    {
+        public MainWnd() => InitializeComponent();
 
-		private static PrefsWnd? prefsDlg = null;
+        private static PrefsWnd? prefsDlg = null;
 		private static IRC.Global.View.NetworkListDlg? networkListDlg = null;
 		private static IRC.Global.View.BncListEditor? bncListEditor = null;
 

@@ -5,16 +5,16 @@ namespace BestChat.IRC.Global.View
 	public partial class ConversationViewCtrl : GUI.Ctrls.AbstractVisualConversationCtrl, System
 		.ComponentModel.INotifyPropertyChanged
 	{
-		#region Constructors & Deconstructors
-			public ConversationViewCtrl(in Platform.Conversations.IGroupViewOrConversation gvc) : base(gvc) =>
-				InitializeComponent();
-		#endregion
+        #region Constructors & Deconstructors
+        public ConversationViewCtrl(in Platform.Conversations.IGroupViewOrConversation gvc) : base(gvc) =>
+			InitializeComponent();
+        #endregion
 
-		#region Delegates
-		#endregion
+        #region Delegates
+        #endregion
 
-		#region Events
-			public event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
+        #region Events
+        public event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
 		#endregion
 
 		#region Constants
@@ -63,7 +63,7 @@ namespace BestChat.IRC.Global.View
 		#endregion
 
 		#region Properties
-			public bool ShouldModeBarBeShown => chkModes.IsChecked == true && gvc is Data.Chan;
+		public bool ShouldModeBarBeShown => chkModes.IsChecked == true && gvc is Data.Chan;
 		#endregion
 
 		#region Methods
@@ -93,7 +93,6 @@ namespace BestChat.IRC.Global.View
 				if(gvc is Data.Chan chan)
 				{
 					icModeBar.ItemTemplateSelector = new TemplateSelector();
-
 					icModeBar.ItemsSource = chan.AllModesOnChan.Values;
 				}
 				else
