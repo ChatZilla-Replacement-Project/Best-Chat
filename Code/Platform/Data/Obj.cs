@@ -126,7 +126,7 @@ namespace BestChat.Platform.Data
 			/// </summary>
 			/// <param name="objSender">The object that sent the notification</param>
 			/// <param name="bIsNowDirty">The new state</param>
-			public delegate void OnDirtyChanged(TypeOfObj objSender, bool bIsNowDirty);
+			public delegate void DDirtyChanged(TypeOfObj objSender, bool bIsNowDirty);
 
 			/// <summary>
 			/// Provides a way to notify interested callers that a field has changed values
@@ -168,7 +168,7 @@ namespace BestChat.Platform.Data
 			/// <summary>
 			/// Fired when the dirty flag changes.  It either wasn't dirty, but now is, or was dirty, but now isn't.
 			/// </summary>
-			public event OnDirtyChanged? evtDirtyChanged;
+			public event DDirtyChanged? evtDirtyChanged;
 		#endregion
 
 		#region Constants

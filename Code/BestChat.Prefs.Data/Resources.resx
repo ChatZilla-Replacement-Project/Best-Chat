@@ -279,4 +279,69 @@
   <data name="strGlobalAppearanceUserListLocTitle" xml:space="preserve">
     <value>Location</value>
   </data>
+  <data name="strGlobalAppearanceUserListSortByModeDesc" xml:space="preserve">
+    <value>Check if you'd like the user list to be sorted by name and mode.  That will highlight ops by placing them at the top of the list.  Uncheck it if you prefer the users to be sorted only by name.</value>
+  </data>
+  <data name="strGlobalAppearanceUserListSortByModeTitle" xml:space="preserve">
+    <value>Sort by Mode</value>
+  </data>
+  <data name="strGlobalAppearanceUserLIstWaysToShowModesColoredDiscsDesc" xml:space="preserve">
+    <value>If you select this, colored discs will be used to indicate op/half op status and voice.</value>
+  </data>
+  <data name="strGlobalAppearanceUserLIstWaysToShowModesColoredDiscsTitle" xml:space="preserve">
+    <value>Colored Discs</value>
+  </data>
+  <data name="strGlobalAppearanceUserListWaysToShowModesDesc" xml:space="preserve">
+    <value>Use these choices to control how Best Chat marks select users as special.  Unless you choose “Hidden”, Best Chat will tell you which users are ops, half ops, or have voice.</value>
+  </data>
+  <data name="strGlobalAppearanceUserListWaysToShowModesSymbolsDesc" xml:space="preserve">
+    <value>If you select this, Best Chat will show op, half op, and voice with traditional symbols.</value>
+  </data>
+  <data name="strGlobalAppearanceUserListWaysToShowModesSymbolsTitle" xml:space="preserve">
+    <value>Use symbols</value>
+  </data>
+  <data name="strGlobalAppearanceUserListWaysToShowModesTitle" xml:space="preserve">
+    <value>How should we show the user modes?</value>
+  </data>
+  <data name="strGlobalPluginsDesc" xml:space="preserve">
+    <value>Best Chat supports two forms of plug-ins: External and Internal.  External plug-ins re those that it needs an external program or the OS to run.  Internal ones are those that rely on an API exported by Best Chat.  Click a link below to configure each type.</value>
+  </data>
+  <data name="strGlobalPluginsExtDesc" xml:space="preserve">
+    <value>It's a security risk as you might run who knows what, but Best Chat does support external plug-ins (run by external programs).  As noted, these might be binaries your OS knows how to run or scripts.</value>
+  </data>
+  <data name="strGlobalPluginsExtTitle" xml:space="preserve">
+    <value>External</value>
+  </data>
+  <data name="strGlobalPluginsExtWhereToLookDesc" xml:space="preserve">
+    <value>Specifies a series of paths you want Best Chat to consider as containing external plug-ins.  Chat will look in each location during start and create commands for all executables in those locations.  On Windows, anything with the extensions CMD, PS1, or EXE will be treated as plugins.  On MacOS, Linux, Unix, and other similar operating systems, that will be anything with the mode +x on files in those paths.  For all operating systems, Best Chat will add anything whose extension is listed in the bottom of this box.  If you aren't running Windows, but want to include EXEs, add Wine.  Also, non-Windows users that want to use PowerShell scripts may need to install PS.</value>
+  </data>
+  <data name="strGlobalPluginsExtWhereToLookPathsTitle" xml:space="preserve">
+    <value>Paths</value>
+  </data>
+  <data name="strGlobalPluginsExtWhereToLookTitle" xml:space="preserve">
+    <value>Where to Look</value>
+  </data>
+  <data name="strGlobalPluginsHowToRunThemDesc" xml:space="preserve">
+    <value>Lists programs that Best Chat will attempt to use to run an external plug-in.  If you don't want any files of a certain type to be run by Best Chat, remove it from the list.  The two tabs below show the same data.  One just groups the data so that all types supported by a program are shown together if both file types use the same parameters to the executing program.  The other lets you quickly find a specific type.
+
+With Linux, anything marked with the +x file mode is treated as a binary executable if there is no file type listed below for that file or the file lacks a file extension.  In the parameter list, any %s will be replaced with the full path to the script.  In here, if you don't specify the path as that comes from a search along your computer's PATH environment variable.  If that path changes, the actual program might change.  In that case, Best Chat will detect the change and ask you to approve the change or disable the program and file type it runs.</value>
+  </data>
+  <data name="strGlobalPluginsHowToRunThemTitle" xml:space="preserve">
+    <value>How to run them</value>
+  </data>
+  <data name="strGlobalPluginsTitle" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="strGlobalPluginsExtWhereToLookIncludeSysPathDesc" xml:space="preserve">
+    <value>Check this to automatically search all directories in your OS's system path environment variable.  This is normally called PATH.</value>
+  </data>
+  <data name="strGlobalPluginsExtWhereToLookIncludeSysPathTitle" xml:space="preserve">
+    <value>Include Your System Path Environment Variable in the Search</value>
+  </data>
+  <data name="strGlobalPluginsHowToRunThemGroupedByWhatRunsThemDesc" xml:space="preserve">
+    <value>Lists all script types by how they're run.</value>
+  </data>
+  <data name="strGlobalPluginsHowToRunThemGroupedByWhatRunsThemTitle" xml:space="preserve">
+    <value>Grouped by what runs them</value>
+  </data>
 </root>

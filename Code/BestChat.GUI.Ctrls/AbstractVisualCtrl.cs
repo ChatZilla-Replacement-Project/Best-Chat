@@ -1,7 +1,5 @@
 ﻿// Ignore Spelling: Ctrls Ctrl Ctnts Hdr
 
-using System;
-
 namespace BestChat.GUI.Ctrls
 {
 	[System.Windows.Markup.ContentProperty(nameof(Ctnts))]
@@ -11,6 +9,13 @@ namespace BestChat.GUI.Ctrls
 	public abstract class AbstractVisualCtrl : System.Windows.Controls.UserControl
 	{
 		#region Constructors & Deconstructors
+			public AbstractVisualCtrl()
+			{
+				if(System.Windows.Application.Current is Platform.DataLoc.IDataLocProvider)
+					throw new System.InvalidProgramException("The default constructors of BestChat.GUI.Ctrls.AbstractVisualCtrl and its derived " +
+						"classes are for designer use only.  They aren't not meant for use at runtime.");
+			}
+
 			public AbstractVisualCtrl(in string strLocalizedShortName, in string strLocalizedLongDesc)
 			{
 				LocalizedShortName = strLocalizedShortName;
@@ -90,7 +95,7 @@ namespace BestChat.GUI.Ctrls
 		#endregion
 
 		#region Methods
-			protected override void OnInitialized(EventArgs e)
+			protected override void OnInitialized(System.EventArgs e)
 			{
 				base.OnInitialized(e);
 

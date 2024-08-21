@@ -20,6 +20,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\BestChat.GUI.Ctrls\BestChat.GUI.Ctrls.csproj" />
+		<ProjectReference Include="..\..\Platform.DataLoc\Platform.DataLoc.csproj" />
 		<ProjectReference Include="..\..\Platform.TreeData\Platform.TreeData.csproj" />
 	</ItemGroup>
 	

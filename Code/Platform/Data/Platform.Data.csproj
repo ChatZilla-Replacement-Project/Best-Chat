@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <AssemblyName>BestChat.Platform.Data</AssemblyName>
-    <RootNamespace>BestChat.Platform.Data</RootNamespace>
+    <AssemblyName>BestChat.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>BestChat.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>

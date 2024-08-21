@@ -367,6 +367,78 @@ namespace BestChat.Prefs.Data {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check if you&apos;d like the user list to be sorted by name and mode.  That will highlight ops by placing them at the top of the list.  Uncheck it if you prefer the users to be sorted only by name..
+        /// </summary>
+        internal static string strGlobalAppearanceUserListSortByModeDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserListSortByModeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sort by Mode.
+        /// </summary>
+        internal static string strGlobalAppearanceUserListSortByModeTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserListSortByModeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you select this, colored discs will be used to indicate op/half op status and voice..
+        /// </summary>
+        internal static string strGlobalAppearanceUserLIstWaysToShowModesColoredDiscsDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserLIstWaysToShowModesColoredDiscsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colored Discs.
+        /// </summary>
+        internal static string strGlobalAppearanceUserLIstWaysToShowModesColoredDiscsTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserLIstWaysToShowModesColoredDiscsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use these choices to control how Best Chat marks select users as special.  Unless you choose “Hidden”, Best Chat will tell you which users are ops, half ops, or have voice..
+        /// </summary>
+        internal static string strGlobalAppearanceUserListWaysToShowModesDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserListWaysToShowModesDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you select this, Best Chat will show op, half op, and voice with traditional symbols..
+        /// </summary>
+        internal static string strGlobalAppearanceUserListWaysToShowModesSymbolsDesc {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserListWaysToShowModesSymbolsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use symbols.
+        /// </summary>
+        internal static string strGlobalAppearanceUserListWaysToShowModesSymbolsTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserListWaysToShowModesSymbolsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How should we show the user modes?.
+        /// </summary>
+        internal static string strGlobalAppearanceUserListWaysToShowModesTitle {
+            get {
+                return ResourceManager.GetString("strGlobalAppearanceUserListWaysToShowModesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reconnect when disconnected unexpectedly.
         /// </summary>
         internal static string strGlobalGeneralConnAutoReconnectName {
@@ -543,6 +615,125 @@ namespace BestChat.Prefs.Data {
         internal static string strGlobalNameToolTipText {
             get {
                 return ResourceManager.GetString("strGlobalNameToolTipText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Best Chat supports two forms of plug-ins: External and Internal.  External plug-ins re those that it needs an external program or the OS to run.  Internal ones are those that rely on an API exported by Best Chat.  Click a link below to configure each type..
+        /// </summary>
+        internal static string strGlobalPluginsDesc {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It&apos;s a security risk as you might run who knows what, but Best Chat does support external plug-ins (run by external programs).  As noted, these might be binaries your OS knows how to run or scripts..
+        /// </summary>
+        internal static string strGlobalPluginsExtDesc {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsExtDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to External.
+        /// </summary>
+        internal static string strGlobalPluginsExtTitle {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsExtTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specifies a series of paths you want Best Chat to consider as containing external plug-ins.  Chat will look in each location during start and create commands for all executables in those locations.  On Windows, anything with the extensions CMD, PS1, or EXE will be treated as plugins.  On MacOS, Linux, Unix, and other similar operating systems, that will be anything with the mode +x on files in those paths.  For all operating systems, Best Chat will add anything whose extension is listed in the bottom of thi [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string strGlobalPluginsExtWhereToLookDesc {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsExtWhereToLookDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check this to automatically search all directories in your OS&apos;s system path environment variable.  This is normally called PATH..
+        /// </summary>
+        internal static string strGlobalPluginsExtWhereToLookIncludeSysPathDesc {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsExtWhereToLookIncludeSysPathDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Your System Path Environment Variable in the Search.
+        /// </summary>
+        internal static string strGlobalPluginsExtWhereToLookIncludeSysPathTitle {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsExtWhereToLookIncludeSysPathTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paths.
+        /// </summary>
+        internal static string strGlobalPluginsExtWhereToLookPathsTitle {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsExtWhereToLookPathsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Where to Look.
+        /// </summary>
+        internal static string strGlobalPluginsExtWhereToLookTitle {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsExtWhereToLookTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lists programs that Best Chat will attempt to use to run an external plug-in.  If you don&apos;t want any files of a certain type to be run by Best Chat, remove it from the list.  The two tabs below show the same data.  One just groups the data so that all types supported by a program are shown together if both file types use the same parameters to the executing program.  The other lets you quickly find a specific type.
+        ///
+        ///With Linux, anything marked with the +x file mode is treated as a binary executable if the [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string strGlobalPluginsHowToRunThemDesc {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsHowToRunThemDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lists all script types by how they&apos;re run..
+        /// </summary>
+        internal static string strGlobalPluginsHowToRunThemGroupedByWhatRunsThemDesc {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsHowToRunThemGroupedByWhatRunsThemDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grouped by what runs them.
+        /// </summary>
+        internal static string strGlobalPluginsHowToRunThemGroupedByWhatRunsThemTitle {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsHowToRunThemGroupedByWhatRunsThemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How to run them.
+        /// </summary>
+        internal static string strGlobalPluginsHowToRunThemTitle {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsHowToRunThemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plugins.
+        /// </summary>
+        internal static string strGlobalPluginsTitle {
+            get {
+                return ResourceManager.GetString("strGlobalPluginsTitle", resourceCulture);
             }
         }
     }

@@ -4,12 +4,48 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <ImplicitUsings>disable</ImplicitUsings>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>9999</WarningLevel>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>9999</WarningLevel>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Page Remove="Global\PluginsExtWhereToLookPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Global\PluginsExtWhereToLookPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BestChat.GUI.Ctrls\BestChat.GUI.Ctrls.csproj" />
     <ProjectReference Include="..\BestChat.Prefs.GUI.Ctrls\BestChat.Prefs.GUI.Ctrls.csproj" />
+    <ProjectReference Include="..\Platform\Prefs\Platform.Prefs.Ctrls\Platform.Prefs.Ctrls.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Rsrcs.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Rsrcs.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Rsrcs.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Rsrcs.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

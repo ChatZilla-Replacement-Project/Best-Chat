@@ -1,0 +1,100 @@
+﻿<base:VisualPrefsTabCtrl
+	x:Class="BestChat.Prefs.GUI.Pages.Global.PluginsExtScriptsGroupedByWhatRunsThem"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:BestChat.Prefs.GUI.Pages.Global"
+	xmlns:base="BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
+	xmlns:BestChatCtrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
+	xmlns:BestChatPrefsCtrls="clr-namespace:BestChat.Prefs.GUI.Ctrls;assembly=BestChat.Prefs.GUI.Ctrls"
+	mc:Ignorable="d">
+	<DockPanel
+		Margin="4">
+		<BestChatPrefsCtrls:InfoOnThisPageTextBlock
+			DockPanel.Dock="Top"
+			Margin="0,0,0,4">Here, plugin formats are grouped by how we need to run them.  So if a program can run several different types of script, those will be grouped under that program.  When Best Chat sees a command it doesn't know and isn't recognized by the server, Best Chat will assume the command's name is the name of a script in somewhere in the paths specified in
+			<Hyperlink
+				x:Name="hlinkExtWhereToLook">Preferences/Global/Plugins/Where to Look</Hyperlink> and is a file type specified somewhere in either here or
+			<Hyperlink
+				x:Name="hlinkExtScriptsUngrouped">Preferences/Global/Plugins/External/Scripts/Ungrouped</Hyperlink> .
+			<LineBreak />
+			<LineBreak /> With Linux, anything marked with the +x file mode is treated as a binary executable if there is no file type listed below for that file or the file lacks a file extension.  In the parameter list, any %s will be replaced with the full path to the script.  In here, if you don't specify the path as that comes from a search along your computer's PATH environment variable.  If that path changes, the actual program might change.  In that case, Best Chat will detect the change and ask you to approve the change or disable the program and file type it runs.
+			<LineBreak />
+			<LineBreak /> Don't put programs in here.  This is for scripts only.  For programs, use
+			<Hyperlink
+				x:Name="hlinkExtLink">Global/Plugins/External</Hyperlink> .
+		</BestChatPrefsCtrls:InfoOnThisPageTextBlock>
+		<Grid
+			DockPanel.Dock="Right"
+			Margin="0,0,4,0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="1*" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="4" />
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="1*" />
+			</Grid.RowDefinitions>
+			<Button
+				x:Name="btnAdd"
+				Grid.Row="1"
+				Content="Add…" />
+			<Button
+				x:Name="btnEdit"
+				Grid.Row="3"
+				Content="Edit…" />
+			<Button
+				x:Name="btnDel"
+				Grid.Row="5"
+				Content="Delete" />
+		</Grid>
+		<DataGrid
+			x:Name="dgData"
+			CanUserAddRows="False">
+			<DataGrid.Columns>
+				<DataGridTextColumn
+					Header="Program needed"
+					Width="Auto"
+					CanUserResize="True"
+					CanUserSort="True"
+					CanUserReorder="True"
+					IsReadOnly="True" />
+				<DataGridCheckBoxColumn
+					Header="Program found?"
+					Width="Auto"
+					CanUserReorder="True"
+					CanUserResize="False"
+					CanUserSort="True"
+					IsReadOnly="True"
+					IsThreeState="True" />
+				<DataGridTextColumn
+					Header="Matching filters"
+					Width="Auto"
+					CanUserResize="True"
+					CanUserSort="True"
+					CanUserReorder="True"
+					IsReadOnly="True" />
+				<DataGridCheckBoxColumn
+					Header="Enabled?"
+					Width="Auto"
+					CanUserReorder="True"
+					CanUserResize="False"
+					CanUserSort="True"
+					IsReadOnly="False" />
+			</DataGrid.Columns>
+		</DataGrid>
+	</DockPanel>
+</base:VisualPrefsTabCtrl>

@@ -1,10 +1,11 @@
-﻿<UserControl
+﻿<base:VisualPrefsTabCtrl
 	x:Class="BestChat.Prefs.GUI.Pages.Global.AppearancePage"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:local="clr-namespace:BestChat.Prefs.GUI.Pages.Global"
+	xmlns:base="BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	xmlns:BestChatCtrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
 	xmlns:BestChatPrefsCtrls="clr-namespace:BestChat.Prefs.GUI.Ctrls;assembly=BestChat.Prefs.GUI.Ctrls"
 	mc:Ignorable="d">
@@ -14,7 +15,7 @@
 		<StackPanel
 			Orientation="Vertical">
 			<BestChatPrefsCtrls:InfoOnThisPageTextBlock
-				Text="These settings affect the overall look of the application.  Some override your theme.  Some can be further overriden on the protocol level."/>
+				Text="These settings affect the overall look of the application.  Some override your theme.  Some can be further overriden on the protocol level." />
 			<GroupBox
 				Padding="4"
 				Header="_Conference Mode"
@@ -55,7 +56,7 @@
 							Height="Auto" />
 					</Grid.RowDefinitions>
 					<BestChatPrefsCtrls:ResetBtn
-						x:Name="btnResetConfModeEnabled"/>
+						x:Name="btnResetConfModeEnabled" />
 					<CheckBox
 						x:Name="checkConfModeEnabled"
 						Content="Use _Conference Mode?"
@@ -92,7 +93,7 @@
 						ToolTip="In Conference Mode, Best Chat can collapse messages.  Do you want that?" />
 					<BestChatPrefsCtrls:ResetBtn
 						x:Name="btnResetConfModeCollapseActions"
-						Grid.Row="6"/>
+						Grid.Row="6" />
 					<CheckBox
 						Content="Collapse Actions When Collapsing Messages"
 						Grid.Row="6"
@@ -142,7 +143,7 @@
 							Height="Auto" />
 					</Grid.RowDefinitions>
 					<BestChatPrefsCtrls:ResetBtn
-						x:Name="btnResetFontNormalFamily"/>
+						x:Name="btnResetFontNormalFamily" />
 					<Label
 						Grid.Column="2"
 						Content="Normal Family: "
@@ -163,7 +164,7 @@
 						ToolTip="{Binding ToolTip, ElementName=chkFontNormalFamily}" />
 					<BestChatPrefsCtrls:ResetBtn
 						x:Name="btnResetFontFixedFamily"
-						Grid.Row="2"/>
+						Grid.Row="2" />
 					<Label
 						Grid.Column="2"
 						Content="Fixed Width Family: "
@@ -177,7 +178,7 @@
 						Grid.Column="4"
 						Grid.Row="2"
 						VerticalContentAlignment="Center"
-						ToolTip="Best Chat switches forts when the formatting calls for a fixed width font.  Most fonts are what they call variable pitch.  That means the width in pixels of a 'I&quot; is far less than the width of a 'W'.  By contrast, a fixed width font uses the same width for all characters." />
+						ToolTip="Best Chat switches forts when the formatting calls for a fixed width font.  Most fonts are what they call variable pitch.  That means the width in pixels of a “I” is far less than the width of a “W”.  By contrast, a fixed width font uses the same width for all characters." />
 					<BestChatCtrls:FontSelectionComboBox
 						Name="cbFontFixedWidthFamily"
 						ListOnlyFixedWidthFonts="True"
@@ -287,7 +288,7 @@
 						ToolTip="Check this if you want to see time stamps and uncheck it if you don't." />
 					<BestChatPrefsCtrls:ResetBtn
 						x:Name="btnResetTimeStampFmt"
-						Grid.Row="4"/>
+						Grid.Row="4" />
 					<Label
 						Content="Format: "
 						Grid.Row="4"
@@ -333,7 +334,7 @@
 					</Grid.RowDefinitions>
 					<BestChatPrefsCtrls:ResetBtn
 						x:Name="btnResetUserListLoc"
-						Grid.Row="2"/>
+						Grid.Row="2" />
 					<GroupBox
 						Padding="4"
 						Header="_User List Location"
@@ -343,26 +344,27 @@
 							x:Name="rbgUserListLoc" />
 					</GroupBox>
 					<BestChatPrefsCtrls:ResetBtn
-						x:Name="btnResetUserListShowModeSymbols"/>
+						x:Name="btnResetUserListShowModeSymbols" />
 					<GroupBox
 						Padding="4"
 						Header="_How should we show the user modes?"
 						Grid.Column="2"
 						Grid.Row="4"
-						ToolTip="Specify if you want the user list on the left or right.">
+						ToolTip="Use these choices to control how Best Chat marks select users as special.  Unless you choose “Hidden”, Best Chat will tell you which users are ops, half ops, or have voice.">
 						<BestChatPrefsCtrls:UserListWaysToShowModesRadioBtnGroup
 							x:Name="rbgUserListWaysToShowModes" />
 					</GroupBox>
 					<BestChatPrefsCtrls:ResetBtn
 						x:Name="btnResetUserListSortByMode"
-						Grid.Row="6"/>
+						Grid.Row="6" />
 					<CheckBox
 						x:Name="chkUserListSortByMode"
 						Content="Sort by Mode"
 						Grid.Column="2"
-						Grid.Row="6" />
+						Grid.Row="6"
+						ToolTip="Check if you'd like the user list to be sorted by name and mode.  That will highlight ops by placing them at the top of the list.  Uncheck it if you prefer the users to be sorted only by name." />
 				</Grid>
 			</GroupBox>
 		</StackPanel>
 	</ScrollViewer>
-</UserControl>
+</base:VisualPrefsTabCtrl>

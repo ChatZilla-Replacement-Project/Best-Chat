@@ -24,7 +24,7 @@
 				<Label
 					Content="{Binding Def.DisplayName.TranslationForCurCulture}"
 					ToolTip="{Binding Def.Desc.TranslationForCurCulture}" />
-				<Ctrls:IntegerUpDown
+				<GuiCtrls:IntegerUpDown
 					Value="{Binding }"
 					Minimum="{Binding Def.MinForNumSafe}"
 					Maximum="{Binding Def.MaxForNumSafe}"

@@ -1,4 +1,6 @@
-﻿// Ignore Spelling: Ctrl
+﻿// Ignore Spelling: Ctrl Prefs Ctrls
+
+using System.Linq;
 
 namespace BestChat.Platform.Prefs.Ctrls
 {
@@ -16,7 +18,8 @@ namespace BestChat.Platform.Prefs.Ctrls
 				Mgr = mgr;
 				UI = mapDataMgrToCtrlType[mgr.GetType()]();
 
-				foreach(Data.AbstractChildMgr cmgrCur in mgr.ChildMgrByName.Values)
+				foreach(Data.AbstractChildMgr cmgrCur in mgr.ChildMgrByName.Values.Where(cmgrCur => !UI.HandlesChildMgrsOfType
+						.Contains(cmgrCur.GetType())))
 					ocChildren.Add(new(cmgrCur));
 			}
 		#endregion
@@ -35,10 +38,10 @@ namespace BestChat.Platform.Prefs.Ctrls
 
 		#region Members
 			private static readonly System.Collections.Generic.Dictionary<System.Type, System.Func<VisualPrefsTabCtrl>> mapDataMgrToCtrlType =
-				new();
+				[];
 
 			private readonly System.Collections.ObjectModel.ObservableCollection<VisualPrefsTreeData> ocChildren =
-				new();
+				[];
 		#endregion
 
 		#region Properties
