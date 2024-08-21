@@ -1,4 +1,4 @@
 ﻿[*.cs]
 
-# CS8603: Possible null reference return.
-dotnet_diagnostic.CS8603.severity = error
+# IDE0290: Use primary constructor
+csharp_style_prefer_primary_constructors = false

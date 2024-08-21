@@ -17,11 +17,6 @@ namespace BestChat.Prefs.Data
 
 				global = dto == null ? new(this) : new(this, dto.Global);
 				global.evtDirtyChanged += OnChildMgrDirtyChanged;
-
-				mapMgrsForProtolsByName[IRC.Protocol_Module.ProtocolDef.instance.Name] = IRC.Protocol_Module
-					.ProtocolDef.instance.ProtocolMgrForRootPrefObj ?? throw new System
-					.InvalidProgramException("The app should've initialized the IRC protocol module, but " +
-					"doesn't seem to have done so.");
 			}
 
 			static Prefs()

@@ -5,9 +5,9 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:local="clr-namespace:BestChat.Prefs.GUI.Pages.Global"
-	xmlns:base="BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
+	xmlns:base="clr-namespace:BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	xmlns:BestChatCtrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
-	xmlns:BestChatPrefsCtrls="clr-namespace:BestChat.Prefs.GUI.Ctrls;assembly=BestChat.Prefs.GUI.Ctrls"
+	xmlns:PrefCtrls="clr-namespace:BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	mc:Ignorable="d">
 	<Grid>
 		<Grid.ColumnDefinitions>
@@ -28,7 +28,7 @@
 			<RowDefinition
 				Height="Auto" />
 		</Grid.RowDefinitions>
-		<BestChatPrefsCtrls:InfoOnThisPageTextBlock
+		<PrefCtrls:InfoOnThisPageTextBlock
 			Text="Below are a series of paths you want Best Chat to consider as containing external plug-ins.  Chat will look in each location during start and create commands for all executables in those locations.  On Windows, anything with the extensions CMD, PS1, or EXE will be treated as plugins.  On MacOS, Linux, Unix, and other similar operating systems, that will be anything with the mode +x on files in those paths.  For all operating systems, Best Chat will add anything whose extension is listed in the bottom of this box.  If you aren't running Windows, but want to include EXEs, add Wine.  Also, non-Windows users that want to use PowerShell scripts may need to install PS."
 			Grid.ColumnSpan="3" />
 		<ListBox
@@ -75,7 +75,7 @@
 			<Button
 				Name="btnAddPath"
 				Content="Add…"
-				Grid.Row="4"/>
+				Grid.Row="4" />
 			<Button
 				Name="btnEditPath"
 				Content="Edit…"
@@ -88,13 +88,16 @@
 				x:Name="btnCopySysPathToList"
 				Grid.Row="10"
 				Content="Copy your system path environment variable">
-				<Button.ToolTip>Causes your OS's search path system environment variable, probably called
-					<BestChatCtrls:FixedWidthHilightSpan>PATH</BestChatCtrls:FixedWidthHilightSpan>, to be copied to the list to the left.  Any existing entries are preserved in the order they currently appear.  No duplicates will be included.  Clicking this will turn the “Include OS's search path system environment variable” off.</Button.ToolTip></Button>
+				<Button.ToolTip>
+					<TextBlock>Causes your OS's search path system environment variable, probably called
+					<BestChatCtrls:FixedWidthHilightSpan>PATH</BestChatCtrls:FixedWidthHilightSpan>, to be copied to the list to the left.  Any existing entries are preserved in the order they currently appear.  No duplicates will be included.  Clicking this will turn the “Include OS's search path system environment variable” off.</TextBlock>
+				</Button.ToolTip>
+			</Button>
 		</Grid>
 		<CheckBox
 			x:Name="checkIncludeSysPath"
 			Grid.Row="4"
 			Grid.ColumnSpan="3"
-			Content="Include OS's search path system environment variable"/>
+			Content="Include OS's search path system environment variable" />
 	</Grid>
 </base:VisualPrefsTabCtrl>

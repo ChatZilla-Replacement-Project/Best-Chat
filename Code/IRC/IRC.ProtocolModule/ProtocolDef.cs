@@ -1,17 +1,14 @@
 ﻿// Ignore Spelling: Ctrl cmgr gvc vgc Prefs
 
-
-namespace BestChat.IRC.Protocol_Module
+namespace BestChat.IRC.ProtocolModule
 {
 	using Util.Ext;
 
-	public partial class ProtocolDef : ProtocolMgr.GUI.ProtocolGuiMgr.IProtocolGuiDef
+	public partial class ProtocolDef : ProtocolMgr.ProtocolMgr.IProtocolDef
 	{
 		#region Constructors & Deconstructors
-			private ProtocolDef()
+			protected ProtocolDef()
 			{
-				TopLevelViewGroupOrConversation = null;
-				ProtocolMgrForRootPrefObj = null;
 			}
 		#endregion
 
@@ -70,8 +67,6 @@ namespace BestChat.IRC.Protocol_Module
 		#endregion
 
 		#region Members
-			public static readonly ProtocolDef instance = new();
-
 		#endregion
 
 		#region Properties
@@ -102,22 +97,13 @@ namespace BestChat.IRC.Protocol_Module
 		#endregion
 
 		#region Methods
-			public void Init(Platform.Prefs.Data.AbstractMgr mgrParent, Platform.Conversations
+			protected void Init(Platform.Prefs.Data.AbstractMgr mgrParent, Platform.Conversations
 				.IGroupViewOrConversation vgcTopLevel)
 			{
-				ProtocolMgrForRootPrefObj = Data.Prefs.PrefsMgr.Init(mgrParent);
+				ProtocolMgrForRootPrefObj = Prefs.Data.Prefs.Init(mgrParent);
 
 				TopLevelViewGroupOrConversation = vgcTopLevel;
 			}
-
-			public void RegisterPrefCtrlMap()
-			{
-				//Platform.Prefs.Ctrls.VisualPrefsTreeData.RegisterDataEditorCtrlType(typeof(Data.Prefs.PrefsMgr), )
-			}
-
-			public GUI.Ctrls.AbstractVisualConversationCtrl MakeConversationCtrl(Platform.Conversations
-				.IGroupViewOrConversation gvcWhatWeNeedCtrlFor) => new Global.View
-				.ConversationViewCtrl(gvcWhatWeNeedCtrlFor);
 
 			public System.Collections.Generic.IEnumerable<Platform.Conversations.PlaceHolder.IInlinePlaceHolder>
 				Parse(in string strParseIt)

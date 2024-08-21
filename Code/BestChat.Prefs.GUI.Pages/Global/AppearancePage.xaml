@@ -5,16 +5,17 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:local="clr-namespace:BestChat.Prefs.GUI.Pages.Global"
-	xmlns:base="BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
+	xmlns:base="clr-namespace:BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	xmlns:BestChatCtrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
 	xmlns:BestChatPrefsCtrls="clr-namespace:BestChat.Prefs.GUI.Ctrls;assembly=BestChat.Prefs.GUI.Ctrls"
+	xmlns:PrefCtrls="clr-namespace:BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	mc:Ignorable="d">
 	<ScrollViewer
 		PanningMode="VerticalOnly"
 		VerticalScrollBarVisibility="Auto">
 		<StackPanel
 			Orientation="Vertical">
-			<BestChatPrefsCtrls:InfoOnThisPageTextBlock
+			<PrefCtrls:InfoOnThisPageTextBlock
 				Text="These settings affect the overall look of the application.  Some override your theme.  Some can be further overriden on the protocol level." />
 			<GroupBox
 				Padding="4"
@@ -55,7 +56,7 @@
 						<RowDefinition
 							Height="Auto" />
 					</Grid.RowDefinitions>
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						x:Name="btnResetConfModeEnabled" />
 					<CheckBox
 						x:Name="checkConfModeEnabled"
@@ -63,7 +64,7 @@
 						Grid.Column="2"
 						Grid.ColumnSpan="5"
 						ToolTip="Check this if you want Conference Mode enabled.  Uncheck it if you always want to see parts, joins, and quits." />
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						Name="btnResetConfModeLimit"
 						Grid.Row="2" />
 					<Label
@@ -80,7 +81,7 @@
 						ToolTip="If the number of users in the system goes above this number, Conference Mode would be activated.  That would cause parts, joins, and quits to be hidden unless you hover over the event marker."
 						Grid.Row="2"
 						IsEnabled="{Binding IsChecked, ElementName=checkConfModeEnabled, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" />
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						x:Name="btnResetConfModeCollapseMsg"
 						Grid.Row="4" />
 					<CheckBox
@@ -91,7 +92,7 @@
 						Grid.ColumnSpan="5"
 						IsEnabled="{Binding IsChecked, ElementName=checkConfModeEnabled, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}"
 						ToolTip="In Conference Mode, Best Chat can collapse messages.  Do you want that?" />
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						x:Name="btnResetConfModeCollapseActions"
 						Grid.Row="6" />
 					<CheckBox
@@ -142,7 +143,7 @@
 						<RowDefinition
 							Height="Auto" />
 					</Grid.RowDefinitions>
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						x:Name="btnResetFontNormalFamily" />
 					<Label
 						Grid.Column="2"
@@ -162,7 +163,7 @@
 						Grid.ColumnSpan="2"
 						IsEnabled="{Binding IsChecked, ElementName=chkFontNormalFamily, NotifyOnSourceUpdated=True}"
 						ToolTip="{Binding ToolTip, ElementName=chkFontNormalFamily}" />
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						x:Name="btnResetFontFixedFamily"
 						Grid.Row="2" />
 					<Label
@@ -187,7 +188,7 @@
 						Grid.Row="2"
 						Grid.ColumnSpan="2"
 						ToolTip="{Binding ToolTip, ElementName=chkFontFixedWidthFamily}" />
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						x:Name="btnResetFontSize"
 						Grid.Row="4" />
 					<Label
@@ -212,7 +213,7 @@
 						Minimum="8"
 						Value="12"
 						ToolTip="{Binding ToolTip, ElementName=chkFontSize}" />
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						x:Name="btnResetFontWeight"
 						Grid.Row="6" />
 					<Label
@@ -276,7 +277,7 @@
 							NavigateUri="https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-timespan-format-strings"
 							Foreground="Blue"
 							FontWeight="Bold">Custom TimeSpan format strings</Hyperlink> for how to format the value and some sample format strings.</TextBlock>
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						x:Name="btnResetTimeStampFmtShow"
 						Grid.Row="2" />
 					<CheckBox
@@ -286,7 +287,7 @@
 						Grid.Column="2"
 						Grid.ColumnSpan="3"
 						ToolTip="Check this if you want to see time stamps and uncheck it if you don't." />
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						x:Name="btnResetTimeStampFmt"
 						Grid.Row="4" />
 					<Label
@@ -332,7 +333,7 @@
 						<RowDefinition
 							Height="Auto" />
 					</Grid.RowDefinitions>
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						x:Name="btnResetUserListLoc"
 						Grid.Row="2" />
 					<GroupBox
@@ -343,7 +344,7 @@
 						<BestChatPrefsCtrls:UserListLocRadioBtnGroup
 							x:Name="rbgUserListLoc" />
 					</GroupBox>
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						x:Name="btnResetUserListShowModeSymbols" />
 					<GroupBox
 						Padding="4"
@@ -354,7 +355,7 @@
 						<BestChatPrefsCtrls:UserListWaysToShowModesRadioBtnGroup
 							x:Name="rbgUserListWaysToShowModes" />
 					</GroupBox>
-					<BestChatPrefsCtrls:ResetBtn
+					<PrefCtrls:ResetBtn
 						x:Name="btnResetUserListSortByMode"
 						Grid.Row="6" />
 					<CheckBox

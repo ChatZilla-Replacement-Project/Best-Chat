@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BestChat.IRC.Protocol_Module {
+namespace BestChat.IRC.ProtocolModule {
     using System;
     
     

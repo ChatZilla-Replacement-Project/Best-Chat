@@ -23,26 +23,36 @@ namespace BestChat.Platform.Prefs.Data
 		#endregion
 
 		#region Members
-			private readonly System.Collections.Generic.SortedDictionary<string, ItemBase> mapItemsByName = new
-				();
+			private readonly System.Collections.Generic.SortedDictionary<string, ItemBase> mapItemsByName = [];
 
-			private readonly System.Collections.Generic.SortedDictionary<string, AbstractChildMgr>
-				mapChildMgrByName = new();
+			private readonly System.Collections.Generic.SortedDictionary<string, AbstractChildMgr> mapChildMgrByName =
+				[];
 		#endregion
 
 		#region Properties
-			public System.Collections.Generic.IReadOnlyDictionary<string, ItemBase> ItemsByName =>
-				mapItemsByName;
+			public System.Collections.Generic.IReadOnlyCollection<ItemBase> ItemsByName => mapItemsByName.Values;
 
-			public System.Collections.Generic.IReadOnlyDictionary<string, AbstractChildMgr> ChildMgrByName =>
-				mapChildMgrByName;
+			public System.Collections.Generic.IReadOnlyCollection<AbstractChildMgr> ChildMgrByName => mapChildMgrByName.Values;
 		#endregion
 
 		#region Methods
+			internal void Add<ItemType>(Item<ItemType> itemNew)
+			{
+				mapItemsByName[itemNew.LocalizedName] = itemNew;
+
+				itemNew.evtDirtyChanged += (objSender, bNowDirty) => MakeDirty();
+			}
+
+			internal void Add(AbstractChildMgr cmgrNew)
+			{
+				mapChildMgrByName[cmgrNew.LocalizedName] = cmgrNew;
+
+				cmgrNew.evtDirtyChanged += (objSender, bNowDirty) => MakeDirty();
+			}
+
 			public System.Collections.Generic.IReadOnlyDictionary<string, object> ToTupleList()
 			{
-				System.Collections.Generic.SortedDictionary<string, object> mapFieldsByName = new
-					();
+				System.Collections.Generic.SortedDictionary<string, object> mapFieldsByName = [];
 
 				foreach(ItemBase itemCur in mapItemsByName.Values)
 					mapFieldsByName[itemCur.ItemName] = itemCur.ValAsText;

@@ -8,7 +8,7 @@
 	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
 	xmlns:Base="clr-namespace:BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
-	xmlns:IrcView="clr-namespace:BestChat.IRC.Global.View;assembly=BestChat.IRC.Global.View"
+	xmlns:IrcView="clr-namespace:BestChat.IRC.General.View;assembly=BestChat.IRC.General.View"
 	mc:Ignorable="d"
 	Width="800">
 	<ScrollViewer>

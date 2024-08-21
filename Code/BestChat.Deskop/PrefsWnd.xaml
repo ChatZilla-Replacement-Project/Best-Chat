@@ -6,7 +6,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:Ctrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
 	xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
-	xmlns:IrcView="clr-namespace:BestChat.IRC.Global.View;assembly=BestChat.IRC.Global.View"
+	xmlns:IrcView="clr-namespace:BestChat.IRC.General.View;assembly=BestChat.IRC.General.View"
 	xmlns:local="clr-namespace:BestChat.Desktop"
 	mc:Ignorable="d"
 	Title="Best Chat (GUI Mode) Preferences"

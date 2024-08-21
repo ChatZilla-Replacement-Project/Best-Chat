@@ -12,6 +12,8 @@ namespace BestChat.Platform.Prefs.Data
 				this.strName = strName;
 				this.strLocalizedName = strLocalizedName;
 				this.strLocalizedLongDesc = strLocalizedLongDesc;
+
+				mgrParent.Add(this);
 			}
 		#endregion
 

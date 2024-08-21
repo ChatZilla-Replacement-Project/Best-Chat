@@ -8,6 +8,7 @@
 		<RootNamespace>BestChat.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+		<UseWPF>true</UseWPF>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

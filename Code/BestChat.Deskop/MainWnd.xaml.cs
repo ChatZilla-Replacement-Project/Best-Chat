@@ -8,8 +8,8 @@
 		public MainWnd() => InitializeComponent();
 
 		private static PrefsWnd? prefsDlg = null;
-		private static IRC.Global.View.NetworkListDlg? networkListDlg = null;
-		private static IRC.Global.View.BncListEditor? bncListEditor = null;
+		private static IRC.General.View.NetworkListDlg? networkListDlg = null;
+		private static IRC.General.View.BncListEditor? bncListEditor = null;
 
 		public event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
 
@@ -19,7 +19,7 @@
 
 			treeLogicalSelector.Items.Add(new Platform.TreeData.VisualTreeData(item => item is IRC
 				.Data.ActiveNetwork || item is IRC.Data.Chan || item is IRC.Data.ConversationWithRemoteUser ? new
-				IRC.Global.View.ConversationViewCtrl((Platform.Conversations.IGroupViewOrConversation)item) :
+				IRC.General.View.ConversationViewCtrl((Platform.Conversations.IGroupViewOrConversation)item) :
 				item is ClientConversation.ClientConversation ? new ClientConversationCtrl() : new System.Windows
 				.Controls.UserControl(), ClientConversation.ClientConversation.instance));
 

@@ -5,9 +5,9 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:local="clr-namespace:BestChat.Prefs.GUI.Pages.Global"
-	xmlns:base="BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
+	xmlns:base="clr-namespace:BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	xmlns:BestChatCtrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
-	xmlns:BestChatPrefsCtrls="clr-namespace:BestChat.Prefs.GUI.Ctrls;assembly=BestChat.Prefs.GUI.Ctrls"
+	xmlns:PrefCtrls="clr-namespace:BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	mc:Ignorable="d">
 	<Grid>
 		<Grid.ColumnDefinitions>
@@ -32,7 +32,7 @@
 			<RowDefinition
 				Height="Auto" />
 		</Grid.RowDefinitions>
-		<BestChatPrefsCtrls:InfoOnThisPageTextBlock
+		<PrefCtrls:InfoOnThisPageTextBlock
 			Grid.ColumnSpan="2"
 			Text="It's a security risk as you might run who knows what, but Best Chat does support external plug-ins (run by external programs).  As noted, these might be binaries your OS knows how to run or scripts.  Use the list below to specify programs to treat as external plugins.  At the bottom of thise page are two pages with options for scripts." />
 		<DataGrid

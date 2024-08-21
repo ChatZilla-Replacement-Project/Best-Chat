@@ -1,28 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿// Ignore Spelling: Prefs
 
 namespace BestChat.Prefs.GUI.Pages.Global
 {
 	/// <summary>
 	/// Interaction logic for PluginsExtScriptsHowToRunThem.xaml
 	/// </summary>
-	public partial class PluginsExtScriptsHowToRunThem : UserControl
+	public partial class PluginsExtScriptsHowToRunThem : Platform.Prefs.Ctrls.VisualPrefsTabCtrl
 	{
-		public PluginsExtScriptsHowToRunThem()
-		{
-			InitializeComponent();
-		}
+		#region Constructors & Deconstructors
+			public PluginsExtScriptsHowToRunThem()
+			{
+				InitializeComponent();
+			}
+		#endregion
+
+		#region Delegates
+		#endregion
+
+		#region Events
+		#endregion
+
+		#region Constants
+		#endregion
+
+		#region Helper Types
+		#endregion
+
+		#region Members
+		#endregion
+
+		#region Properties
+		#endregion
+
+		#region Methods
+		#endregion
+
+		#region Event Handlers
+		#endregion
 	}
 }

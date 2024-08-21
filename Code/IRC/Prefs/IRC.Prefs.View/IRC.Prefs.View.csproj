@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<AssemblyName>BestChat.$(MSBuildProjectName)</AssemblyName>
+		<RootNamespace>BestChat.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<WarningLevel>9999</WarningLevel>
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<WarningLevel>9999</WarningLevel>
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\BestChat.GUI.Ctrls\BestChat.GUI.Ctrls.csproj" />
+		<ProjectReference Include="..\..\..\BestChat.Prefs.GUI.Ctrls\BestChat.Prefs.GUI.Ctrls.csproj" />
+		<ProjectReference Include="..\..\..\Platform\Prefs\Platform.Prefs.Ctrls\Platform.Prefs.Ctrls.csproj" />
+		<ProjectReference Include="..\..\..\Platform\Prefs\Platform.Prefs.Data\Platform.Prefs.Data.csproj" />
+		<ProjectReference Include="..\..\..\Platform\Util.Collections\Util.Collections.csproj" />
+		<ProjectReference Include="..\..\..\Platform\Util.Exceptions\Util.Exceptions.csproj" />
+		<ProjectReference Include="..\..\..\Platform\Util.Ext\Util.Ext.csproj" />
+		<ProjectReference Include="..\..\Data\IRC.Data.csproj" />
+		<ProjectReference Include="..\..\General\IRC.General.Ctrls\IRC.General.Ctrls.csproj" />
+		<ProjectReference Include="..\IRC.Prefs.Data\IRC.Prefs.Data.csproj" />
+	</ItemGroup>
+
+</Project>

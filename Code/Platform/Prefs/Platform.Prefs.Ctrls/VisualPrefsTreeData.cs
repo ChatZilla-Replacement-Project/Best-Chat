@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace BestChat.Platform.Prefs.Ctrls
 {
+	using BestChat.Platform.Prefs.Data;
 	using Util.Ext;
 
 	public sealed class VisualPrefsTreeData : System.Windows.DependencyObject
@@ -16,9 +17,16 @@ namespace BestChat.Platform.Prefs.Ctrls
 						"specified.", nameof(mgr));
 
 				Mgr = mgr;
-				UI = mapDataMgrToCtrlType[mgr.GetType()]();
 
-				foreach(Data.AbstractChildMgr cmgrCur in mgr.ChildMgrByName.Values.Where(cmgrCur => !UI.HandlesChildMgrsOfType
+				System.Func<AbstractMgr, VisualPrefsTabCtrl> funcCtrlMaker = mapDataMgrToCtrlType[mgr.GetType()];
+				if(funcCtrlMaker != null)
+					UI = funcCtrlMaker(mgr);
+				UI ??= new PrefsGenericTreeListerPage()
+					{
+						Children = Children,
+					};
+
+				foreach(Data.AbstractChildMgr cmgrCur in mgr.ChildMgrByName.Where(cmgrCur => !UI.HandlesChildMgrsOfType
 						.Contains(cmgrCur.GetType())))
 					ocChildren.Add(new(cmgrCur));
 			}
@@ -37,8 +45,8 @@ namespace BestChat.Platform.Prefs.Ctrls
 		#endregion
 
 		#region Members
-			private static readonly System.Collections.Generic.Dictionary<System.Type, System.Func<VisualPrefsTabCtrl>> mapDataMgrToCtrlType =
-				[];
+			private static readonly System.Collections.Generic.Dictionary<System.Type, System.Func<AbstractMgr, VisualPrefsTabCtrl>>
+				mapDataMgrToCtrlType = [];
 
 			private readonly System.Collections.ObjectModel.ObservableCollection<VisualPrefsTreeData> ocChildren =
 				[];
@@ -58,21 +66,25 @@ namespace BestChat.Platform.Prefs.Ctrls
 
 				private init;
 			}
+
+			public System.Collections.Generic.IReadOnlyList<VisualPrefsTreeData> Children => ocChildren;
 		#endregion
 
 		#region Methods
-			public static void RegisterDataEditorCtrlType(in System.Type typeOfMgr, in System.Func<VisualPrefsTabCtrl> typeOfEditorCtrl)
+			public static void RegisterDataEditorCtrlType(in System.Type typeOfMgr, in System.Func<AbstractMgr, VisualPrefsTabCtrl>
+				funcCtrlMaker)
 			{
 				if(!typeOfMgr.IsDerivedFrom(typeof(Data.AbstractMgr)))
 					throw new System.ArgumentException("When calling BestChat.Platform.TreeData.VisualTreeData.RegisterDataEditorCtrlType, the" +
-						$" type specified in {typeOfEditorCtrl} must be a BestChat preference manager, either child or main.",
-						nameof(typeOfEditorCtrl));
+						$" type specified in {typeOfMgr} must be a BestChat preference manager, either child or main.",
+						nameof(typeOfMgr));
 
 				if(mapDataMgrToCtrlType.ContainsKey(typeOfMgr))
 					throw new System.ArgumentException("Chat.Platform.TreeData.VisualTreeData.RegisterDataEditorCtrlType was already called " +
 						"with a manager type that was already in the system.", nameof(typeOfMgr));
 
-				mapDataMgrToCtrlType[typeOfMgr] = typeOfEditorCtrl;
+				mapDataMgrToCtrlType[typeOfMgr] = funcCtrlMaker ?? throw new System.ArgumentNullException("The function passed to BestChat" +
+					".Platform.TreeData.VisualTreeData.RegisterDataEditorType in was null", nameof(funcCtrlMaker));
 			}
 		#endregion
 

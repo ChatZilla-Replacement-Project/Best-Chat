@@ -16,8 +16,7 @@ namespace BestChat.Desktop
 		{
 			base.OnStartup(e);
 
-			//IRC.Protocol_Module.ProtocolDef.instance.Init(Prefs.Data.Prefs.instance, ClientConversation
-				//.instance);
+			IRC.ProtocolModule.GUI.ProtocolGuiDef.instance.Init(Prefs.Data.Prefs.instance);
 
 			// TODO: Make the above statement work.
 		}

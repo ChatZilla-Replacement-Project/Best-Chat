@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>BestChat.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>BestChat.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>9999</WarningLevel>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>9999</WarningLevel>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BestChat.ProtocolMgr.GUI\BestChat.ProtocolMgr.GUI.csproj" />
+    <ProjectReference Include="..\General\IRC.General.Ctrls\IRC.General.Ctrls.csproj" />
+    <ProjectReference Include="..\General\View\IRC.General.View.csproj" />
+    <ProjectReference Include="..\IRC.ProtocolModule\IRC.ProtocolModule.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,38 @@
+﻿<ItemsControl
+	x:Class="BestChat.Platform.Prefs.Ctrls.PrefGroupTreeListerCtrl"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:BestChat.Platform.Prefs.Ctrls"
+	xmlns:data="BestChat.Platform.Prefs.Data;assembly=BestChat.Platform.Prefs.Data"
+	xmlns:calc="clr-namespace:CalcBinding;assembly=CalcBinding"
+	mc:Ignorable="d">
+	<ItemsControl.ItemTemplate>
+		<DataTemplate DataType="data:AbstractMgr">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition
+						Width="20" />
+					<ColumnDefinition
+						Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition
+						Height="Auto" />
+					<RowDefinition
+						Height="Auto" />
+				</Grid.RowDefinitions>
+				<TextBlock
+					Grid.ColumnSpan="2"
+					ToolTip="{Binding LocalizedLongDesc}"><Hyperlink><Label
+							Content="{Binding LocalizedName}" /></Hyperlink></TextBlock>
+				<local:PrefGroupTreeListerCtrl
+					Grid.Row="1"
+					Grid.Column="1"
+					ItemsSource="{Binding Children, RelativeSource={RelativeSource AncestorType=local:PrefsGroupTreeListerCtrl}}"
+					Visibilty="{calc:Binding 'Children != null and Children.Count &lt; 0', RelativeSource={RelativeSource AncestorType=local:PrefsGroupTreeListerCtrl}}"/>
+			</Grid>
+		</DataTemplate>
+	</ItemsControl.ItemTemplate>
+</ItemsControl>

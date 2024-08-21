@@ -50,23 +50,27 @@ namespace BestChat.Platform.Prefs.Data
 				strLocalizedLongDesc, in TypeOfItem def, in TypeOfItem? valCur) : base(mgrParent, strItemName,
 				strLocalizedName, strLocalizedLongDesc)
 			{
-				if(typeof(TypeOfItem) == typeof(int) && GetType() == typeof(Item<int>))
+				if(typeof(TypeOfItem) == typeof(int) && this is Item<int>)
 					throw new System.InvalidProgramException("Instead of directly using Item<int>, use " +
 						"IntItem.  It provides and enforces minimum and maximum values.");
 
 				this.def = def;
 				this.valCur = valCur ?? def;
+
+				mgrParent.Add(this);
 			}
 
 			public Item(in AbstractMgr mgrParent, in string strItemName, in string strLocalizedName, in string
 				strLocalizedLongDesc, in TypeOfItem def) : base(mgrParent, strItemName, strLocalizedName,
 				strLocalizedLongDesc)
 			{
-				if(typeof(TypeOfItem) == typeof(int) && GetType() == typeof(Item<int>))
+				if(typeof(TypeOfItem) == typeof(int) && this is Item<int>)
 					throw new System.InvalidProgramException("Instead of directly using Item<int>, use " +
 						"IntItem.  It provides and enforces minimum and maximum values.");
 
 				valCur = this.def = def;
+
+				mgrParent.Add(this);
 			}
 		#endregion
 
