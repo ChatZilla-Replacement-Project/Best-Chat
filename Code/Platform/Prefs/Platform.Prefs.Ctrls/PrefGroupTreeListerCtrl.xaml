@@ -26,12 +26,13 @@
 				<TextBlock
 					Grid.ColumnSpan="2"
 					ToolTip="{Binding LocalizedLongDesc}"><Hyperlink><Label
-							Content="{Binding LocalizedName}" /></Hyperlink></TextBlock>
-				<local:PrefGroupTreeListerCtrl
+					Content="{Binding LocalizedName}" /></Hyperlink></TextBlock>
+                <local:PrefGroupTreeListerCtrl
 					Grid.Row="1"
 					Grid.Column="1"
-					ItemsSource="{Binding Children, RelativeSource={RelativeSource AncestorType=local:PrefsGroupTreeListerCtrl}}"
-					Visibilty="{calc:Binding 'Children != null and Children.Count &lt; 0', RelativeSource={RelativeSource AncestorType=local:PrefsGroupTreeListerCtrl}}"/>
+					ItemsSource="{Binding Children, RelativeSource={RelativeSource AncestorType=local:PrefGroupTreeListerCtrl}}"
+                />
+				<!-- TODO Visibilty="{calc:Binding 'Children != null and Children.Count &lt; 0', RelativeSource={RelativeSource AncestorType=local:PrefGroupTreeListerCtrl}}" -->
 			</Grid>
 		</DataTemplate>
 	</ItemsControl.ItemTemplate>

@@ -12,7 +12,7 @@
     <ProjectReference Include="..\..\BestChat.ProtocolMgr.GUI\BestChat.ProtocolMgr.GUI.csproj" />
     <ProjectReference Include="..\..\BestChat.ProtocolMgr\BestChat.ProtocolMgr.csproj" />
     <ProjectReference Include="..\Data\IRC.Data.csproj" />
-    <ProjectReference Include="..\Global\View\IRC.General.View.csproj" />
+    <ProjectReference Include="..\General\View\IRC.General.View.csproj" />
     <ProjectReference Include="..\Prefs\IRC.Prefs.Data\IRC.Prefs.Data.csproj" />
   </ItemGroup>
 

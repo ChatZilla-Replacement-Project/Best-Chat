@@ -7,7 +7,7 @@
 	xmlns:local="clr-namespace:BestChat.Prefs.GUI.Pages.Global"
 	xmlns:base="clr-namespace:BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	xmlns:BestChatCtrls="clr-namespace:BestChat.GUI.Ctrls;assembly=BestChat.GUI.Ctrls"
-	xmlns:BestChatPrefsCtrls="clr-namespace:BestChat.Prefs.GUI.Ctrls;assembly=BestChat.Prefs.GUI.Ctrls"
+	xmlns:BestChatPrefsCtrls="clr-namespace:BestChat.Platform.Prefs.Ctrls;assembly=BestChat.Platform.Prefs.Ctrls"
 	mc:Ignorable="d">
 	<DockPanel
 		Margin="4">

@@ -5,22 +5,19 @@
 	/// </summary>
 	public partial class PrefsGenericTreeListerPage : VisualPrefsTabCtrl
 	{
-		#region Constructors & Deconstructors
-			public PrefsGenericTreeListerPage()
-			{
-				InitializeComponent();
-			}
-		#endregion
+        #region Constructors & Deconstructors
+        public PrefsGenericTreeListerPage() => InitializeComponent();
+        #endregion
 
-		#region Delegates
-		#endregion
+        #region Delegates
+        #endregion
 
-		#region Events
-		#endregion
+        #region Events
+        #endregion
 
-		#region Constants
-			#region Dependency Properties
-				public readonly System.Windows.DependencyProperty ChildrenProperty = System.Windows.DependencyProperty.Register(nameof(Children),
+        #region Constants
+        #region Dependency Properties
+        public readonly System.Windows.DependencyProperty ChildrenProperty = System.Windows.DependencyProperty.Register(nameof(Children),
 					typeof(System.Collections.Generic.IReadOnlyCollection<VisualPrefsTreeData>), typeof(PrefGroupTreeListerCtrl));
 			#endregion
 		#endregion
