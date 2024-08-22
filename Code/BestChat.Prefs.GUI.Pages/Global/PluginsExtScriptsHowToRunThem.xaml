@@ -1,5 +1,5 @@
 ﻿<base:VisualPrefsTabCtrl
-	x:Class="BestChat.Prefs.GUI.Pages.Global.PluginsExtWhereToLookPage"
+	x:Class="BestChat.Prefs.GUI.Pages.Global.PluginsExtScriptsHowToRunThem"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -32,8 +32,7 @@
 			Grid.ColumnSpan="3">These tabs both list programs that Best Chat will attempt to use to run an external plug-in.  If you don't want any files of a certain type to be run by Best Chat, remove it from the list.  The two tabs below show the same data.  One just groups the data so that all types supported by a program are shown together if both file types use the same parameters to the executing program.  The other lets you quickly find a specific type.
 			<LineBreak />
 			<LineBreak /> With Linux, anything marked with the +x file mode is treated as a binary executable if there is no file type listed below for that file or the file lacks a file extension.  In the parameter list, any %s will be replaced with the full path to the script.  In here, if you don't specify the path as that comes from a search along your computer's PATH environment variable.  If that path changes, the actual program might change.  In that case, Best Chat will detect the change and ask you to approve the change or disable the program and file type it runs.  For program plugins, see
-			<Hyperlink
-				x:Name="hlinkPrograms">Preferences/Global/Plugins/External</Hyperlink> .
+			<Hyperlink>Preferences/Global/Plugins/External</Hyperlink> .
 		</PrefCtrls:InfoOnThisPageTextBlock>
 		<ListBox
 			Name="lbLocations"
