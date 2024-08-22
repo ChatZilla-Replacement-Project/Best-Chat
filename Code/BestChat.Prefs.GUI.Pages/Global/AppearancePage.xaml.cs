@@ -36,9 +36,11 @@ namespace BestChat.Prefs.GUI.Pages.Global
 		#endregion
 
 		#region Properties
-			public override System.Collections.Generic.IEnumerable<System.Type> HandlesChildMgrsOfType => [Data.Prefs.GlobalPrefs
-				.AppearancePrefs.ConfModePrefs), typeof(Data.Prefs.GlobalPrefs.AppearancePrefs.FontPrefs), typeof(Data.Prefs.GlobalPrefs
-				.AppearancePrefs.TimeStampPrefs), typeof(Data.Prefs.GlobalPrefs.AppearancePrefs.UserListPrefs)];
+			public override System.Collections.Generic.IEnumerable<System.Type> HandlesChildMgrsOfType => [
+				typeof(Data.Prefs.GlobalPrefs.AppearancePrefs.ConfModePrefs),
+				typeof(Data.Prefs.GlobalPrefs.AppearancePrefs.FontPrefs),
+				typeof(Data.Prefs.GlobalPrefs.AppearancePrefs.TimeStampPrefs),
+				typeof(Data.Prefs.GlobalPrefs.AppearancePrefs.UserListPrefs)];
 		#endregion
 
 		#region Methods

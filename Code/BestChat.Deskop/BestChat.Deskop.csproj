@@ -16,7 +16,6 @@
 		<ProjectReference Include="..\BestChat.Prefs.Data\BestChat.Prefs.Data.csproj" />
 		<ProjectReference Include="..\IRC\Data\IRC.Data.csproj" />
 		<ProjectReference Include="..\IRC\General\View\IRC.General.View.csproj" />
-		<ProjectReference Include="..\IRC\Global\View\IRC.General.View.csproj" />
 		<ProjectReference Include="..\IRC\IRC.ProtocolModule.GUI\IRC.ProtocolModule.GUI.csproj" />
 		<ProjectReference Include="..\Platform\Platform.DataLoc\Platform.DataLoc.csproj" />
 		<ProjectReference Include="..\Platform\Platform.Common\Platform.Common.csproj" />
