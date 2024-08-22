@@ -23,8 +23,9 @@
 		</Grid.RowDefinitions>
 		<Things:InfoOnThisPageTextBlock
 			Text="{Binding LocalizedName}" />
-		<local:PrefGroupTreeListerCtrl
-			Grid.Row="2"
-			Children="{Binding Children, RelativeSource={RelativeSource AncestorType=local:PrefsGenericTreeListerPage}}" />
-	</Grid>
+        <Things:PrefGroupTreeListerCtrl
+            Grid.Row="2"
+            />
+            <!-- TODO Children="{Binding Children, RelativeSource={RelativeSource AncestorType=Things:PrefsGenericTreeListerPage}}" -->
+    </Grid>
 </Things:VisualPrefsTabCtrl>
